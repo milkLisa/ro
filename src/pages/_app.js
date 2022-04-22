@@ -1,7 +1,7 @@
-import '../assets/stylesheets/index.scss'
 import { useRouter } from "next/router"
-import zhContent from '../public/static/locales/zh_TW'
-import enContent from '../public/static/locales/en_US'
+import zhContent from '../constants/locales/zh_TW'
+import enContent from '../constants/locales/en_US'
+import '../assets/stylesheets/index.scss'
 
 export default function MyApp({ Component, pageProps }) {
   const { locale } = useRouter();
