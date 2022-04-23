@@ -1,6 +1,6 @@
-[
+export const monsters = [
   {
-    "fthId":1089,
+    "id":1089,
     "isMVP":false,
     "name":"蛙王",
     "level":27,
@@ -12,7 +12,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1089,
+    "id":1089,
     "isMVP":false,
     "name":"蛙王",
     "level":27,
@@ -24,7 +24,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1093,
+    "id":1093,
     "isMVP":false,
     "name":"藍瘋兔",
     "level":31,
@@ -36,7 +36,7 @@
     "time":"30分鐘"
   },
   {
-    "fthId":1093,
+    "id":1093,
     "isMVP":false,
     "name":"藍瘋兔",
     "level":31,
@@ -48,7 +48,7 @@
     "time":"30分鐘"
   },
   {
-    "fthId":1090,
+    "id":1090,
     "isMVP":false,
     "name":"波利之王",
     "level":42,
@@ -60,7 +60,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1090,
+    "id":1090,
     "isMVP":false,
     "name":"波利之王",
     "level":42,
@@ -72,7 +72,7 @@
     "time":"1小時30分鐘"
   },
   {
-    "fthId":1090,
+    "id":1090,
     "isMVP":false,
     "name":"波利之王",
     "level":42,
@@ -84,7 +84,7 @@
     "time":"30分鐘"
   },
   {
-    "fthId":1090,
+    "id":1090,
     "isMVP":false,
     "name":"波利之王",
     "level":42,
@@ -96,7 +96,7 @@
     "time":"30分鐘"
   },
   {
-    "fthId":1091,
+    "id":1091,
     "isMVP":false,
     "name":"龍蠅",
     "level":47,
@@ -108,7 +108,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1299,
+    "id":1299,
     "isMVP":false,
     "name":"哥布靈首領",
     "level":55,
@@ -120,7 +120,7 @@
     "time":"30分鐘"
   },
   {
-    "fthId":1582,
+    "id":1582,
     "isMVP":false,
     "name":"惡魔波利",
     "level":66,
@@ -132,7 +132,7 @@
     "time":"1小時40分鐘"
   },
   {
-    "fthId":1582,
+    "id":1582,
     "isMVP":false,
     "name":"惡魔波利",
     "level":66,
@@ -144,7 +144,19 @@
     "time":"2小時"
   },
   {
-    "fthId":1096,
+    "id":1283,
+    "isMVP":false,
+    "name":"凱美拉",
+    "level":70,
+    "race":"動物",
+    "element":"火3",
+    "size":"大",
+    "image":"1283.png",
+    "location":"克雷斯特漢姆古城 2樓 (gl_cas02)",
+    "time":"5秒"
+  },
+  {
+    "id":1096,
     "isMVP":false,
     "name":"天使波利",
     "level":77,
@@ -156,7 +168,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1096,
+    "id":1096,
     "isMVP":false,
     "name":"天使波利",
     "level":77,
@@ -168,7 +180,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1096,
+    "id":1096,
     "isMVP":false,
     "name":"天使波利",
     "level":77,
@@ -180,7 +192,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1307,
+    "id":1307,
     "isMVP":false,
     "name":"狂暴月夜貓",
     "level":79,
@@ -192,7 +204,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1307,
+    "id":1307,
     "isMVP":false,
     "name":"狂暴月夜貓",
     "level":79,
@@ -204,7 +216,19 @@
     "time":"20分鐘"
   },
   {
-    "fthId":1289,
+    "id":1875,
+    "isMVP":false,
+    "name":"王的屍體",
+    "level":80,
+    "race":"不死",
+    "element":"不死4",
+    "size":"中",
+    "image":"1875.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":1289,
     "isMVP":false,
     "name":"狂暴蟻后",
     "level":81,
@@ -216,7 +240,7 @@
     "time":"20分鐘"
   },
   {
-    "fthId":1289,
+    "id":1289,
     "isMVP":false,
     "name":"狂暴蟻后",
     "level":81,
@@ -228,7 +252,7 @@
     "time":"20分鐘"
   },
   {
-    "fthId":1289,
+    "id":1289,
     "isMVP":false,
     "name":"狂暴蟻后",
     "level":81,
@@ -240,7 +264,7 @@
     "time":"20分鐘"
   },
   {
-    "fthId":1388,
+    "id":1388,
     "isMVP":false,
     "name":"聖天使波利",
     "level":84,
@@ -252,7 +276,19 @@
     "time":"1小時"
   },
   {
-    "fthId":1960,
+    "id":1674,
+    "isMVP":false,
+    "name":"莫內",
+    "level":88,
+    "race":"無形",
+    "element":"火3",
+    "size":"大",
+    "image":"1674.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":1960,
     "isMVP":false,
     "name":"魔力之荊棘",
     "level":89,
@@ -264,7 +300,7 @@
     "time":"1天 至 3天"
   },
   {
-    "fthId":1120,
+    "id":1120,
     "isMVP":false,
     "name":"幽靈波利",
     "level":90,
@@ -276,7 +312,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1120,
+    "id":1120,
     "isMVP":false,
     "name":"幽靈波利",
     "level":90,
@@ -288,7 +324,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1120,
+    "id":1120,
     "isMVP":false,
     "name":"幽靈波利",
     "level":90,
@@ -300,7 +336,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1120,
+    "id":1120,
     "isMVP":false,
     "name":"幽靈波利",
     "level":90,
@@ -312,7 +348,79 @@
     "time":"4小時"
   },
   {
-    "fthId":1092,
+    "id":1733,
+    "isMVP":false,
+    "name":"齊爾",
+    "level":90,
+    "race":"無形",
+    "element":"暗2",
+    "size":"中",
+    "image":"1733.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":1320,
+    "isMVP":false,
+    "name":"鴞裊首領",
+    "level":92,
+    "race":"惡魔",
+    "element":"無3",
+    "size":"大",
+    "image":"1320.png",
+    "location":"克雷斯特漢姆古城 1樓 (gl_cas01)",
+    "time":"5秒"
+  },
+  {
+    "id":1320,
+    "isMVP":false,
+    "name":"鴞裊首領",
+    "level":92,
+    "race":"惡魔",
+    "element":"無3",
+    "size":"大",
+    "image":"1320.png",
+    "location":"艾爾帕蘭鐘塔 地上4樓 (c_tower4)",
+    "time":"5秒"
+  },
+  {
+    "id":1320,
+    "isMVP":false,
+    "name":"鴞裊首領",
+    "level":92,
+    "race":"惡魔",
+    "element":"無3",
+    "size":"大",
+    "image":"1320.png",
+    "location":"達納托斯塔台上層部 (tha_t05)",
+    "time":"5秒"
+  },
+  {
+    "id":1320,
+    "isMVP":false,
+    "name":"鴞裊首領",
+    "level":92,
+    "race":"惡魔",
+    "element":"無3",
+    "size":"大",
+    "image":"1320.png",
+    "location":"達納托斯塔台上層部 (tha_t06)",
+    "time":"5秒"
+  },
+  {
+    "id":1320,
+    "isMVP":false,
+    "name":"鴞裊首領",
+    "level":92,
+    "race":"惡魔",
+    "element":"無3",
+    "size":"大",
+    "image":"1320.png",
+    "location":"魔物終結塔 (4@tower) 84樓",
+    "time":"5秒"
+  },
+  {
+    "id":1092,
     "isMVP":false,
     "name":"流浪之狼",
     "level":93,
@@ -324,7 +432,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1092,
+    "id":1092,
     "isMVP":false,
     "name":"流浪之狼",
     "level":93,
@@ -336,7 +444,7 @@
     "time":"30分鐘"
   },
   {
-    "fthId":1092,
+    "id":1092,
     "isMVP":false,
     "name":"流浪之狼",
     "level":93,
@@ -348,7 +456,19 @@
     "time":"4小時"
   },
   {
-    "fthId":1302,
+    "id":2208,
+    "isMVP":false,
+    "name":"野貓騎士",
+    "level":95,
+    "race":"魚貝",
+    "element":"水2",
+    "size":"大",
+    "image":"2208.png",
+    "location":"星光珊瑚地區 (mal_dun01)",
+    "time":"5秒"
+  },
+  {
+    "id":1302,
     "isMVP":false,
     "name":"迷幻之王",
     "level":96,
@@ -360,7 +480,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1302,
+    "id":1302,
     "isMVP":false,
     "name":"迷幻之王",
     "level":96,
@@ -372,7 +492,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1302,
+    "id":1302,
     "isMVP":false,
     "name":"迷幻之王",
     "level":96,
@@ -384,7 +504,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1302,
+    "id":1302,
     "isMVP":false,
     "name":"迷幻之王",
     "level":96,
@@ -396,7 +516,7 @@
     "time":"20分鐘"
   },
   {
-    "fthId":1302,
+    "id":1302,
     "isMVP":false,
     "name":"迷幻之王",
     "level":96,
@@ -408,7 +528,7 @@
     "time":"20分鐘"
   },
   {
-    "fthId":1302,
+    "id":1302,
     "isMVP":false,
     "name":"迷幻之王",
     "level":96,
@@ -420,7 +540,19 @@
     "time":"20分鐘"
   },
   {
-    "fthId":1205,
+    "id":2188,
+    "isMVP":false,
+    "name":"怪異腔棘魚",
+    "level":100,
+    "race":"魚貝",
+    "element":"水2",
+    "size":"大",
+    "image":"2188.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":1205,
     "isMVP":false,
     "name":"行刑者",
     "level":101,
@@ -432,7 +564,7 @@
     "time":"3小時"
   },
   {
-    "fthId":1205,
+    "id":1205,
     "isMVP":false,
     "name":"行刑者",
     "level":101,
@@ -444,7 +576,7 @@
     "time":"5小時"
   },
   {
-    "fthId":1205,
+    "id":1205,
     "isMVP":false,
     "name":"行刑者",
     "level":101,
@@ -456,7 +588,7 @@
     "time":"5小時"
   },
   {
-    "fthId":1205,
+    "id":1205,
     "isMVP":false,
     "name":"行刑者",
     "level":101,
@@ -468,7 +600,31 @@
     "time":"5小時"
   },
   {
-    "fthId":1200,
+    "id":3426,
+    "isMVP":false,
+    "name":"虎王",
+    "level":101,
+    "race":"動物",
+    "element":"火1",
+    "size":"大",
+    "image":"3426.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":3427,
+    "isMVP":false,
+    "name":"俄塞里斯",
+    "level":103,
+    "race":"不死",
+    "element":"不死3",
+    "size":"中",
+    "image":"3427.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":1200,
     "isMVP":false,
     "name":"艾斯恩魔女",
     "level":105,
@@ -480,7 +636,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1259,
+    "id":1259,
     "isMVP":false,
     "name":"獅鷲獸",
     "level":105,
@@ -492,7 +648,43 @@
     "time":"1小時"
   },
   {
-    "fthId":1296,
+    "id":3428,
+    "isMVP":false,
+    "name":"皮里恩",
+    "level":105,
+    "race":"動物",
+    "element":"無1",
+    "size":"大",
+    "image":"3428.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":3429,
+    "isMVP":false,
+    "name":"獸人英雄",
+    "level":107,
+    "race":"人形",
+    "element":"地2",
+    "size":"大",
+    "image":"3429.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":3430,
+    "isMVP":false,
+    "name":"塔奧群卡",
+    "level":109,
+    "race":"惡魔",
+    "element":"無1",
+    "size":"大",
+    "image":"3430.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":1296,
     "isMVP":false,
     "name":"犬妖首領",
     "level":112,
@@ -504,7 +696,7 @@
     "time":"30分鐘"
   },
   {
-    "fthId":1296,
+    "id":1296,
     "isMVP":false,
     "name":"犬妖首領",
     "level":112,
@@ -516,7 +708,7 @@
     "time":"4小時"
   },
   {
-    "fthId":1204,
+    "id":1204,
     "isMVP":false,
     "name":"獸牙怪",
     "level":114,
@@ -528,7 +720,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1204,
+    "id":1204,
     "isMVP":false,
     "name":"獸牙怪",
     "level":114,
@@ -540,7 +732,7 @@
     "time":"3小時"
   },
   {
-    "fthId":1204,
+    "id":1204,
     "isMVP":false,
     "name":"獸牙怪",
     "level":114,
@@ -552,7 +744,7 @@
     "time":"5小時"
   },
   {
-    "fthId":1204,
+    "id":1204,
     "isMVP":false,
     "name":"獸牙怪",
     "level":114,
@@ -564,7 +756,7 @@
     "time":"5小時"
   },
   {
-    "fthId":1204,
+    "id":1204,
     "isMVP":false,
     "name":"獸牙怪",
     "level":114,
@@ -576,7 +768,7 @@
     "time":"5小時"
   },
   {
-    "fthId":1268,
+    "id":1268,
     "isMVP":false,
     "name":"血腥騎士",
     "level":116,
@@ -588,7 +780,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1268,
+    "id":1268,
     "isMVP":false,
     "name":"血腥騎士",
     "level":116,
@@ -600,7 +792,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1268,
+    "id":1268,
     "isMVP":false,
     "name":"血腥騎士",
     "level":116,
@@ -612,7 +804,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1268,
+    "id":1268,
     "isMVP":false,
     "name":"血腥騎士",
     "level":116,
@@ -624,7 +816,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1268,
+    "id":1268,
     "isMVP":false,
     "name":"血腥騎士",
     "level":116,
@@ -636,7 +828,307 @@
     "time":"1小時"
   },
   {
-    "fthId":1203,
+    "id":2198,
+    "isMVP":false,
+    "name":"大腳龍蝦",
+    "level":117,
+    "race":"魚貝",
+    "element":"水2",
+    "size":"大",
+    "image":"2198.png",
+    "location":"依斯魯得島 海盜地洞密穴 6樓 (iz_dun05)",
+    "time":"5秒"
+  },
+  {
+    "id":1295,
+    "isMVP":false,
+    "name":"鴞裊男爵",
+    "level":120,
+    "race":"惡魔",
+    "element":"無3",
+    "size":"大",
+    "image":"1295.png",
+    "location":"克雷斯特漢姆古城 1樓 (gl_cas01)",
+    "time":"5秒"
+  },
+  {
+    "id":1295,
+    "isMVP":false,
+    "name":"鴞裊男爵",
+    "level":120,
+    "race":"惡魔",
+    "element":"無3",
+    "size":"大",
+    "image":"1295.png",
+    "location":"公會地下密穴 (gld_dun02)",
+    "time":"5秒"
+  },
+  {
+    "id":1295,
+    "isMVP":false,
+    "name":"鴞裊男爵",
+    "level":120,
+    "race":"惡魔",
+    "element":"無3",
+    "size":"大",
+    "image":"1295.png",
+    "location":"達納托斯塔台上層部 (tha_t05)",
+    "time":"5秒"
+  },
+  {
+    "id":1295,
+    "isMVP":false,
+    "name":"鴞裊男爵",
+    "level":120,
+    "race":"惡魔",
+    "element":"無3",
+    "size":"大",
+    "image":"1295.png",
+    "location":"達納托斯塔台上層部 (tha_t06)",
+    "time":"5秒"
+  },
+  {
+    "id":1295,
+    "isMVP":false,
+    "name":"鴞裊男爵",
+    "level":120,
+    "race":"惡魔",
+    "element":"無3",
+    "size":"大",
+    "image":"1295.png",
+    "location":"達納托斯塔台下層部 廢棄空間 (tha_t04)",
+    "time":"5秒"
+  },
+  {
+    "id":1702,
+    "isMVP":false,
+    "name":"代行刑者",
+    "level":121,
+    "race":"天使",
+    "element":"暗3",
+    "size":"中",
+    "image":"1702.png",
+    "location":"達納托斯塔台上層部 天使之房 (tha_t07)",
+    "time":"5秒"
+  },
+  {
+    "id":1702,
+    "isMVP":false,
+    "name":"代行刑者",
+    "level":121,
+    "race":"天使",
+    "element":"暗3",
+    "size":"中",
+    "image":"1702.png",
+    "location":"達納托斯塔台上層部 天使之房 (tha_t08)",
+    "time":"5秒"
+  },
+  {
+    "id":1702,
+    "isMVP":false,
+    "name":"代行刑者",
+    "level":121,
+    "race":"天使",
+    "element":"暗3",
+    "size":"中",
+    "image":"1702.png",
+    "location":"達納托斯塔台下層部 博物館 (tha_t02)",
+    "time":"5秒"
+  },
+  {
+    "id":1720,
+    "isMVP":false,
+    "name":"三頭龍",
+    "level":121,
+    "race":"龍族",
+    "element":"暗2",
+    "size":"大",
+    "image":"1720.png",
+    "location":"毀葛深淵湖水 地下洞穴 3樓 (abyss_03)",
+    "time":"5秒"
+  },
+  {
+    "id":1703,
+    "isMVP":false,
+    "name":"慰勞者",
+    "level":123,
+    "race":"天使",
+    "element":"聖3",
+    "size":"中",
+    "image":"1703.png",
+    "location":"達納托斯塔台上層部 天使之房 (tha_t07)",
+    "time":"5秒"
+  },
+  {
+    "id":1703,
+    "isMVP":false,
+    "name":"慰勞者",
+    "level":123,
+    "race":"天使",
+    "element":"聖3",
+    "size":"中",
+    "image":"1703.png",
+    "location":"達納托斯塔台上層部 天使之房 (tha_t08)",
+    "time":"5秒"
+  },
+  {
+    "id":1703,
+    "isMVP":false,
+    "name":"慰勞者",
+    "level":123,
+    "race":"天使",
+    "element":"聖3",
+    "size":"中",
+    "image":"1703.png",
+    "location":"達納托斯塔台下層部 博物館入口 (tha_t01)",
+    "time":"5秒"
+  },
+  {
+    "id":1701,
+    "isMVP":false,
+    "name":"安息者",
+    "level":125,
+    "race":"天使",
+    "element":"聖3",
+    "size":"中",
+    "image":"1701.png",
+    "location":"達納托斯塔台上層部 天使之房 (tha_t07)",
+    "time":"5秒"
+  },
+  {
+    "id":1701,
+    "isMVP":false,
+    "name":"安息者",
+    "level":125,
+    "race":"天使",
+    "element":"聖3",
+    "size":"中",
+    "image":"1701.png",
+    "location":"達納托斯塔台下層部 廢棄空間 (tha_t03)",
+    "time":"5秒"
+  },
+  {
+    "id":1701,
+    "isMVP":false,
+    "name":"安息者",
+    "level":125,
+    "race":"天使",
+    "element":"聖3",
+    "size":"中",
+    "image":"1701.png",
+    "location":"魔物終結塔 (3@tower) 69樓",
+    "time":"5秒"
+  },
+  {
+    "id":1991,
+    "isMVP":false,
+    "name":"三角狂獅獸",
+    "level":126,
+    "race":"動物",
+    "element":"地2",
+    "size":"中",
+    "image":"1991.png",
+    "location":"史波浪壯麗原野 (spl_fild03)",
+    "time":"5秒"
+  },
+  {
+    "id":1700,
+    "isMVP":false,
+    "name":"監視者",
+    "level":127,
+    "race":"天使",
+    "element":"聖4",
+    "size":"中",
+    "image":"1700.png",
+    "location":"達納托斯塔台上層部 天使之房 (tha_t07)",
+    "time":"5秒"
+  },
+  {
+    "id":1700,
+    "isMVP":false,
+    "name":"監視者",
+    "level":127,
+    "race":"天使",
+    "element":"聖4",
+    "size":"中",
+    "image":"1700.png",
+    "location":"達納托斯塔台上層部 天使之房 (tha_t08)",
+    "time":"5秒"
+  },
+  {
+    "id":1700,
+    "isMVP":false,
+    "name":"監視者",
+    "level":127,
+    "race":"天使",
+    "element":"聖4",
+    "size":"中",
+    "image":"1700.png",
+    "location":"達納托斯塔台下層部 廢棄空間 (tha_t04)",
+    "time":"5秒"
+  },
+  {
+    "id":1872,
+    "isMVP":false,
+    "name":"魔鬼蒼蠅",
+    "level":127,
+    "race":"天使",
+    "element":"無4",
+    "size":"中",
+    "image":"1872.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":1704,
+    "isMVP":false,
+    "name":"塔納托斯的憎恨",
+    "level":129,
+    "race":"人形",
+    "element":"念4",
+    "size":"大",
+    "image":"1704.png",
+    "location":"達納托斯塔台上層部 天使之房 (tha_t08)",
+    "time":"5秒"
+  },
+  {
+    "id":1705,
+    "isMVP":false,
+    "name":"塔納托斯的絕望",
+    "level":129,
+    "race":"不死",
+    "element":"念4",
+    "size":"大",
+    "image":"1705.png",
+    "location":"達納托斯塔台上層部 天使之房 (tha_t07)",
+    "time":"5秒"
+  },
+  {
+    "id":1706,
+    "isMVP":false,
+    "name":"塔納托斯的悲哀",
+    "level":129,
+    "race":"不死",
+    "element":"念4",
+    "size":"中",
+    "image":"1706.png",
+    "location":"達納托斯塔台上層部 (tha_t06)",
+    "time":"5秒"
+  },
+  {
+    "id":1707,
+    "isMVP":false,
+    "name":"塔納托斯的苦惱",
+    "level":129,
+    "race":"不死",
+    "element":"念4",
+    "size":"小",
+    "image":"1707.png",
+    "location":"達納托斯塔台上層部 (tha_t05)",
+    "time":"5秒"
+  },
+  {
+    "id":1203,
     "isMVP":false,
     "name":"弒神者",
     "level":130,
@@ -648,7 +1140,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1203,
+    "id":1203,
     "isMVP":false,
     "name":"弒神者",
     "level":130,
@@ -660,7 +1152,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1203,
+    "id":1203,
     "isMVP":false,
     "name":"弒神者",
     "level":130,
@@ -672,7 +1164,7 @@
     "time":"3小時"
   },
   {
-    "fthId":1203,
+    "id":1203,
     "isMVP":false,
     "name":"弒神者",
     "level":130,
@@ -684,7 +1176,7 @@
     "time":"5小時"
   },
   {
-    "fthId":1203,
+    "id":1203,
     "isMVP":false,
     "name":"弒神者",
     "level":130,
@@ -696,7 +1188,7 @@
     "time":"5小時"
   },
   {
-    "fthId":1203,
+    "id":1203,
     "isMVP":false,
     "name":"弒神者",
     "level":130,
@@ -708,7 +1200,91 @@
     "time":"5小時"
   },
   {
-    "fthId":1830,
+    "id":2141,
+    "isMVP":false,
+    "name":"守護者記憶",
+    "level":130,
+    "race":"無形",
+    "element":"無1",
+    "size":"小",
+    "image":"2141.png",
+    "location":"霧林迷宮 (1@mist)",
+    "time":"30秒"
+  },
+  {
+    "id":2142,
+    "isMVP":false,
+    "name":"守護者記憶碎片",
+    "level":130,
+    "race":"無形",
+    "element":"無1",
+    "size":"小",
+    "image":"2142.png",
+    "location":"霧林迷宮 (1@mist)",
+    "time":"30秒"
+  },
+  {
+    "id":3181,
+    "isMVP":false,
+    "name":"暴走的船長裴陸",
+    "level":130,
+    "race":"龍族",
+    "element":"暗2",
+    "size":"大",
+    "image":"3181.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":1754,
+    "isMVP":false,
+    "name":"褐方體惡魔",
+    "level":131,
+    "race":"天使",
+    "element":"聖2",
+    "size":"小",
+    "image":"1754.png",
+    "location":"毀葛奧丁神殿北區 (odin_tem03)",
+    "time":"5秒"
+  },
+  {
+    "id":1754,
+    "isMVP":false,
+    "name":"褐方體惡魔",
+    "level":131,
+    "race":"天使",
+    "element":"聖2",
+    "size":"小",
+    "image":"1754.png",
+    "location":"毀葛奧丁神殿南區 (odin_tem02)",
+    "time":"5秒"
+  },
+  {
+    "id":1755,
+    "isMVP":false,
+    "name":"黑方體惡魔",
+    "level":131,
+    "race":"天使",
+    "element":"聖2",
+    "size":"小",
+    "image":"1755.png",
+    "location":"毀葛奧丁神殿北區 (odin_tem03)",
+    "time":"5秒"
+  },
+  {
+    "id":1755,
+    "isMVP":false,
+    "name":"黑方體惡魔",
+    "level":131,
+    "race":"天使",
+    "element":"聖2",
+    "size":"小",
+    "image":"1755.png",
+    "location":"毀葛奧丁神殿南區 (odin_tem02)",
+    "time":"5秒"
+  },
+  {
+    "id":1830,
     "isMVP":false,
     "name":"弓箭手監護人魔物",
     "level":132,
@@ -720,7 +1296,127 @@
     "time":"2小時"
   },
   {
-    "fthId":1829,
+    "id":1830,
+    "isMVP":false,
+    "name":"弓箭手監護人魔物",
+    "level":132,
+    "race":"人形",
+    "element":"無4",
+    "size":"大",
+    "image":null,
+    "location":"菲音斯 托爾火山洞穴 1樓 (thor_v01)",
+    "time":"5秒"
+  },
+  {
+    "id":1830,
+    "isMVP":false,
+    "name":"弓箭手監護人魔物",
+    "level":132,
+    "race":"人形",
+    "element":"無4",
+    "size":"大",
+    "image":null,
+    "location":"菲音斯 托爾火山洞穴 3樓 (thor_v03)",
+    "time":"5秒"
+  },
+  {
+    "id":1918,
+    "isMVP":false,
+    "name":"夢羅克門徒之邪靈",
+    "level":132,
+    "race":"天使",
+    "element":"暗1",
+    "size":"大",
+    "image":"1918.png",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild20)",
+    "time":"30秒"
+  },
+  {
+    "id":1918,
+    "isMVP":false,
+    "name":"夢羅克門徒之邪靈",
+    "level":132,
+    "race":"天使",
+    "element":"暗1",
+    "size":"大",
+    "image":"1918.png",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild21)",
+    "time":"30秒"
+  },
+  {
+    "id":1918,
+    "isMVP":false,
+    "name":"夢羅克門徒之邪靈",
+    "level":132,
+    "race":"天使",
+    "element":"暗1",
+    "size":"大",
+    "image":"1918.png",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild22)",
+    "time":"30秒"
+  },
+  {
+    "id":1918,
+    "isMVP":false,
+    "name":"夢羅克門徒之邪靈",
+    "level":132,
+    "race":"天使",
+    "element":"暗1",
+    "size":"大",
+    "image":"1918.png",
+    "location":"火焰盆地 (moro_vol)",
+    "time":"未知"
+  },
+  {
+    "id":1919,
+    "isMVP":false,
+    "name":"夢羅克門徒之泥怪",
+    "level":132,
+    "race":"惡魔",
+    "element":"暗3",
+    "size":"中",
+    "image":"1919.png",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild20)",
+    "time":"30秒"
+  },
+  {
+    "id":1919,
+    "isMVP":false,
+    "name":"夢羅克門徒之泥怪",
+    "level":132,
+    "race":"惡魔",
+    "element":"暗3",
+    "size":"中",
+    "image":"1919.png",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild21)",
+    "time":"30秒"
+  },
+  {
+    "id":1919,
+    "isMVP":false,
+    "name":"夢羅克門徒之泥怪",
+    "level":132,
+    "race":"惡魔",
+    "element":"暗3",
+    "size":"中",
+    "image":"1919.png",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild22)",
+    "time":"30秒"
+  },
+  {
+    "id":1919,
+    "isMVP":false,
+    "name":"夢羅克門徒之泥怪",
+    "level":132,
+    "race":"惡魔",
+    "element":"暗3",
+    "size":"中",
+    "image":"1919.png",
+    "location":"火焰盆地 (moro_vol)",
+    "time":"未知"
+  },
+  {
+    "id":1829,
     "isMVP":false,
     "name":"劍士監護人魔物",
     "level":133,
@@ -732,7 +1428,151 @@
     "time":"2小時"
   },
   {
-    "fthId":1681,
+    "id":1829,
+    "isMVP":false,
+    "name":"劍士監護人魔物",
+    "level":133,
+    "race":"人形",
+    "element":"無4",
+    "size":"大",
+    "image":null,
+    "location":"菲音斯 托爾火山洞穴 3樓 (thor_v03)",
+    "time":"5秒 至 30分鐘"
+  },
+  {
+    "id":1829,
+    "isMVP":false,
+    "name":"劍士監護人魔物",
+    "level":133,
+    "race":"人形",
+    "element":"無4",
+    "size":"大",
+    "image":null,
+    "location":"菲音斯 托爾火山洞穴 1樓 (thor_v01)",
+    "time":"5秒 至 7分鐘"
+  },
+  {
+    "id":1870,
+    "isMVP":false,
+    "name":"行妖術者",
+    "level":133,
+    "race":"不死",
+    "element":"不死4",
+    "size":"中",
+    "image":"1870.png",
+    "location":"無名島修道院 地下1樓 (abbey02)",
+    "time":"5秒"
+  },
+  {
+    "id":1870,
+    "isMVP":false,
+    "name":"行妖術者",
+    "level":133,
+    "race":"不死",
+    "element":"不死4",
+    "size":"中",
+    "image":"1870.png",
+    "location":"無名島修道院 地下2樓 (abbey03)",
+    "time":"5秒"
+  },
+  {
+    "id":1920,
+    "isMVP":false,
+    "name":"夢羅克門徒之活屍",
+    "level":133,
+    "race":"惡魔",
+    "element":"不死3",
+    "size":"中",
+    "image":"1920.png",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild20)",
+    "time":"30秒"
+  },
+  {
+    "id":1920,
+    "isMVP":false,
+    "name":"夢羅克門徒之活屍",
+    "level":133,
+    "race":"惡魔",
+    "element":"不死3",
+    "size":"中",
+    "image":"1920.png",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild21)",
+    "time":"30秒"
+  },
+  {
+    "id":1920,
+    "isMVP":false,
+    "name":"夢羅克門徒之活屍",
+    "level":133,
+    "race":"惡魔",
+    "element":"不死3",
+    "size":"中",
+    "image":"1920.png",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild22)",
+    "time":"30秒"
+  },
+  {
+    "id":1920,
+    "isMVP":false,
+    "name":"夢羅克門徒之活屍",
+    "level":133,
+    "race":"惡魔",
+    "element":"不死3",
+    "size":"中",
+    "image":"1920.png",
+    "location":"火焰盆地 (moro_vol)",
+    "time":"未知"
+  },
+  {
+    "id":1921,
+    "isMVP":false,
+    "name":"夢羅克門徒之喜樂",
+    "level":134,
+    "race":"惡魔",
+    "element":"念3",
+    "size":"中",
+    "image":"1921.png",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild20)",
+    "time":"30秒"
+  },
+  {
+    "id":1921,
+    "isMVP":false,
+    "name":"夢羅克門徒之喜樂",
+    "level":134,
+    "race":"惡魔",
+    "element":"念3",
+    "size":"中",
+    "image":"1921.png",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild21)",
+    "time":"30秒"
+  },
+  {
+    "id":1921,
+    "isMVP":false,
+    "name":"夢羅克門徒之喜樂",
+    "level":134,
+    "race":"惡魔",
+    "element":"念3",
+    "size":"中",
+    "image":"1921.png",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild22)",
+    "time":"30秒"
+  },
+  {
+    "id":1921,
+    "isMVP":false,
+    "name":"夢羅克門徒之喜樂",
+    "level":134,
+    "race":"惡魔",
+    "element":"念3",
+    "size":"中",
+    "image":"1921.png",
+    "location":"火焰盆地 (moro_vol)",
+    "time":"未知"
+  },
+  {
+    "id":1681,
     "isMVP":false,
     "name":"雙子星-S58",
     "level":135,
@@ -744,7 +1584,7 @@
     "time":"30分鐘"
   },
   {
-    "fthId":1681,
+    "id":1681,
     "isMVP":false,
     "name":"雙子星-S58",
     "level":135,
@@ -756,7 +1596,55 @@
     "time":"30分鐘"
   },
   {
-    "fthId":1990,
+    "id":1833,
+    "isMVP":false,
+    "name":"火鳥",
+    "level":135,
+    "race":"無形",
+    "element":"火3",
+    "size":"大",
+    "image":"1833.png",
+    "location":"菲音斯 托爾火山洞穴 1樓 (thor_v01)",
+    "time":"5秒"
+  },
+  {
+    "id":1833,
+    "isMVP":false,
+    "name":"火鳥",
+    "level":135,
+    "race":"無形",
+    "element":"火3",
+    "size":"大",
+    "image":"1833.png",
+    "location":"菲音斯 托爾火山洞穴 3樓 (thor_v03)",
+    "time":"5秒"
+  },
+  {
+    "id":1839,
+    "isMVP":false,
+    "name":"漂流浪人",
+    "level":135,
+    "race":"人形",
+    "element":"無1",
+    "size":"中",
+    "image":"1839.png",
+    "location":"菲音斯 托爾火山洞穴 1樓 (thor_v01)",
+    "time":"5秒"
+  },
+  {
+    "id":1839,
+    "isMVP":false,
+    "name":"漂流浪人",
+    "level":135,
+    "race":"人形",
+    "element":"無1",
+    "size":"中",
+    "image":"1839.png",
+    "location":"菲音斯 托爾火山洞穴 3樓 (thor_v03)",
+    "time":"5秒"
+  },
+  {
+    "id":1990,
     "isMVP":false,
     "name":"硬石猛瑪",
     "level":137,
@@ -768,7 +1656,55 @@
     "time":"4小時"
   },
   {
-    "fthId":1765,
+    "id":1831,
+    "isMVP":false,
+    "name":"火蜥蝪",
+    "level":138,
+    "race":"無形",
+    "element":"火3",
+    "size":"大",
+    "image":"1831.png",
+    "location":"菲音斯 托爾火山洞穴 1樓 (thor_v01)",
+    "time":"5秒"
+  },
+  {
+    "id":1831,
+    "isMVP":false,
+    "name":"火蜥蝪",
+    "level":138,
+    "race":"無形",
+    "element":"火3",
+    "size":"大",
+    "image":"1831.png",
+    "location":"菲音斯 托爾火山洞穴 2樓 (thor_v02)",
+    "time":"5秒"
+  },
+  {
+    "id":1831,
+    "isMVP":false,
+    "name":"火蜥蝪",
+    "level":138,
+    "race":"無形",
+    "element":"火3",
+    "size":"大",
+    "image":"1831.png",
+    "location":"菲音斯 托爾火山洞穴 3樓 (thor_v03)",
+    "time":"5秒"
+  },
+  {
+    "id":3073,
+    "isMVP":false,
+    "name":"覺醒的貝爾",
+    "level":140,
+    "race":"惡魔",
+    "element":"不死3",
+    "size":"中",
+    "image":"3073.png",
+    "location":"噩夢吉特巴 (1@jtb) 最終房",
+    "time":"未知"
+  },
+  {
+    "id":1765,
     "isMVP":false,
     "name":"巴基力 蘭特克力斯",
     "level":141,
@@ -780,7 +1716,7 @@
     "time":"1小時30分鐘"
   },
   {
-    "fthId":1765,
+    "id":1765,
     "isMVP":false,
     "name":"巴基力 蘭特克力斯",
     "level":141,
@@ -792,7 +1728,67 @@
     "time":"1小時30分鐘"
   },
   {
-    "fthId":1916,
+    "id":3039,
+    "isMVP":false,
+    "name":"烈火夢羅克門徒",
+    "level":149,
+    "race":"惡魔",
+    "element":"暗1",
+    "size":"大",
+    "image":"3039.png",
+    "location":"火焰盆地 (moro_vol)",
+    "time":"未知"
+  },
+  {
+    "id":3040,
+    "isMVP":false,
+    "name":"猖狂夢羅克門徒",
+    "level":149,
+    "race":"惡魔",
+    "element":"暗3",
+    "size":"中",
+    "image":"3040.png",
+    "location":"火焰盆地 (moro_vol)",
+    "time":"未知"
+  },
+  {
+    "id":3041,
+    "isMVP":false,
+    "name":"冰凍夢羅克門徒",
+    "level":149,
+    "race":"惡魔",
+    "element":"水3",
+    "size":"中",
+    "image":"3041.png",
+    "location":"火焰盆地 (moro_vol)",
+    "time":"未知"
+  },
+  {
+    "id":2475,
+    "isMVP":false,
+    "name":"墮落根莖",
+    "level":150,
+    "race":"惡魔",
+    "element":"地3",
+    "size":"大",
+    "image":"2475.png",
+    "location":"舊的古城騎士團副本1F [網站備註] (1@gl_k)",
+    "time":"未知"
+  },
+  {
+    "id":2476,
+    "isMVP":false,
+    "name":"闇答萊屍",
+    "level":150,
+    "race":"不死",
+    "element":"不死4",
+    "size":"大",
+    "image":"2476.png",
+    "location":"舊的古城騎士團副本2F [網站備註] (2@gl_k)",
+    "time":"未知"
+  },
+  {
+    "id":1916,
     "isMVP":false,
     "name":"魔王夢羅克",
     "level":151,
@@ -804,7 +1800,31 @@
     "time":"6小時"
   },
   {
-    "fthId":2921,
+    "id":2562,
+    "isMVP":false,
+    "name":"狄瓦伊",
+    "level":160,
+    "race":"人形",
+    "element":"念2",
+    "size":"中",
+    "image":"2562.png",
+    "location":"吉芬魔法大賽 (1@ge_st)",
+    "time":"未知"
+  },
+  {
+    "id":2564,
+    "isMVP":false,
+    "name":"潘利爾",
+    "level":160,
+    "race":"人形",
+    "element":"念2",
+    "size":"中",
+    "image":"2564.png",
+    "location":"吉芬魔法大賽 (1@ge_st)",
+    "time":"未知"
+  },
+  {
+    "id":2921,
     "isMVP":false,
     "name":"鴞裊子爵",
     "level":168,
@@ -816,7 +1836,7 @@
     "time":"1分鐘"
   },
   {
-    "fthId":2923,
+    "id":2923,
     "isMVP":false,
     "name":"鴞裊侯爵",
     "level":170,
@@ -828,7 +1848,7 @@
     "time":"1分鐘"
   },
   {
-    "fthId":20521,
+    "id":20521,
     "isMVP":false,
     "name":"혼돈의 안드레마",
     "level":177,
@@ -840,7 +1860,67 @@
     "time":"1小時"
   },
   {
-    "fthId":3505,
+    "id":2973,
+    "isMVP":false,
+    "name":"噩夢大公",
+    "level":190,
+    "race":"無形",
+    "element":"無1",
+    "size":"小",
+    "image":"2973.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":20575,
+    "isMVP":false,
+    "name":"無限墮落根莖",
+    "level":190,
+    "race":"惡魔",
+    "element":"地3",
+    "size":"大",
+    "image":"20575.png",
+    "location":"污染的次元 (1@gl_he) 中央走道",
+    "time":"未知"
+  },
+  {
+    "id":20785,
+    "isMVP":false,
+    "name":"MD_BROKEN_THANATOS",
+    "level":999,
+    "race":"無形",
+    "element":"無1",
+    "size":"小",
+    "image":"20785.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":20928,
+    "isMVP":false,
+    "name":"CHIMERA_THEONE",
+    "level":999,
+    "race":"無形",
+    "element":"無1",
+    "size":"小",
+    "image":"20928.png",
+    "location":"廢棄研究所 艾米基提亞 二樓 : 集中培養室 [網站備註] (amicitia2)",
+    "time":"未知"
+  },
+  {
+    "id":21395,
+    "isMVP":false,
+    "name":"ILL_MAYA",
+    "level":999,
+    "race":null,
+    "element":"無1",
+    "size":null,
+    "image":"21395.png",
+    "location":"認知的庭園(幻影) [網站備註] (ant_d02_i)",
+    "time":"未知"
+  },
+  {
+    "id":3505,
     "isMVP":true,
     "name":"巨大蛋黃波利",
     "level":25,
@@ -852,7 +1932,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1087,
+    "id":1087,
     "isMVP":true,
     "name":"獸人英雄",
     "level":50,
@@ -864,7 +1944,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1147,
+    "id":1147,
     "isMVP":true,
     "name":"蟻后",
     "level":55,
@@ -876,7 +1956,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1147,
+    "id":1147,
     "isMVP":true,
     "name":"蟻后",
     "level":55,
@@ -888,7 +1968,7 @@
     "time":"8小時"
   },
   {
-    "fthId":1147,
+    "id":1147,
     "isMVP":true,
     "name":"蟻后",
     "level":55,
@@ -900,7 +1980,7 @@
     "time":"8小時"
   },
   {
-    "fthId":1190,
+    "id":1190,
     "isMVP":true,
     "name":"獸人酋長",
     "level":55,
@@ -912,7 +1992,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1086,
+    "id":1086,
     "isMVP":true,
     "name":"黃金蟲",
     "level":65,
@@ -924,7 +2004,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1115,
+    "id":1115,
     "isMVP":true,
     "name":"虎王",
     "level":65,
@@ -936,7 +2016,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1115,
+    "id":1115,
     "isMVP":true,
     "name":"虎王",
     "level":65,
@@ -948,7 +2028,7 @@
     "time":"8小時"
   },
   {
-    "fthId":1115,
+    "id":1115,
     "isMVP":true,
     "name":"虎王",
     "level":65,
@@ -960,7 +2040,7 @@
     "time":"8小時"
   },
   {
-    "fthId":1038,
+    "id":1038,
     "isMVP":true,
     "name":"俄塞里斯",
     "level":68,
@@ -972,7 +2052,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1511,
+    "id":1511,
     "isMVP":true,
     "name":"古埃及王",
     "level":69,
@@ -984,7 +2064,7 @@
     "time":"1小時 至 1小時10分鐘"
   },
   {
-    "fthId":1159,
+    "id":1159,
     "isMVP":true,
     "name":"皮里恩",
     "level":71,
@@ -996,7 +2076,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1389,
+    "id":1389,
     "isMVP":true,
     "name":"德古拉男爵",
     "level":75,
@@ -1008,7 +2088,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1046,
+    "id":1046,
     "isMVP":true,
     "name":"死靈",
     "level":77,
@@ -1020,7 +2100,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1046,
+    "id":1046,
     "isMVP":true,
     "name":"死靈",
     "level":77,
@@ -1032,7 +2112,19 @@
     "time":"8小時"
   },
   {
-    "fthId":1059,
+    "id":1046,
+    "isMVP":true,
+    "name":"死靈",
+    "level":77,
+    "race":"惡魔",
+    "element":"暗3",
+    "size":"中",
+    "image":"1046.png",
+    "location":"公會地下密穴 (gld_dun04)",
+    "time":"未知"
+  },
+  {
+    "id":1059,
     "isMVP":true,
     "name":"蜂后",
     "level":78,
@@ -1044,7 +2136,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1059,
+    "id":1059,
     "isMVP":true,
     "name":"蜂后",
     "level":78,
@@ -1056,7 +2148,7 @@
     "time":"8小時"
   },
   {
-    "fthId":1150,
+    "id":1150,
     "isMVP":true,
     "name":"月夜貓",
     "level":79,
@@ -1068,7 +2160,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1150,
+    "id":1150,
     "isMVP":true,
     "name":"月夜貓",
     "level":79,
@@ -1080,7 +2172,7 @@
     "time":"8小時"
   },
   {
-    "fthId":1688,
+    "id":1688,
     "isMVP":true,
     "name":"嗒妮小姐",
     "level":80,
@@ -1092,7 +2184,7 @@
     "time":"7小時10分鐘"
   },
   {
-    "fthId":1039,
+    "id":1039,
     "isMVP":true,
     "name":"巴風特",
     "level":81,
@@ -1104,7 +2196,19 @@
     "time":"2小時"
   },
   {
-    "fthId":1157,
+    "id":1039,
+    "isMVP":true,
+    "name":"巴風特",
+    "level":81,
+    "race":"惡魔",
+    "element":"暗3",
+    "size":"大",
+    "image":"1039.png",
+    "location":"公會地下密穴 (gld_dun03)",
+    "time":"未知"
+  },
+  {
+    "id":1157,
     "isMVP":true,
     "name":"法老王",
     "level":85,
@@ -1116,7 +2220,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1980,
+    "id":1980,
     "isMVP":true,
     "name":"榔鎚酷布靈",
     "level":85,
@@ -1128,7 +2232,7 @@
     "time":"8小時"
   },
   {
-    "fthId":1980,
+    "id":1980,
     "isMVP":true,
     "name":"榔鎚酷布靈",
     "level":85,
@@ -1140,7 +2244,7 @@
     "time":"8小時"
   },
   {
-    "fthId":1112,
+    "id":1112,
     "isMVP":true,
     "name":"海盜之王",
     "level":91,
@@ -1152,7 +2256,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1251,
+    "id":1251,
     "isMVP":true,
     "name":"冰暴騎士",
     "level":92,
@@ -1164,7 +2268,7 @@
     "time":"1小時"
   },
   {
-    "fthId":2068,
+    "id":2068,
     "isMVP":true,
     "name":"波伊塔塔",
     "level":93,
@@ -1176,7 +2280,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1373,
+    "id":1373,
     "isMVP":true,
     "name":"死靈騎士",
     "level":94,
@@ -1188,7 +2292,7 @@
     "time":"2小時13分鐘"
   },
   {
-    "fthId":2156,
+    "id":2156,
     "isMVP":true,
     "name":"讓特",
     "level":94,
@@ -1200,7 +2304,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1272,
+    "id":1272,
     "isMVP":true,
     "name":"黑暗之王",
     "level":96,
@@ -1212,7 +2316,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1272,
+    "id":1272,
     "isMVP":true,
     "name":"黑暗之王",
     "level":96,
@@ -1224,7 +2328,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1272,
+    "id":1272,
     "isMVP":true,
     "name":"黑暗之王",
     "level":96,
@@ -1236,7 +2340,7 @@
     "time":"8小時"
   },
   {
-    "fthId":1272,
+    "id":1272,
     "isMVP":true,
     "name":"黑暗之王",
     "level":96,
@@ -1248,7 +2352,19 @@
     "time":"8小時"
   },
   {
-    "fthId":1630,
+    "id":1518,
+    "isMVP":true,
+    "name":"白素貞",
+    "level":97,
+    "race":"人形",
+    "element":"水2",
+    "size":"大",
+    "image":"1518.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":1630,
     "isMVP":true,
     "name":"白素貞",
     "level":97,
@@ -1260,7 +2376,19 @@
     "time":"2小時"
   },
   {
-    "fthId":1885,
+    "id":1630,
+    "isMVP":true,
+    "name":"白素貞",
+    "level":97,
+    "race":"人形",
+    "element":"風3",
+    "size":"大",
+    "image":"1630.png",
+    "location":"魔物終結塔 (2@tower) 30樓",
+    "time":"未知"
+  },
+  {
+    "id":1885,
     "isMVP":true,
     "name":"青冠龍",
     "level":97,
@@ -1272,7 +2400,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1252,
+    "id":1252,
     "isMVP":true,
     "name":"卡崙",
     "level":98,
@@ -1284,7 +2412,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1779,
+    "id":1779,
     "isMVP":true,
     "name":"水晶龍",
     "level":98,
@@ -1296,7 +2424,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1708,
+    "id":1708,
     "isMVP":true,
     "name":"魔劍士 達納托斯的記憶",
     "level":99,
@@ -1308,7 +2436,31 @@
     "time":"2小時"
   },
   {
-    "fthId":1492,
+    "id":2441,
+    "isMVP":true,
+    "name":"魔鬼孩子王",
+    "level":99,
+    "race":"人形",
+    "element":"火4",
+    "size":"中",
+    "image":"2441.png",
+    "location":"公會地下密穴 葛洛麗雅(普隆德拉) [網站備註] (teg_dun01)",
+    "time":"未知"
+  },
+  {
+    "id":2442,
+    "isMVP":true,
+    "name":"魔鬼孩子王",
+    "level":99,
+    "race":"人形",
+    "element":"火4",
+    "size":"中",
+    "image":"2442.png",
+    "location":"公會地下密穴 卡普拉賈登(艾爾帕蘭) [網站備註] (teg_dun02)",
+    "time":"未知"
+  },
+  {
+    "id":1492,
     "isMVP":true,
     "name":"元靈武士",
     "level":100,
@@ -1320,7 +2472,7 @@
     "time":"1小時30分鐘"
   },
   {
-    "fthId":1623,
+    "id":1623,
     "isMVP":true,
     "name":"RSX-0806",
     "level":100,
@@ -1332,7 +2484,7 @@
     "time":"2小時5分鐘"
   },
   {
-    "fthId":1418,
+    "id":1418,
     "isMVP":true,
     "name":"墨蛇君",
     "level":105,
@@ -1344,7 +2496,7 @@
     "time":"1小時30分鐘"
   },
   {
-    "fthId":1312,
+    "id":1312,
     "isMVP":true,
     "name":"烏龜將軍",
     "level":110,
@@ -1356,7 +2508,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1583,
+    "id":1583,
     "isMVP":true,
     "name":"塔奧群卡",
     "level":110,
@@ -1368,7 +2520,7 @@
     "time":"5小時"
   },
   {
-    "fthId":20386,
+    "id":20386,
     "isMVP":true,
     "name":"詛咒施密特國王",
     "level":110,
@@ -1380,7 +2532,7 @@
     "time":"1天"
   },
   {
-    "fthId":1785,
+    "id":1785,
     "isMVP":true,
     "name":"阿特羅斯",
     "level":113,
@@ -1392,7 +2544,7 @@
     "time":"3小時"
   },
   {
-    "fthId":1785,
+    "id":1785,
     "isMVP":true,
     "name":"阿特羅斯",
     "level":113,
@@ -1404,7 +2556,7 @@
     "time":"3小時"
   },
   {
-    "fthId":1785,
+    "id":1785,
     "isMVP":true,
     "name":"阿特羅斯",
     "level":113,
@@ -1416,7 +2568,7 @@
     "time":"5小時"
   },
   {
-    "fthId":1785,
+    "id":1785,
     "isMVP":true,
     "name":"阿特羅斯",
     "level":113,
@@ -1428,7 +2580,7 @@
     "time":"6小時"
   },
   {
-    "fthId":1785,
+    "id":1785,
     "isMVP":true,
     "name":"阿特羅斯",
     "level":113,
@@ -1440,7 +2592,7 @@
     "time":"8小時"
   },
   {
-    "fthId":2022,
+    "id":2022,
     "isMVP":true,
     "name":"尼德霍格的影子",
     "level":117,
@@ -1452,7 +2604,7 @@
     "time":"3天"
   },
   {
-    "fthId":2202,
+    "id":2202,
     "isMVP":true,
     "name":"魔鬼大烏賊",
     "level":124,
@@ -1464,7 +2616,7 @@
     "time":"2小時"
   },
   {
-    "fthId":2202,
+    "id":2202,
     "isMVP":true,
     "name":"魔鬼大烏賊",
     "level":124,
@@ -1476,7 +2628,7 @@
     "time":"2小時20分鐘 至 2小時30分鐘"
   },
   {
-    "fthId":1734,
+    "id":1734,
     "isMVP":true,
     "name":"齊爾-D-01",
     "level":125,
@@ -1488,7 +2640,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1685,
+    "id":1685,
     "isMVP":true,
     "name":"貝思波",
     "level":128,
@@ -1500,7 +2652,19 @@
     "time":"2小時"
   },
   {
-    "fthId":1719,
+    "id":2244,
+    "isMVP":true,
+    "name":"闇●武術宗師",
+    "level":130,
+    "race":"不死",
+    "element":"水4",
+    "size":"中",
+    "image":"2244.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":1719,
     "isMVP":true,
     "name":"迪塔勒泰晤勒斯",
     "level":135,
@@ -1512,7 +2676,7 @@
     "time":"3小時"
   },
   {
-    "fthId":2131,
+    "id":2131,
     "isMVP":true,
     "name":"殭屍龍",
     "level":135,
@@ -1524,7 +2688,7 @@
     "time":"2小時"
   },
   {
-    "fthId":3796,
+    "id":3796,
     "isMVP":true,
     "name":"甦醒水晶龍",
     "level":135,
@@ -1536,7 +2700,7 @@
     "time":"20小時 至 22小時查看資訊 資訊僅供參考×在中央四周的四個祭壇上，在30秒內從第一個祭壇解除封印起到第四個祭壇解除封印後，即可召喚出來。"
   },
   {
-    "fthId":1871,
+    "id":1871,
     "isMVP":true,
     "name":"墮落大神官 悉潘",
     "level":138,
@@ -1548,7 +2712,7 @@
     "time":"2小時"
   },
   {
-    "fthId":1768,
+    "id":1768,
     "isMVP":true,
     "name":"幽暗夢魘",
     "level":139,
@@ -1560,7 +2724,7 @@
     "time":"5小時"
   },
   {
-    "fthId":2087,
+    "id":2087,
     "isMVP":true,
     "name":"女王甲蟲",
     "level":140,
@@ -1572,7 +2736,7 @@
     "time":"2小時"
   },
   {
-    "fthId":2165,
+    "id":2165,
     "isMVP":true,
     "name":"女王甲蟲",
     "level":140,
@@ -1584,7 +2748,7 @@
     "time":"2小時10分鐘"
   },
   {
-    "fthId":1658,
+    "id":1658,
     "isMVP":true,
     "name":"闇●劍士 賽尼亞",
     "level":141,
@@ -1596,7 +2760,7 @@
     "time":"2小時 至 2小時10分鐘"
   },
   {
-    "fthId":1751,
+    "id":1751,
     "isMVP":true,
     "name":"蘭特克力斯",
     "level":141,
@@ -1608,7 +2772,7 @@
     "time":"8小時"
   },
   {
-    "fthId":2249,
+    "id":2249,
     "isMVP":true,
     "name":"淘汰者傅立葉",
     "level":141,
@@ -1620,7 +2784,7 @@
     "time":"8小時"
   },
   {
-    "fthId":2253,
+    "id":2253,
     "isMVP":true,
     "name":"將軍大賢",
     "level":142,
@@ -1632,7 +2796,7 @@
     "time":"8小時"
   },
   {
-    "fthId":2255,
+    "id":2255,
     "isMVP":true,
     "name":"亡靈的守護者卡德斯",
     "level":143,
@@ -1644,7 +2808,7 @@
     "time":"8小時"
   },
   {
-    "fthId":2362,
+    "id":2362,
     "isMVP":true,
     "name":"古埃及王-夢魘",
     "level":145,
@@ -1656,7 +2820,7 @@
     "time":"1小時"
   },
   {
-    "fthId":1832,
+    "id":1832,
     "isMVP":true,
     "name":"伊夫利特",
     "level":146,
@@ -1668,7 +2832,7 @@
     "time":"11小時"
   },
   {
-    "fthId":2251,
+    "id":2251,
     "isMVP":true,
     "name":"喬伊亞",
     "level":146,
@@ -1680,7 +2844,7 @@
     "time":"8小時"
   },
   {
-    "fthId":1917,
+    "id":1917,
     "isMVP":true,
     "name":"負傷夢羅克",
     "level":151,
@@ -1692,7 +2856,31 @@
     "time":"12小時"
   },
   {
-    "fthId":3741,
+    "id":2483,
+    "isMVP":true,
+    "name":"惡夢之巴風特",
+    "level":154,
+    "race":"惡魔",
+    "element":"暗3",
+    "size":"大",
+    "image":"2483.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":2321,
+    "isMVP":true,
+    "name":"bakonawa",
+    "level":156,
+    "race":"龍族",
+    "element":"水4",
+    "size":"大",
+    "image":"2321.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":3741,
     "isMVP":true,
     "name":"蜘蛛戰車",
     "level":158,
@@ -1704,7 +2892,19 @@
     "time":"2小時"
   },
   {
-    "fthId":1646,
+    "id":3029,
+    "isMVP":true,
+    "name":"死神 安庫",
+    "level":159,
+    "race":"不死",
+    "element":"不死4",
+    "size":"大",
+    "image":"3029.png",
+    "location":"拜歐斯島 (1@dth3)",
+    "time":"未知"
+  },
+  {
+    "id":1646,
     "isMVP":true,
     "name":"闇●騎士領主 賽依連",
     "level":160,
@@ -1716,7 +2916,7 @@
     "time":"3天"
   },
   {
-    "fthId":1647,
+    "id":1647,
     "isMVP":true,
     "name":"闇●十字刺客 艾勒梅斯",
     "level":160,
@@ -1728,7 +2928,7 @@
     "time":"3天"
   },
   {
-    "fthId":1648,
+    "id":1648,
     "isMVP":true,
     "name":"闇●神工匠 哈沃德",
     "level":160,
@@ -1740,7 +2940,7 @@
     "time":"3天"
   },
   {
-    "fthId":1649,
+    "id":1649,
     "isMVP":true,
     "name":"闇●神官 瑪嘉雷特",
     "level":160,
@@ -1752,7 +2952,7 @@
     "time":"3天"
   },
   {
-    "fthId":1650,
+    "id":1650,
     "isMVP":true,
     "name":"闇●神射手 迪文",
     "level":160,
@@ -1764,7 +2964,7 @@
     "time":"3天"
   },
   {
-    "fthId":1651,
+    "id":1651,
     "isMVP":true,
     "name":"闇●超魔導師 凱特莉娜",
     "level":160,
@@ -1776,7 +2976,7 @@
     "time":"3天"
   },
   {
-    "fthId":2235,
+    "id":2235,
     "isMVP":true,
     "name":"闇●聖殿十字軍 蘭達羅倫斯",
     "level":160,
@@ -1788,7 +2988,7 @@
     "time":"3天"
   },
   {
-    "fthId":2236,
+    "id":2236,
     "isMVP":true,
     "name":"闇●創造者 普拉梅姆",
     "level":160,
@@ -1800,7 +3000,7 @@
     "time":"3天"
   },
   {
-    "fthId":2237,
+    "id":2237,
     "isMVP":true,
     "name":"闇●智者 西里亞阿迪",
     "level":160,
@@ -1812,7 +3012,7 @@
     "time":"3天"
   },
   {
-    "fthId":2238,
+    "id":2238,
     "isMVP":true,
     "name":"闇●武術宗師 陳理歐",
     "level":160,
@@ -1824,7 +3024,7 @@
     "time":"3天"
   },
   {
-    "fthId":2239,
+    "id":2239,
     "isMVP":true,
     "name":"闇●神行太保 科迪",
     "level":160,
@@ -1836,7 +3036,7 @@
     "time":"3天"
   },
   {
-    "fthId":2240,
+    "id":2240,
     "isMVP":true,
     "name":"闇●搞笑藝人 雅歐帕奇爾",
     "level":160,
@@ -1848,7 +3048,7 @@
     "time":"3天"
   },
   {
-    "fthId":2241,
+    "id":2241,
     "isMVP":true,
     "name":"闇●冷豔舞姬 特蘭提尼",
     "level":160,
@@ -1860,7 +3060,67 @@
     "time":"3天"
   },
   {
-    "fthId":3074,
+    "id":2996,
+    "isMVP":true,
+    "name":"席琳基米",
+    "level":160,
+    "race":"不死",
+    "element":"念1",
+    "size":"大",
+    "image":"2996.png",
+    "location":"恐怖玩具工廠 (1@xm_d)",
+    "time":"未知"
+  },
+  {
+    "id":20260,
+    "isMVP":true,
+    "name":"光芒泰迪熊",
+    "level":160,
+    "race":"無形",
+    "element":"聖4",
+    "size":"大",
+    "image":"20260.png",
+    "location":"羅斯里安帝國 (ein_d02_i) 中央",
+    "time":"條件式查看資訊 資訊僅供參考×召喚條件為「單一伺服器每當各種顏色泰迪熊被擊倒數量皆達2500隻以上時」，「光芒泰迪熊」即會在中央地帶重生，擊倒後或伺服器重開機時重新計算。"
+  },
+  {
+    "id":20648,
+    "isMVP":true,
+    "name":"大王喵喵",
+    "level":168,
+    "race":"動物",
+    "element":"火3",
+    "size":"小",
+    "image":"20648.png",
+    "location":"失落的山谷飼養場 (ba_lost)",
+    "time":"未知"
+  },
+  {
+    "id":20273,
+    "isMVP":true,
+    "name":"古代塔奧群卡",
+    "level":169,
+    "race":"惡魔",
+    "element":"無3",
+    "size":"大",
+    "image":"20273.png",
+    "location":"北邊洞穴盧安達 (com_d02_i)",
+    "time":"條件式查看資訊 資訊僅供參考×1) 當伺服器自例行性維護後、或上一次出現的MVP死亡後一小時起算，各族的手下魔物均打倒至1500隻，則該族的MVP即出現。2) 當打倒MVP時，則地圖內所有其他現存的魔物將會陣亡，同時出現另一族的手下魔物。"
+  },
+  {
+    "id":20277,
+    "isMVP":true,
+    "name":"古代伍坦防禦者",
+    "level":169,
+    "race":"人形",
+    "element":"火4",
+    "size":"大",
+    "image":"20277.png",
+    "location":"北邊洞穴盧安達 (com_d02_i)",
+    "time":"條件式查看資訊 資訊僅供參考×1) 當伺服器自例行性維護後、或上一次出現的MVP死亡後一小時起算，各族的手下魔物均打倒至1500隻，則該族的MVP即出現。2) 當打倒MVP時，則地圖內所有其他現存的魔物將會陣亡，同時出現另一族的手下魔物。"
+  },
+  {
+    "id":3074,
     "isMVP":true,
     "name":"時間支配者",
     "level":170,
@@ -1872,7 +3132,7 @@
     "time":"2小時"
   },
   {
-    "fthId":20387,
+    "id":20387,
     "isMVP":true,
     "name":"詛咒施密特國王",
     "level":175,
@@ -1884,7 +3144,7 @@
     "time":"3天"
   },
   {
-    "fthId":20520,
+    "id":20520,
     "isMVP":true,
     "name":"混沌巴風特",
     "level":178,
@@ -1896,7 +3156,19 @@
     "time":"1小時"
   },
   {
-    "fthId":3241,
+    "id":20536,
+    "isMVP":true,
+    "name":"無名劍士",
+    "level":180,
+    "race":"人形",
+    "element":"火2",
+    "size":"中",
+    "image":"20536.png",
+    "location":"停屍間 (1@gol2)",
+    "time":"未知"
+  },
+  {
+    "id":3241,
     "isMVP":true,
     "name":"闇●基因學者 普拉梅姆",
     "level":186,
@@ -1908,7 +3180,7 @@
     "time":"2小時"
   },
   {
-    "fthId":3245,
+    "id":3245,
     "isMVP":true,
     "name":"闇●宮廷樂師 雅歐帕奇爾",
     "level":186,
@@ -1920,7 +3192,7 @@
     "time":"2小時"
   },
   {
-    "fthId":3246,
+    "id":3246,
     "isMVP":true,
     "name":"闇●浪姬舞者 特蘭提尼",
     "level":186,
@@ -1932,7 +3204,7 @@
     "time":"2小時"
   },
   {
-    "fthId":3221,
+    "id":3221,
     "isMVP":true,
     "name":"闇●大主教 瑪嘉雷特",
     "level":187,
@@ -1944,7 +3216,7 @@
     "time":"2小時"
   },
   {
-    "fthId":3223,
+    "id":3223,
     "isMVP":true,
     "name":"闇●機械工匠 哈沃德",
     "level":187,
@@ -1956,7 +3228,7 @@
     "time":"2小時"
   },
   {
-    "fthId":3224,
+    "id":3224,
     "isMVP":true,
     "name":"闇●咒術士 凱特莉娜",
     "level":187,
@@ -1968,7 +3240,7 @@
     "time":"2小時"
   },
   {
-    "fthId":3240,
+    "id":3240,
     "isMVP":true,
     "name":"闇●皇家禁衛隊 蘭達",
     "level":188,
@@ -1980,7 +3252,7 @@
     "time":"2小時"
   },
   {
-    "fthId":3242,
+    "id":3242,
     "isMVP":true,
     "name":"闇●妖術師 西里亞",
     "level":188,
@@ -1992,7 +3264,7 @@
     "time":"2小時"
   },
   {
-    "fthId":3243,
+    "id":3243,
     "isMVP":true,
     "name":"闇●修羅 陳理歐",
     "level":188,
@@ -2004,7 +3276,7 @@
     "time":"2小時"
   },
   {
-    "fthId":3244,
+    "id":3244,
     "isMVP":true,
     "name":"闇●魅影追蹤者 科迪",
     "level":188,
@@ -2016,7 +3288,7 @@
     "time":"2小時"
   },
   {
-    "fthId":20419,
+    "id":20419,
     "isMVP":true,
     "name":"堅硬穆希貝斯寇",
     "level":188,
@@ -2028,7 +3300,7 @@
     "time":"3天"
   },
   {
-    "fthId":3220,
+    "id":3220,
     "isMVP":true,
     "name":"闇●十字斬首者 艾勒梅斯",
     "level":189,
@@ -2040,7 +3312,7 @@
     "time":"2小時"
   },
   {
-    "fthId":3222,
+    "id":3222,
     "isMVP":true,
     "name":"闇●遊俠 迪文",
     "level":189,
@@ -2052,7 +3324,7 @@
     "time":"2小時"
   },
   {
-    "fthId":3225,
+    "id":3225,
     "isMVP":true,
     "name":"闇●盧恩騎士 賽依連",
     "level":189,
@@ -2064,7 +3336,31 @@
     "time":"2小時"
   },
   {
-    "fthId":20422,
+    "id":20919,
+    "isMVP":true,
+    "name":"噩夢小丑皇",
+    "level":189,
+    "race":"無形",
+    "element":"毒3",
+    "size":"小",
+    "image":"20919.png",
+    "location":null,
+    "time":null
+  },
+  {
+    "id":20573,
+    "isMVP":true,
+    "name":"闇答萊屍幻影",
+    "level":192,
+    "race":"惡魔",
+    "element":"暗3",
+    "size":"大",
+    "image":"20573.png",
+    "location":"污染的次元 (1@gl_he)",
+    "time":"未知"
+  },
+  {
+    "id":20422,
     "isMVP":true,
     "name":"汙染黑暗之王",
     "level":194,
@@ -2076,7 +3372,7 @@
     "time":"2小時10分鐘"
   },
   {
-    "fthId":20421,
+    "id":20421,
     "isMVP":true,
     "name":"汙染蜘蛛女王",
     "level":195,
@@ -2086,5 +3382,125 @@
     "image":"20421.png",
     "location":"克雷斯特漢姆古城深淵1樓 (gl_cas01_)",
     "time":"2小時7分鐘"
+  },
+  {
+    "id":20572,
+    "isMVP":true,
+    "name":"希梅爾茲幻影",
+    "level":195,
+    "race":"天使",
+    "element":"聖3",
+    "size":"中",
+    "image":"20572.png",
+    "location":"污染的次元 (1@gl_he)",
+    "time":"未知"
+  },
+  {
+    "id":20601,
+    "isMVP":true,
+    "name":"珠寶溫古力安特",
+    "level":197,
+    "race":"昆蟲",
+    "element":"無4",
+    "size":"大",
+    "image":"20601.png",
+    "location":"艾音貝赫礦山3樓 (ein_dun03)",
+    "time":"未知"
+  },
+  {
+    "id":20811,
+    "isMVP":true,
+    "name":"深海魔鬼大烏賊",
+    "level":204,
+    "race":"魚貝",
+    "element":"水4",
+    "size":"大",
+    "image":"20811.png",
+    "location":"深淵海底洞穴下層樓 (iz_d05_i)",
+    "time":"未知"
+  },
+  {
+    "id":20843,
+    "isMVP":true,
+    "name":"深海魔女",
+    "level":205,
+    "race":"惡魔",
+    "element":"暗3",
+    "size":"大",
+    "image":"20843.png",
+    "location":"深淵海底洞穴上層樓 (iz_d04_i)",
+    "time":"未知"
+  },
+  {
+    "id":20610,
+    "isMVP":true,
+    "name":"巴基力雷吉麗芙",
+    "level":207,
+    "race":"天使",
+    "element":"火4",
+    "size":"中",
+    "image":"20610.png",
+    "location":"古代奧丁神殿 (odin_past)",
+    "time":"未知"
+  },
+  {
+    "id":20611,
+    "isMVP":true,
+    "name":"巴基力英格麗",
+    "level":207,
+    "race":"天使",
+    "element":"水4",
+    "size":"中",
+    "image":"20611.png",
+    "location":"古代奧丁神殿 (odin_past)",
+    "time":"未知"
+  },
+  {
+    "id":20618,
+    "isMVP":true,
+    "name":"骷髏迪塔勒泰晤勒斯",
+    "level":209,
+    "race":"不死",
+    "element":"不死4",
+    "size":"大",
+    "image":"20618.png",
+    "location":"毀葛深淵湖水地下洞穴4樓 (abyss_04)",
+    "time":"未知"
+  },
+  {
+    "id":21301,
+    "isMVP":true,
+    "name":"불태우는 송곳니",
+    "level":212,
+    "race":null,
+    "element":"無1",
+    "size":null,
+    "image":"21301.png",
+    "location":"奧茲迷宮2F [網站備註] (oz_dun02)",
+    "time":"未知"
+  },
+  {
+    "id":20934,
+    "isMVP":true,
+    "name":"R001-貝斯蒂亞",
+    "level":215,
+    "race":"動物",
+    "element":"暗2",
+    "size":"大",
+    "image":"20934.png",
+    "location":"實驗體廢棄場魯杜斯四樓 [網站備註] (sp_rudus4)",
+    "time":"未知"
+  },
+  {
+    "id":20943,
+    "isMVP":true,
+    "name":"DEATH_WITCH",
+    "level":999,
+    "race":"無形",
+    "element":"無1",
+    "size":"小",
+    "image":"20943.png",
+    "location":"尼芙菲姆密穴 二樓 : 崩毀的歌劇院 [網站備註] (nif_dun02)",
+    "time":"未知"
   }
 ]

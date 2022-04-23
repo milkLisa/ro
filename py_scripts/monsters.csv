@@ -366,7 +366,7 @@ ID,名稱,Lv↑,種族,屬性,體型,HP,B.Exp,J.Exp,ATK(min),ATK(max),DEF,MDEF,1
 2184,[B] 深海人魚,151,惡魔,水3,中,700000,2200,2200,0,0,68 + 0,326 + 326,438,517,https://rd.fharr.com/assets/sprite/몬스터/idle/obeaune.gif,排水溝 (2@pump),隨機,即時
 2186,[B] 古怪腔棘魚,100,魚貝,水2,大,2200000,400000,400000,0,0,280 + 0,280 + 280,460,430,https://rd.fharr.com/assets/sprite/몬스터/idle/coelacanth_n.gif,排水溝 (1@pump),隨機,即時
 2187,[M] 黑暗腔棘魚,100,魚貝,水2,大,2200000,1000000,1000000,1890,1890,280 + 0,280 + 280,460,430,https://rd.fharr.com/assets/sprite/몬스터/idle/coelacanth_n.gif,排水溝 (1@pump),隨機,即時
-2188,[B] 怪異腔棘魚,100,魚貝,水2,大,2200000,1000000,1000000,0,0,280 + 0,280 + 280,460,430,,,,
+2188,[B] 怪異腔棘魚,100,魚貝,水2,大,2200000,1000000,1000000,0,0,280 + 0,280 + 280,460,430,https://rd.fharr.com/assets/sprite/몬스터/idle/coelacanth_n.gif,,,
 2189,[M] 暴力腔棘魚,155,魚貝,水2,大,5200000,3000000,3300000,0,0,280 + 0,280 + 280,615,585,https://rd.fharr.com/assets/sprite/몬스터/idle/coelacanth_h.gif,排水溝 (2@pump),隨機,即時
 2190,[M] 變種腔棘魚,155,魚貝,水2,大,5200000,3000000,3300000,0,0,280 + 0,280 + 280,615,585,https://rd.fharr.com/assets/sprite/몬스터/idle/coelacanth_h.gif,排水溝 (2@pump),隨機,即時
 2191,[B] 海草,100,魚貝,水1,小,100000,0,0,1,1,0 + 0,0 + 0,301,271,https://rd.fharr.com/assets/sprite/몬스터/idle/md_seaweed.gif,排水溝 (2@pump),隨機,即時
@@ -401,10 +401,6 @@ ID,名稱,Lv↑,種族,屬性,體型,HP,B.Exp,J.Exp,ATK(min),ATK(max),DEF,MDEF,1
 2322,[B] 月亮的巴庫暴龍,156,龍族,水4,大,3351884,5020222,4690302,0,0,472 + 0,0 + 0,490,563,https://rd.fharr.com/assets/sprite/몬스터/idle/bakonawa.gif,食月暴龍藏身處 (1@ma_b),隨機,即時
 2327,[B] 噩夢死神靈魂的樑柱,115,惡魔,暗2,中,250,1563082,1522402,0,0,411 + 0,95 + 95,507,536,https://rd.fharr.com/assets/sprite/몬스터/idle/elder_wilow.gif,噩夢醫院 2樓 (1@ma_h),隨機,即時
 2362,[M] 古埃及王-夢魘,145,人形,地3,大,2515784,3252974,2604174,3201,4106,367 + 0,301 + 301,434,416,https://rd.fharr.com/assets/sprite/몬스터/idle/n_amon_ra.gif,夢羅克金字塔地下2樓 夢魘 (moc_prydn2),隨機,1小時
-2408,[B] Lv. 10,10,無形,無1,小,100000000,0,0,0,0,0 + 0,0 + 0,210,180,https://rd.fharr.com/assets/sprite/몬스터/idle/peco_egg.gif,,,
-2409,[B] Lv. 50,50,無形,無1,中,100000000,0,0,0,0,50 + 0,50 + 50,250,220,https://rd.fharr.com/assets/sprite/몬스터/idle/horn_scaraba_egg.gif,盧恩 米德加茲王國 首都普隆德拉 (prontera),隨機,即時
-2410,[B] Lv. 100,100,無形,無1,中,100000000,0,0,0,0,90 + 0,90 + 90,300,270,https://rd.fharr.com/assets/sprite/몬스터/idle/horn_scaraba2_egg.gif,盧恩 米德加茲王國 首都普隆德拉 (prontera),隨機,即時
-2411,[B] Lv. 150,150,無形,無1,中,99999999,0,0,0,0,120 + 0,120 + 120,350,320,https://rd.fharr.com/assets/sprite/몬스터/idle/dragon_egg.gif,盧恩 米德加茲王國 首都普隆德拉 (prontera),隨機,即時
 2441,[M] 魔鬼孩子王,99,人形,火4,中,265203,212534,175494,3747,5435,510 + 0,139 + 139,447,429,https://rd.fharr.com/assets/sprite/몬스터/idle/b_novice.gif,公會地下密穴 葛洛麗雅(普隆德拉) [網站備註] (teg_dun01),隨機,未知
 2442,[M] 魔鬼孩子王,99,人形,火4,中,268800,217620,178000,5006,7357,410 + 0,192 + 192,493,472,https://rd.fharr.com/assets/sprite/몬스터/idle/b_supernovice.gif,公會地下密穴 卡普拉賈登(艾爾帕蘭) [網站備註] (teg_dun02),隨機,未知
 2475,[B] 墮落根莖,150,惡魔,地3,大,1781117,2199900,2209324,3460,5015,333 + 0,333 + 333,370,521,https://rd.fharr.com/assets/sprite/몬스터/idle/mg_corruption_root.gif,舊的古城騎士團副本1F [網站備註] (1@gl_k),隨機,未知
@@ -532,6 +528,7 @@ ID,名稱,Lv↑,種族,屬性,體型,HP,B.Exp,J.Exp,ATK(min),ATK(max),DEF,MDEF,1
 20784,[M] 魔劍士 達納托斯的記憶,210,惡魔,念4,大,442473041,0,0,0,0,390 + 0,86 + 86,410,380,https://rd.fharr.com/assets/sprite/몬스터/idle/md_thanatos.gif,達納托斯塔台 惡魔劍士 達納托斯記憶 [網站備註] (8@thts),隨機,即時
 20785,[M] MD_BROKEN_THANATOS,999,無形,無1,小,0,0,0,0,0,0 + 0,0 + 0,1199,1169,https://rd.fharr.com/assets/sprite/몬스터/idle/md_broken_thanatos.gif,,,
 20811,[M] 深海魔鬼大烏賊,204,魚貝,水4,大,14342360,0,0,0,0,335 + 0,271 + 271,404,374,https://rd.fharr.com/assets/sprite/몬스터/idle/ill_kraken.gif,深淵海底洞穴下層樓 (iz_d05_i),隨機,未知
+20843,[M] 深海魔女,205,惡魔,暗3,大,"75,746,433",0,0,0,0,452 + 0,81 + 81,405,375,https://rd.fharr.com/assets/sprite/몬스터/idle/ill_abysmal_witch.gif,深淵海底洞穴上層樓 (iz_d04_i),隨機,未知
 20919,[M] 噩夢小丑皇,189,無形,毒3,小,2100000000,0,0,0,0,200 + 0,400 + 400,389,359,https://rd.fharr.com/assets/sprite/몬스터/idle/carat.gif,,,
 20928,[M] CHIMERA_THEONE,999,無形,無1,小,0,0,0,0,0,0 + 0,0 + 0,1199,1169,https://rd.fharr.com/assets/sprite/몬스터/idle/chimera_theone.gif,廢棄研究所 艾米基提亞 二樓 : 集中培養室 [網站備註] (amicitia2),隨機,未知
 20934,[M] R001-貝斯蒂亞,215,動物,暗2,大,37957533,0,0,0,0,540 + 0,140 + 140,415,385,https://rd.fharr.com/assets/sprite/몬스터/idle/r001_bestia.gif,實驗體廢棄場魯杜斯四樓 [網站備註] (sp_rudus4),隨機,未知
