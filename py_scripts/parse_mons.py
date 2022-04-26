@@ -4,13 +4,40 @@
 import re
 import pandas as pd
 
+def getMSEC(str):
+  SENCOND = 1000
+  MINUTE = SENCOND * 60
+  HOUR = MINUTE * 60
+  DAY = HOUR * 24
+
+  time = re.search(r"(\d+)(天|小時|分鐘)", str)
+  return{
+    "天": DAY,
+    "小時": HOUR,
+    "分鐘": MINUTE
+  }.get(time[2], SENCOND) * int(time[1])
+
+def transToMSEC(x):
+  tmp = re.search(r'(\d+(天|小時|分鐘))(\d+(天|小時|分鐘))?', str(x))
+  msec = getMSEC(tmp[1]) + (getMSEC(tmp[3]) if pd.notna(tmp[3]) else 0)
+  return msec
+"""
+===================================
+"""
 result = pd.read_csv("monsters.csv", encoding="utf-8")
 print("1. result length {}".format(len(result)))
 
-#只取非即時重生的資料
+#刪除即時和秒數重生的資料
 #result = result[result["time"].notna() & result["time"].str.contains(r"^\d+.?[天|時|分]")]
-result = result[result["time"].isna() | (result["time"].str.contains(r"即時")==False)]
+result = result[result["time"].isna() | (result["time"].str.contains(r"^(即時|\d+秒)")==False)]
 print("2. result length {}".format(len(result)))
+
+#空白、未知或條件式的重生時間都預設1小時
+result["time"] = result["time"].fillna("1小時")
+result = result.replace({"time": r"^\D+.*"}, {"time": "1小時"}, regex=True)
+
+#轉換重生時間為milliseconds
+result = result.assign(msec=lambda x: x["time"].replace(r"((\d+(天|小時|分鐘))+).*", value=r"\1", regex=True).apply(transToMSEC))
 
 #增加isMVP欄位
 result = result.assign(isMVP=result["名稱"].str.count("[M]")==True)
@@ -27,13 +54,13 @@ result["img"] = result.apply(lambda x: str(x["ID"]) + ".png" if pd.notna(x["img"
 result["location"] = result["location"] + result["floor"].apply(lambda x: " " + x if pd.notna(x) else "")
 
 #只取需要的欄位
-result = result.filter(items=["ID", "isMVP","名稱","Lv↑","種族","屬性","體型", "img", "location", "time"], axis=1)
+result = result.filter(items=["ID", "isMVP","名稱","Lv↑","種族","屬性","體型", "img", "location", "msec"], axis=1)
 
 #自訂欄位名稱
-result.columns = ["id", "isMVP", "name", "level", "race", "element", "size", "image", "location", "time"]
+result.columns = ["id", "isMVP", "name", "level", "race", "element", "size", "image", "location", "msec"]
 
 #result.to_json("monsters.json", orient="index", force_ascii=False, indent=2)
-result = result.sort_values(by=["isMVP", "level", "id", "time", "location"])
+result = result.sort_values(by=["isMVP", "level", "id", "msec", "location"])
 jsonData = result.to_json(orient="records", force_ascii=False, indent=2)
 with open("../src/constants/monsters.js", "w+", encoding="utf-8") as file:
   file.write(f"export const monsters = {jsonData}")
