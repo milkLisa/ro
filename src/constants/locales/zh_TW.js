@@ -4,8 +4,7 @@ const zh_TW = {
     welcome: "歡迎來到Ragnarok工具庫"
   },
   mvp: {
-    title: "MVP計時器",
-    welcome: "歡迎使用MVP計時器"
+    title: "MVP計時器"
   },
   monsters: {
     race: {

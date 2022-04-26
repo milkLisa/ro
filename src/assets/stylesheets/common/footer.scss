@@ -1,6 +1,7 @@
 footer {
   width: 100%;
-  height: 100px;
+  height: $anchor-height;
+  min-height: $anchor-height;
   border-top: 1px solid #eaeaea;
   display: flex;
   justify-content: center;
@@ -9,7 +10,7 @@ footer {
   img {
     margin-left: 0.5rem;
   }
-  
+
   a {
     display: flex;
     justify-content: center;

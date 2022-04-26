@@ -1,11 +1,11 @@
-import Header from '../components/common/header'
+import PageTitle from '../components/common/page_title'
 import Footer from '../components/common/footer'
-import ArrowForward from '@material-ui/icons/ArrowForward'
+import ArrowForward from '@mui/icons-material/ArrowForward'
 
 export default function Home({ locale, langContent }) {
   return (
     <>
-      <Header title={langContent.main.title} />
+      <PageTitle title={langContent.main.title} />
 
       <div className="container">
         

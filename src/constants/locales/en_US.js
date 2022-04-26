@@ -4,8 +4,7 @@ const en_US = {
     welcome: "Welcome to Ragnarok Tools"
   },
   mvp: {
-    title: "MVP Timer",
-    welcome: "Welcome to MVP Timer"
+    title: "MVP Timer"
   },
   monsters: {
     race: {

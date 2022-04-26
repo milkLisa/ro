@@ -1,44 +1,40 @@
+@import './common/device';
+@import './common/public';
+@import './common/header';
 @import './common/footer';
 @import './fonts/notosanstc.css'; //思源黑體繁中字型
 
+html {
+  font-size: 14px;
+  @include default-font-family();
+  position: relative;
+  height: 100%;
+}
+
+body {
+  @include default-font-family();
+  @include default-font();
+  position: relative;
+  height: 100%;
+  color: $font-color;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: $mini-mobile;
+}
+
 .container {
-  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  @include default-font-family();
   min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-main {
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.list > * {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-
-  & > * {
-    margin: 5px;
-  }
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+  .page-title {
+    text-align: center;
+    font-size: $middle-size;
+    color: $font-color;
   }
 }

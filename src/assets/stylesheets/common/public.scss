@@ -1,0 +1,164 @@
+/* Size */
+$small-size: 0.8rem;
+$normal-size: 1rem;
+$middle-size: 1.2rem;
+$large-size: 1.5rem;
+$timer-icon-size: 0.8rem;
+
+$anchor-height: 64px;
+
+$thin-weight: 400;
+$normal-weight: 500;
+$bold-weight: 600;
+
+/* Color */
+$main-color: #8192c8;
+$secondary-color: #fcc08a;
+$note-color: #d0d2d3;
+$font-color: #666;
+
+@mixin default-font-family() {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+
+@mixin default-font() {
+  font-size: $normal-size;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+
+    & > * {
+      margin: 5px;
+    }
+  }
+}
+
+.monster-card {
+  display: flex;
+  align-items: center;
+
+  &.timer {
+    border: 3px solid $main-color;
+  }
+
+  & > .avatar {
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    & > * {
+      flex: 1 0 auto;
+
+      &:first-child {
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        width: 48px;
+        height: 48px;
+      }
+
+      &:last-child {
+        padding: 3px;
+      }
+    }
+    
+    img {
+      width: auto;
+      height: 100%;
+      font-size: $small-size;
+      color: $note-color;
+    }
+
+    .level, .status {
+      display: flex;
+      align-items: center;
+
+      & > * {
+        flex: 1 0 auto;
+        padding: 2px;
+      }
+    }
+    
+    .level * {
+      font-size: $normal-size;
+    }
+    
+    .status * {
+      font-size: $small-size;
+      color: $font-color;
+    }
+  }
+
+  & > .info {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+
+    & > * {
+      padding: 5px;
+    }
+
+    .label {
+      flex: 1 0 auto;
+      
+      .name {
+        font-weight: $bold-weight;
+      }
+
+      .location {
+        font-size: $small-size;
+        color: $font-color;
+      }
+    }
+
+    .time {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px dotted #666;
+      -webkit-border-radius: 5px 20px;
+      border-radius: 5px 20px;
+
+      .timer {
+        color: $main-color;
+        font-weight: $bold-weight;
+      }
+
+      .play button {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
