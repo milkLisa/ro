@@ -5,6 +5,7 @@ export default function PageTitle({title}) {
     <Head>
       <title>{title}</title>
       <link rel="icon" href="/static/images/favicon.ico" />
+      <meta name="viewport" content="initial-scale=1, width=device-width" />
     </Head>
   )
 }

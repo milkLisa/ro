@@ -1,10 +1,12 @@
 const zh_TW = {
   main: {
     title: "Ragnarok工具庫",
-    welcome: "歡迎來到Ragnarok工具庫"
+    welcome: "歡迎來到Ragnarok工具庫",
+    loading: "讀取中..."
   },
   mvp: {
-    title: "MVP計時器"
+    title: "MVP計時器",
+    search: "輸入魔物名稱或ID"
   },
   monsters: {
     race: {

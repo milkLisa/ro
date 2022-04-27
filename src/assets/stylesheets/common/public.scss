@@ -6,6 +6,7 @@ $large-size: 1.5rem;
 $timer-icon-size: 0.8rem;
 
 $anchor-height: 64px;
+$avatar-size: 48px;
 
 $thin-weight: 400;
 $normal-weight: 500;
@@ -14,7 +15,7 @@ $bold-weight: 600;
 /* Color */
 $main-color: #8192c8;
 $secondary-color: #fcc08a;
-$note-color: #d0d2d3;
+$note-color: #c1c5c9;
 $font-color: #666;
 
 @mixin default-font-family() {
@@ -25,12 +26,23 @@ $font-color: #666;
   font-size: $normal-size;
 }
 
+@mixin icon-button() {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+
+  svg {
+    font-size: $large-size;
+  }
+}
+
 main {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 a {
@@ -38,16 +50,33 @@ a {
   text-decoration: none;
 }
 
+.search-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  width: 100%;
+
+  .search-field input {
+    margin-right: 32px;
+  }
+
+  .search-btn {
+    @include icon-button();
+    margin-left: -42px;
+  }
+}
+
 .list {
   display: flex;
-  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 
   & > * {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 5px;
 
     & > * {
       margin: 5px;
@@ -58,9 +87,14 @@ a {
 .monster-card {
   display: flex;
   align-items: center;
+  padding: 2px;
+  border: 1px solid $note-color;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px $note-color;
 
   &.timer {
     border: 3px solid $main-color;
+    padding: 0;
   }
 
   & > .avatar {
@@ -77,8 +111,8 @@ a {
         display: flex;
         justify-content: center;
         padding: 5px;
-        width: 48px;
-        height: 48px;
+        width: $avatar-size;
+        height: $avatar-size;
       }
 
       &:last-child {
@@ -109,29 +143,29 @@ a {
     
     .status * {
       font-size: $small-size;
-      color: $font-color;
+      color: $note-color;
     }
   }
 
   & > .info {
     display: flex;
     flex-direction: column;
-    flex: 2;
 
     & > * {
       padding: 5px;
     }
 
     .label {
-      flex: 1 0 auto;
-      
       .name {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         font-weight: $bold-weight;
       }
 
       .location {
         font-size: $small-size;
-        color: $font-color;
+        color: $note-color;
       }
     }
 
@@ -142,6 +176,7 @@ a {
       border: 1px dotted #666;
       -webkit-border-radius: 5px 20px;
       border-radius: 5px 20px;
+      margin: 0 5px 5px;
 
       .timer {
         color: $main-color;
@@ -149,8 +184,8 @@ a {
       }
 
       .play button {
-        width: 24px;
-        height: 24px;
+        @include icon-button();
+        margin: 0 10px;
       }
     }
   }

@@ -1,10 +1,12 @@
 const en_US = {
   main: {
     title: "Ragnarok Tools",
-    welcome: "Welcome to Ragnarok Tools"
+    welcome: "Welcome to Ragnarok Tools",
+    loading: "Loading..."
   },
   mvp: {
-    title: "MVP Timer"
+    title: "MVP Timer",
+    search: "input monster name or monster ID"
   },
   monsters: {
     race: {

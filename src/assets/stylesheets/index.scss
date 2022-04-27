@@ -5,7 +5,7 @@
 @import './fonts/notosanstc.css'; //思源黑體繁中字型
 
 html {
-  font-size: 14px;
+  font-size: 16px;
   @include default-font-family();
   position: relative;
   height: 100%;
@@ -29,12 +29,5 @@ body {
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-
-  .page-title {
-    text-align: center;
-    font-size: $middle-size;
-    color: $font-color;
-  }
 }
