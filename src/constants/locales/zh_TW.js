@@ -6,7 +6,9 @@ const zh_TW = {
   },
   mvp: {
     title: "MVP計時器",
-    search: "輸入魔物名稱或ID"
+    search: "輸入魔物名稱或ID",
+    respwan: "重生時間",
+    checked: "已選取 {0} / {1}"
   },
   monsters: {
     race: {

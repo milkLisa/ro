@@ -6,7 +6,9 @@ const en_US = {
   },
   mvp: {
     title: "MVP Timer",
-    search: "input monster name or monster ID"
+    search: "input monster name or monster ID",
+    respwan: "respwan time",
+    checked: "{0} / {1} Selected"
   },
   monsters: {
     race: {

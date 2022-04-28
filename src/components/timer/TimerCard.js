@@ -4,9 +4,9 @@ import SkipPreviousIcon from '@mui/icons-material/SkipPrevious'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import StopCircleIcon from '@mui/icons-material/StopCircle'
 import SkipNextIcon from '@mui/icons-material/SkipNext'
-import { SECOND, getFormatedTime } from '../../constants/date_time'
+import { DAY, SECOND, getFormatedTime } from '../../constants/date_time'
 
-export default class MonsterCard extends Component {
+export default class TimerCard extends Component {
   state = {
     isStart : false,
     time    : this.props.monster.msec
@@ -17,15 +17,13 @@ export default class MonsterCard extends Component {
   }
 
   rewind() {
-    let { time } = this.state
-    time = time + SECOND
-    this.setState({ time })
+    const { time } = this.state
+    this.setState({ time: time + SECOND })
   }
 
   forward() {
-    let { time } = this.state
-    time = time - SECOND
-    this.setState({ time })
+    const { time } = this.state
+    time < -DAY? this.stop() : this.setState({ time: time - SECOND })
   }
 
   start() {
@@ -45,7 +43,7 @@ export default class MonsterCard extends Component {
     const img = monster.image ? monster.image : "egg.png"
     
     return (
-      <div className={ `monster-card${ isStart ? " timer": "" }` }>
+      <div className={ `timer-card${ isStart ? " timer": "" }` }>
         <div className="avatar">
           <div>
             <img
@@ -55,12 +53,16 @@ export default class MonsterCard extends Component {
           </div>
           
           <div>
+            <div className="note">
+              <span>{ `ID ${ monster.roId }` }</span>
+            </div>
+
             <div className="level">
               <span>{ monster.isMVP ? "MVP" : "Boss" }</span>
               <span>{ `Lv.${ monster.level }` }</span>
             </div>
 
-            <div className="status">
+            <div className="note">
               <span>{ monster.race }</span>
               <span>{ monster.element }</span>
               <span>{ monster.size }</span>
@@ -78,7 +80,7 @@ export default class MonsterCard extends Component {
           </div>
           
           <div className="time">
-            <div className={ isStart? "timer": "" }>
+            <div className={ `${ isStart? "timer": "" } ${ time < 0? "appeared": "" }` }>
               { getFormatedTime(time) }
             </div>
 

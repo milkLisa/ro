@@ -4,7 +4,7 @@ export const HOUR   = MINUTE * 60
 export const DAY    = HOUR * 24
 
 export function padZero(len, x) {
-  x = x.toString()
+  x = x.toString().replace("-", "")
   return x.length < len ? x.padStart(len, "0") : x
 }
 

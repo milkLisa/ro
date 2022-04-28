@@ -57,10 +57,15 @@ result["location"] = result["location"] + result["floor"].apply(lambda x: " " + 
 result = result.filter(items=["ID", "isMVP","名稱","Lv↑","種族","屬性","體型", "img", "location", "msec"], axis=1)
 
 #自訂欄位名稱
-result.columns = ["id", "isMVP", "name", "level", "race", "element", "size", "image", "location", "msec"]
+result.columns = ["roId", "isMVP", "name", "level", "race", "element", "size", "image", "location", "msec"]
 
 #result.to_json("monsters.json", orient="index", force_ascii=False, indent=2)
-result = result.sort_values(by=["isMVP", "level", "id", "msec", "location"])
+result = result.sort_values(by=["isMVP", "roId", "level", "msec", "location"])
+
+#重設index
+result = result.reset_index(drop=True)
+result.insert(0, "id", result.index.tolist())
+
 jsonData = result.to_json(orient="records", force_ascii=False, indent=2)
 with open("../src/constants/monsters.js", "w+", encoding="utf-8") as file:
   file.write(f"export const monsters = {jsonData}")
