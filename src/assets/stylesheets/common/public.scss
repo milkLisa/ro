@@ -2,9 +2,9 @@
 $mini-size: 0.5rem;
 $small-size: 0.8rem;
 $normal-size: 1rem;
-$middle-size: 1.2rem;
-$large-size: 1.5rem;
-$big-size: 2rem;
+$middle-size: 1.5rem;
+$large-size: 2rem;
+$big-size: 2.5rem;
 
 $anchor-height: 64px;
 $avatar-size: 48px;
@@ -35,6 +35,26 @@ $alert-color: #bf565b;
 
   svg {
     font-size: $large-size;
+  }
+}
+
+@mixin large-button() {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  svg {
+    font-size: $large-size;
+  }
+}
+
+@mixin big-button() {
+  width: 64px;
+  height: 64px;
+  padding: 0;
+
+  svg {
+    font-size: $big-size;
   }
 }
 
@@ -69,11 +89,13 @@ a {
   }
 
   .close-btn {
-    width: 48px;
-    height: 48px;
+    @include large-button();
     display: flex;
     flex-direction: column;
-    margin: 5px;
+
+    svg {
+      font-size: $middle-size;
+    }
 
     span {
       color: $note-color;
@@ -95,67 +117,31 @@ a {
   }
 }
 
+.big-btn {
+  @include big-button();
+  padding: 5px;
+}
+
 .timer-card, .check-card {
   display: flex;
   align-items: center;
   border: 1px solid $note-color;
   border-radius: 5px;
   box-shadow: 2px 2px 1px $note-color;
-}
+  padding: 5px;
 
-.check-card {
-  justify-content: flex-start;
-  width: 300px;
-
-  .check-btn {
-    margin-right: 0;
-  }
-
-  .name {
-    font-weight: $bold-weight;
-  }
-
-  .note *, .respwan *, .location * {
-    font-size: $small-size;
-    color: $font-color;
-    margin: 5px;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  & > * {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 8px;
-    
-    & > * {
-      margin: 0;
-    }
-  }
-}
-
-.timer-card {
   &.timer {
-    border: 3px solid $main-color;
-    padding: 0;
+    border: 3px solid $secondary-color;
+    padding: 3px;
   }
 
   & > .avatar {
-    min-width: 100px;
+    min-width: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
 
     & > * {
-      flex: 1 0 auto;
 
       &:first-child {
         display: flex;
@@ -166,7 +152,11 @@ a {
       }
 
       &:last-child {
-        padding: 3px;
+        padding: 0;
+
+        & > * {
+          padding: 0 0 5px 5px;
+        }
       }
     }
     
@@ -177,14 +167,13 @@ a {
       color: $note-color;
     }
 
-    .level, .note {
+    .desc, .note {
       display: flex;
       align-items: center;
       font-size: $small-size;
 
       & > * {
-        flex: 1 0 auto;
-        padding: 2px;
+        padding-right: 5px;
       }
     }
   }
@@ -192,18 +181,28 @@ a {
   & > .info {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
     & > * {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 5px;
+      
+      & > *:first-child {
+        padding-left: 0;
+      }
+
+      & > span:last-child {
+        padding-right: 0;
+      }
     }
 
-    .label {
-      .name {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-weight: $bold-weight;
-      }
+    .name {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: $bold-weight;
     }
 
     .time {
@@ -213,12 +212,7 @@ a {
       border: 1px dotted #666;
       -webkit-border-radius: 5px 20px;
       border-radius: 5px 20px;
-      margin: 0 5px 5px;
-
-      .timer {
-        color: $main-color;
-        font-weight: $bold-weight;
-      }
+      margin: 5px;
         
       .appeared {
         color: $alert-color;
@@ -226,9 +220,18 @@ a {
 
       .play button {
         @include icon-button();
-        margin: 0 10px;
+        margin: 0 5px;
       }
     }
+  }
+  
+  .timer {
+    color: $secondary-color;
+    font-weight: $bold-weight;
+  }
+
+  .desc {
+    font-size: $small-size;
   }
   
   .note, .location {

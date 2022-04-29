@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Container from '@mui/material/Container'
 import Drawer from '@mui/material/Drawer'
 import IconButton from '@mui/material/IconButton'
-import AddIcon from '@mui/icons-material/Add'
+import TableViewIcon from '@mui/icons-material/TableView'
 import CheckList from './CheckList'
 import TimerCard from './TimerCard'
 
@@ -18,13 +18,13 @@ export default function TimerList({ langContent }) {
 
   return (
     <Container className="container">
-      <div className="">
+      <div>
         <IconButton
-          variant   = "contained"
-          className = "add-btn"
-          onClick   = { () => setIsOpen(true)  }
+          aria-label  = "add timer"
+          className   = "big-btn"
+          onClick     = { () => setIsOpen(true)  }
         >
-          <AddIcon />
+          <TableViewIcon />
         </IconButton>
 
         <Drawer

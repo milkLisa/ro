@@ -14,41 +14,57 @@ export default function CheckCard({ langContent, monster, isChecked, onCheck }) 
     onCheck(monster, !checked)
   }
 
+  const img = monster.image ? monster.image : "egg.png"
+
   return (
     <div className="check-card">
-      <IconButton
-        aria-label     = "check timer"
-        className      = "check-btn"
-        disableRipple  = { true }
-        onClick        = { () => check()  }
-      >
-        { checked
-          ? <CheckBoxIcon className="check"/> 
-          : <CheckBoxOutlineBlankIcon/> 
-        }
-      </IconButton>
+      <div className="avatar">
+        <div>
+          <img
+            src = { `/static/images/${ img }` }
+            alt = { monster.name }
+          />
+        </div>
+        
+        <div>
+          <div className="note">
+            <span>{ `ID ${ monster.roId }` }</span>
+          </div>
 
-      <div>
+          <div className="desc">
+            <span>{ monster.isMVP ? "MVP" : "Boss" }</span>
+            <span>{ `Lv.${ monster.level }` }</span>
+          </div>
+
+          <div className="note">
+            <span>{ monster.race }</span>
+            <span>{ monster.element }</span>
+            <span>{ monster.size }</span>
+          </div>
+        </div>
+      </div>
+      
+      <div className="info">
         <div className="name">
           <span>{ monster.name }</span>
-        </div>
-        
-        <div className="note">
-          <span>{ monster.isMVP ? "MVP" : "Boss" }</span>
-          <span>{ `Lv.${ monster.level }` }</span>
-          <span>{ `ID ${ monster.roId }` }</span>
-          <span>{ monster.race }</span>
-          <span>{ monster.element }</span>
-          <span>{ monster.size }</span>
-        </div>
 
-        <div className="respwan">
-          <span>{
-           `${ langContent.mvp.respwan } ${ getFormatedTime(monster.msec) }` 
-          }</span>
+          <IconButton
+            aria-label = "check timer"
+            onClick    = { () => check()  }
+          >
+            { checked
+              ? <CheckBoxIcon className="check"/> 
+              : <CheckBoxOutlineBlankIcon/> 
+            }
+          </IconButton>
         </div>
         
-        <div className="location">
+        <div className="desc">
+          <span>{ langContent.mvp.respwan }</span>
+          <span>{ getFormatedTime(monster.msec) }</span>
+        </div>
+        
+        <div className="desc">
           <span>{ monster.location }</span>
         </div>
       </div>

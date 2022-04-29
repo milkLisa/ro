@@ -1,9 +1,9 @@
 import { Component } from 'react'
 import IconButton from '@mui/material/IconButton'
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious'
+import Replay10Icon from '@mui/icons-material/Replay10'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import StopCircleIcon from '@mui/icons-material/StopCircle'
-import SkipNextIcon from '@mui/icons-material/SkipNext'
+import Forward10Icon from '@mui/icons-material/Forward10'
 import { DAY, SECOND, getFormatedTime } from '../../constants/date_time'
 
 export default class TimerCard extends Component {
@@ -18,18 +18,23 @@ export default class TimerCard extends Component {
 
   rewind() {
     const { time } = this.state
-    this.setState({ time: time + SECOND })
+    this.setState({ time: time + 10 * SECOND })
   }
 
   forward() {
     const { time } = this.state
-    time < -DAY? this.stop() : this.setState({ time: time - SECOND })
+    console.log(time, time - 10 * SECOND)
+    this.setState({ time: time - 10 * SECOND })
+  }
+
+  timing() {
+    const { time } = this.state
+    time < -DAY ? this.stop() : this.setState({ time: time - SECOND })
   }
 
   start() {
-    this.timer = setInterval(() => this.forward(), SECOND)
+    this.timer = setInterval(() => this.timing(), SECOND)
     this.setState({ isStart: true })
-    this.forward()
   }
 
   stop() {
@@ -57,7 +62,7 @@ export default class TimerCard extends Component {
               <span>{ `ID ${ monster.roId }` }</span>
             </div>
 
-            <div className="level">
+            <div className="desc">
               <span>{ monster.isMVP ? "MVP" : "Boss" }</span>
               <span>{ `Lv.${ monster.level }` }</span>
             </div>
@@ -71,13 +76,11 @@ export default class TimerCard extends Component {
         </div>
         
         <div className="info">
-          <div className="label">
-            <div className="name">
-              <span>{ monster.name }</span>
-            </div>
-
-            <span className="location">{ monster.location }</span>
+          <div className={ `name${ isStart? " timer": "" }` }>
+            <span>{ monster.name }</span>
           </div>
+          
+          <span className="location">{ monster.location }</span>
           
           <div className="time">
             <div className={ `${ isStart? "timer": "" } ${ time < 0? "appeared": "" }` }>
@@ -89,7 +92,7 @@ export default class TimerCard extends Component {
                 aria-label  = "rewind"
                 onClick     = { () => this.rewind() }
               >
-                <SkipPreviousIcon />
+                <Replay10Icon />
               </IconButton>
               <IconButton 
                 aria-label  = "start/stop"
@@ -101,7 +104,7 @@ export default class TimerCard extends Component {
                 aria-label  = "forward"
                 onClick     = { () => this.forward()  }
               >
-                <SkipNextIcon />
+                <Forward10Icon />
               </IconButton>
             </div>
           </div>
