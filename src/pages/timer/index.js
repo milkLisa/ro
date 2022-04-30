@@ -1,15 +1,16 @@
-import PageTitle from '../../components/common/PageTitle'
+import { StyledEngineProvider } from '@mui/material/styles'
+import HtmlHead from '../../components/common/HtmlHead'
 import Layout from '../../components/timer/Layout'
 import TimerList from '../../components/timer/TimerList'
 
 export default function Home({ langContent }) {
   return (
-    <>
-      <PageTitle title={ langContent.mvp.title } />
+    <StyledEngineProvider injectFirst>
+      <HtmlHead title={ langContent.mvp.title } />
       
       <Layout title={ langContent.mvp.title }>
         <TimerList langContent={ langContent } />
       </Layout>
-    </>
+    </StyledEngineProvider>
   )
 }

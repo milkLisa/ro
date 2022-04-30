@@ -6,7 +6,7 @@ export default function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="/static/images/GitHub-Mark-32px.png" alt="RO Repository" width={32} height={32}/>
+        <img src="/static/icons/GitHub-Mark-32px.png" alt="RO Repository" width={32} height={32}/>
       </a>
     </footer>
   )
