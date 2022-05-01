@@ -6,7 +6,7 @@ import '../assets/stylesheets/index.scss'
 
 export default function MyApp({ Component, pageProps }) {
   const { locale } = useRouter()
-  const langContent = locale === "en-US" ? enContent : zhContent
+  const intl = locale === "en-US" ? enContent : zhContent
   
   useEffect(() => {
     if ("serviceWorker" in navigator) {
@@ -26,5 +26,5 @@ export default function MyApp({ Component, pageProps }) {
     }
   }, [])
   
-  return <Component locale={locale} langContent={langContent} {...pageProps} />
+  return <Component locale={locale} intl={intl} {...pageProps} />
 }

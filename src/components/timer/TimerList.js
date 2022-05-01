@@ -6,7 +6,7 @@ import TableViewIcon from '@mui/icons-material/TableView'
 import CheckList from './CheckList'
 import TimerCard from './TimerCard'
 
-export default function TimerList({ langContent }) {
+export default function TimerList({ intl }) {
   const [ monsters, setMonsters ] = useState([])
   const [ isOpen, setIsOpen ]     = useState(false)
 
@@ -28,12 +28,13 @@ export default function TimerList({ langContent }) {
         </IconButton>
 
         <Drawer
-          anchor ="bottom"
-          open   ={ isOpen }
-          onClose={ () => setIsOpen(false) }
+          anchor      = "bottom"
+          ModalProps  = {{ keepMounted: true }}
+          open        = { isOpen }
+          onClose     = { () => setIsOpen(false) }
         >
           <CheckList
-            langContent = { langContent }
+            intl        = { intl }
             checkedMons = { getMonsId() }
             onClose     = { () => setIsOpen(false) }
             onCheck     = { monsters => setMonsters(monsters) }

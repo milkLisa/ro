@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import IconButton from '@mui/material/IconButton'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
-import { getFormatedTime } from '../../constants/date_time'
+import { getFormatedTime } from '../../constants/dateTime'
 
-export default function CheckCard({ langContent, monster, isChecked, onCheck }) {
+export default function CheckCard({ intl, monster, isChecked, onCheck }) {
   const [ checked, setChecked ] = useState(isChecked)
 
   useEffect(() => setChecked(isChecked), [isChecked])
@@ -60,7 +60,7 @@ export default function CheckCard({ langContent, monster, isChecked, onCheck }) 
         </div>
         
         <div className="desc">
-          <span>{ langContent.mvp.respwan }</span>
+          <span>{ intl.mvp.respwan }</span>
           <span>{ getFormatedTime(monster.msec) }</span>
         </div>
         

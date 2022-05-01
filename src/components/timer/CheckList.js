@@ -7,7 +7,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import CheckCard from './CheckCard'
 import { trimStr, format } from '../../utils/parser'
 
-export default function CheckList({ langContent, checkedMons, onClose, onCheck }) {
+export default function CheckList({ intl, checkedMons, onClose, onCheck }) {
   const [ monsters, setMonsters ]       = useState([])
   const [ leftList, setLeftList ]       = useState([])
   const [ checkedList, setCheckedList ] = useState([])
@@ -52,7 +52,7 @@ export default function CheckList({ langContent, checkedMons, onClose, onCheck }
   }
   
   if(!monsters.length) 
-    return <Container className="container">{ langContent.main.loading }</Container>
+    return <Container className="container">{ intl.main.loading }</Container>
 
   return (
     <Container className="container">
@@ -70,7 +70,7 @@ export default function CheckList({ langContent, checkedMons, onClose, onCheck }
           fullWidth       = { true }
           margin          = "none"
           variant         = "outlined"
-          placeholder     = { langContent.mvp.search }
+          placeholder     = { intl.mvp.search }
           value           = { searchText }
           className       = "search-field"
           onChange        = { e => setSearchText(e.target.value) }
@@ -89,17 +89,17 @@ export default function CheckList({ langContent, checkedMons, onClose, onCheck }
         </IconButton>
       </div>
       
-      <div>{ format(langContent.mvp.checked, count, monsters.length) }</div>
+      <div>{ format(intl.mvp.checked, count, monsters.length) }</div>
 
       <div className="list">
         { 
           leftList.map(mon => (
             <CheckCard 
-              key         = { `${ mon.id }` } 
-              monster     = { mon }
-              langContent = { langContent }
-              isChecked   = { checkedList.includes(mon) }
-              onCheck     = { changeList }
+              key       = { `${ mon.id }` } 
+              monster   = { mon }
+              intl      = { intl }
+              isChecked = { checkedList.includes(mon) }
+              onCheck   = { changeList }
             />
           ))
         }

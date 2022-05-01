@@ -3,13 +3,14 @@ import HtmlHead from '../../components/common/HtmlHead'
 import Layout from '../../components/timer/Layout'
 import TimerList from '../../components/timer/TimerList'
 
-export default function Home({ langContent }) {
+export default function Home({ intl }) {
   return (
     <StyledEngineProvider injectFirst>
-      <HtmlHead title={ langContent.mvp.title } />
       
-      <Layout title={ langContent.mvp.title }>
-        <TimerList langContent={ langContent } />
+      <HtmlHead title={ intl.mvp.title } />
+      
+      <Layout title={ intl.mvp.title }>
+        <TimerList intl={ intl } />
       </Layout>
     </StyledEngineProvider>
   )

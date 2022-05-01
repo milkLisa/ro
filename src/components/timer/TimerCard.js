@@ -4,7 +4,7 @@ import Replay10Icon from '@mui/icons-material/Replay10'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import StopCircleIcon from '@mui/icons-material/StopCircle'
 import Forward10Icon from '@mui/icons-material/Forward10'
-import { DAY, SECOND, getFormatedTime } from '../../constants/date_time'
+import { DAY, SECOND, getFormatedTime } from '../../constants/dateTime'
 
 export default class TimerCard extends Component {
   state = {
