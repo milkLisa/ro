@@ -9,7 +9,7 @@ export const monsters = [
     "element":"水1",
     "size":"中",
     "image":"1089.png",
-    "location":"克魔島基乃依沼澤地 (cmd_fild03)",
+    "location":"克魔島基乃依沼澤地 (cmd_fild03)",
     "msec":3600000
   },
   {
@@ -22,7 +22,7 @@ export const monsters = [
     "element":"水1",
     "size":"中",
     "image":"1089.png",
-    "location":"吉芬原野 (gef_fild01)",
+    "location":"吉芬原野 (gef_fild01)",
     "msec":3600000
   },
   {
@@ -35,7 +35,7 @@ export const monsters = [
     "element":"水1",
     "size":"中",
     "image":"1090.png",
-    "location":"普隆德拉迷宮森林 3樓 (prt_maze03)",
+    "location":"普隆德拉迷宮森林3樓 (prt_maze03)",
     "msec":1800000
   },
   {
@@ -48,7 +48,7 @@ export const monsters = [
     "element":"水1",
     "size":"中",
     "image":"1090.png",
-    "location":"薑餅城玩具工廠倉庫 (xmas_dun01)",
+    "location":"薑餅城玩具工廠倉庫 (xmas_dun01)",
     "msec":1800000
   },
   {
@@ -61,7 +61,7 @@ export const monsters = [
     "element":"水1",
     "size":"中",
     "image":"1090.png",
-    "location":"蘇克拉特沙漠 (pay_fild04)",
+    "location":"蘇克拉特沙漠 (pay_fild04)",
     "msec":3600000
   },
   {
@@ -74,7 +74,7 @@ export const monsters = [
     "element":"水1",
     "size":"中",
     "image":"1090.png",
-    "location":"爾邁斯 瀑雷德 (yuno_fild04)",
+    "location":"爾邁斯瀑雷德 (yuno_fild04)",
     "msec":5400000
   },
   {
@@ -87,7 +87,7 @@ export const monsters = [
     "element":"風1",
     "size":"小",
     "image":"1091.png",
-    "location":"蘇克拉特沙漠 (moc_fild18)",
+    "location":"蘇克拉特沙漠 (moc_fild18)",
     "msec":3600000
   },
   {
@@ -100,7 +100,7 @@ export const monsters = [
     "element":"地1",
     "size":"中",
     "image":"1092.png",
-    "location":"普隆德拉迷宮森林 3樓 (prt_maze03)",
+    "location":"普隆德拉迷宮森林3樓 (prt_maze03)",
     "msec":1800000
   },
   {
@@ -113,7 +113,7 @@ export const monsters = [
     "element":"地1",
     "size":"中",
     "image":"1092.png",
-    "location":"普隆德拉迷宮森林 1樓 (prt_maze01)",
+    "location":"普隆德拉迷宮森林1樓 (prt_maze01)",
     "msec":3600000
   },
   {
@@ -126,7 +126,7 @@ export const monsters = [
     "element":"地1",
     "size":"中",
     "image":"1092.png",
-    "location":"公會地下密穴 (gld_dun01)",
+    "location":"公會地下密穴 (gld_dun01)",
     "msec":14400000
   },
   {
@@ -139,7 +139,7 @@ export const monsters = [
     "element":"無3",
     "size":"中",
     "image":"1093.png",
-    "location":"普隆德拉原野 (prt_fild02)",
+    "location":"普隆德拉原野 (prt_fild02)",
     "msec":1800000
   },
   {
@@ -152,7 +152,7 @@ export const monsters = [
     "element":"無3",
     "size":"中",
     "image":"1093.png",
-    "location":"普隆德拉迷宮森林 3樓 (prt_maze03)",
+    "location":"普隆德拉迷宮森林3樓 (prt_maze03)",
     "msec":1800000
   },
   {
@@ -165,7 +165,7 @@ export const monsters = [
     "element":"聖4",
     "size":"中",
     "image":"1096.png",
-    "location":"爾邁斯 瀑雷德 (yuno_fild03)",
+    "location":"爾邁斯瀑雷德 (yuno_fild03)",
     "msec":3600000
   },
   {
@@ -178,7 +178,7 @@ export const monsters = [
     "element":"聖4",
     "size":"中",
     "image":"1096.png",
-    "location":"薑餅城玩具工廠倉庫 (xmas_dun01)",
+    "location":"薑餅城玩具工廠倉庫 (xmas_dun01)",
     "msec":3600000
   },
   {
@@ -191,7 +191,7 @@ export const monsters = [
     "element":"聖4",
     "size":"中",
     "image":"1096.png",
-    "location":"蘇克拉特沙漠 (pay_fild04)",
+    "location":"蘇克拉特沙漠 (pay_fild04)",
     "msec":3600000
   },
   {
@@ -204,7 +204,7 @@ export const monsters = [
     "element":"念4",
     "size":"中",
     "image":"1120.png",
-    "location":"艾爾貝塔沈船 2樓 (treasure02)",
+    "location":"艾爾貝塔沈船2樓 (treasure02)",
     "msec":3600000
   },
   {
@@ -217,7 +217,7 @@ export const monsters = [
     "element":"念4",
     "size":"中",
     "image":"1120.png",
-    "location":"蘇克拉特沙漠 (pay_fild04)",
+    "location":"蘇克拉特沙漠 (pay_fild04)",
     "msec":3600000
   },
   {
@@ -230,7 +230,7 @@ export const monsters = [
     "element":"念4",
     "size":"中",
     "image":"1120.png",
-    "location":"普隆德拉迷宮森林 3樓 (prt_maze03)",
+    "location":"普隆德拉迷宮森林3樓 (prt_maze03)",
     "msec":7200000
   },
   {
@@ -243,7 +243,7 @@ export const monsters = [
     "element":"念4",
     "size":"中",
     "image":"1120.png",
-    "location":"公會地下密穴 (gld_dun04)",
+    "location":"公會地下密穴 (gld_dun04)",
     "msec":14400000
   },
   {
@@ -256,7 +256,7 @@ export const monsters = [
     "element":"無3",
     "size":"中",
     "image":"1200.png",
-    "location":"克雷斯特漢姆古城 地下監獄 2樓 (gl_prison1)",
+    "location":"克雷斯特漢姆古城地下監獄2樓 (gl_prison1)",
     "msec":3600000
   },
   {
@@ -269,7 +269,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1203.png",
-    "location":"克雷斯特漢姆古城 騎士團 2樓 (gl_knt02)",
+    "location":"克雷斯特漢姆古城騎士團2樓 (gl_knt02)",
     "msec":3600000
   },
   {
@@ -282,7 +282,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1203.png",
-    "location":"克雷斯特漢姆古城 2樓 (gl_cas02)",
+    "location":"克雷斯特漢姆古城2樓 (gl_cas02)",
     "msec":7200000
   },
   {
@@ -295,7 +295,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1203.png",
-    "location":"葛帔尼亞 (gefenia01)",
+    "location":"葛帔尼亞 (gefenia01)",
     "msec":10800000
   },
   {
@@ -308,7 +308,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1203.png",
-    "location":"葛帔尼亞 (gefenia02)",
+    "location":"葛帔尼亞 (gefenia02)",
     "msec":18000000
   },
   {
@@ -321,7 +321,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1203.png",
-    "location":"葛帔尼亞 (gefenia03)",
+    "location":"葛帔尼亞 (gefenia03)",
     "msec":18000000
   },
   {
@@ -334,7 +334,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1203.png",
-    "location":"葛帔尼亞 (gefenia04)",
+    "location":"葛帔尼亞 (gefenia04)",
     "msec":18000000
   },
   {
@@ -347,7 +347,7 @@ export const monsters = [
     "element":"暗3",
     "size":"中",
     "image":"1204.png",
-    "location":"克雷斯特漢姆古城 2樓 (gl_cas02)",
+    "location":"克雷斯特漢姆古城2樓 (gl_cas02)",
     "msec":7200000
   },
   {
@@ -360,7 +360,7 @@ export const monsters = [
     "element":"暗3",
     "size":"中",
     "image":"1204.png",
-    "location":"葛帔尼亞 (gefenia02)",
+    "location":"葛帔尼亞 (gefenia02)",
     "msec":10800000
   },
   {
@@ -373,7 +373,7 @@ export const monsters = [
     "element":"暗3",
     "size":"中",
     "image":"1204.png",
-    "location":"葛帔尼亞 (gefenia01)",
+    "location":"葛帔尼亞 (gefenia01)",
     "msec":18000000
   },
   {
@@ -386,7 +386,7 @@ export const monsters = [
     "element":"暗3",
     "size":"中",
     "image":"1204.png",
-    "location":"葛帔尼亞 (gefenia03)",
+    "location":"葛帔尼亞 (gefenia03)",
     "msec":18000000
   },
   {
@@ -399,7 +399,7 @@ export const monsters = [
     "element":"暗3",
     "size":"中",
     "image":"1204.png",
-    "location":"葛帔尼亞 (gefenia04)",
+    "location":"葛帔尼亞 (gefenia04)",
     "msec":18000000
   },
   {
@@ -412,7 +412,7 @@ export const monsters = [
     "element":"暗2",
     "size":"大",
     "image":"1205.png",
-    "location":"葛帔尼亞 (gefenia03)",
+    "location":"葛帔尼亞 (gefenia03)",
     "msec":10800000
   },
   {
@@ -425,7 +425,7 @@ export const monsters = [
     "element":"暗2",
     "size":"大",
     "image":"1205.png",
-    "location":"葛帔尼亞 (gefenia01)",
+    "location":"葛帔尼亞 (gefenia01)",
     "msec":18000000
   },
   {
@@ -438,7 +438,7 @@ export const monsters = [
     "element":"暗2",
     "size":"大",
     "image":"1205.png",
-    "location":"葛帔尼亞 (gefenia02)",
+    "location":"葛帔尼亞 (gefenia02)",
     "msec":18000000
   },
   {
@@ -451,7 +451,7 @@ export const monsters = [
     "element":"暗2",
     "size":"大",
     "image":"1205.png",
-    "location":"葛帔尼亞 (gefenia04)",
+    "location":"葛帔尼亞 (gefenia04)",
     "msec":18000000
   },
   {
@@ -464,7 +464,7 @@ export const monsters = [
     "element":"風4",
     "size":"大",
     "image":"1259.png",
-    "location":"毀葛原野 (hu_fild02)",
+    "location":"毀葛原野 (hu_fild02)",
     "msec":3600000
   },
   {
@@ -477,7 +477,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1268.png",
-    "location":"克雷斯特漢姆古城 騎士團 2樓 (gl_knt02)",
+    "location":"克雷斯特漢姆古城騎士團2樓 (gl_knt02)",
     "msec":3600000
   },
   {
@@ -490,7 +490,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1268.png",
-    "location":"葛帔尼亞 (gefenia01)",
+    "location":"葛帔尼亞 (gefenia01)",
     "msec":3600000
   },
   {
@@ -503,7 +503,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1268.png",
-    "location":"葛帔尼亞 (gefenia02)",
+    "location":"葛帔尼亞 (gefenia02)",
     "msec":3600000
   },
   {
@@ -516,7 +516,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1268.png",
-    "location":"葛帔尼亞 (gefenia03)",
+    "location":"葛帔尼亞 (gefenia03)",
     "msec":3600000
   },
   {
@@ -529,7 +529,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1268.png",
-    "location":"葛帔尼亞 (gefenia04)",
+    "location":"葛帔尼亞 (gefenia04)",
     "msec":3600000
   },
   {
@@ -542,7 +542,7 @@ export const monsters = [
     "element":"地4",
     "size":"大",
     "image":"1289.png",
-    "location":"公會地下密穴 2樓 (gld_dun02_2)",
+    "location":"公會地下密穴 (gld_dun03)",
     "msec":1200000
   },
   {
@@ -555,7 +555,7 @@ export const monsters = [
     "element":"地4",
     "size":"大",
     "image":"1289.png",
-    "location":"公會地下密穴 (gld_dun03)",
+    "location":"公會地下密穴2樓 (gld_dun02_2)",
     "msec":1200000
   },
   {
@@ -568,7 +568,7 @@ export const monsters = [
     "element":"地4",
     "size":"大",
     "image":"1289.png",
-    "location":"深淵迴廊 : 英雄之淚 (gld2_ald)",
+    "location":"深淵迴廊:英雄之淚 (gld2_ald)",
     "msec":1200000
   },
   {
@@ -581,7 +581,7 @@ export const monsters = [
     "element":"風2",
     "size":"中",
     "image":"1296.png",
-    "location":"浦勒吐盧納 (ra_fild06)",
+    "location":"浦勒吐盧納(ra_fild06)",
     "msec":1800000
   },
   {
@@ -594,7 +594,7 @@ export const monsters = [
     "element":"風2",
     "size":"中",
     "image":"1296.png",
-    "location":"公會地下密穴 2樓 (gld_dun03_2)",
+    "location":"公會地下密穴2樓 (gld_dun03_2)",
     "msec":14400000
   },
   {
@@ -607,7 +607,7 @@ export const monsters = [
     "element":"風1",
     "size":"中",
     "image":"1299.png",
-    "location":"吉芬原野 (gef_fild11)",
+    "location":"吉芬原野 (gef_fild11)",
     "msec":1800000
   },
   {
@@ -620,7 +620,7 @@ export const monsters = [
     "element":"不死4",
     "size":"大",
     "image":"1302.png",
-    "location":"公會地下密穴 2樓 (gld_dun04_2)",
+    "location":"公會地下密穴 (gld_dun04)",
     "msec":1200000
   },
   {
@@ -633,7 +633,7 @@ export const monsters = [
     "element":"不死4",
     "size":"大",
     "image":"1302.png",
-    "location":"公會地下密穴 (gld_dun04)",
+    "location":"公會地下密穴2樓 (gld_dun04_2)",
     "msec":1200000
   },
   {
@@ -646,7 +646,7 @@ export const monsters = [
     "element":"不死4",
     "size":"大",
     "image":"1302.png",
-    "location":"深淵迴廊 : 亡者之丘 (gld2_gef)",
+    "location":"深淵迴廊:亡者之丘 (gld2_gef)",
     "msec":1200000
   },
   {
@@ -659,7 +659,7 @@ export const monsters = [
     "element":"不死4",
     "size":"大",
     "image":"1302.png",
-    "location":"克雷斯特漢姆古城 地下公墓 (gl_chy_a)",
+    "location":"克雷斯特漢姆古城地下公墓 (gl_chy_a)",
     "msec":3600000
   },
   {
@@ -672,7 +672,7 @@ export const monsters = [
     "element":"不死4",
     "size":"大",
     "image":"1302.png",
-    "location":"克雷斯特漢姆古城 地下公墓 (gl_chyard)",
+    "location":"克雷斯特漢姆古城地下公墓 (gl_chyard)",
     "msec":3600000
   },
   {
@@ -685,7 +685,7 @@ export const monsters = [
     "element":"不死4",
     "size":"大",
     "image":"1302.png",
-    "location":"古城地下公墓(夢魘) [網站備註] (gl_chyard_)",
+    "location":"古城地下公墓(夢魘) (gl_chyard_)",
     "msec":3600000
   },
   {
@@ -698,7 +698,7 @@ export const monsters = [
     "element":"火3",
     "size":"中",
     "image":"1307.png",
-    "location":"公會地下密穴 (gld_dun01)",
+    "location":"公會地下密穴 (gld_dun01)",
     "msec":1200000
   },
   {
@@ -711,7 +711,7 @@ export const monsters = [
     "element":"火3",
     "size":"中",
     "image":"1307.png",
-    "location":"斐揚洞穴 5樓(廢村) (pay_dun04)",
+    "location":"斐揚洞穴5樓(廢村) (pay_dun04)",
     "msec":3600000
   },
   {
@@ -724,7 +724,7 @@ export const monsters = [
     "element":"聖3",
     "size":"中",
     "image":"1388.png",
-    "location":"爾邁斯 瀑雷德 (yuno_fild04)",
+    "location":"爾邁斯瀑雷德 (yuno_fild04)",
     "msec":3600000
   },
   {
@@ -737,7 +737,7 @@ export const monsters = [
     "element":"暗4",
     "size":"中",
     "image":"1582.png",
-    "location":"爾邁斯 瀑雷德 (yuno_fild03)",
+    "location":"爾邁斯瀑雷德 (yuno_fild03)",
     "msec":6000000
   },
   {
@@ -750,7 +750,7 @@ export const monsters = [
     "element":"暗4",
     "size":"中",
     "image":"1582.png",
-    "location":"蘇克拉特沙漠 (pay_fild04)",
+    "location":"蘇克拉特沙漠 (pay_fild04)",
     "msec":7200000
   },
   {
@@ -776,7 +776,7 @@ export const monsters = [
     "element":"水3",
     "size":"中",
     "image":"1681.png",
-    "location":"活體實驗研究所 地下 2樓 (lhz_dun02)",
+    "location":"活體實驗研究所地下1樓 (lhz_dun01)",
     "msec":1800000
   },
   {
@@ -789,7 +789,7 @@ export const monsters = [
     "element":"水3",
     "size":"中",
     "image":"1681.png",
-    "location":"活體實驗研究所 地下1樓 (lhz_dun01)",
+    "location":"活體實驗研究所地下2樓 (lhz_dun02)",
     "msec":1800000
   },
   {
@@ -815,7 +815,7 @@ export const monsters = [
     "element":"聖2",
     "size":"大",
     "image":"1765.png",
-    "location":"奧丁神殿3F（分流A） [網站備註] (odin_t03a)",
+    "location":"奧丁神殿3F（分流A） (odin_t03a)",
     "msec":5400000
   },
   {
@@ -828,7 +828,7 @@ export const monsters = [
     "element":"聖2",
     "size":"大",
     "image":"1765.png",
-    "location":"毀葛奧丁神殿北區 (odin_tem03)",
+    "location":"毀葛奧丁神殿北區 (odin_tem03)",
     "msec":5400000
   },
   {
@@ -841,7 +841,7 @@ export const monsters = [
     "element":"無4",
     "size":"大",
     "image":null,
-    "location":"菲音斯 托爾火山洞穴 2樓 (thor_v02)",
+    "location":"菲音斯托爾火山洞穴2樓 (thor_v02)",
     "msec":7200000
   },
   {
@@ -854,7 +854,7 @@ export const monsters = [
     "element":"無4",
     "size":"大",
     "image":null,
-    "location":"菲音斯 托爾火山洞穴 2樓 (thor_v02)",
+    "location":"菲音斯托爾火山洞穴2樓 (thor_v02)",
     "msec":7200000
   },
   {
@@ -893,7 +893,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1916.png",
-    "location":"蘇克拉特沙漠次元裂縫 (moc_fild21)",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild21)",
     "msec":21600000
   },
   {
@@ -906,7 +906,7 @@ export const monsters = [
     "element":"暗1",
     "size":"大",
     "image":"1918.png",
-    "location":"火焰盆地 (moro_vol)",
+    "location":"火焰盆地 (moro_vol)",
     "msec":3600000
   },
   {
@@ -919,7 +919,7 @@ export const monsters = [
     "element":"暗3",
     "size":"中",
     "image":"1919.png",
-    "location":"火焰盆地 (moro_vol)",
+    "location":"火焰盆地 (moro_vol)",
     "msec":3600000
   },
   {
@@ -932,7 +932,7 @@ export const monsters = [
     "element":"不死3",
     "size":"中",
     "image":"1920.png",
-    "location":"火焰盆地 (moro_vol)",
+    "location":"火焰盆地 (moro_vol)",
     "msec":3600000
   },
   {
@@ -945,7 +945,7 @@ export const monsters = [
     "element":"念3",
     "size":"中",
     "image":"1921.png",
-    "location":"火焰盆地 (moro_vol)",
+    "location":"火焰盆地 (moro_vol)",
     "msec":3600000
   },
   {
@@ -958,7 +958,7 @@ export const monsters = [
     "element":"暗4",
     "size":"小",
     "image":"1960.png",
-    "location":"克雷斯特漢姆的沒落 (1@gl_prq)",
+    "location":"克雷斯特漢姆的沒落 (1@gl_prq)",
     "msec":86400000
   },
   {
@@ -971,7 +971,7 @@ export const monsters = [
     "element":"地3",
     "size":"大",
     "image":"1990.png",
-    "location":"魔怒克原野 (man_fild03)",
+    "location":"魔怒克原野 (man_fild03)",
     "msec":14400000
   },
   {
@@ -997,7 +997,7 @@ export const monsters = [
     "element":"地3",
     "size":"大",
     "image":"2475.png",
-    "location":"舊的古城騎士團副本1F [網站備註] (1@gl_k)",
+    "location":"舊的古城騎士團副本1F (1@gl_k)",
     "msec":3600000
   },
   {
@@ -1010,7 +1010,7 @@ export const monsters = [
     "element":"不死4",
     "size":"大",
     "image":"2476.png",
-    "location":"舊的古城騎士團副本2F [網站備註] (2@gl_k)",
+    "location":"舊的古城騎士團副本2F (2@gl_k)",
     "msec":3600000
   },
   {
@@ -1023,7 +1023,7 @@ export const monsters = [
     "element":"念2",
     "size":"中",
     "image":"2562.png",
-    "location":"吉芬魔法大賽 (1@ge_st)",
+    "location":"吉芬魔法大賽 (1@ge_st)",
     "msec":3600000
   },
   {
@@ -1036,7 +1036,7 @@ export const monsters = [
     "element":"念2",
     "size":"中",
     "image":"2564.png",
-    "location":"吉芬魔法大賽 (1@ge_st)",
+    "location":"吉芬魔法大賽 (1@ge_st)",
     "msec":3600000
   },
   {
@@ -1049,7 +1049,7 @@ export const monsters = [
     "element":"無3",
     "size":"大",
     "image":"2921.png",
-    "location":"夢魘密穴鐘塔 2樓 (c_tower2_)",
+    "location":"夢魘密穴鐘塔2樓 (c_tower2_)",
     "msec":60000
   },
   {
@@ -1062,7 +1062,7 @@ export const monsters = [
     "element":"無3",
     "size":"大",
     "image":"2923.png",
-    "location":"夢魘密穴鐘塔 3樓 (c_tower3_)",
+    "location":"夢魘密穴鐘塔3樓 (c_tower3_)",
     "msec":60000
   },
   {
@@ -1088,7 +1088,7 @@ export const monsters = [
     "element":"暗1",
     "size":"大",
     "image":"3039.png",
-    "location":"火焰盆地 (moro_vol)",
+    "location":"火焰盆地 (moro_vol)",
     "msec":3600000
   },
   {
@@ -1101,7 +1101,7 @@ export const monsters = [
     "element":"暗3",
     "size":"中",
     "image":"3040.png",
-    "location":"火焰盆地 (moro_vol)",
+    "location":"火焰盆地 (moro_vol)",
     "msec":3600000
   },
   {
@@ -1114,7 +1114,7 @@ export const monsters = [
     "element":"水3",
     "size":"中",
     "image":"3041.png",
-    "location":"火焰盆地 (moro_vol)",
+    "location":"火焰盆地 (moro_vol)",
     "msec":3600000
   },
   {
@@ -1127,7 +1127,7 @@ export const monsters = [
     "element":"不死3",
     "size":"中",
     "image":"3073.png",
-    "location":"噩夢吉特巴 (1@jtb) 最終房",
+    "location":"噩夢吉特巴 (1@jtb)最終房",
     "msec":3600000
   },
   {
@@ -1218,7 +1218,7 @@ export const monsters = [
     "element":"無4",
     "size":"中",
     "image":"20521.png",
-    "location":"扭曲的迷宮森林 (prt_mz03_i)",
+    "location":"扭曲的迷宮森林 (prt_mz03_i)",
     "msec":3600000
   },
   {
@@ -1231,7 +1231,7 @@ export const monsters = [
     "element":"地3",
     "size":"大",
     "image":"20575.png",
-    "location":"污染的次元 (1@gl_he) 中央走道",
+    "location":"污染的次元 (1@gl_he)中央走道",
     "msec":3600000
   },
   {
@@ -1257,7 +1257,7 @@ export const monsters = [
     "element":"無1",
     "size":"小",
     "image":"20928.png",
-    "location":"廢棄研究所 艾米基提亞 二樓 : 集中培養室 [網站備註] (amicitia2)",
+    "location":"廢棄研究所艾米基提亞二樓:集中培養室 (amicitia2)",
     "msec":3600000
   },
   {
@@ -1270,7 +1270,7 @@ export const monsters = [
     "element":"無1",
     "size":null,
     "image":"21395.png",
-    "location":"認知的庭園(幻影) [網站備註] (ant_d02_i)",
+    "location":"認知的庭園(幻影) (ant_d02_i)",
     "msec":3600000
   },
   {
@@ -1283,7 +1283,7 @@ export const monsters = [
     "element":"不死4",
     "size":"中",
     "image":"1038.png",
-    "location":"夢羅克金字塔 4樓 (moc_pryd04)",
+    "location":"夢羅克金字塔4樓 (moc_pryd04)",
     "msec":3600000
   },
   {
@@ -1296,7 +1296,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"1039.png",
-    "location":"公會地下密穴 (gld_dun03)",
+    "location":"公會地下密穴 (gld_dun03)",
     "msec":3600000
   },
   {
@@ -1309,7 +1309,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"1039.png",
-    "location":"普隆德拉迷宮森林 3樓 (prt_maze03)",
+    "location":"普隆德拉迷宮森林3樓 (prt_maze03)",
     "msec":7200000
   },
   {
@@ -1322,7 +1322,7 @@ export const monsters = [
     "element":"暗3",
     "size":"中",
     "image":"1046.png",
-    "location":"公會地下密穴 (gld_dun04)",
+    "location":"公會地下密穴 (gld_dun04)",
     "msec":3600000
   },
   {
@@ -1335,7 +1335,7 @@ export const monsters = [
     "element":"暗3",
     "size":"中",
     "image":"1046.png",
-    "location":"吉芬地下密穴 3樓 (gef_dun02)",
+    "location":"吉芬地下密穴3樓 (gef_dun02)",
     "msec":7200000
   },
   {
@@ -1348,7 +1348,7 @@ export const monsters = [
     "element":"暗3",
     "size":"中",
     "image":"1046.png",
-    "location":"公會地下密穴 (gld_dun02)",
+    "location":"公會地下密穴 (gld_dun02)",
     "msec":28800000
   },
   {
@@ -1361,7 +1361,7 @@ export const monsters = [
     "element":"風4",
     "size":"小",
     "image":"1059.png",
-    "location":"妙勒妙勒尼山脈北區 (mjolnir_04)",
+    "location":"妙勒妙勒尼山脈北區 (mjolnir_04)",
     "msec":7200000
   },
   {
@@ -1374,7 +1374,7 @@ export const monsters = [
     "element":"風4",
     "size":"小",
     "image":"1059.png",
-    "location":"公會地下密穴 (gld_dun02)",
+    "location":"公會地下密穴 (gld_dun02)",
     "msec":28800000
   },
   {
@@ -1387,7 +1387,7 @@ export const monsters = [
     "element":"火2",
     "size":"大",
     "image":"1086.png",
-    "location":"普隆德拉地下水道 4樓 (prt_sewb4)",
+    "location":"普隆德拉地下水道4樓 (prt_sewb4)",
     "msec":3600000
   },
   {
@@ -1400,7 +1400,7 @@ export const monsters = [
     "element":"地2",
     "size":"大",
     "image":"1087.png",
-    "location":"吉芬原野 (gef_fild03)",
+    "location":"吉芬原野 (gef_fild03)",
     "msec":3600000
   },
   {
@@ -1413,7 +1413,7 @@ export const monsters = [
     "element":"不死1",
     "size":"中",
     "image":"1112.png",
-    "location":"艾爾貝塔沈船 2樓 (treasure02)",
+    "location":"艾爾貝塔沈船2樓 (treasure02)",
     "msec":7200000
   },
   {
@@ -1426,7 +1426,7 @@ export const monsters = [
     "element":"火1",
     "size":"大",
     "image":"1115.png",
-    "location":"斐揚森林 (pay_fild10)",
+    "location":"斐揚森林 (pay_fild10)",
     "msec":7200000
   },
   {
@@ -1439,7 +1439,7 @@ export const monsters = [
     "element":"火1",
     "size":"大",
     "image":"1115.png",
-    "location":"公會地下密穴 2樓 (gld_dun01_2)",
+    "location":"公會地下密穴 (gld_dun01)",
     "msec":28800000
   },
   {
@@ -1452,7 +1452,7 @@ export const monsters = [
     "element":"火1",
     "size":"大",
     "image":"1115.png",
-    "location":"公會地下密穴 (gld_dun01)",
+    "location":"公會地下密穴2樓 (gld_dun01_2)",
     "msec":28800000
   },
   {
@@ -1465,7 +1465,7 @@ export const monsters = [
     "element":"地4",
     "size":"大",
     "image":"1147.png",
-    "location":"夢羅克螞蟻地獄密穴 2樓 (anthell02)",
+    "location":"夢羅克螞蟻地獄密穴2樓 (anthell02)",
     "msec":7200000
   },
   {
@@ -1478,7 +1478,7 @@ export const monsters = [
     "element":"地4",
     "size":"大",
     "image":"1147.png",
-    "location":"公會地下密穴 2樓 (gld_dun02_2)",
+    "location":"公會地下密穴 (gld_dun03)",
     "msec":28800000
   },
   {
@@ -1491,7 +1491,7 @@ export const monsters = [
     "element":"地4",
     "size":"大",
     "image":"1147.png",
-    "location":"公會地下密穴 (gld_dun03)",
+    "location":"公會地下密穴2樓 (gld_dun02_2)",
     "msec":28800000
   },
   {
@@ -1504,7 +1504,7 @@ export const monsters = [
     "element":"火3",
     "size":"中",
     "image":"1150.png",
-    "location":"斐揚洞穴 5樓(廢村) (pay_dun04)",
+    "location":"斐揚洞穴5樓(廢村) (pay_dun04)",
     "msec":3600000
   },
   {
@@ -1517,7 +1517,7 @@ export const monsters = [
     "element":"火3",
     "size":"中",
     "image":"1150.png",
-    "location":"公會地下密穴 (gld_dun01)",
+    "location":"公會地下密穴 (gld_dun01)",
     "msec":28800000
   },
   {
@@ -1530,7 +1530,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"1157.png",
-    "location":"夢羅克人面獅身像 地下 5樓 (in_sphinx5)",
+    "location":"夢羅克人面獅身像地下5樓 (in_sphinx5)",
     "msec":3600000
   },
   {
@@ -1543,7 +1543,7 @@ export const monsters = [
     "element":"無3",
     "size":"大",
     "image":"1159.png",
-    "location":"蘇克拉特沙漠 (moc_fild17)",
+    "location":"蘇克拉特沙漠 (moc_fild17)",
     "msec":7200000
   },
   {
@@ -1556,7 +1556,7 @@ export const monsters = [
     "element":"地4",
     "size":"大",
     "image":"1190.png",
-    "location":"獸人村 (gef_fild10)",
+    "location":"獸人村 (gef_fild10)",
     "msec":7200000
   },
   {
@@ -1569,7 +1569,7 @@ export const monsters = [
     "element":"風4",
     "size":"大",
     "image":"1251.png",
-    "location":"薑餅城玩具分類場 (xmas_dun02)",
+    "location":"薑餅城玩具分類場 (xmas_dun02)",
     "msec":3600000
   },
   {
@@ -1582,7 +1582,7 @@ export const monsters = [
     "element":"水4",
     "size":"大",
     "image":"1252.png",
-    "location":"薑餅城原野 (xmas_fild01)",
+    "location":"薑餅城原野 (xmas_fild01)",
     "msec":7200000
   },
   {
@@ -1595,7 +1595,7 @@ export const monsters = [
     "element":"不死4",
     "size":"大",
     "image":"1272.png",
-    "location":"克雷斯特漢姆古城 地下公墓 (gl_chyard)",
+    "location":"克雷斯特漢姆古城地下公墓 (gl_chyard)",
     "msec":3600000
   },
   {
@@ -1608,7 +1608,7 @@ export const monsters = [
     "element":"不死4",
     "size":"大",
     "image":"1272.png",
-    "location":"古城地下公墓(夢魘) [網站備註] (gl_chyard_)",
+    "location":"古城地下公墓(夢魘) (gl_chyard_)",
     "msec":3600000
   },
   {
@@ -1621,7 +1621,7 @@ export const monsters = [
     "element":"不死4",
     "size":"大",
     "image":"1272.png",
-    "location":"公會地下密穴 2樓 (gld_dun04_2)",
+    "location":"公會地下密穴 (gld_dun04)",
     "msec":28800000
   },
   {
@@ -1634,7 +1634,7 @@ export const monsters = [
     "element":"不死4",
     "size":"大",
     "image":"1272.png",
-    "location":"公會地下密穴 (gld_dun04)",
+    "location":"公會地下密穴2樓 (gld_dun04_2)",
     "msec":28800000
   },
   {
@@ -1647,7 +1647,7 @@ export const monsters = [
     "element":"地2",
     "size":"大",
     "image":"1312.png",
-    "location":"舊良宮 (tur_dun04)",
+    "location":"舊良宮 (tur_dun04)",
     "msec":3600000
   },
   {
@@ -1660,7 +1660,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"1373.png",
-    "location":"亡者國都 尼芙菲姆 (niflheim)",
+    "location":"亡者國都尼芙菲姆 (niflheim)",
     "msec":7980000
   },
   {
@@ -1673,7 +1673,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1389.png",
-    "location":"吉芬地下密穴 2樓 (gef_dun01)",
+    "location":"吉芬地下密穴2樓 (gef_dun01)",
     "msec":3600000
   },
   {
@@ -1686,7 +1686,7 @@ export const monsters = [
     "element":"念3",
     "size":"大",
     "image":"1418.png",
-    "location":"崑崙武陵道院 (gon_dun03)",
+    "location":"崑崙武陵道院 (gon_dun03)",
     "msec":5400000
   },
   {
@@ -1699,7 +1699,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"1492.png",
-    "location":"天津町 地下神舍 (ama_dun03)",
+    "location":"天津町地下神舍 (ama_dun03)",
     "msec":5400000
   },
   {
@@ -1712,7 +1712,7 @@ export const monsters = [
     "element":"地3",
     "size":"大",
     "image":"1511.png",
-    "location":"夢羅克金字塔 地下 2樓 (moc_pryd06)",
+    "location":"夢羅克金字塔地下2樓 (moc_pryd06)",
     "msec":3600000
   },
   {
@@ -1738,7 +1738,7 @@ export const monsters = [
     "element":"無3",
     "size":"大",
     "image":"1583.png",
-    "location":"克魔島西邊洞穴加露 (beach_dun)",
+    "location":"克魔島西邊洞穴加露 (beach_dun)",
     "msec":18000000
   },
   {
@@ -1751,7 +1751,7 @@ export const monsters = [
     "element":"無3",
     "size":"大",
     "image":"1623.png",
-    "location":"艾音貝赫礦山 2樓 (ein_dun02)",
+    "location":"艾音貝赫礦山2樓 (ein_dun02)",
     "msec":7500000
   },
   {
@@ -1764,7 +1764,7 @@ export const monsters = [
     "element":"風3",
     "size":"大",
     "image":"1630.png",
-    "location":"魔物終結塔 (2@tower) 30樓",
+    "location":"魔物終結塔 (2@tower)30樓",
     "msec":3600000
   },
   {
@@ -1777,7 +1777,7 @@ export const monsters = [
     "element":"風3",
     "size":"大",
     "image":"1630.png",
-    "location":"龍之城審良宮 (lou_dun03)",
+    "location":"龍之城審良宮 (lou_dun03)",
     "msec":7200000
   },
   {
@@ -1790,7 +1790,7 @@ export const monsters = [
     "element":"火3",
     "size":"中",
     "image":"1646.png",
-    "location":"保羅協夫的研究室 (1@lhz)",
+    "location":"保羅協夫的研究室 (1@lhz)",
     "msec":259200000
   },
   {
@@ -1803,7 +1803,7 @@ export const monsters = [
     "element":"毒4",
     "size":"中",
     "image":"1647.png",
-    "location":"保羅協夫的研究室 (1@lhz)",
+    "location":"保羅協夫的研究室 (1@lhz)",
     "msec":259200000
   },
   {
@@ -1816,7 +1816,7 @@ export const monsters = [
     "element":"地4",
     "size":"中",
     "image":"1648.png",
-    "location":"保羅協夫的研究室 (1@lhz)",
+    "location":"保羅協夫的研究室 (1@lhz)",
     "msec":259200000
   },
   {
@@ -1829,7 +1829,7 @@ export const monsters = [
     "element":"聖4",
     "size":"中",
     "image":"1649.png",
-    "location":"保羅協夫的研究室 (1@lhz)",
+    "location":"保羅協夫的研究室 (1@lhz)",
     "msec":259200000
   },
   {
@@ -1842,7 +1842,7 @@ export const monsters = [
     "element":"風4",
     "size":"中",
     "image":"1650.png",
-    "location":"保羅協夫的研究室 (1@lhz)",
+    "location":"保羅協夫的研究室 (1@lhz)",
     "msec":259200000
   },
   {
@@ -1855,7 +1855,7 @@ export const monsters = [
     "element":"念3",
     "size":"中",
     "image":"1651.png",
-    "location":"保羅協夫的研究室 (1@lhz)",
+    "location":"保羅協夫的研究室 (1@lhz)",
     "msec":259200000
   },
   {
@@ -1868,7 +1868,7 @@ export const monsters = [
     "element":"火2",
     "size":"中",
     "image":"1658.png",
-    "location":"活體實驗研究所 地下 2樓 (lhz_dun02)",
+    "location":"活體實驗研究所地下2樓 (lhz_dun02)",
     "msec":7200000
   },
   {
@@ -1881,7 +1881,7 @@ export const monsters = [
     "element":"聖2",
     "size":"大",
     "image":"1685.png",
-    "location":"優配擂斯中心部 (jupe_core)",
+    "location":"優配擂斯中心部 (jupe_core)",
     "msec":7200000
   },
   {
@@ -1894,7 +1894,7 @@ export const monsters = [
     "element":"風3",
     "size":"大",
     "image":"1688.png",
-    "location":"哎喲泰雅 古神殿內部 (ayo_dun02)",
+    "location":"哎喲泰雅古神殿內部 (ayo_dun02)",
     "msec":25800000
   },
   {
@@ -1907,7 +1907,7 @@ export const monsters = [
     "element":"念4",
     "size":"大",
     "image":"1708.png",
-    "location":"達納托斯塔台(不明區域) (thana_boss)",
+    "location":"達納托斯塔台(不明區域) (thana_boss)",
     "msec":7200000
   },
   {
@@ -1920,7 +1920,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"1719.png",
-    "location":"毀葛深淵湖水 地下洞穴 3樓 (abyss_03)",
+    "location":"毀葛深淵湖水地下洞穴3樓 (abyss_03)",
     "msec":10800000
   },
   {
@@ -1933,7 +1933,7 @@ export const monsters = [
     "element":"暗2",
     "size":"中",
     "image":"1734.png",
-    "location":"機械娃娃工廠 2樓 (kh_dun02)",
+    "location":"機械娃娃工廠2樓 (kh_dun02)",
     "msec":7200000
   },
   {
@@ -1946,7 +1946,7 @@ export const monsters = [
     "element":"聖4",
     "size":"大",
     "image":"1751.png",
-    "location":"毀葛奧丁神殿北區 (odin_tem03)",
+    "location":"毀葛奧丁神殿北區 (odin_tem03)",
     "msec":28800000
   },
   {
@@ -1959,7 +1959,7 @@ export const monsters = [
     "element":"念3",
     "size":"大",
     "image":"1768.png",
-    "location":"拉赫神殿聖域二樓中區 (ra_san05)",
+    "location":"拉赫神殿聖域二樓中區 (ra_san05)",
     "msec":18000000
   },
   {
@@ -1972,7 +1972,7 @@ export const monsters = [
     "element":"水4",
     "size":"大",
     "image":"1779.png",
-    "location":"拉赫冰穴 3樓 (ice_dun03)",
+    "location":"拉赫冰穴3樓 (ice_dun03)",
     "msec":7200000
   },
   {
@@ -1985,7 +1985,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"1785.png",
-    "location":"拉赫 伊達平原 (ra_fild03)",
+    "location":"拉赫伊達平原 (ra_fild03)",
     "msec":10800000
   },
   {
@@ -1998,7 +1998,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"1785.png",
-    "location":"菲音斯原野 (ve_fild01)",
+    "location":"菲音斯原野 (ve_fild01)",
     "msec":10800000
   },
   {
@@ -2011,7 +2011,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"1785.png",
-    "location":"拉赫 阿巫敦拉草原 (ra_fild04)",
+    "location":"拉赫阿巫敦拉草原 (ra_fild04)",
     "msec":18000000
   },
   {
@@ -2024,7 +2024,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"1785.png",
-    "location":"菲音斯原野 (ve_fild02)",
+    "location":"菲音斯原野 (ve_fild02)",
     "msec":21600000
   },
   {
@@ -2037,7 +2037,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"1785.png",
-    "location":"公會地下密穴 2樓 (gld_dun03_2)",
+    "location":"公會地下密穴2樓 (gld_dun03_2)",
     "msec":28800000
   },
   {
@@ -2050,7 +2050,7 @@ export const monsters = [
     "element":"火4",
     "size":"大",
     "image":"1832.png",
-    "location":"菲音斯 托爾火山洞穴 3樓 (thor_v03)",
+    "location":"菲音斯托爾火山洞穴3樓 (thor_v03)",
     "msec":39600000
   },
   {
@@ -2063,7 +2063,7 @@ export const monsters = [
     "element":"暗2",
     "size":"中",
     "image":"1871.png",
-    "location":"無名島修道院 地下1樓 (abbey02)",
+    "location":"無名島修道院地下1樓 (abbey02)",
     "msec":7200000
   },
   {
@@ -2076,7 +2076,7 @@ export const monsters = [
     "element":"地3",
     "size":"大",
     "image":"1885.png",
-    "location":"莫斯科森林最深處 (mosk_dun03)",
+    "location":"莫斯科森林最深處 (mosk_dun03)",
     "msec":7200000
   },
   {
@@ -2089,7 +2089,7 @@ export const monsters = [
     "element":"暗4",
     "size":"大",
     "image":"1917.png",
-    "location":"蘇克拉特沙漠次元裂縫 (moc_fild22)",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild22)",
     "msec":43200000
   },
   {
@@ -2102,7 +2102,7 @@ export const monsters = [
     "element":"地1",
     "size":"中",
     "image":"1980.png",
-    "location":"公會地下密穴 (arug_dun01)",
+    "location":"公會地下密穴 (arug_dun01)",
     "msec":28800000
   },
   {
@@ -2115,7 +2115,7 @@ export const monsters = [
     "element":"地1",
     "size":"中",
     "image":"1980.png",
-    "location":"公會地下密穴 (schg_dun01)",
+    "location":"公會地下密穴 (schg_dun01)",
     "msec":28800000
   },
   {
@@ -2128,7 +2128,7 @@ export const monsters = [
     "element":"暗2",
     "size":"大",
     "image":"2022.png",
-    "location":"尼德霍格巢穴 (2@nyd)",
+    "location":"尼德霍格巢穴 (2@nyd)",
     "msec":259200000
   },
   {
@@ -2141,7 +2141,7 @@ export const monsters = [
     "element":"火3",
     "size":"大",
     "image":"2068.png",
-    "location":"瀑布內的洞窟 (bra_dun02)",
+    "location":"瀑布內的洞窟 (bra_dun02)",
     "msec":7200000
   },
   {
@@ -2154,7 +2154,7 @@ export const monsters = [
     "element":"地3",
     "size":"大",
     "image":"2087.png",
-    "location":"斯卡勒伯熔岩 (dic_dun02)",
+    "location":"斯卡勒伯熔岩 (dic_dun02)",
     "msec":7200000
   },
   {
@@ -2167,7 +2167,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"2131.png",
-    "location":"霧林迷宮 (1@mist)",
+    "location":"霧林迷宮 (1@mist)",
     "msec":7200000
   },
   {
@@ -2180,7 +2180,7 @@ export const monsters = [
     "element":"暗2",
     "size":"大",
     "image":"2156.png",
-    "location":"喀拉喀托火山島 (dew_dun01)",
+    "location":"喀拉喀托火山島 (dew_dun01)",
     "msec":7200000
   },
   {
@@ -2193,7 +2193,7 @@ export const monsters = [
     "element":"地3",
     "size":"大",
     "image":"2165.png",
-    "location":"斯卡勒伯熔岩 (dic_dun03)",
+    "location":"斯卡勒伯熔岩 (dic_dun03)",
     "msec":7800000
   },
   {
@@ -2206,7 +2206,7 @@ export const monsters = [
     "element":"水4",
     "size":"大",
     "image":"2202.png",
-    "location":"依斯魯得島 海盜地洞密穴 6樓 (iz_dun05)",
+    "location":"依斯魯得島海盜地洞密穴6樓 (iz_dun05)",
     "msec":7200000
   },
   {
@@ -2219,7 +2219,7 @@ export const monsters = [
     "element":"水4",
     "size":"大",
     "image":"2202.png",
-    "location":"依斯魯得島 海盜地洞密穴 6樓 (iz_dun05)",
+    "location":"依斯魯得島海盜地洞密穴6樓 (iz_dun05)",
     "msec":8400000
   },
   {
@@ -2232,7 +2232,7 @@ export const monsters = [
     "element":"聖4",
     "size":"中",
     "image":"2235.png",
-    "location":"保羅協夫的研究室 (1@lhz)",
+    "location":"保羅協夫的研究室 (1@lhz)",
     "msec":259200000
   },
   {
@@ -2245,7 +2245,7 @@ export const monsters = [
     "element":"火4",
     "size":"中",
     "image":"2236.png",
-    "location":"保羅協夫的研究室 (1@lhz)",
+    "location":"保羅協夫的研究室 (1@lhz)",
     "msec":259200000
   },
   {
@@ -2258,7 +2258,7 @@ export const monsters = [
     "element":"念3",
     "size":"中",
     "image":"2237.png",
-    "location":"保羅協夫的研究室 (1@lhz)",
+    "location":"保羅協夫的研究室 (1@lhz)",
     "msec":259200000
   },
   {
@@ -2271,7 +2271,7 @@ export const monsters = [
     "element":"水4",
     "size":"中",
     "image":"2238.png",
-    "location":"保羅協夫的研究室 (1@lhz)",
+    "location":"保羅協夫的研究室 (1@lhz)",
     "msec":259200000
   },
   {
@@ -2284,7 +2284,7 @@ export const monsters = [
     "element":"毒4",
     "size":"中",
     "image":"2239.png",
-    "location":"保羅協夫的研究室 (1@lhz)",
+    "location":"保羅協夫的研究室 (1@lhz)",
     "msec":259200000
   },
   {
@@ -2297,7 +2297,7 @@ export const monsters = [
     "element":"風4",
     "size":"中",
     "image":"2240.png",
-    "location":"保羅協夫的研究室 (1@lhz)",
+    "location":"保羅協夫的研究室 (1@lhz)",
     "msec":259200000
   },
   {
@@ -2310,7 +2310,7 @@ export const monsters = [
     "element":"風4",
     "size":"中",
     "image":"2241.png",
-    "location":"保羅協夫的研究室 (1@lhz)",
+    "location":"保羅協夫的研究室 (1@lhz)",
     "msec":259200000
   },
   {
@@ -2336,7 +2336,7 @@ export const monsters = [
     "element":"火4",
     "size":"中",
     "image":"2249.png",
-    "location":"深淵迴廊 : 戰士之路 (gld2_prt)",
+    "location":"深淵迴廊:戰士之路 (gld2_prt)",
     "msec":28800000
   },
   {
@@ -2349,7 +2349,7 @@ export const monsters = [
     "element":"風4",
     "size":"大",
     "image":"2251.png",
-    "location":"深淵迴廊 : 英雄之淚 (gld2_ald)",
+    "location":"深淵迴廊:英雄之淚 (gld2_ald)",
     "msec":28800000
   },
   {
@@ -2362,7 +2362,7 @@ export const monsters = [
     "element":"地3",
     "size":"大",
     "image":"2253.png",
-    "location":"深淵迴廊 : 太古之風 (gld2_pay)",
+    "location":"深淵迴廊:太古之風 (gld2_pay)",
     "msec":28800000
   },
   {
@@ -2375,7 +2375,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"2255.png",
-    "location":"深淵迴廊 : 亡者之丘 (gld2_gef)",
+    "location":"深淵迴廊:亡者之丘 (gld2_gef)",
     "msec":28800000
   },
   {
@@ -2401,7 +2401,7 @@ export const monsters = [
     "element":"地3",
     "size":"大",
     "image":"2362.png",
-    "location":"夢羅克金字塔地下2樓 夢魘 (moc_prydn2)",
+    "location":"夢羅克金字塔地下2樓夢魘 (moc_prydn2)",
     "msec":3600000
   },
   {
@@ -2414,7 +2414,7 @@ export const monsters = [
     "element":"火4",
     "size":"中",
     "image":"2441.png",
-    "location":"公會地下密穴 葛洛麗雅(普隆德拉) [網站備註] (teg_dun01)",
+    "location":"公會地下密穴葛洛麗雅(普隆德拉) (teg_dun01)",
     "msec":3600000
   },
   {
@@ -2427,7 +2427,7 @@ export const monsters = [
     "element":"火4",
     "size":"中",
     "image":"2442.png",
-    "location":"公會地下密穴 卡普拉賈登(艾爾帕蘭) [網站備註] (teg_dun02)",
+    "location":"公會地下密穴卡普拉賈登(艾爾帕蘭) (teg_dun02)",
     "msec":3600000
   },
   {
@@ -2453,7 +2453,7 @@ export const monsters = [
     "element":"念1",
     "size":"大",
     "image":"2996.png",
-    "location":"恐怖玩具工廠 (1@xm_d)",
+    "location":"恐怖玩具工廠 (1@xm_d)",
     "msec":3600000
   },
   {
@@ -2466,7 +2466,7 @@ export const monsters = [
     "element":"不死4",
     "size":"大",
     "image":"3029.png",
-    "location":"拜歐斯島 (1@dth3)",
+    "location":"拜歐斯島 (1@dth3)",
     "msec":3600000
   },
   {
@@ -2479,7 +2479,7 @@ export const monsters = [
     "element":"無4",
     "size":"大",
     "image":"3074.png",
-    "location":"夢魘密穴鐘塔 3樓 (c_tower3_)",
+    "location":"夢魘密穴鐘塔3樓 (c_tower3_)",
     "msec":7200000
   },
   {
@@ -2492,7 +2492,7 @@ export const monsters = [
     "element":"毒4",
     "size":"中",
     "image":"3220.png",
-    "location":"戰死者之墓 (lhz_dun_n)",
+    "location":"戰死者之墓 (lhz_dun_n)",
     "msec":7200000
   },
   {
@@ -2505,7 +2505,7 @@ export const monsters = [
     "element":"聖4",
     "size":"中",
     "image":"3221.png",
-    "location":"戰死者之墓 (lhz_dun_n)",
+    "location":"戰死者之墓 (lhz_dun_n)",
     "msec":7200000
   },
   {
@@ -2518,7 +2518,7 @@ export const monsters = [
     "element":"風4",
     "size":"中",
     "image":"3222.png",
-    "location":"戰死者之墓 (lhz_dun_n)",
+    "location":"戰死者之墓 (lhz_dun_n)",
     "msec":7200000
   },
   {
@@ -2531,7 +2531,7 @@ export const monsters = [
     "element":"水4",
     "size":"中",
     "image":"3223.png",
-    "location":"戰死者之墓 (lhz_dun_n)",
+    "location":"戰死者之墓 (lhz_dun_n)",
     "msec":7200000
   },
   {
@@ -2544,7 +2544,7 @@ export const monsters = [
     "element":"念4",
     "size":"中",
     "image":"3224.png",
-    "location":"戰死者之墓 (lhz_dun_n)",
+    "location":"戰死者之墓 (lhz_dun_n)",
     "msec":7200000
   },
   {
@@ -2557,7 +2557,7 @@ export const monsters = [
     "element":"火4",
     "size":"中",
     "image":"3225.png",
-    "location":"戰死者之墓 (lhz_dun_n)",
+    "location":"戰死者之墓 (lhz_dun_n)",
     "msec":7200000
   },
   {
@@ -2570,7 +2570,7 @@ export const monsters = [
     "element":"聖4",
     "size":"中",
     "image":"3240.png",
-    "location":"戰死者之墓 (lhz_dun_n)",
+    "location":"戰死者之墓 (lhz_dun_n)",
     "msec":7200000
   },
   {
@@ -2583,7 +2583,7 @@ export const monsters = [
     "element":"火4",
     "size":"中",
     "image":"3241.png",
-    "location":"戰死者之墓 (lhz_dun_n)",
+    "location":"戰死者之墓 (lhz_dun_n)",
     "msec":7200000
   },
   {
@@ -2596,7 +2596,7 @@ export const monsters = [
     "element":"念4",
     "size":"中",
     "image":"3242.png",
-    "location":"戰死者之墓 (lhz_dun_n)",
+    "location":"戰死者之墓 (lhz_dun_n)",
     "msec":7200000
   },
   {
@@ -2609,7 +2609,7 @@ export const monsters = [
     "element":"水4",
     "size":"中",
     "image":"3243.png",
-    "location":"戰死者之墓 (lhz_dun_n)",
+    "location":"戰死者之墓 (lhz_dun_n)",
     "msec":7200000
   },
   {
@@ -2622,7 +2622,7 @@ export const monsters = [
     "element":"毒4",
     "size":"中",
     "image":"3244.png",
-    "location":"戰死者之墓 (lhz_dun_n)",
+    "location":"戰死者之墓 (lhz_dun_n)",
     "msec":7200000
   },
   {
@@ -2635,7 +2635,7 @@ export const monsters = [
     "element":"風4",
     "size":"中",
     "image":"3245.png",
-    "location":"戰死者之墓 (lhz_dun_n)",
+    "location":"戰死者之墓 (lhz_dun_n)",
     "msec":7200000
   },
   {
@@ -2648,7 +2648,7 @@ export const monsters = [
     "element":"風4",
     "size":"中",
     "image":"3246.png",
-    "location":"戰死者之墓 (lhz_dun_n)",
+    "location":"戰死者之墓 (lhz_dun_n)",
     "msec":7200000
   },
   {
@@ -2661,7 +2661,7 @@ export const monsters = [
     "element":"地3",
     "size":"中",
     "image":"3505.png",
-    "location":"龍巢穴1樓 (lasa_dun01)",
+    "location":"龍巢穴1樓 (lasa_dun01)",
     "msec":3600000
   },
   {
@@ -2674,7 +2674,7 @@ export const monsters = [
     "element":"無2",
     "size":"大",
     "image":"3741.png",
-    "location":"洛克理奇岩嶺礦山 (rockmi1)",
+    "location":"洛克理奇岩嶺礦山 (rockmi1)",
     "msec":7200000
   },
   {
@@ -2687,7 +2687,7 @@ export const monsters = [
     "element":"水4",
     "size":"大",
     "image":"3796.png",
-    "location":"極凍幻影 (ice_d03_i) 中央",
+    "location":"極凍幻影 (ice_d03_i)中央",
     "msec":72000000
   },
   {
@@ -2700,7 +2700,7 @@ export const monsters = [
     "element":"聖4",
     "size":"大",
     "image":"20260.png",
-    "location":"羅斯里安帝國 (ein_d02_i) 中央",
+    "location":"羅斯里安帝國 (ein_d02_i)中央",
     "msec":3600000
   },
   {
@@ -2713,7 +2713,7 @@ export const monsters = [
     "element":"無3",
     "size":"大",
     "image":"20273.png",
-    "location":"北邊洞穴盧安達 (com_d02_i)",
+    "location":"北邊洞穴盧安達 (com_d02_i)",
     "msec":3600000
   },
   {
@@ -2726,7 +2726,7 @@ export const monsters = [
     "element":"火4",
     "size":"大",
     "image":"20277.png",
-    "location":"北邊洞穴盧安達 (com_d02_i)",
+    "location":"北邊洞穴盧安達 (com_d02_i)",
     "msec":3600000
   },
   {
@@ -2739,7 +2739,7 @@ export const monsters = [
     "element":"無3",
     "size":"中",
     "image":"20386.png",
-    "location":"克雷斯特漢姆的沒落 (1@gl_prq) 簡易模式 - 尾王",
+    "location":"克雷斯特漢姆的沒落 (1@gl_prq)簡易模式-尾王",
     "msec":86400000
   },
   {
@@ -2752,7 +2752,7 @@ export const monsters = [
     "element":"無3",
     "size":"中",
     "image":"20387.png",
-    "location":"克雷斯特漢姆的沒落 (1@gl_prq) 困難模式 - 尾王",
+    "location":"克雷斯特漢姆的沒落 (1@gl_prq)困難模式-尾王",
     "msec":259200000
   },
   {
@@ -2765,7 +2765,7 @@ export const monsters = [
     "element":"火3",
     "size":"中",
     "image":"20419.png",
-    "location":"朱諾 諾可羅德 3樓 (mag_dun03)",
+    "location":"朱諾諾可羅德3樓 (mag_dun03)",
     "msec":259200000
   },
   {
@@ -2778,7 +2778,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"20421.png",
-    "location":"克雷斯特漢姆古城深淵1樓 (gl_cas01_)",
+    "location":"克雷斯特漢姆古城深淵1樓 (gl_cas01_)",
     "msec":7620000
   },
   {
@@ -2791,7 +2791,7 @@ export const monsters = [
     "element":"不死3",
     "size":"大",
     "image":"20422.png",
-    "location":"克雷斯特漢姆古城深淵1樓 (gl_cas01_)",
+    "location":"克雷斯特漢姆古城深淵1樓 (gl_cas01_)",
     "msec":7800000
   },
   {
@@ -2804,7 +2804,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"20520.png",
-    "location":"扭曲的迷宮森林 (prt_mz03_i)",
+    "location":"扭曲的迷宮森林 (prt_mz03_i)",
     "msec":3600000
   },
   {
@@ -2817,7 +2817,7 @@ export const monsters = [
     "element":"火2",
     "size":"中",
     "image":"20536.png",
-    "location":"停屍間 (1@gol2)",
+    "location":"停屍間 (1@gol2)",
     "msec":3600000
   },
   {
@@ -2830,7 +2830,7 @@ export const monsters = [
     "element":"聖3",
     "size":"中",
     "image":"20572.png",
-    "location":"污染的次元 (1@gl_he)",
+    "location":"污染的次元 (1@gl_he)",
     "msec":3600000
   },
   {
@@ -2843,7 +2843,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"20573.png",
-    "location":"污染的次元 (1@gl_he)",
+    "location":"污染的次元 (1@gl_he)",
     "msec":3600000
   },
   {
@@ -2856,7 +2856,7 @@ export const monsters = [
     "element":"無4",
     "size":"大",
     "image":"20601.png",
-    "location":"艾音貝赫礦山3樓 (ein_dun03)",
+    "location":"艾音貝赫礦山3樓 (ein_dun03)",
     "msec":3600000
   },
   {
@@ -2869,7 +2869,7 @@ export const monsters = [
     "element":"火4",
     "size":"中",
     "image":"20610.png",
-    "location":"古代奧丁神殿 (odin_past)",
+    "location":"古代奧丁神殿 (odin_past)",
     "msec":3600000
   },
   {
@@ -2882,7 +2882,7 @@ export const monsters = [
     "element":"水4",
     "size":"中",
     "image":"20611.png",
-    "location":"古代奧丁神殿 (odin_past)",
+    "location":"古代奧丁神殿 (odin_past)",
     "msec":3600000
   },
   {
@@ -2895,7 +2895,7 @@ export const monsters = [
     "element":"不死4",
     "size":"大",
     "image":"20618.png",
-    "location":"毀葛深淵湖水地下洞穴4樓 (abyss_04)",
+    "location":"毀葛深淵湖水地下洞穴4樓 (abyss_04)",
     "msec":3600000
   },
   {
@@ -2908,7 +2908,7 @@ export const monsters = [
     "element":"火3",
     "size":"小",
     "image":"20648.png",
-    "location":"失落的山谷飼養場 (ba_lost)",
+    "location":"失落的山谷飼養場 (ba_lost)",
     "msec":3600000
   },
   {
@@ -2921,7 +2921,7 @@ export const monsters = [
     "element":"水4",
     "size":"大",
     "image":"20811.png",
-    "location":"深淵海底洞穴下層樓 (iz_d05_i)",
+    "location":"深淵海底洞穴下層樓 (iz_d05_i)",
     "msec":3600000
   },
   {
@@ -2934,7 +2934,7 @@ export const monsters = [
     "element":"暗3",
     "size":"大",
     "image":"20843.png",
-    "location":"深淵海底洞穴上層樓 (iz_d04_i)",
+    "location":"深淵海底洞穴上層樓 (iz_d04_i)",
     "msec":3600000
   },
   {
@@ -2960,7 +2960,7 @@ export const monsters = [
     "element":"暗2",
     "size":"大",
     "image":"20934.png",
-    "location":"實驗體廢棄場魯杜斯四樓 [網站備註] (sp_rudus4)",
+    "location":"實驗體廢棄場魯杜斯四樓 (sp_rudus4)",
     "msec":3600000
   },
   {
@@ -2973,7 +2973,7 @@ export const monsters = [
     "element":"無1",
     "size":"小",
     "image":"20943.png",
-    "location":"尼芙菲姆密穴 二樓 : 崩毀的歌劇院 [網站備註] (nif_dun02)",
+    "location":"尼芙菲姆密穴二樓:崩毀的歌劇院 (nif_dun02)",
     "msec":3600000
   },
   {
@@ -2986,7 +2986,7 @@ export const monsters = [
     "element":"無1",
     "size":null,
     "image":"21301.png",
-    "location":"奧茲迷宮2F [網站備註] (oz_dun02)",
+    "location":"奧茲迷宮2F (oz_dun02)",
     "msec":3600000
   }
 ]

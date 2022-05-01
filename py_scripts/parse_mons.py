@@ -52,6 +52,8 @@ result["img"] = result.apply(lambda x: str(x["ID"]) + ".png" if pd.notna(x["img"
 
 #結合地圖與樓層資訊
 result["location"] = result["location"] + result["floor"].apply(lambda x: " " + x if pd.notna(x) else "")
+result["location"] = result["location"].replace(r"( |\[網站備註\])", "", regex=True)
+result["location"] = result["location"].replace(r" ", " ", regex=True)
 
 #只取需要的欄位
 result = result.filter(items=["ID", "isMVP","名稱","Lv↑","種族","屬性","體型", "img", "location", "msec"], axis=1)
