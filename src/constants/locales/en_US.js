@@ -4,9 +4,10 @@ const en_US = {
     welcome: "Welcome to Ragnarok Tools",
     loading: "Loading..."
   },
-  mvp: {
+  timer: {
     title: "MVP Timer",
     search: "Monster name or monster ID",
+    checkTimer: "Click to select timers",
     respawn: "Respawn Time",
     checked: "{0} / {1} Selected",
     editTitle: "Custom Time",

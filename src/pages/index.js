@@ -15,7 +15,7 @@ export default function Home({ locale, intl }) {
 
           <span>
             <ArrowForward />
-            <a href={ `${ locale }/timer` }>{ intl.mvp.title }</a>
+            <a href={ `${ locale }/timer` }>{ intl.timer.title }</a>
           </span>
         </main>
 

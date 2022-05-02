@@ -6,7 +6,7 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button'
 import { 
-  DAY, SECOND, getFormatedTime, parseToMSEC 
+  MINUTE, SECOND, getFormatedTime, parseToMSEC 
 } from '../../constants/dateTime'
 
 export default class MonsterCard extends Component {
@@ -23,7 +23,7 @@ export default class MonsterCard extends Component {
 
   timing() {
     const { time } = this.state
-    time < -DAY ? this.switch(false) : this.setState({ time: time - SECOND })
+    time <= -MINUTE ? this.switch(false) : this.setState({ time: time - SECOND })
   }
 
   switch(on) {
@@ -67,15 +67,18 @@ export default class MonsterCard extends Component {
     const img = "/static/images/" + (monster.image ? monster.image : "egg.png")
 
     return (
-      <div className={ `monster-card${ isStart ? " timer" : "" }` }>
+      <div className={ `monster-card${ 
+          isStart ? " timer" : "" 
+        }${ 
+          time < 0 ? " appeared" : time < MINUTE ? " alert" : ""
+        }` 
+      }>
         <div 
           className = "avatar"
           onClick   = { () => this.switch(!isStart) }
           onContextMenu = { e => this.editTime(e) }
         >
-          <div className={ 
-            `time${ isStart ? " timer" : "" }${ time < 0 ? " appeared" : "" }` 
-          }>
+          <div className="time">
             { getFormatedTime(time) }
           </div>
 
@@ -88,8 +91,6 @@ export default class MonsterCard extends Component {
 
         <div className="info">
           <div>{ monster.name }</div>
-
-          <div className="note">{ `ID ${ monster.roId }` }</div>
           
           <div className="location">{ monster.location }</div>
         </div>
@@ -99,9 +100,9 @@ export default class MonsterCard extends Component {
           open      = { isEdit } 
           onClose   = { () => this.handleEditClose() }
         >
-          <DialogTitle>{ intl.mvp.editTitle }</DialogTitle>
+          <DialogTitle>{ intl.timer.editTitle }</DialogTitle>
           <div className="desc">
-            { intl.mvp.editDesc }
+            { intl.timer.editDesc }
           </div>
           <DialogContent>
             <TextField
@@ -119,7 +120,7 @@ export default class MonsterCard extends Component {
           </DialogContent>
           <DialogActions>
             <Button onClick={() => this.handleEditOk() }>
-              { intl.mvp.editSubmit }
+              { intl.timer.editSubmit }
             </Button>
           </DialogActions>
         </Dialog>

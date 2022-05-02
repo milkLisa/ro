@@ -1,3 +1,10 @@
+/* Device */
+$mini-mobile: 320px;
+$smaller-mobile: 540px;
+$mobile: 768px;
+$pad: 1024px;
+$desktop: 1200px;
+
 /* Size */
 $mini-size: 0.5rem;
 $small-size: 0.8rem;
@@ -18,11 +25,26 @@ $main-color: #8192c8;
 $secondary-color: #fcc08a;
 $note-color: #c1c5c9;
 $font-color: #3C3C3C;
+$bg-color: #ddd;
+$border-color: #bbb;
+$mask-color: rgba(255, 255, 255, 0.65);
+$card-shadow: 2px 2px 1px $note-color;
+
+$timer-color: #adb4d1;
+$timer-bg-color: #c6f1fc;
+$timer-shadow: inset 0 0 0 3px $mask-color;
 $alert-color: #bf565b;
-$disable-color: #eee;
-$enable-color: #fffaf5;
-$border-color: #ddd;
-$mask-color: rgba(255,255,255,0.65);
+$alert-bg-color: #fcdbdc;
+$appeared-color: #22c42a;
+$appeared-bg-color: #bffbc1;
+$time-text-shadow: #fff 0 2px,
+  #fff 2px 0,
+  #fff -2px 0,
+  #fff 0 -2px,
+  #fff -1.4px -1.4px,
+  #fff 1.4px 1.4px,
+  #fff 1.4px -1.4px,
+  #fff -1.4px 1.4px;
 
 @mixin default-font-family() {
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
@@ -62,6 +84,10 @@ $mask-color: rgba(255,255,255,0.65);
   }
 }
 
+@mixin timing-shadow($color) {
+  box-shadow: $color 2px 2px 1px;
+}
+
 main {
   flex: 1;
   display: flex;
@@ -80,8 +106,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px;
-  width: 100%;
+  margin: 10px 0 5px 10px;
+  width: 90%;
 
   .search-field input {
     margin-left: 32px;
@@ -96,10 +122,6 @@ a {
     @include large-button();
     display: flex;
     flex-direction: column;
-
-    svg {
-      font-size: $middle-size;
-    }
 
     span {
       color: $note-color;
@@ -134,7 +156,7 @@ a {
 }
 
 .monster-card {
-  max-width: 100px;
+  width: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,11 +166,12 @@ a {
     width: 80px;
     height: 80px;
     position: relative;
-    background: $disable-color center 0px no-repeat;
+    background: $bg-color center 0px no-repeat;
     border: 3px solid $border-color;
     border-radius: 10px;
-    box-shadow: inset 0 0 0 3px $mask-color;
-    opacity: 0.5;
+    box-shadow: $timer-shadow;
+    opacity: 0.3;
+    cursor: pointer;
 
     .time {
       width: 100%;
@@ -156,7 +179,7 @@ a {
       position: absolute;
       bottom: 0px;
       background-color: $mask-color;
-      border-radius: 0 0 8px 8px;
+      border-radius: 0 0 7px 7px;
     }
   }
 
@@ -174,24 +197,22 @@ a {
     }
 
     .note, .location {
+      font-size: $mini-size;
       color: $note-color;
     }
   }
 
   &.timer {
     .avatar {
-      border: 3px solid $secondary-color;
-      background-color: $secondary-color;
+      border: 3px solid $timer-color;
+      background-color: $timer-bg-color;
       opacity: 1;
+      @include timing-shadow($timer-color);
 
       .time {
         color: $font-color;
         font-weight: $bold-weight;
-        text-shadow: #fff 0 2px, #fff 2px 0, #fff -2px 0, #fff 0 -2px, #fff -1.4px -1.4px, #fff 1.4px 1.4px, #fff 1.4px -1.4px, #fff -1.4px 1.4px;
-      }
-
-      .appeared {
-        color: $alert-color;
+        text-shadow: $time-text-shadow;
       }
     }
 
@@ -201,6 +222,26 @@ a {
       }
     }
   }
+
+  &.alert .avatar {
+    border: 3px solid $alert-color;
+    background-color: $alert-bg-color;
+    @include timing-shadow($alert-color);
+
+    .time {
+      color: $alert-color;
+    }
+  }
+  
+  &.appeared .avatar {
+    border: 3px solid $appeared-color;
+    background-color: $appeared-bg-color;
+    @include timing-shadow($appeared-color);
+  
+    .time {
+      color: $appeared-color;
+    }
+  }
 }
 
 .timer-card, .check-card {
@@ -208,12 +249,12 @@ a {
   align-items: center;
   border: 1px solid $note-color;
   border-radius: 5px;
-  box-shadow: 2px 2px 1px $note-color;
+  box-shadow: $card-shadow;
   padding: 5px;
   width: 300px;
 
   &.timer {
-    border: 3px solid $secondary-color;
+    border: 3px solid $timer-color;
     padding: 3px;
   }
 
@@ -227,9 +268,10 @@ a {
       &:first-child {
         display: flex;
         justify-content: center;
-        padding: 5px;
         width: $avatar-size;
         height: $avatar-size;
+        padding: 5px;
+        margin: 5px 0;
       }
 
       &:last-child {
@@ -243,10 +285,10 @@ a {
     
     img {
       width: auto;
-      height: 100%;
       font-size: $small-size;
       color: $note-color;
       text-align: center;
+      align-self: center;
     }
 
     .desc, .note {
@@ -291,8 +333,13 @@ a {
       align-items: center;
       justify-content: space-between;
       font-weight: $bold-weight;
-      height: 48px;
+      height: $avatar-size;
       padding-top: 5px;
+      margin: 5px 0;
+
+      .check {
+        color: $main-color;
+      }
     }
 
     .time {
@@ -304,8 +351,12 @@ a {
       border-radius: 5px 20px;
       margin: 5px;
         
-      .appeared {
+      .alert {
         color: $alert-color;
+      }
+
+      .appeared {
+        color: $appeared-color;
       }
 
       .play button {
@@ -316,7 +367,7 @@ a {
   }
   
   .timer {
-    color: $secondary-color;
+    color: $timer-color;
     font-weight: $bold-weight;
   }
 

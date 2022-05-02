@@ -4,9 +4,10 @@ const zh_TW = {
     welcome: "歡迎來到Ragnarok工具庫",
     loading: "讀取中..."
   },
-  mvp: {
+  timer: {
     title: "MVP計時器",
     search: "輸入魔物名稱或ID",
+    checkTimer: "選取計時器",
     respawn: "重生時間",
     checked: "已選取 {0} / {1}",
     editTitle: "自訂時間",

@@ -1,4 +1,3 @@
-
 import { monsters } from '../../constants/monsters'
 
 export default function handler(req, res) {

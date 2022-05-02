@@ -1,7 +1,7 @@
 {
-  "short_name": "MVP Timer",
-  "name": "Ragnarok MVP Timer",
-  "description": "Ragnarok Tools",
+  "short_name": "RO MVP Timer",
+  "name": "Ragnarok Online MVP Timer",
+  "description": "List most of all mvp timer, for player easy to timering the respawn time",
   "icons": [
     {
       "src": "/static/icons/icon-36x36.png",

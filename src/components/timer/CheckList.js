@@ -70,7 +70,7 @@ export default function CheckList({ intl, checkedMons, onClose, onCheck }) {
           fullWidth       = { true }
           margin          = "none"
           variant         = "outlined"
-          placeholder     = { intl.mvp.search }
+          placeholder     = { intl.timer.search }
           value           = { searchText }
           className       = "search-field"
           onChange        = { e => setSearchText(e.target.value) }
@@ -89,7 +89,7 @@ export default function CheckList({ intl, checkedMons, onClose, onCheck }) {
         </IconButton>
       </div>
       
-      <div>{ format(intl.mvp.checked, count, monsters.length) }</div>
+      <div>{ format(intl.timer.checked, count, monsters.length) }</div>
 
       <div className="list">
         { 

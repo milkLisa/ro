@@ -19,17 +19,18 @@ export default function TimerList({ intl }) {
   return (
     <Container className="container">
       <div>
+        <span>{ intl.timer.checkTimer }</span>
         <IconButton
           aria-label  = "add timer"
           className   = "big-btn"
-          onClick     = { () => setIsOpen(true)  }
+          onClick     = { () => setIsOpen(true) }
         >
           <TableViewIcon />
         </IconButton>
 
         <Drawer
           anchor      = "bottom"
-          ModalProps  = {{ keepMounted: true }}
+          ModalProps  = { { keepMounted: true } }
           open        = { isOpen }
           onClose     = { () => setIsOpen(false) }
         >

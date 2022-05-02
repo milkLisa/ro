@@ -6,10 +6,9 @@ import TimerList from '../../components/timer/TimerList'
 export default function Home({ intl }) {
   return (
     <StyledEngineProvider injectFirst>
+      <HtmlHead title={ intl.timer.title } />
       
-      <HtmlHead title={ intl.mvp.title } />
-      
-      <Layout title={ intl.mvp.title }>
+      <Layout title={ intl.timer.title }>
         <TimerList intl={ intl } />
       </Layout>
     </StyledEngineProvider>

@@ -60,7 +60,7 @@ export default function CheckCard({ intl, monster, isChecked, onCheck }) {
         </div>
         
         <div className="desc">
-          <span>{ intl.mvp.respawn }</span>
+          <span>{ intl.timer.respawn }</span>
           <span>{ getFormatedTime(monster.msec) }</span>
         </div>
         
