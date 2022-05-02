@@ -4,7 +4,7 @@ import Drawer from '@mui/material/Drawer'
 import IconButton from '@mui/material/IconButton'
 import TableViewIcon from '@mui/icons-material/TableView'
 import CheckList from './CheckList'
-import TimerCard from './TimerCard'
+import MonsterCard from './MonsterCard'
 
 export default function TimerList({ intl }) {
   const [ monsters, setMonsters ] = useState([])
@@ -45,7 +45,8 @@ export default function TimerList({ intl }) {
       <div className="list">
         { 
           monsters.map(mon => (
-            <TimerCard 
+            <MonsterCard 
+              intl    = { intl }
               key     = { `${ mon.id }` } 
               monster = { mon }
             />

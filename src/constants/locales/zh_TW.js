@@ -7,8 +7,11 @@ const zh_TW = {
   mvp: {
     title: "MVP計時器",
     search: "輸入魔物名稱或ID",
-    respwan: "重生時間",
-    checked: "已選取 {0} / {1}"
+    respawn: "重生時間",
+    checked: "已選取 {0} / {1}",
+    editTitle: "自訂時間",
+    editDesc: "請輸入剩餘分鐘數, 或以符號分隔的時分秒數, 如[時.分.秒]、[時 分 秒]",
+    editSubmit: "確定"
   },
   monsters: {
     race: {

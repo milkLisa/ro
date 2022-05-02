@@ -27,7 +27,7 @@ export default function CheckCard({ intl, monster, isChecked, onCheck }) {
         </div>
         
         <div>
-          <div className="note">
+          <div className="desc">
             <span>{ `ID ${ monster.roId }` }</span>
           </div>
 
@@ -36,7 +36,7 @@ export default function CheckCard({ intl, monster, isChecked, onCheck }) {
             <span>{ `Lv.${ monster.level }` }</span>
           </div>
 
-          <div className="note">
+          <div className="desc">
             <span>{ monster.race }</span>
             <span>{ monster.element }</span>
             <span>{ monster.size }</span>
@@ -60,7 +60,7 @@ export default function CheckCard({ intl, monster, isChecked, onCheck }) {
         </div>
         
         <div className="desc">
-          <span>{ intl.mvp.respwan }</span>
+          <span>{ intl.mvp.respawn }</span>
           <span>{ getFormatedTime(monster.msec) }</span>
         </div>
         

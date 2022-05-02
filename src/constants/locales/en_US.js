@@ -6,9 +6,12 @@ const en_US = {
   },
   mvp: {
     title: "MVP Timer",
-    search: "input monster name or monster ID",
-    respwan: "respwan time",
-    checked: "{0} / {1} Selected"
+    search: "Monster name or monster ID",
+    respawn: "Respawn Time",
+    checked: "{0} / {1} Selected",
+    editTitle: "Custom Time",
+    editDesc: "Please enter remaining minutes, or time in [H.m.s] / [H m s] format",
+    editSubmit: "OK"
   },
   monsters: {
     race: {
