@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Container from '@mui/material/Container'
 import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
@@ -7,25 +7,11 @@ import SearchIcon from '@mui/icons-material/Search'
 import CheckCard from './CheckCard'
 import { trimStr, format } from '../../utils/parser'
 
-export default function CheckList({ intl, checkedMons, onClose, onCheck }) {
-  const [ monsters, setMonsters ]       = useState([])
-  const [ leftList, setLeftList ]       = useState([])
-  const [ checkedList, setCheckedList ] = useState([])
-  const [ count, setCount ]             = useState(0)
+export default function CheckList({ intl, monsters, checkedMons, onClose, onCheck }) {
+  const [ leftList, setLeftList ]       = useState(monsters)
+  const [ checkedList, setCheckedList ] = useState(checkedMons)
+  const [ count, setCount ]             = useState(checkedMons.length)
   const [ searchText, setSearchText]    = useState("")
-
-  useEffect(() => {
-    fetch("/api/monsters")
-      .then((res) => res.json())
-      .then((data) => {
-        setMonsters(data)
-        setLeftList(data)
-
-        const list = data.filter(mon => checkedMons.includes(mon.id))
-        setCheckedList(list)
-        setCount(list.length)
-      })
-  }, [])
 
   const search = keywords => {
     setSearchText(keywords)
@@ -50,8 +36,8 @@ export default function CheckList({ intl, checkedMons, onClose, onCheck }) {
     setCount(checkedList.length)
     onCheck(checkedList)
   }
-  
-  if(!monsters.length) 
+
+  if (!monsters || !monsters.length) 
     return <Container className="container">{ intl.main.loading }</Container>
 
   return (
@@ -95,10 +81,10 @@ export default function CheckList({ intl, checkedMons, onClose, onCheck }) {
         { 
           leftList.map(mon => (
             <CheckCard 
-              key       = { `${ mon.id }` } 
+              key       = { `${ mon.id }${ mon.roId }` } 
               monster   = { mon }
               intl      = { intl }
-              isChecked = { checkedList.includes(mon) }
+              isChecked = { checkedList.find(item => item.id == mon.id) }
               onCheck   = { changeList }
             />
           ))

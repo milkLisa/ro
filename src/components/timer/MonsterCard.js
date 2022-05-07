@@ -5,6 +5,7 @@ import DialogTitle from '@mui/material/DialogTitle'
 import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button'
+import { updateData } from '../../utils/ajax'
 import { 
   MINUTE, SECOND, getFormatedTime, parseToMSEC 
 } from '../../constants/dateTime'
@@ -14,11 +15,28 @@ export default class MonsterCard extends Component {
     isStart: false,
     isEdit: false,
     editText: "",
-    time: this.props.monster.msec
+    defaultTime: this.props.monster.msec,
+    time: this.initTime()
+  }
+
+  componentDidMount() {
+    const { monster } = this.props
+    const { time } = this.state
+    if (monster.utcMSEC) {
+      time == monster.msec 
+      ? updateData("/api/timers", { id: monster.id, utcMSEC: null }) 
+      : this.switch(true, true)
+    }
   }
 
   componentWillUnmount() {
     this.switch(false)
+  }
+
+  initTime() {
+    const { monster } = this.props
+    const msec = monster.utcMSEC ? monster.utcMSEC - Date.now() : 0
+    return msec < SECOND ? monster.msec : msec
   }
 
   timing() {
@@ -26,13 +44,19 @@ export default class MonsterCard extends Component {
     time <= -MINUTE ? this.switch(false) : this.setState({ time: time - SECOND })
   }
 
-  switch(on) {
+  switch(on, dontSave) {
     if (on) {
       this.timer = setInterval(() => this.timing(), SECOND)
       this.setState({ isStart: true })
     } else {
-      clearInterval(this.timer)
-      this.setState({ isStart: false, time: this.props.monster.msec })
+      if (this.timer) clearInterval(this.timer)
+      this.setState({ isStart: false, time: this.state.defaultTime })
+    }
+
+    if (!dontSave) {
+      const { monster } = this.props
+      const msec = on ? monster.msec + Date.now() : null
+      updateData("/api/timers", { id: monster.id, utcMSEC: msec })
     }
   }
 
@@ -65,7 +89,7 @@ export default class MonsterCard extends Component {
     const { monster, intl } = this.props
     const { isStart, isEdit, editText, time } = this.state
     const img = "/static/images/" + (monster.image ? monster.image : "egg.png")
-
+    
     return (
       <div className={ `monster-card${ 
           isStart ? " timer" : "" 

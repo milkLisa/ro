@@ -1,10 +1,12 @@
-const cacheName="timer-cache-v1"
-const CacheNames=[
-  cacheName,
-]
+const cacheName = "timer-cache-v1"
+const CacheNames = [cacheName]
 
 const appShellFiles=[
-  "/"
+  //"/"
+]
+
+const freshFileNames = [
+  //"manifest.json"
 ]
 
 self.addEventListener("install", event => {
@@ -17,13 +19,8 @@ self.addEventListener("install", event => {
   event.waitUntil(preCache())
 })
 
-self.addEventListener("fetch", event => {
-  console.log("[Service Worker] Fetch url: ", event.request.url)
-  return event.respondWith(networkFirstStrategy(event.request))
-})
-
-self.addEventListener("activate", (event) => {
-    console.log("[Service Worker] From SW: Activate Event")
+self.addEventListener("activate", event => {
+    console.log("[Service Worker] Activate Event")
     self.clients.claim()
     const clearCache = async () => {
         const keys = await caches.keys()
@@ -34,24 +31,31 @@ self.addEventListener("activate", (event) => {
             await caches.delete(k)
         })
     }
-    event.waitUntil(clearCache())
+  event.waitUntil(clearCache())
 })
 
-const cacheFirstStrategy = async (request) => {
-  const cacheResponse = await caches.match(request)
-  return cacheResponse || fetchRequestandCache(request)
-}
+self.addEventListener("fetch", event => {
+  const requestUrl = new URL(event.request.url)
+  const requestPath = requestUrl.pathname
+  const fileName = requestPath.substring(requestPath.lastIndexOf("/") + 1)
+  if (freshFileNames.indexOf(fileName) > -1 ||
+      requestPath.indexOf("/api/") > -1) {
+    return event.respondWith(fetch(event.request))
+  } else {
+    console.log("[Service Worker] Fetch url: ", event.request.url)
+    return event.respondWith(networkFirstStrategy(event.request))
+  }
+})
 
 const networkFirstStrategy = async (request) => {
   try {
-    return await fetchRequestandCache(request)
+    return await fetchRequestAndCache(request)
   } catch (ex) {
-    console.log(`[Catch] Fetch ${ request.url } : ${ ex.message }`)
     return await caches.match(request)
   }
 }
 
-const fetchRequestandCache = async (request) => {
+const fetchRequestAndCache = async (request) => {
   const networkResponse = await fetch(request)
   const clonedResponse = networkResponse.clone()
   const cache = await caches.open(cacheName)
