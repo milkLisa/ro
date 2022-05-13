@@ -52,6 +52,7 @@ export async function del(url, data) {
 
 const fetchApi = async (url, options) => {
   const apiName = url.substring(url.lastIndexOf("/") + 1)
+  console.log("Fetch API: ", apiName)
 
   let isDBSupport = true
   const db = await openDB(DB_NAME, 1, {
@@ -81,14 +82,17 @@ const fetchApi = async (url, options) => {
 }
 
 const fetchFromNetwork = async (url, options) => {
-  return await fetch(url, options)
-    .then(res => res.ok ? res.json() : [])
+  try {
+    return await fetch(url, options).then(res => res.json())
+  } catch (ex) {
+    return []
+  }
 }
 
 const fetchApiAndStore = async (db, apiName, url, options) => {
   const resJson = await fetchFromNetwork(url, options)
 
-  if (resJson) {
+  if (resJson.length) {
     const tx = db.transaction(apiName, "readwrite")
     const store = tx.objectStore(apiName)
 

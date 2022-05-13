@@ -44,6 +44,8 @@ export default class MonsterCard extends Component {
         this.setState({ time: msec })
         this.start()
       }
+    } else if (monster.editMSEC) {
+      this.setState({ time: monster.editMSEC })
     }
   }
 

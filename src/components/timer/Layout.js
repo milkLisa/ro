@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
-import Container from '@mui/material/Container'
 import Drawer from '@mui/material/Drawer'
-import Header from '../../components/common/Header'
-import BottomBar from '../../components/timer/BottomBar'
 import { TimerObj } from '../../constants/customData'
 import { query, renew, update } from '../../utils/fetchData'
 import TimerList from './TimerList'
+import BottomBar from './BottomBar'
 import CheckList from './CheckList'
 
 const combinedTimer = (ts, ms) => {
@@ -17,8 +15,8 @@ const combinedTimer = (ts, ms) => {
   return arr
 }
 
-export default function TimerContainer({ intl }) {
-  const [ monsters, setMonsters ] = useState([])
+export default function Layout({ intl }) {
+  const [ monsters, setMonsters ] = useState(null)
   const [ timers, setTimers ]     = useState([])
   const [ isOpen, setIsOpen ]     = useState(false)
   const [ isChange, setIsChange ] = useState(false)
@@ -26,11 +24,15 @@ export default function TimerContainer({ intl }) {
   useEffect(() => {
     query("/api/monsters")
       .then(mons => {
-        query("/api/timers")
-          .then(data => {
-            setTimers(combinedTimer(data, mons))
-            setMonsters(mons)
-          })
+        if (mons.length) {
+          query("/api/timers")
+            .then(data => {
+              setTimers(combinedTimer(data, mons))
+              setMonsters(mons)
+            })
+        } else {
+          setMonsters(mons)
+        }
       })
   }, [])
 
@@ -57,13 +59,14 @@ export default function TimerContainer({ intl }) {
     })
   }
 
-  if (!monsters || !monsters.length)
-    return <Container className="container">{ intl.home.loading }</Container>
+  if (!monsters)
+    return <main>{ intl.home.loading }</main>
+
+  if (!monsters.length)
+    return <main>{ intl.timer.emptyError }</main>
 
   return (
-    <Container className="timer-container">
-      <Header title={ intl.timer.title } />
-
+    <>
       <main>
         <TimerList
           intl     = { intl } 
@@ -91,6 +94,6 @@ export default function TimerContainer({ intl }) {
           onCheck     = { mons => checkTimer(mons) }
         />
       </Drawer>
-    </Container>
+    </>
   )
 }
