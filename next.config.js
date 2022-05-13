@@ -1,4 +1,4 @@
-const withPWA = require("next-pwa");
+const withPWA = require("next-pwa")
 
 module.exports = withPWA({
   async redirects() {
@@ -10,6 +10,7 @@ module.exports = withPWA({
       },
     ]
   },
+  compress: true,
   reactStrictMode: true,
   i18n: {
     locales: ["default", "zh-TW", "en-US"],
@@ -18,6 +19,6 @@ module.exports = withPWA({
   },
   pwa: {
     dest: "public",
-    register: false,
+    importScripts: ["offline/serviceWorker.js"]
   },
 })

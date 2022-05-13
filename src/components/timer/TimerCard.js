@@ -23,7 +23,6 @@ export default class TimerCard extends Component {
 
   forward() {
     const { time } = this.state
-    console.log(time, time - 10 * SECOND)
     this.setState({ time: time - 10 * SECOND })
   }
 

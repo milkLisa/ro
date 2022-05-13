@@ -1,4 +1,4 @@
-import { useRouter } from "next/router"
+import { useRouter } from 'next/router'
 import zhContent from '../constants/locales/zh_TW'
 import enContent from '../constants/locales/en_US'
 import '../assets/stylesheets/index.scss'

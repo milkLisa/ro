@@ -1,8 +1,9 @@
 import { Component } from 'react'
-import { StyledEngineProvider } from '@mui/material/styles'
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+import timerTheme from '../../assets/themes/timerTheme'
 import HtmlHead from '../../components/common/HtmlHead'
-import Layout from '../../components/timer/Layout'
-import TimerList from '../../components/timer/TimerList'
+import TimerContainer from '../../components/timer/TimerContainer'
 
 export default class Home extends Component {
   componentDidMount() {
@@ -28,11 +29,13 @@ export default class Home extends Component {
 
     return (
       <StyledEngineProvider injectFirst>
-        <HtmlHead title={ intl.timer.title } />
+        <CssBaseline />
         
-        <Layout title={ intl.timer.title }>
-          <TimerList intl={ intl } />
-        </Layout>
+        <ThemeProvider theme={ timerTheme }>
+          <HtmlHead title={ intl.timer.title } />
+          
+          <TimerContainer intl={ intl } />
+        </ThemeProvider>
       </StyledEngineProvider>
     )
   }

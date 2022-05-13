@@ -2,12 +2,10 @@ const cacheName = "timer-cache-v1"
 const CacheNames = [cacheName]
 
 const appShellFiles=[
-  //"/"
+  "/manifest.json"
 ]
 
-const freshFileNames = [
-  //"manifest.json"
-]
+const freshFileNames = []
 
 self.addEventListener("install", event => {
   console.log("[Service Worker] Install")
@@ -40,12 +38,22 @@ self.addEventListener("fetch", event => {
   const fileName = requestPath.substring(requestPath.lastIndexOf("/") + 1)
   if (freshFileNames.indexOf(fileName) > -1 ||
       requestPath.indexOf("/api/") > -1) {
-    return event.respondWith(fetch(event.request))
+    return event.respondWith(networkFetch(event.request))
   } else {
     console.log("[Service Worker] Fetch url: ", event.request.url)
     return event.respondWith(networkFirstStrategy(event.request))
   }
 })
+
+const networkFetch = async (request) => {
+  try {
+    return await fetch(request)
+  } catch (ex) {
+    return new Response(new Blob([JSON.stringify([])]), {
+      "status": 500, "statusText": ex.message
+    })
+  }
+}
 
 const networkFirstStrategy = async (request) => {
   try {

@@ -4,21 +4,29 @@ const DB_NAME = "ro"
 const STORE_NAMES = ["monsters", "timers"]
 
 const REQ_OPTIONS = {
-  cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-  credentials: "omit", // include, same-origin, *omit
-  headers: { "content-type": "application/json" },
-  mode: "no-cors", // no-cors, cors, *same-origin
-  referrer: "no-referrer", // *client, no-referrer
+  cache       : "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+  credentials : "omit", // include, same-origin, *omit
+  headers     : { "content-type": "application/json" },
+  mode        : "same-origin", // no-cors, cors, *same-origin
+  referrer    : "no-referrer", // *client, no-referrer
 }
 
-export async function queryData(url) {
+export async function query(url) {
   return fetchApi(url, {
     method: "GET",
     ...REQ_OPTIONS
   })
 }
 
-export async function setData(url, data) {
+export async function add(url, data) {
+  return fetchApi(url, {
+    body: JSON.stringify(data), // must match "Content-Type" header
+    method: "POST",
+    ...REQ_OPTIONS
+  })
+}
+
+export async function renew(url, data) {
   return fetchApi(url, {
     body: JSON.stringify(data), // must match "Content-Type" header
     method: "PUT",
@@ -26,7 +34,7 @@ export async function setData(url, data) {
   })
 }
 
-export async function updateData(url, data) {
+export async function update(url, data) {
   return fetchApi(url, {
     body: JSON.stringify(data),
     method: "PATCH",
@@ -34,7 +42,7 @@ export async function updateData(url, data) {
   })
 }
 
-export async function deleteData(url, data) {
+export async function del(url, data) {
   return fetchApi(url, {
     body: JSON.stringify(data),
     method: "DELETE",
@@ -44,33 +52,41 @@ export async function deleteData(url, data) {
 
 const fetchApi = async (url, options) => {
   const apiName = url.substring(url.lastIndexOf("/") + 1)
-  console.log("fetchApi: ", options.method, url, apiName)
 
+  let isDBSupport = true
   const db = await openDB(DB_NAME, 1, {
     upgrade(db) {
       STORE_NAMES.forEach(name => {
         db.createObjectStore(name, { keyPath: "id" })
       })
     }
+  }).catch(err => {
+    isDBSupport = false
+    console.log("IndexedDB Error: ", err.message)
   })
 
+  // Firefox private browsing is not support IndexedDB
+  if (!isDBSupport) {
+    return await fetchFromNetwork(url, options)
+  } 
+
   try {
-    switch(options.method) {
-      case "PUT":
-      case "PATCH":
-        return await fetchApiToIdb(db, apiName, options)
-      default:
-        return await fetchApiFromIdb(db, apiName)
-    }
+    return (options.method == "GET")
+      ? (await fetchApiFromIdb(db, apiName))
+      : (await updateToIdb(db, apiName, options))
   } catch (ex) {
-    console.log("[Fetch API from network failed]", url, ex)
+    console.log("Fetch API from network failed: ", url, ex)
     return await fetchApiAndStore(db, apiName, url, options)
   }
 }
 
+const fetchFromNetwork = async (url, options) => {
+  return await fetch(url, options)
+    .then(res => res.ok ? res.json() : [])
+}
+
 const fetchApiAndStore = async (db, apiName, url, options) => {
-  console.log("fetchApiAndStore: ", url)
-  const resJson = await fetch(url, options).then(res => res.json())
+  const resJson = await fetchFromNetwork(url, options)
 
   if (resJson) {
     const tx = db.transaction(apiName, "readwrite")
@@ -86,7 +102,6 @@ const fetchApiAndStore = async (db, apiName, url, options) => {
 }
 
 const fetchApiFromIdb = async (db, apiName) => {
-  console.log("fetchApiFromIdb", apiName)
   const tx = db.transaction(apiName, "readwrite")
   const arr = await tx.objectStore(apiName).getAll()
   tx.done
@@ -98,19 +113,21 @@ const fetchApiFromIdb = async (db, apiName) => {
   }
 }
 
-const fetchApiToIdb = async (db, apiName, options) => {
-  console.log("fetchApiToIdb", apiName)
+const updateToIdb = async (db, apiName, options) => {
   const tx = db.transaction(apiName, "readwrite")
   const store = tx.objectStore(apiName)
   const json = JSON.parse(options.body)
 
-  if (options.method == "PUT") {
-    store.clear()
-    json.forEach(obj => store.put(obj))
-  } else {
-    store.put(json)
+  switch(options.method) {
+    case "PUT":   //array of all
+      store.clear()
+    case "POST":  //array of new
+      json.forEach(obj => store.put(obj))
+      break
+    default:      //an object
+      store.put(json)
   }
-
+  
   const newArr = await store.getAll()
   tx.done
 

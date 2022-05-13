@@ -17,7 +17,10 @@ export default function CheckCard({ intl, monster, isChecked, onCheck }) {
   const img = monster.image ? monster.image : "egg.png"
 
   return (
-    <div className="check-card">
+    <div 
+      className = "check-card"
+      onClick   = { () => check() }
+    >
       <div className="avatar">
         <div>
           <img
@@ -48,10 +51,7 @@ export default function CheckCard({ intl, monster, isChecked, onCheck }) {
         <div className="name">
           <span>{ monster.name }</span>
 
-          <IconButton
-            aria-label = "check timer"
-            onClick    = { () => check()  }
-          >
+          <IconButton aria-label="check timer">
             { checked
               ? <CheckBoxIcon className="check"/> 
               : <CheckBoxOutlineBlankIcon/> 

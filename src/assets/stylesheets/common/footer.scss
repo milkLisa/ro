@@ -1,19 +1,11 @@
 footer {
   width: 100%;
-  height: $anchor-height;
   min-height: $anchor-height;
   border-top: 1px solid #eaeaea;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  img {
-    margin-left: 0.5rem;
-  }
-
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  font-size: $small-size;
+  padding: 5px;
 }

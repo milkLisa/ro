@@ -1,18 +1,13 @@
 header {
-  height: $anchor-height;
-  min-height: $anchor-height;
-  font-size: $large-size;
   width: 100%;
+  min-height: $anchor-height;
   border-bottom: 1px solid #eaeaea;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  word-break: break-word;
-  text-align: center;
+  position: relative;
 
-  a,
-  img {
-    height: 100%;
+  .title {
+    font-size: $large-size;
   }
 }

@@ -1,33 +1,5 @@
+@import './fonts/notosanstc.css'; //思源黑體繁中字型
 @import './common/public';
 @import './common/header';
 @import './common/footer';
-@import './fonts/notosanstc.css'; //思源黑體繁中字型
-
-html {
-  font-size: 16px;
-  @include default-font-family();
-  position: relative;
-  height: 100%;
-}
-
-body {
-  @include default-font-family();
-  @include default-font();
-  width: 100%;
-  height: 100%;
-  min-width: $mini-mobile;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
-  color: $font-color;
-}
-
-.container {
-  @include default-font-family();
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+@import './timer';

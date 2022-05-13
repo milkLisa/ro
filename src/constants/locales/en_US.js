@@ -1,5 +1,5 @@
 const en_US = {
-  main: {
+  home: {
     title: "Ragnarok Tools",
     welcome: "Welcome to Ragnarok Tools",
     loading: "Loading..."
@@ -44,7 +44,8 @@ const en_US = {
       medium: "Medium",
       large: "Large"
     }
-  }
+  },
+  copyright: "All ragnarok-related graphics and materials are copyright © 2002-2022 Gravity Co., Ltd.Logo Gravity Co., Ltd.X.D.Global Ltd. & Lee Myoungjin."
 }
 
 export default en_US

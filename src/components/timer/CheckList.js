@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import SearchIcon from '@mui/icons-material/Search'
 import CheckCard from './CheckCard'
-import { trimStr, format } from '../../utils/parser'
+import { trimStr, template } from '../../utils/parser'
 
 export default function CheckList({ intl, monsters, checkedMons, onClose, onCheck }) {
   const [ leftList, setLeftList ]       = useState(monsters)
@@ -38,7 +38,7 @@ export default function CheckList({ intl, monsters, checkedMons, onClose, onChec
   }
 
   if (!monsters || !monsters.length) 
-    return <Container className="container">{ intl.main.loading }</Container>
+    return <Container className="container">{ intl.home.loading }</Container>
 
   return (
     <Container className="container">
@@ -75,7 +75,7 @@ export default function CheckList({ intl, monsters, checkedMons, onClose, onChec
         </IconButton>
       </div>
       
-      <div>{ format(intl.timer.checked, count, monsters.length) }</div>
+      <div>{ template(intl.timer.checked, count, monsters.length) }</div>
 
       <div className="list">
         { 

@@ -1,5 +1,7 @@
 export default function Header({ title }) {
   return (
-    <header>{ title }</header>
+    <header>
+      <div className="title">{ title }</div>
+    </header>
   )
 }

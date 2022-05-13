@@ -1,9 +1,12 @@
 {
   "private": true,
   "scripts": {
-    "dev": "node server.js",
+    "clean": "rimraf .next public\\sw.* public\\workbox-* public\\fallback-*",
     "build": "next build",
-    "start": "next start"
+    "next:dev": "next dev",
+    "next:prod": "next start",
+    "dev": "npm-run-all clean next:dev",
+    "start": "set NODE_ENV=production && npm-run-all clean build next:prod"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -17,6 +20,8 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
     "sass": "^1.50.1"
   }
 }

@@ -5,62 +5,82 @@ import DialogTitle from '@mui/material/DialogTitle'
 import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button'
-import { updateData } from '../../utils/ajax'
+import { TimerObj } from '../../constants/customData'
 import { 
   MINUTE, SECOND, getFormatedTime, parseToMSEC 
 } from '../../constants/dateTime'
+
+const getClass = (stable, isStart, time) => {
+  let classArr = [stable]
+
+  if(isStart) {
+    classArr.push("timer")
+
+    if(time < 0)
+      classArr.push("appeared")
+    else if(time < MINUTE)
+      classArr.push("alert")
+  }
+
+  return classArr.join(" ")
+}
 
 export default class MonsterCard extends Component {
   state = {
     isStart: false,
     isEdit: false,
     editText: "",
-    defaultTime: this.props.monster.msec,
-    time: this.initTime()
+    defaultTime: this.props.monster.editMSEC || this.props.monster.msec,
+    time: this.props.monster.msec
   }
 
   componentDidMount() {
     const { monster } = this.props
-    const { time } = this.state
     if (monster.utcMSEC) {
-      time == monster.msec 
-      ? updateData("/api/timers", { id: monster.id, utcMSEC: null }) 
-      : this.switch(true, true)
+      const msec = (monster.utcMSEC || 0) - Date.now()
+      if(msec <= -MINUTE){
+        this.handleSwitch(false)
+      } else {
+        this.setState({ time: msec })
+        this.start()
+      }
     }
   }
 
   componentWillUnmount() {
-    this.switch(false)
-  }
-
-  initTime() {
-    const { monster } = this.props
-    const msec = monster.utcMSEC ? monster.utcMSEC - Date.now() : 0
-    return msec < SECOND ? monster.msec : msec
+    clearInterval(this.timer)
   }
 
   timing() {
     const { time } = this.state
-    time <= -MINUTE ? this.switch(false) : this.setState({ time: time - SECOND })
+    time <= -MINUTE 
+      ? this.handleSwitch(false) 
+      : this.setState({ time: time - SECOND })
   }
 
-  switch(on, dontSave) {
-    if (on) {
-      this.timer = setInterval(() => this.timing(), SECOND)
-      this.setState({ isStart: true })
-    } else {
-      if (this.timer) clearInterval(this.timer)
-      this.setState({ isStart: false, time: this.state.defaultTime })
-    }
-
-    if (!dontSave) {
-      const { monster } = this.props
-      const msec = on ? monster.msec + Date.now() : null
-      updateData("/api/timers", { id: monster.id, utcMSEC: msec })
-    }
+  start() {
+    clearInterval(this.timer)
+    this.timer = setInterval(() => this.timing(), SECOND)
+    this.setState({ isStart: true })
   }
 
-  editTime(e) {
+  stop() {
+    clearInterval(this.timer)
+    this.setState({ isStart: false, time: this.state.defaultTime })
+  }
+
+  handleSwitch(turnOn) {
+    const { defaultTime } = this.state
+    const { monster, onChange } = this.props
+
+    onChange(TimerObj(monster, 
+      { utcMSEC: turnOn ? defaultTime + Date.now() : null }
+    ))
+
+    turnOn ? this.start() : this.stop()
+  }
+
+  handleEditTime(e) {
     e.preventDefault()
     this.setState({ isEdit: true })
     return false
@@ -76,13 +96,22 @@ export default class MonsterCard extends Component {
 
   handleEditOk() {
     const { editText } = this.state
-    const { monster } = this.props
-    const msec = parseToMSEC(editText)
+    const { monster, onChange } = this.props
+    let msec = parseToMSEC(editText)
+    msec = msec < SECOND ? monster.editMSEC || monster.msec : msec
+
+    onChange(TimerObj(monster, 
+      { utcMSEC: msec + Date.now(), editMSEC: msec }
+    ))
+
     this.setState({ 
       isEdit: false, 
       editText: "", 
-      time: msec < SECOND ? monster.msec : msec 
+      defaultTime: msec,
+      time: msec
     })
+
+    this.start()
   }
 
   render() {
@@ -91,16 +120,11 @@ export default class MonsterCard extends Component {
     const img = "/static/images/" + (monster.image ? monster.image : "egg.png")
     
     return (
-      <div className={ `monster-card${ 
-          isStart ? " timer" : "" 
-        }${ 
-          time < 0 ? " appeared" : time < MINUTE ? " alert" : ""
-        }` 
-      }>
+      <div className={ getClass("monster-card", isStart, time) }>
         <div 
           className = "avatar"
-          onClick   = { () => this.switch(!isStart) }
-          onContextMenu = { e => this.editTime(e) }
+          onClick   = { () => this.handleSwitch(!isStart) }
+          onContextMenu = { e => this.handleEditTime(e) }
         >
           <div className="time">
             { getFormatedTime(time) }
@@ -125,9 +149,11 @@ export default class MonsterCard extends Component {
           onClose   = { () => this.handleEditClose() }
         >
           <DialogTitle>{ intl.timer.editTitle }</DialogTitle>
+
           <div className="desc">
             { intl.timer.editDesc }
           </div>
+
           <DialogContent>
             <TextField
               autoFocus
@@ -137,13 +163,15 @@ export default class MonsterCard extends Component {
               type      = "tel"
               value     = { editText }
               onChange  = { e => this.handleEditChange(e) }
-              onKeyDown       = { e => {
-                if (e.key.match(new RegExp("enter", "i"))) this.handleEditOk()
+              onKeyDown = { e => {
+                if (e.key.match(new RegExp("enter", "i"))) 
+                  this.handleEditOk()
               }}
             />
           </DialogContent>
+
           <DialogActions>
-            <Button onClick={() => this.handleEditOk() }>
+            <Button onClick={ () => this.handleEditOk() }>
               { intl.timer.editSubmit }
             </Button>
           </DialogActions>
