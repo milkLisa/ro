@@ -7,6 +7,8 @@ import BottomBar from './BottomBar'
 import CheckList from './CheckList'
 
 const combinedTimer = (ts, ms) => {
+  if (!ts || !ms) return ts
+
   let arr = []
   ts.forEach(obj => {
     let mons = ms.find(m => m.id == obj.id)
@@ -15,8 +17,8 @@ const combinedTimer = (ts, ms) => {
   return arr
 }
 
-export default function Layout({ intl }) {
-  const [ monsters, setMonsters ] = useState(null)
+export default function Content({ intl, swMsg }) {
+  const [ monsters, setMonsters ] = useState([])
   const [ timers, setTimers ]     = useState([])
   const [ isOpen, setIsOpen ]     = useState(false)
   const [ isChange, setIsChange ] = useState(false)
@@ -24,7 +26,7 @@ export default function Layout({ intl }) {
   useEffect(() => {
     query("/api/monsters")
       .then(mons => {
-        if (mons.length) {
+        if (mons && mons.length) {
           query("/api/timers")
             .then(data => {
               setTimers(combinedTimer(data, mons))
@@ -59,15 +61,17 @@ export default function Layout({ intl }) {
     })
   }
 
-  if (!monsters)
-    return <main>{ intl.home.loading }</main>
+  if (!monsters || !timers)
+    return <main>{ intl.timer.emptyError }</main>
 
   if (!monsters.length)
-    return <main>{ intl.timer.emptyError }</main>
+    return <main>{ intl.home.loading }</main>
 
   return (
     <>
       <main>
+        <div>{ swMsg || "null" }</div>
+
         <TimerList
           intl     = { intl } 
           timers   = { timers }

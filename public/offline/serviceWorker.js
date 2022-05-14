@@ -49,7 +49,7 @@ const networkFetch = async (request) => {
   try {
     return await fetch(request)
   } catch (ex) {
-    return new Response(new Blob([JSON.stringify([])]), {
+    return new Response(new Blob([]), {
       "status": 417, "statusText": ex.message
     })
   }

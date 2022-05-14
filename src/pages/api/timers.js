@@ -10,9 +10,7 @@ export default function handler(req, res) {
     timers = req.body
     res.status(200).json(timers)
   } else if (req.method === "PATCH") {
-    timers = timers.map(t => {
-      return (t.id == req.body.id)? req.body : t
-    })
+    timers = timers.map(t => t.id == req.body.id ? req.body : t)
     res.status(200).json(timers)
   } else {
     res.status(400).json([])

@@ -85,14 +85,14 @@ const fetchFromNetwork = async (url, options) => {
   try {
     return await fetch(url, options).then(res => res.json())
   } catch (ex) {
-    return []
+    return null
   }
 }
 
 const fetchApiAndStore = async (db, apiName, url, options) => {
   const resJson = await fetchFromNetwork(url, options)
 
-  if (resJson.length) {
+  if (resJson && resJson.length) {
     const tx = db.transaction(apiName, "readwrite")
     const store = tx.objectStore(apiName)
 

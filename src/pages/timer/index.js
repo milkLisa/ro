@@ -5,7 +5,7 @@ import Container from '@mui/material/Container'
 import timerTheme from '../../assets/themes/timerTheme'
 import HtmlHead from '../../components/common/HtmlHead'
 import Header from '../../components/common/Header'
-import Layout from '../../components/timer/Layout'
+import Content from '../../components/timer/Content'
 
 export default class Home extends Component {
   componentDidMount() {
@@ -28,7 +28,7 @@ export default class Home extends Component {
 
   render() {
     const { intl } = this.props
-    
+
     return (
       <StyledEngineProvider injectFirst>
         <CssBaseline />
@@ -39,7 +39,7 @@ export default class Home extends Component {
           <Container className="timer-container">
             <Header title={ intl.timer.title } />
 
-            <Layout intl={ intl } />
+            <Content intl={ intl } />
           </Container>
         </ThemeProvider>
       </StyledEngineProvider>
