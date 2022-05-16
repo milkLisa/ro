@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import IconButton from '@mui/material/IconButton'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
+import AlarmOnIcon from '@mui/icons-material/AlarmOn'
 import { getFormatedTime } from '../../constants/dateTime'
+import { isValid } from '../../utils/parser'
 
 export default function CheckCard({ intl, monster, isChecked, onCheck }) {
   const [ checked, setChecked ] = useState(isChecked)
@@ -15,10 +17,11 @@ export default function CheckCard({ intl, monster, isChecked, onCheck }) {
   }
 
   const img = monster.image ? monster.image : "egg.png"
+  const isStarting = isValid(monster.intervalId)
 
   return (
-    <div 
-      className = "check-card"
+    <div
+      className = { `check-card${ isStarting ?" timer" : "" }` }
       onClick   = { () => check() }
     >
       <div className="avatar">
@@ -52,9 +55,12 @@ export default function CheckCard({ intl, monster, isChecked, onCheck }) {
           <span>{ monster.name }</span>
 
           <IconButton aria-label="check timer">
-            { checked
-              ? <CheckBoxIcon className="check"/> 
-              : <CheckBoxOutlineBlankIcon/> 
+            { 
+              isStarting
+              ? <AlarmOnIcon />
+              : checked
+                ? <CheckBoxIcon className="check" /> 
+                : <CheckBoxOutlineBlankIcon />
             }
           </IconButton>
         </div>

@@ -2,42 +2,6 @@ import { createTheme } from "@mui/material/styles"
 
 const theme = createTheme({
   components: {
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          zIndex: "1", //drawer z-index default 1300
-          minHeight: "64px",
-          justifyContent: "center",
-          backgroundColor: "#feecc5"
-        }
-      }
-    },
-    MuiToolbar: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#feecc5"
-        }
-      }
-    },
-    MuiFab: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#8192c8",
-          textTransform: "initial",
-          color: "#fff",
-          ":hover": {
-            backgroundColor: "#adb4d1"
-          }
-        }
-      }
-    },
-    MuiBackdrop: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#fff"
-        }
-      }
-    },
     MuiOutlinedInput: {
       styleOverrides: {
         input: {

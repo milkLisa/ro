@@ -1,7 +1,11 @@
+const objKeys = ["id", "utcMSEC", "editMSEC", "intervalId"]
+
 export function TimerObj(monster, options = {}) {
-  return {
-    id: monster.id,
-    utcMSEC: ("utcMSEC" in options ? options.utcMSEC : monster.utcMSEC) || null,
-    editMSEC: ("editMSEC" in options ? options.editMSEC : monster.editMSEC) || null
-  }
+  let newObj = {}
+
+  objKeys.forEach(key => {
+    newObj[key] = (key in options ? options[key] : monster[key]) || null
+  })
+
+  return newObj
 }

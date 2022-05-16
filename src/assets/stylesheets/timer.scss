@@ -1,6 +1,7 @@
 /* Color */
 $timer-color: #adb4d1;
 $timer-bg-color: #c6f1fc;
+$disable-color: rgba(221, 221, 221, 0.2);
 $timer-shadow: inset 0 0 0 3px $mask-color;
 $alert-color: #bf565b;
 $alert-bg-color: #fcdbdc;
@@ -20,8 +21,7 @@ $time-text-shadow: #fff 0 2px,
 }
 
 .big-btn {
-  @include big-button();
-  padding: 5px;
+  @include large-button();
 }
 
 .edit-dialog {
@@ -126,7 +126,7 @@ $time-text-shadow: #fff 0 2px,
   }
 }
 
-.timer-card, .check-card {
+.check-card {
   display: flex;
   align-items: center;
   border: 1px solid $note-color;
@@ -134,10 +134,12 @@ $time-text-shadow: #fff 0 2px,
   box-shadow: $card-shadow;
   padding: 5px;
   width: 300px;
+  cursor: pointer;
 
   &.timer {
-    border: 3px solid $timer-color;
-    padding: 3px;
+    background-color: $disable-color;
+    cursor: initial;
+    pointer-events: none;
   }
 
   & > .avatar {
@@ -264,34 +266,85 @@ $time-text-shadow: #fff 0 2px,
   }
 }
 
+.timer-container header {
+  & > *:not(.title) {
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+  }
+}
+
 .timer-container footer {
-  min-height: 150px;
+  min-height: 100px;
+  padding-bottom: 40px;
 
   .copyright {
-    height: 55px;
     position: absolute;
-    bottom: 95px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     margin: 0 10px;
   }
+}
 
-  .bottom-bar {
-    align-self: stretch;
+.swipeable-rawer {
+  height: 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 
-    .fab-btn {
+  * {
+    pointer-events: initial;
+  }
+
+  & > .MuiPaper-root {
+    max-height: initial;
+    overflow: visible;
+  }
+
+  .puller {
+    @include dark-style();
+    height: 16px;
+    text-align: center;
+    visibility: visible;
+    position: absolute;
+    top: -15px;
+    right: 0;
+    left: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    .open-btn {
+      @include dark-style();
+      width: 140px;
       position: absolute;
-      z-index: 1;
-      top: -30px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
+      top: -24px;
+      left: calc(50% - 70px);
+      border-top-left-radius: 70%;
+      border-top-right-radius: 70%;
+      padding: 5px;
+      cursor: pointer;
     }
+  }
+
+  .content {
+    @include dark-style();
+    height: 0;
+    display: flex;
+    overflow: auto;
+    padding: 8px;
     
-    .blank {
-      flex-grow: 1;
+    .monster-card .info * {
+      @include dark-style();
+    }
+  }
+
+  &.show {
+    height: initial;
+    
+    .content {
+      height: initial;
     }
   }
 }

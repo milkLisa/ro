@@ -54,31 +54,37 @@ export default class MonsterCard extends Component {
   }
 
   timing() {
-    const { time } = this.state
-    time <= -MINUTE 
+    const { monster } = this.props
+    const msec = (monster.utcMSEC || 0) - Date.now()
+    msec <= -MINUTE 
       ? this.handleSwitch(false) 
-      : this.setState({ time: time - SECOND })
+      : this.setState({ time: msec })
   }
 
   start() {
+    const { defaultTime } = this.state
+    const { monster, onChange } = this.props
+
     clearInterval(this.timer)
     this.timer = setInterval(() => this.timing(), SECOND)
+
+    onChange(TimerObj(monster,
+      { utcMSEC: defaultTime + Date.now(), intervalId: this.timer }
+    ))
+
     this.setState({ isStart: true })
   }
 
   stop() {
+    const { monster, onChange } = this.props
+
     clearInterval(this.timer)
+    onChange(TimerObj(monster,{ utcMSEC: null, intervalId: null }))
+
     this.setState({ isStart: false, time: this.state.defaultTime })
   }
 
   handleSwitch(turnOn) {
-    const { defaultTime } = this.state
-    const { monster, onChange } = this.props
-
-    onChange(TimerObj(monster, 
-      { utcMSEC: turnOn ? defaultTime + Date.now() : null }
-    ))
-
     turnOn ? this.start() : this.stop()
   }
 

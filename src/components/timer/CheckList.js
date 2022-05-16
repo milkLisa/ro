@@ -79,15 +79,17 @@ export default function CheckList({ intl, monsters, checkedMons, onClose, onChec
 
       <div className="list">
         { 
-          leftList.map(mon => (
-            <CheckCard 
+          leftList.map(mon => {
+            const checked = checkedList.find(item => item.id == mon.id)
+
+            return (<CheckCard 
               key       = { `${ mon.id }${ mon.roId }` } 
-              monster   = { mon }
+              monster   = { checked || mon }
               intl      = { intl }
-              isChecked = { checkedList.find(item => item.id == mon.id) }
+              isChecked = { !!checked }
               onCheck   = { changeList }
-            />
-          ))
+            />)
+          })
         }
       </div>
     </Container>

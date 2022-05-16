@@ -7,13 +7,14 @@ const zh_TW = {
   timer: {
     title: "MVP計時器",
     search: "輸入魔物名稱或ID",
-    checkTimer: "請先選取計時器",
+    checkTimer: "選取計時器",
     respawn: "重生時間",
     checked: "已選取 {0} / {1}",
     editTitle: "自訂時間",
     editDesc: "請輸入剩餘分鐘數, 或以符號分隔的時分秒數, 如[時.分.秒]、[時 分 秒]",
     editSubmit: "確定",
-    emptyError: "無資料，請確認網路連線是否正常。"
+    emptyError: "無資料，請確認網路連線是否正常。",
+    appearSort: "現身排序"
   },
   monsters: {
     race: {

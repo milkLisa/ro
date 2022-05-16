@@ -5,6 +5,7 @@ import Container from '@mui/material/Container'
 import timerTheme from '../../assets/themes/timerTheme'
 import HtmlHead from '../../components/common/HtmlHead'
 import Header from '../../components/common/Header'
+import GitHubLink from '../../components/common/GitHubLink'
 import Content from '../../components/timer/Content'
 
 export default class Home extends Component {
@@ -37,7 +38,9 @@ export default class Home extends Component {
           <HtmlHead title={ intl.timer.title } />
 
           <Container className="timer-container">
-            <Header title={ intl.timer.title } />
+            <Header title={ intl.timer.title }>
+              <GitHubLink />
+            </Header>
 
             <Content intl={ intl } />
           </Container>

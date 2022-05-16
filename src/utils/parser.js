@@ -1,3 +1,8 @@
+export function isValid(x) {
+  const arr = ["undefined", "null", "nan"]
+  return !arr.find(y => `${x}`.trim().toLocaleLowerCase() == y)
+}
+
 export function trimStr(str) {
   return (str !== undefined && str !== null) ? `${str}`.trim() : ""
 }

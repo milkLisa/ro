@@ -13,7 +13,8 @@ const en_US = {
     editTitle: "Custom Time",
     editDesc: "Please enter remaining minutes, or time in [H.m.s] / [H m s] format",
     editSubmit: "OK",
-    emptyError: "Fetch data failed. Please check your network connection."
+    emptyError: "Fetch data failed. Please check your network connection.",
+    appearSort: "Appear Sort"
   },
   monsters: {
     race: {
