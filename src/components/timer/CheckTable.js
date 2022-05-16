@@ -7,7 +7,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import CheckCard from './CheckCard'
 import { trimStr, template } from '../../utils/parser'
 
-export default function CheckList({ intl, monsters, checkedMons, onClose, onCheck }) {
+export default function CheckTable({ intl, monsters, checkedMons, onClose, onCheck }) {
   const [ leftList, setLeftList ]       = useState(monsters)
   const [ checkedList, setCheckedList ] = useState(checkedMons)
   const [ count, setCount ]             = useState(checkedMons.length)
@@ -68,7 +68,7 @@ export default function CheckList({ intl, monsters, checkedMons, onClose, onChec
         <IconButton
           aria-label  = "close"
           className   = "close-btn"
-          onClick     = { () => onClose()  }
+          onClick     = { () => onClose() }
         >
           <CloseIcon />
           <span>ESC</span>

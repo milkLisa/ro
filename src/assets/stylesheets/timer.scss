@@ -72,7 +72,7 @@ $time-text-shadow: #fff 0 2px,
     }
 
     .note, .location {
-      font-size: $mini-size;
+      font-size: $tiny-size;
       color: $note-color;
     }
   }
@@ -85,6 +85,7 @@ $time-text-shadow: #fff 0 2px,
       @include timing-shadow($timer-color);
 
       .time {
+        display: inline-table;
         color: $font-color;
         font-weight: $bold-weight;
         text-shadow: $time-text-shadow;
@@ -293,6 +294,7 @@ $time-text-shadow: #fff 0 2px,
   width: 100%;
   position: fixed;
   bottom: 0;
+  z-index: 1;
 
   * {
     pointer-events: initial;
@@ -346,5 +348,11 @@ $time-text-shadow: #fff 0 2px,
     .content {
       height: initial;
     }
+  }
+}
+
+@media (max-width: 410px) {
+  .copyright * {
+    font-size: $mini-size;
   }
 }

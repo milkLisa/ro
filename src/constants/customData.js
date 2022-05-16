@@ -1,4 +1,4 @@
-const objKeys = ["id", "utcMSEC", "editMSEC", "intervalId"]
+const objKeys = ["id", "utcMSEC", "editMSEC"]
 
 export function TimerObj(monster, options = {}) {
   let newObj = {}

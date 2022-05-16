@@ -5,6 +5,7 @@ import Container from '@mui/material/Container'
 import timerTheme from '../../assets/themes/timerTheme'
 import HtmlHead from '../../components/common/HtmlHead'
 import Header from '../../components/common/Header'
+import Footer from '../../components/common/Footer'
 import GitHubLink from '../../components/common/GitHubLink'
 import Content from '../../components/timer/Content'
 
@@ -43,6 +44,8 @@ export default class Home extends Component {
             </Header>
 
             <Content intl={ intl } />
+
+            <Footer copyright={ intl.copyright }/>
           </Container>
         </ThemeProvider>
       </StyledEngineProvider>

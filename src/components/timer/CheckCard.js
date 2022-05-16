@@ -17,7 +17,7 @@ export default function CheckCard({ intl, monster, isChecked, onCheck }) {
   }
 
   const img = monster.image ? monster.image : "egg.png"
-  const isStarting = isValid(monster.intervalId)
+  const isStarting = isValid(monster.utcMSEC)
 
   return (
     <div

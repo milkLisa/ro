@@ -4,10 +4,8 @@ import Button from '@mui/material/Button'
 import TableViewIcon from '@mui/icons-material/TableView'
 import { TimerObj } from '../../constants/customData'
 import { query, renew, update } from '../../utils/fetchData'
-import Footer from '../common/Footer'
-import CheckList from './CheckList'
-import SortedList from './SortedList'
-import MonsterCard from './MonsterCard'
+import CheckTable from './CheckTable'
+import TimerList from './TimerList'
 
 const combinedTimer = (ts, ms) => {
   if (!ts || !ms) return ts
@@ -20,19 +18,11 @@ const combinedTimer = (ts, ms) => {
   return arr
 }
 
-const sortByAppearTime = list => {
-  let newList = list.filter(m => !!m.utcMSEC)
-  newList.sort((a, b) => a.utcMSEC - b.utcMSEC)
-  return newList
-}
-
 export default function Content({ intl }) {
   const [ monsters, setMonsters ]       = useState([])
   const [ timers, setTimers ]           = useState([])
-  const [ sorted, setSorted ]           = useState([])
   const [ isSaved, setIsSaved ]         = useState(false)
   const [ isCheckOpen, setIsCheckOpen ] = useState(false)
-  const [ isSortOpen, setIsSortOpen ]   = useState(false)
 
   useEffect(() => {
     query("/api/monsters")
@@ -40,9 +30,7 @@ export default function Content({ intl }) {
         if (mons && mons.length) {
           query("/api/timers")
             .then(data => {
-              let list = combinedTimer(data, mons)
-              setTimers(list)
-              setSorted(sortByAppearTime(list))
+              setTimers(combinedTimer(data, mons))
               setMonsters(mons)
             })
         } else {
@@ -54,38 +42,25 @@ export default function Content({ intl }) {
   const checkTimer = mons => {
     setIsSaved(false)
     setTimers(mons)
-    setSorted(sortByAppearTime(mons))
   }
 
   const saveTimers = () => {
     if (!isSaved) {
-      const data = timers.map(m => TimerObj(m))
-      renew("/api/timers", data).then(() => {
+      const list = timers.map(m => TimerObj(m))
+      renew("/api/timers", list).then(data => {
         setIsSaved(true)
         setIsCheckOpen(false)
+        setTimers(combinedTimer(data, monsters))
       })
     } else {
       setIsCheckOpen(false)
     }
   }
 
-  const updateTimer = status => {
-    update("/api/timers", status).then(data => {
-      let list = combinedTimer(data, monsters)
-      setTimers(list)
-      setSorted(sortByAppearTime(list))
+  const updateTimers = list => {
+    renew("/api/timers", list).then(data => {
+      setTimers(combinedTimer(data, monsters))
     })
-  }
-
-  const MonstarList = list => {
-    return list.map(mon => (
-      <MonsterCard 
-        intl    = { intl }
-        key     = { `${ mon.id }${ mon.roId }` } 
-        monster = { mon }
-        onChange= { updateTimer }
-      />
-    ))
   }
 
   if (!monsters || !timers)
@@ -106,29 +81,20 @@ export default function Content({ intl }) {
         >
           { intl.timer.checkTimer }
         </Button>
-
-        <div className="list">
-          { timers.length > 0 && MonstarList(timers) }
-        </div>
+        
+        <TimerList 
+          intl    = { intl }
+          timers  = { timers }
+          onChange= { list => updateTimers(list) }
+        />
       </main>
-
-      <Footer copyright={ intl.copyright }/>
-
-      <SortedList 
-        intl   = { intl }
-        open   = { isSortOpen }
-        number = { sorted.length }
-        onOpen = { setIsSortOpen }
-      >
-        { sorted.length > 0 && MonstarList(sorted) }
-      </SortedList>
-
+      
       <Drawer
         anchor  = "bottom"
         open    = { isCheckOpen }
         onClose = { () => saveTimers() }
       >
-        <CheckList
+        <CheckTable
           intl        = { intl }
           checkedMons = { timers }
           monsters    = { monsters }

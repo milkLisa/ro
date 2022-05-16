@@ -1,4 +1,4 @@
-export default function SortedList({ intl, open, number, onOpen, children }) {
+export default function SortedDrawer({ intl, open, number, onOpen, children }) {
   return (
     <div
       className  = { `swipeable-rawer${ open ? " show" : "" }` }

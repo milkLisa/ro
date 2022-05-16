@@ -6,7 +6,8 @@ $pad: 1024px;
 $desktop: 1200px;
 
 /* Size */
-$mini-size: 0.5rem;
+$tiny-size: 0.5rem;
+$mini-size: 0.7rem;
 $small-size: 0.8rem;
 $normal-size: 1rem;
 $middle-size: 1.5rem;
@@ -133,6 +134,7 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   align-items: flex-start;
+  margin: 10px;
 
   & > * {
     display: flex;
@@ -165,14 +167,7 @@ a {
 
     span {
       color: $note-color;
-      font-size: $mini-size;
+      font-size: $tiny-size;
     }
-  }
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
   }
 }
