@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import IconButton from '@mui/material/IconButton'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
@@ -7,22 +6,13 @@ import { getFormatedTime } from '../../constants/dateTime'
 import { isValid } from '../../utils/parser'
 
 export default function CheckCard({ intl, monster, isChecked, onCheck }) {
-  const [ checked, setChecked ] = useState(isChecked)
-
-  useEffect(() => setChecked(isChecked), [isChecked])
-
-  const check = () => {
-    setChecked(!checked)
-    onCheck(monster, !checked)
-  }
-
   const img = monster.image ? monster.image : "egg.png"
   const isStarting = isValid(monster.utcMSEC)
 
   return (
     <div
       className = { `check-card${ isStarting ?" timer" : "" }` }
-      onClick   = { () => check() }
+      onClick   = { () => onCheck(monster, !isChecked) }
     >
       <div className="avatar">
         <div>
@@ -58,7 +48,7 @@ export default function CheckCard({ intl, monster, isChecked, onCheck }) {
             { 
               isStarting
               ? <AlarmOnIcon />
-              : checked
+              : isChecked
                 ? <CheckBoxIcon className="check" /> 
                 : <CheckBoxOutlineBlankIcon />
             }

@@ -1,13 +1,15 @@
-export default function SortedDrawer({ intl, open, number, onOpen, children }) {
+export default function SortedDrawer({ 
+  intl, isOpen, number, onOpen, children 
+}) {
   return (
     <div
-      className  = { `swipeable-rawer${ open ? " show" : "" }` }
+      className  = { `swipeable-drawer${ isOpen ? " show" : "" }` }
       anchor     = "bottom"
-      onClick    = { () => onOpen(!open) }
+      onClick    = { () => onOpen(!isOpen) }
     >
       <div 
         className = "puller" 
-        onClick   = { () => onOpen(!open) }
+        onClick   = { () => onOpen(!isOpen) }
       >
         <span className="open-btn">
           { `${ intl.timer.appearSort } (${ number })` }

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import moment from 'moment-timezone'
 import TextField from '@mui/material/TextField'
 import Dialog from '@mui/material/Dialog'
 import DialogTitle from '@mui/material/DialogTitle'
@@ -11,22 +12,9 @@ import {
 } from '../../constants/dateTime'
 import { isValid } from '../../utils/parser'
 
-const getClass = (stable, isStart, time) => {
-  let classArr = [stable]
-
-  if(isStart) {
-    classArr.push("timer")
-
-    if(time < 0)
-      classArr.push("appeared")
-    else if(time < MINUTE)
-      classArr.push("alert")
-  }
-
-  return classArr.join(" ")
-}
-
-export default function MonsterCard({ intl, monster, onStart, onStop }) {
+export default function MonsterCard({ 
+  intl, monster, settings, onStart, onStop 
+}) {
   const [isEdit, setIsEdit]     = useState(false)
   const [editText, setEditText] = useState("")
   const defaultTime = monster.editMSEC || monster.msec
@@ -34,6 +22,21 @@ export default function MonsterCard({ intl, monster, onStart, onStop }) {
   const leftTime = monster.leftTime || defaultTime
   const img = "/static/images/" + (monster.image ? monster.image : "egg.png")
   
+  const getClass = (stable, isStart, time) => {
+    let classArr = [stable]
+
+    if(isStart) {
+      classArr.push("timer")
+
+      if(time < 0)
+        classArr.push("appeared")
+      else if (time < (parseToMSEC(settings.remindBefore) || MINUTE))
+        classArr.push("alert")
+    }
+
+    return classArr.join(" ")
+  }
+
   const handleSwitch = turnOn => {
     if (turnOn) {
       onStart(TimerObj(monster, { utcMSEC: defaultTime + Date.now() }))
@@ -68,6 +71,10 @@ export default function MonsterCard({ intl, monster, onStart, onStop }) {
     handleEditClose()
   }
 
+  const showField = (setting, value) => {
+    return setting ? value : ""
+  }
+
   return (
     <div className={ getClass("monster-card", isStart, leftTime) }>
       <div 
@@ -87,9 +94,16 @@ export default function MonsterCard({ intl, monster, onStart, onStop }) {
       </div>
 
       <div className="info">
-        <div>{ monster.name }</div>
+        <div>{ showField(settings.showName, monster.name) }</div>
         
-        <div className="location">{ monster.location }</div>
+        <div className="location">
+          { showField(settings.showLocation, monster.location) }
+        </div>
+        
+        <div>
+          { showField(settings.showDateTime, 
+            moment(monster.utcMSEC || "").format("YYYY-MM-DD HH:mm:ss")) }
+        </div>
       </div>
 
       <Dialog 

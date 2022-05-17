@@ -6,10 +6,8 @@ export default function GitHubLink() {
       rel   = "noopener noreferrer"
     >
       <img
-        src   = "/static/icons/GitHub-Mark-32px.png"
-        alt   = "RO Repository"
-        width = { 32 }
-        height= { 32 }
+        src = "/static/icons/GitHub-Mark-32px.png"
+        alt = "RO Repository"
       />
     </a>
   )

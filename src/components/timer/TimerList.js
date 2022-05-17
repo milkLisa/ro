@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { TimerObj } from '../../constants/customData'
-import { MINUTE, SECOND } from '../../constants/dateTime'
+import { MINUTE, SECOND, parseToMSEC } from '../../constants/dateTime'
 import { isValid, isChanged } from '../../utils/parser'
 import MonsterCard from './MonsterCard'
 import SortedDrawer from './SortedDrawer'
@@ -40,13 +40,14 @@ export default class TimerList extends Component {
   }
 
   timing() {
+    const { settings } = this.props
     let { allTimer } = this.state
     let keepTiming = false, hasStop = false
 
     allTimer = allTimer.map(mon => {
       if (isValid(mon.utcMSEC)) {
         const msec = mon.utcMSEC - Date.now()
-        if (msec <= -MINUTE) {
+        if (msec <= (-parseToMSEC(settings.continueAfter) || -MINUTE)) {
           mon.utcMSEC = null
           mon.leftTime = null
           hasStop = true
@@ -74,7 +75,7 @@ export default class TimerList extends Component {
     let { allTimer } = this.state
     
     if (!timer) {
-    // No assign timer means initial
+      // No assign timer means initial
       this.clearTimer()
     } else {
       allTimer = allTimer.map(mon => {
@@ -108,13 +109,16 @@ export default class TimerList extends Component {
   }
 
   MonsterList(prefix, list) {
+    const { intl, settings } = this.props
+
     return list.map(mon => (
       <MonsterCard 
-        intl        = { this.props.intl }
-        key         = { `${prefix}${ mon.id }${ mon.roId }` }
-        monster     = { mon }
-        onStart     = { timer => this.start(timer) }
-        onStop      = { timer => this.stop(timer) }
+        intl     = { intl }
+        settings = { settings }
+        key      = { `${prefix}${ mon.id }${ mon.roId }` }
+        monster  = { mon }
+        onStart  = { timer => this.start(timer) }
+        onStop   = { timer => this.stop(timer) }
       />
     ))
   }
@@ -132,7 +136,7 @@ export default class TimerList extends Component {
 
         <SortedDrawer 
           intl   = { intl }
-          open   = { isSortOpen }
+          isOpen = { isSortOpen }
           number = { sorted.length }
           onOpen = { () => this.setState({ isSortOpen: !isSortOpen }) }
         >

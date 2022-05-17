@@ -1,16 +1,26 @@
-import { Component } from 'react'
+import { useState, useEffect } from 'react'
 import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import Container from '@mui/material/Container'
+import SettingsIcon from '@mui/icons-material/Settings'
 import timerTheme from '../../assets/themes/timerTheme'
+import { SettingsObj } from '../../constants/customData'
 import HtmlHead from '../../components/common/HtmlHead'
 import Header from '../../components/common/Header'
 import Footer from '../../components/common/Footer'
 import GitHubLink from '../../components/common/GitHubLink'
 import Content from '../../components/timer/Content'
+import SettingsDrawer from '../../components/timer/SettingsDrawer'
+import { query, renew } from '../../utils/fetchData'
+import { isChanged } from '../../utils/parser'
 
-export default class Home extends Component {
-  componentDidMount() {
+export default function Home({ intl }) {
+  const [isOpen, setIsOpen]     = useState(false)
+  const [settings, setSettings]  = useState(SettingsObj())
+  
+  useEffect(() => {
+    query("/api/settings").then(data => { setSettings(data) })
+
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("/sw.js").then(
         registration => {
@@ -26,29 +36,48 @@ export default class Home extends Component {
     } else {
       console.log("Service worker not supported")
     }
+  }, [])
+
+  const changeSettings = newSettings => {
+    if (isChanged(settings, newSettings)) {
+      renew("/api/settings", newSettings)
+        .then(data => {
+          setSettings(data)
+          setIsOpen(false)
+        })
+    } else {
+      setIsOpen(false)
+    }
   }
 
-  render() {
-    const { intl } = this.props
+  return (
+    <StyledEngineProvider injectFirst>
+      <CssBaseline />
+      
+      <ThemeProvider theme={ timerTheme }>
+        <HtmlHead title={ intl.timer.title } />
 
-    return (
-      <StyledEngineProvider injectFirst>
-        <CssBaseline />
-        
-        <ThemeProvider theme={ timerTheme }>
-          <HtmlHead title={ intl.timer.title } />
+        <Container className="timer-container">
+          <Header title={ intl.timer.title }>
+            <div>
+              <SettingsIcon onClick={ () => setIsOpen(true) }/>
 
-          <Container className="timer-container">
-            <Header title={ intl.timer.title }>
               <GitHubLink />
-            </Header>
+            </div>
+          </Header>
 
-            <Content intl={ intl } />
+          <Content intl={ intl } settings={ settings } />
 
-            <Footer copyright={ intl.copyright }/>
-          </Container>
-        </ThemeProvider>
-      </StyledEngineProvider>
-    )
-  }
+          <Footer copyright={ intl.copyright }/>
+          
+          <SettingsDrawer
+            intl          = { intl }
+            isOpen        = { isOpen }
+            savedSettings = { settings }
+            onClose       = { newSettings => changeSettings(newSettings) }
+          />
+        </Container>
+      </ThemeProvider>
+    </StyledEngineProvider>
+  )
 }

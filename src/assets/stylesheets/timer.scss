@@ -85,7 +85,6 @@ $time-text-shadow: #fff 0 2px,
       @include timing-shadow($timer-color);
 
       .time {
-        display: inline-table;
         color: $font-color;
         font-weight: $bold-weight;
         text-shadow: $time-text-shadow;
@@ -269,9 +268,24 @@ $time-text-shadow: #fff 0 2px,
 
 .timer-container header {
   & > *:not(.title) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     right: 0;
     margin-right: 5px;
+    
+    & > *:not(a) {
+      width: 36px;
+      height: 36px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+      
+    & > a {
+      display: flex;
+      align-items: center;
+    }
   }
 }
 
@@ -289,7 +303,7 @@ $time-text-shadow: #fff 0 2px,
   }
 }
 
-.swipeable-rawer {
+.swipeable-drawer {
   height: 0;
   width: 100%;
   position: fixed;
@@ -347,6 +361,53 @@ $time-text-shadow: #fff 0 2px,
     
     .content {
       height: initial;
+    }
+  }
+}
+
+.settings-table {
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  
+  & > * {
+    width: 100%;
+    min-height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    & > * {
+      padding: 0 0 0 10px;
+      
+      &:first-child {
+        min-width: 100px;
+        display: block;
+        text-align: left;
+        padding-left: 0;
+        padding-right: 10px;
+      }
+
+      &.discrete-slider {
+        max-width: 300px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex: 1;
+
+        & > * {
+          margin: 0 10px;
+
+          &:first-child {
+            width: 200px;
+          }
+        }
+
+        input {
+          width: 42px;
+        }
+      }
     }
   }
 }

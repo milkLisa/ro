@@ -1,17 +1,23 @@
-import { useState } from 'react'
-import Container from '@mui/material/Container'
+import { useState, useEffect } from 'react'
 import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
-import CloseIcon from '@mui/icons-material/Close'
 import SearchIcon from '@mui/icons-material/Search'
-import CheckCard from './CheckCard'
 import { trimStr, template } from '../../utils/parser'
+import DrawerContainer from '../common/DrawerContainer'
+import CheckCard from './CheckCard'
 
-export default function CheckTable({ intl, monsters, checkedMons, onClose, onCheck }) {
+export default function CheckDrawer({ 
+  intl, isOpen, monsters, checkedMons, onClose, onCheck 
+}) {
   const [ leftList, setLeftList ]       = useState(monsters)
   const [ checkedList, setCheckedList ] = useState(checkedMons)
   const [ count, setCount ]             = useState(checkedMons.length)
   const [ searchText, setSearchText]    = useState("")
+
+  useEffect(() => {
+    setCheckedList(checkedMons)
+    setCount(checkedMons.length)
+  }, [checkedMons])
 
   const search = keywords => {
     setSearchText(keywords)
@@ -37,44 +43,37 @@ export default function CheckTable({ intl, monsters, checkedMons, onClose, onChe
     onCheck(checkedList)
   }
 
-  if (!monsters || !monsters.length) 
-    return <Container className="container">{ intl.home.loading }</Container>
-
   return (
-    <Container className="container">
-      <div className="search-panel">
-        <IconButton
-          aria-label= "search"
-          className = "search-btn"
-          onClick   = { () => search(searchText)  }
-        >
-          <SearchIcon />
-        </IconButton>
+    <DrawerContainer
+      anchor  = "bottom"
+      isOpen  = { isOpen }
+      header  = {
+        <div className="search-panel">
+          <IconButton
+            aria-label= "search"
+            className = "search-btn"
+            onClick   = { () => search(searchText)  }
+          >
+            <SearchIcon />
+          </IconButton>
 
-        <TextField
-          autoComplete    = "off"
-          fullWidth       = { true }
-          margin          = "none"
-          variant         = "outlined"
-          placeholder     = { intl.timer.search }
-          value           = { searchText }
-          className       = "search-field"
-          onChange        = { e => setSearchText(e.target.value) }
-          onKeyDown       = { e => {
-            if (e.key.match(new RegExp("enter", "i"))) search(e.target.value)
-          }}
-        />
-        
-        <IconButton
-          aria-label  = "close"
-          className   = "close-btn"
-          onClick     = { () => onClose() }
-        >
-          <CloseIcon />
-          <span>ESC</span>
-        </IconButton>
-      </div>
-      
+          <TextField
+            autoComplete    = "off"
+            fullWidth       = { true }
+            margin          = "none"
+            variant         = "outlined"
+            placeholder     = { intl.timer.search }
+            value           = { searchText }
+            className       = "search-field"
+            onChange        = { e => setSearchText(e.target.value) }
+            onKeyDown       = { e => {
+              if (e.key.match(new RegExp("enter", "i"))) search(e.target.value)
+            }}
+          />
+        </div>
+      }
+      onClose = { () => onClose() }
+    >
       <div>{ template(intl.timer.checked, count, monsters.length) }</div>
 
       <div className="list">
@@ -92,6 +91,6 @@ export default function CheckTable({ intl, monsters, checkedMons, onClose, onChe
           })
         }
       </div>
-    </Container>
+    </DrawerContainer>
   )
 }

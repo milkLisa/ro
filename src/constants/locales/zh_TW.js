@@ -14,7 +14,12 @@ const zh_TW = {
     editDesc: "請輸入剩餘分鐘數, 或以符號分隔的時分秒數, 如[時.分.秒]、[時 分 秒]",
     editSubmit: "確定",
     emptyError: "無資料，請確認網路連線是否正常。",
-    appearSort: "現身排序"
+    appearSort: "現身排序",
+    showName: "顯示名稱",
+    showLocation: "顯示地點",
+    showDateTime: "顯示時間日期",
+    remindBefore: "現身前幾分鐘開始提醒",
+    continueAfter: "現身後持續計時幾分鐘"
   },
   monsters: {
     race: {

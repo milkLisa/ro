@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
-import Drawer from '@mui/material/Drawer'
 import Button from '@mui/material/Button'
 import TableViewIcon from '@mui/icons-material/TableView'
 import { TimerObj } from '../../constants/customData'
-import { query, renew, update } from '../../utils/fetchData'
-import CheckTable from './CheckTable'
+import { query, renew } from '../../utils/fetchData'
+import CheckDrawer from './CheckDrawer'
 import TimerList from './TimerList'
 
 const combinedTimer = (ts, ms) => {
@@ -18,7 +17,7 @@ const combinedTimer = (ts, ms) => {
   return arr
 }
 
-export default function Content({ intl }) {
+export default function Content({ intl, settings }) {
   const [ monsters, setMonsters ]       = useState([])
   const [ timers, setTimers ]           = useState([])
   const [ isSaved, setIsSaved ]         = useState(false)
@@ -33,8 +32,6 @@ export default function Content({ intl }) {
               setTimers(combinedTimer(data, mons))
               setMonsters(mons)
             })
-        } else {
-          setMonsters(mons)
         }
       })
   }, [])
@@ -85,23 +82,20 @@ export default function Content({ intl }) {
         <TimerList 
           intl    = { intl }
           timers  = { timers }
+          settings= { settings }
           onChange= { list => updateTimers(list) }
         />
       </main>
       
-      <Drawer
-        anchor  = "bottom"
-        open    = { isCheckOpen }
-        onClose = { () => saveTimers() }
-      >
-        <CheckTable
-          intl        = { intl }
-          checkedMons = { timers }
-          monsters    = { monsters }
-          onClose     = { () => saveTimers() }
-          onCheck     = { mons => checkTimer(mons) }
-        />
-      </Drawer>
+      <CheckDrawer
+        intl        = { intl }
+        anchor      = "bottom"
+        isOpen      = { isCheckOpen }
+        checkedMons = { timers }
+        monsters    = { monsters }
+        onClose     = { () => saveTimers() }
+        onCheck     = { mons => checkTimer(mons) }
+      />
     </>
   )
 }

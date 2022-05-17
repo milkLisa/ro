@@ -14,7 +14,12 @@ const en_US = {
     editDesc: "Please enter remaining minutes, or time in [H.m.s] / [H m s] format",
     editSubmit: "OK",
     emptyError: "Fetch data failed. Please check your network connection.",
-    appearSort: "Appear Sort"
+    appearSort: "Appear Sort",
+    showName: "Display Monster Name",
+    showLocation: "Display appear location",
+    showDateTime: "Display appear date and time",
+    remindBefore: "Remind minutes before appear",
+    continueAfter: "Keep timing minutes after appeared"
   },
   monsters: {
     race: {

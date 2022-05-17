@@ -1,7 +1,7 @@
 import { openDB } from 'idb'
 
 const DB_NAME = "ro"
-const STORE_NAMES = ["monsters", "timers"]
+const STORE_NAMES = ["monsters", "timers", "settings"]
 
 const REQ_OPTIONS = {
   cache       : "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

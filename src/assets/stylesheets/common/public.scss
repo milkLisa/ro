@@ -12,7 +12,7 @@ $small-size: 0.8rem;
 $normal-size: 1rem;
 $middle-size: 1.5rem;
 $large-size: 2rem;
-$big-size: 2.5rem;
+$big-size: 3rem;
 
 $anchor-height: 64px;
 $avatar-size: 48px;
@@ -144,12 +144,23 @@ a {
   }
 }
 
+.drawer-container .close-btn {
+  @include large-button();
+  display: flex;
+  flex-direction: column;
+
+  span {
+    color: $note-color;
+    font-size: $tiny-size;
+  }
+}
+
 .search-panel {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px 0 5px 10px;
-  width: 90%;
+  width: 100%;
 
   .search-field input {
     margin-left: 32px;
@@ -159,15 +170,20 @@ a {
     @include icon-button();
     margin-right: -42px;
   }
+}
 
-  .close-btn {
-    @include large-button();
-    display: flex;
-    flex-direction: column;
+.toggle-switch {
+  @include big-button();
+  width: initial;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 
-    span {
-      color: $note-color;
-      font-size: $tiny-size;
-    }
+  .on {
+    color: $main-color;
+  }
+  
+  .off {
+    color: $note-color;
   }
 }
