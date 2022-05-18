@@ -96,9 +96,9 @@ export default function MonsterCard({
       <div className="info">
         <div>{ showField(settings.showName, monster.name) }</div>
         
-        <div className="location">
-          { showField(settings.showLocation, monster.location) }
-        </div>
+        
+        { showField(settings.showLocation, 
+          <div className="location">{ monster.location }</div>) }
         
         <div>
           { showField(settings.showDateTime, 

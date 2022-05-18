@@ -1,8 +1,7 @@
 const zh_TW = {
   home: {
     title: "Ragnarok工具庫",
-    welcome: "歡迎來到Ragnarok工具庫",
-    loading: "讀取中..."
+    welcome: "歡迎來到Ragnarok工具庫"
   },
   timer: {
     title: "MVP計時器",

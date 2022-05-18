@@ -3,9 +3,8 @@ export default function SortedDrawer({
 }) {
   return (
     <div
-      className  = { `swipeable-drawer${ isOpen ? " show" : "" }` }
-      anchor     = "bottom"
-      onClick    = { () => onOpen(!isOpen) }
+      className = { `swipeable-drawer${ isOpen ? " show" : "" }` }
+      onClick   = { () => onOpen(!isOpen) }
     >
       <div 
         className = "puller" 

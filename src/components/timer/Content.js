@@ -3,6 +3,7 @@ import Button from '@mui/material/Button'
 import TableViewIcon from '@mui/icons-material/TableView'
 import { TimerObj } from '../../constants/customData'
 import { query, renew } from '../../utils/fetchData'
+import Loading from '../common/Loading'
 import CheckDrawer from './CheckDrawer'
 import TimerList from './TimerList'
 
@@ -64,7 +65,7 @@ export default function Content({ intl, settings }) {
     return <main>{ intl.timer.emptyError }</main>
 
   if (!monsters.length)
-    return <main>{ intl.home.loading }</main>
+    return <main><Loading /></main>
 
   return (
     <>
@@ -89,7 +90,6 @@ export default function Content({ intl, settings }) {
       
       <CheckDrawer
         intl        = { intl }
-        anchor      = "bottom"
         isOpen      = { isCheckOpen }
         checkedMons = { timers }
         monsters    = { monsters }
