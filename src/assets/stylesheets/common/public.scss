@@ -148,15 +148,25 @@ a {
   color: $secondary-color;
 }
 
+.loading-modal .content {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: center;
+  color: $secondary-color;
+
+  & > *:last-child {
+    padding-top: 10px;
+  }
+}
+
 .drawer-container .buton-box {
   position: relative;
 
   .progress {
-    width: 50px;
-    height: 50px;
     position: absolute;
-    top: -1px;
-    left: -1px;
+    top: 0;
+    left: 0;
     z-index: 1;
   }
 

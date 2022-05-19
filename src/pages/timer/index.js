@@ -11,7 +11,7 @@ import Footer from '../../components/common/Footer'
 import GitHubLink from '../../components/common/GitHubLink'
 import Content from '../../components/timer/Content'
 import SettingsDrawer from '../../components/timer/SettingsDrawer'
-import { query, renew } from '../../utils/fetchData'
+import { query, update } from '../../utils/fetchData'
 import { isChanged } from '../../utils/parser'
 
 export default function Home({ intl }) {
@@ -19,7 +19,9 @@ export default function Home({ intl }) {
   const [settings, setSettings]  = useState(SettingsObj())
   
   useEffect(() => {
-    query("/api/settings").then(data => { setSettings(data) })
+    query("/api/settings").then(data => { 
+      setSettings(data && data[0])
+    })
 
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("/sw.js").then(
@@ -40,9 +42,9 @@ export default function Home({ intl }) {
 
   const changeSettings = newSettings => {
     if (isChanged(settings, newSettings)) {
-      renew("/api/settings", newSettings)
+      update("/api/settings", newSettings)
         .then(data => {
-          setSettings(data)
+          setSettings(data && data[0])
           setIsOpen(false)
         })
     } else {
@@ -65,7 +67,7 @@ export default function Home({ intl }) {
               <GitHubLink />
             </div>
           </Header>
-
+          
           <Content intl={ intl } settings={ settings } />
 
           <Footer copyright={ intl.copyright }/>

@@ -45,6 +45,7 @@ export default function CheckDrawer({
 
   return (
     <DrawerContainer
+      intl    = { intl }
       anchor  = "bottom"
       isOpen  = { isOpen }
       header  = {

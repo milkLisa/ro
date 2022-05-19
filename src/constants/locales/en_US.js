@@ -1,7 +1,8 @@
 const en_US = {
   home: {
     title: "Ragnarok Tools",
-    welcome: "Welcome to Ragnarok Tools"
+    welcome: "Welcome to Ragnarok Tools",
+    loading: "Just a moment..."
   },
   timer: {
     title: "MVP Timer",

@@ -15,15 +15,16 @@ export default function SettingsDrawer({
   const handleChange = (key, value) => {
     setSettings({ [key]: value })
   }
-
+  
   return (
     <DrawerContainer
+      intl    = { intl }
       anchor  = "right"
       isOpen  = { isOpen }
       onClose ={ () => onClose(settings) }
     >
       {
-        settings
+        savedSettings
         ? <div className="settings-table">
           <div>
             <span>{ intl.timer.showName }</span>

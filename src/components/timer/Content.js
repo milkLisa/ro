@@ -61,7 +61,7 @@ export default function Content({ intl, settings }) {
     })
   }
 
-  if (!monsters || !timers)
+  if (!settings || !monsters || !timers)
     return <main>{ intl.timer.emptyError }</main>
 
   if (!monsters.length)
@@ -74,6 +74,7 @@ export default function Content({ intl, settings }) {
           className = "add-btn"
           aria-label= "add timers"
           variant   = "contained"
+          disableFocusRipple
           endIcon   = { <TableViewIcon /> }
           onClick   = { () => setIsCheckOpen(true) } 
         >

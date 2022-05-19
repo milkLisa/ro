@@ -73,7 +73,7 @@ const fetchApi = async (url, options) => {
 
   try {
     return (options.method == "GET")
-      ? (await fetchApiFromIdb(db, apiName))
+      ? (await fetchFromIdb(db, apiName))
       : (await updateToIdb(db, apiName, options))
   } catch (ex) {
     console.log("Fetch API from network failed: ", url, ex)
@@ -96,7 +96,7 @@ const fetchApiAndStore = async (db, apiName, url, options) => {
     const tx = db.transaction(apiName, "readwrite")
     const store = tx.objectStore(apiName)
 
-    // 目前api CRUD都回覆完整陣列, 所以直接清空store重建資料
+    // Api CRUD都回覆完整陣列, 所以直接清空store重建資料
     store.clear()
     resJson.forEach(obj => store.put(obj))
     tx.done
@@ -105,7 +105,7 @@ const fetchApiAndStore = async (db, apiName, url, options) => {
   return resJson
 }
 
-const fetchApiFromIdb = async (db, apiName) => {
+const fetchFromIdb = async (db, apiName) => {
   const tx = db.transaction(apiName, "readwrite")
   const arr = await tx.objectStore(apiName).getAll()
   tx.done
