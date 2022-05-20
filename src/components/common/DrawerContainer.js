@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Container from '@mui/material/Container'
 import Drawer from '@mui/material/Drawer'
 import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
+import ScrollTopButton from './ScrollTopButton'
 import LoadingModal from './LoadingModal'
 import Loading from './Loading'
 
@@ -11,6 +12,7 @@ export default function DrawerContainer({
   closeIcon = <CloseIcon />, closeLabel = "ESC"
 }) {
   const [loading, setLoading] = useState(false)
+  const container = useRef(null)
 
   useEffect(() => {
     if (loading) setLoading(!loading)
@@ -30,10 +32,11 @@ export default function DrawerContainer({
       <Drawer
         anchor    = { anchor }
         open      = { isOpen }
+        PaperProps= { { ref: container } }
         ModalProps= { { keepMounted: true } }
         onClose   = { () => handleClose() }
       >
-        <Container className="drawer-container">
+        <Container className="drawer-container" >
           <header>
             { header }
 
@@ -53,6 +56,8 @@ export default function DrawerContainer({
           </header>
 
           { children }
+
+          <ScrollTopButton scrollWin={ container.current }/>
         </Container>
       </Drawer>
     </>

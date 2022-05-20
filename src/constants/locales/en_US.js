@@ -19,7 +19,8 @@ const en_US = {
     showLocation: "Display appear location",
     showDateTime: "Display appear date and time",
     remindBefore: "Remind minutes before appear",
-    continueAfter: "Keep timing minutes after appeared"
+    continueAfter: "Keep timing minutes after appeared",
+    settingTitle: "Settings"
   },
   monsters: {
     race: {

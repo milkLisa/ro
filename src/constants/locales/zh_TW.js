@@ -19,7 +19,8 @@ const zh_TW = {
     showLocation: "顯示地點",
     showDateTime: "顯示時間日期",
     remindBefore: "現身前幾分鐘開始提醒",
-    continueAfter: "現身後持續計時幾分鐘"
+    continueAfter: "現身後持續計時幾分鐘",
+    settingTitle: "設定"
   },
   monsters: {
     race: {

@@ -21,6 +21,7 @@ export default function SettingsDrawer({
       intl    = { intl }
       anchor  = "right"
       isOpen  = { isOpen }
+      header  = { <span>{ intl.timer.settingTitle }</span> }
       onClose ={ () => onClose(settings) }
     >
       {

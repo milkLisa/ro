@@ -21,7 +21,7 @@ const combinedTimer = (ts, ms) => {
 export default function Content({ intl, settings }) {
   const [ monsters, setMonsters ]       = useState([])
   const [ timers, setTimers ]           = useState([])
-  const [ isSaved, setIsSaved ]         = useState(false)
+  const [ isSaved, setIsSaved ]         = useState(true)
   const [ isCheckOpen, setIsCheckOpen ] = useState(false)
 
   useEffect(() => {

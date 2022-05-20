@@ -1,4 +1,5 @@
-import { trimStr } from '../utils/parser'
+import moment from 'moment-timezone'
+import { isValid, trimStr } from '../utils/parser'
 
 export const SECOND = 1000   // 1 second = 1000 milliseconds
 export const MINUTE = SECOND * 60
@@ -16,6 +17,11 @@ export function getFormatedTime(ms) {
   const seconds = parseInt((ms % HOUR % MINUTE) / SECOND)
 
   return padZero(2, hours) + ":" + padZero(2, minutes) + ":" + padZero(2, seconds)
+}
+
+export function getDateTime(ms) {
+  if (isValid(ms)) return moment(ms).format("YYYY-MM-DD HH:mm:ss")
+  else return ""
 }
 
 export function parseToMSEC(str) {

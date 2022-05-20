@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import moment from 'moment-timezone'
 import TextField from '@mui/material/TextField'
 import Dialog from '@mui/material/Dialog'
 import DialogTitle from '@mui/material/DialogTitle'
@@ -8,7 +7,7 @@ import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button'
 import { TimerObj } from '../../constants/customData'
 import { 
-  MINUTE, SECOND, getFormatedTime, parseToMSEC 
+  MINUTE, SECOND, getFormatedTime, getDateTime, parseToMSEC
 } from '../../constants/dateTime'
 import { isValid } from '../../utils/parser'
 
@@ -101,8 +100,7 @@ export default function MonsterCard({
           <div className="location">{ monster.location }</div>) }
         
         <div>
-          { showField(settings.showDateTime, 
-            moment(monster.utcMSEC || "").format("YYYY-MM-DD HH:mm:ss")) }
+          { showField(settings.showDateTime, getDateTime(monster.utcMSEC)) }
         </div>
       </div>
 

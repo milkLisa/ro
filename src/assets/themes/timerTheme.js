@@ -11,6 +11,13 @@ const theme = createTheme({
         }
       }
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          maxWidth: "100%"
+        }
+      }
+    },
     MuiOutlinedInput: {
       styleOverrides: {
         input: {

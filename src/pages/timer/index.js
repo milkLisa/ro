@@ -9,6 +9,7 @@ import HtmlHead from '../../components/common/HtmlHead'
 import Header from '../../components/common/Header'
 import Footer from '../../components/common/Footer'
 import GitHubLink from '../../components/common/GitHubLink'
+import ScrollTopButton from '../../components/common/ScrollTopButton'
 import Content from '../../components/timer/Content'
 import SettingsDrawer from '../../components/timer/SettingsDrawer'
 import { query, update } from '../../utils/fetchData'
@@ -78,6 +79,8 @@ export default function Home({ intl }) {
             savedSettings = { settings }
             onClose       = { newSettings => changeSettings(newSettings) }
           />
+
+          <ScrollTopButton />
         </Container>
       </ThemeProvider>
     </StyledEngineProvider>
