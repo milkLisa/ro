@@ -3,6 +3,7 @@ import Button from '@mui/material/Button'
 import TableViewIcon from '@mui/icons-material/TableView'
 import { TimerObj } from '../../constants/customData'
 import { query, renew } from '../../utils/fetchData'
+import { isChanged } from '../../utils/parser'
 import Loading from '../common/Loading'
 import CheckDrawer from './CheckDrawer'
 import TimerList from './TimerList'
@@ -21,7 +22,6 @@ const combinedTimer = (ts, ms) => {
 export default function Content({ intl, settings }) {
   const [ monsters, setMonsters ]       = useState([])
   const [ timers, setTimers ]           = useState([])
-  const [ isSaved, setIsSaved ]         = useState(true)
   const [ isCheckOpen, setIsCheckOpen ] = useState(false)
 
   useEffect(() => {
@@ -30,35 +30,38 @@ export default function Content({ intl, settings }) {
         if (mons && mons.length) {
           query("/api/timers")
             .then(data => {
-              setTimers(combinedTimer(data, mons))
+              setTimers(data)
               setMonsters(mons)
             })
         }
       })
   }, [])
 
-  const checkTimer = mons => {
-    setIsSaved(false)
-    setTimers(mons)
-  }
+  const saveTimers = newTimers => {
+    const ids = timers.map(t => t.id)
+    let newIds = []
+    newTimers = newTimers.reduce((previous, current) => {
+      if (ids.includes(current.id)) {
+        previous.push(timers.find(t => t.id == current.id))
+      } else {
+        previous.push(TimerObj(current))
+      }
 
-  const saveTimers = () => {
-    if (!isSaved) {
-      const list = timers.map(m => TimerObj(m))
-      renew("/api/timers", list).then(data => {
-        setIsSaved(true)
-        setIsCheckOpen(false)
-        setTimers(combinedTimer(data, monsters))
-      })
-    } else {
-      setIsCheckOpen(false)
+      newIds.push(current.id)
+      return previous
+    }, [])
+
+    setIsCheckOpen(false)
+
+    if (isChanged(ids, newIds)) {
+      setTimers(newTimers)
+      renew("/api/timers", newTimers)
     }
   }
 
   const updateTimers = list => {
-    renew("/api/timers", list).then(data => {
-      setTimers(combinedTimer(data, monsters))
-    })
+    setTimers(list)
+    renew("/api/timers", list)
   }
 
   if (!settings || !monsters || !timers)
@@ -83,19 +86,18 @@ export default function Content({ intl, settings }) {
         
         <TimerList 
           intl    = { intl }
-          timers  = { timers }
+          timers  = { combinedTimer(timers, monsters) }
           settings= { settings }
-          onChange= { list => updateTimers(list) }
+          onChange= { updateTimers }
         />
       </main>
       
       <CheckDrawer
         intl        = { intl }
         isOpen      = { isCheckOpen }
-        checkedMons = { timers }
+        timers      = { timers }
         monsters    = { monsters }
-        onClose     = { () => saveTimers() }
-        onCheck     = { mons => checkTimer(mons) }
+        onClose     = { saveTimers }
       />
     </>
   )

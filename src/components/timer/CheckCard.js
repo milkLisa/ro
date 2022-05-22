@@ -3,11 +3,11 @@ import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import AlarmOnIcon from '@mui/icons-material/AlarmOn'
 import { getFormatedTime } from '../../constants/dateTime'
-import { isValid } from '../../utils/parser'
 
-export default function CheckCard({ intl, monster, isChecked, onCheck }) {
+export default function CheckCard({ 
+  intl, monster, isChecked, isStarting, onCheck 
+}) {
   const img = monster.image ? monster.image : "egg.png"
-  const isStarting = isValid(monster.utcMSEC)
 
   return (
     <div

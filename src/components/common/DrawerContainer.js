@@ -8,7 +8,7 @@ import LoadingModal from './LoadingModal'
 import Loading from './Loading'
 
 export default function DrawerContainer({ 
-  intl, anchor, isOpen, header, onClose, children, 
+  intl, anchor, isOpen, header, onClose, children,
   closeIcon = <CloseIcon />, closeLabel = "ESC"
 }) {
   const [loading, setLoading] = useState(false)
@@ -57,7 +57,7 @@ export default function DrawerContainer({
 
           { children }
 
-          <ScrollTopButton scrollWin={ container.current }/>
+          <ScrollTopButton scrollWin={ container } />
         </Container>
       </Drawer>
     </>

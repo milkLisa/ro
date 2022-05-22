@@ -47,7 +47,6 @@ export default function MonsterCard({
   const openEditBox = e => {
     e.preventDefault()
     setIsEdit(true)
-    return false
   }
 
   const handleEditChange = e => {
@@ -77,8 +76,9 @@ export default function MonsterCard({
   return (
     <div className={ getClass("monster-card", isStart, leftTime) }>
       <div 
-        className = "avatar"
-        onClick   = { () => handleSwitch(!isStart) }
+        className     = "avatar"
+        onClick       = { () => handleSwitch(!isStart) }
+        onDoubleClick = { e => openEditBox(e) }
         onContextMenu = { e => openEditBox(e) }
       >
         <div className="time">
@@ -117,9 +117,9 @@ export default function MonsterCard({
 
         <DialogContent>
           <TextField
+            focused
             autoFocus
             fullWidth
-            hiddenLabel
             margin    = "none"
             type      = "tel"
             value     = { editText }

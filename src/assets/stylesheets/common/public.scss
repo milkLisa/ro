@@ -218,12 +218,17 @@ a {
 
 .scroll-btn {
   @include large-button();
-  position: fixed;
-  right: 10%;
+  position: sticky;
+  left: calc(90% - 48px);
   bottom: 10%;
   background-color: $bg-color;
+  display: none;
 
   &:hover {
     background-color: $note-color;
+  }
+
+  &.show {
+    display: flex;
   }
 }

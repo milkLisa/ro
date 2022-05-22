@@ -42,14 +42,11 @@ export default function Home({ intl }) {
   }, [])
 
   const changeSettings = newSettings => {
+    setIsOpen(false)
+
     if (isChanged(settings, newSettings)) {
+      setSettings(newSettings)
       update("/api/settings", newSettings)
-        .then(data => {
-          setSettings(data && data[0])
-          setIsOpen(false)
-        })
-    } else {
-      setIsOpen(false)
     }
   }
 

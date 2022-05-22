@@ -26,7 +26,8 @@ export default function SettingsDrawer({
     >
       {
         savedSettings
-        ? <div className="settings-table">
+        ? 
+        <div className="settings-table">
           <div>
             <span>{ intl.timer.showName }</span>
             <ToggleSwitch 
@@ -34,6 +35,7 @@ export default function SettingsDrawer({
               onSwitch= { status => handleChange("showName", status) }
             />
           </div>
+
           <div>
             <span>{ intl.timer.showLocation }</span>
             <ToggleSwitch 
@@ -41,6 +43,7 @@ export default function SettingsDrawer({
               onSwitch= { status => handleChange("showLocation", status) }
             />
           </div>
+
           <div>
             <span>{ intl.timer.showDateTime }</span>
             <ToggleSwitch 
@@ -48,6 +51,7 @@ export default function SettingsDrawer({
               onSwitch= { status => handleChange("showDateTime", status) }
             />
           </div>
+
           <div>
             <span>{ intl.timer.remindBefore }</span>
             <DiscreteSlider 
@@ -56,6 +60,7 @@ export default function SettingsDrawer({
               onChange= { value => handleChange("remindBefore", value) }
             />
           </div>
+
           <div>
             <span>{ intl.timer.continueAfter }</span>
             <DiscreteSlider 
@@ -65,7 +70,8 @@ export default function SettingsDrawer({
             />
           </div>
         </div>
-        : <span>{ intl.timer.emptyError }</span>
+        :
+        <span>{ intl.timer.emptyError }</span>
       }
     </DrawerContainer>
   )

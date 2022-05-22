@@ -2,26 +2,21 @@ import { useState, useEffect } from 'react'
 import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
-import { trimStr, template } from '../../utils/parser'
+import { TimerObj } from '../../constants/customData'
+import { isValid, trimStr, template } from '../../utils/parser'
 import DrawerContainer from '../common/DrawerContainer'
 import CheckCard from './CheckCard'
 
 export default function CheckDrawer({ 
-  intl, isOpen, monsters, checkedMons, onClose, onCheck 
+  intl, isOpen, monsters, timers, onClose 
 }) {
   const [ leftList, setLeftList ]       = useState(monsters)
-  const [ checkedList, setCheckedList ] = useState(checkedMons)
-  const [ count, setCount ]             = useState(checkedMons.length)
+  const [ checkedList, setCheckedList ] = useState(timers)
   const [ searchText, setSearchText]    = useState("")
 
-  useEffect(() => {
-    setCheckedList(checkedMons)
-    setCount(checkedMons.length)
-  }, [checkedMons])
+  useEffect(() => setCheckedList(timers) , [timers])
 
   const search = keywords => {
-    setSearchText(keywords)
-
     const word = trimStr(keywords)
     const newList = monsters.filter(mon => 
       mon.roId.toString().match(new RegExp(word, "i")) || 
@@ -32,15 +27,13 @@ export default function CheckDrawer({
   }
 
   const changeList = (monster, isAdd) => {
+    let newList = Array.from(checkedList)
     if(isAdd) 
-      checkedList.push(monster)
+      newList.push(TimerObj(monster))
     else 
-      checkedList = checkedList.filter(mon => mon.id != monster.id)
+      newList = newList.filter(mon => mon.id != monster.id)
 
-    checkedList.sort((a, b) => a.id - b.id)
-    setCheckedList(checkedList)
-    setCount(checkedList.length)
-    onCheck(checkedList)
+    setCheckedList(newList)
   }
 
   return (
@@ -73,20 +66,23 @@ export default function CheckDrawer({
           />
         </div>
       }
-      onClose = { () => onClose() }
+      onClose = { () => onClose(checkedList.sort((a, b) => a.id - b.id)) }
     >
-      <div>{ template(intl.timer.checked, count, monsters.length) }</div>
+      <div>
+        { template(intl.timer.checked, checkedList.length, monsters.length) }
+      </div>
 
       <div className="list">
         { 
           leftList.map(mon => {
-            const checked = checkedList.find(item => item.id == mon.id)
+            const checked = checkedList.find(c => c.id == mon.id)
 
             return (<CheckCard 
               key       = { `${ mon.id }${ mon.roId }` } 
-              monster   = { checked || mon }
+              monster   = { mon }
               intl      = { intl }
               isChecked = { !!checked }
+              isStarting= { checked && isValid(checked.utcMSEC) }
               onCheck   = { changeList }
             />)
           })

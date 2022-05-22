@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import ReactDOM from 'react-dom'
 import IconButton from '@mui/material/IconButton'
 import ExpandLessIcon from '@mui/icons-material/ExpandLess'
 
@@ -8,21 +7,27 @@ export default function ScrollTopButton({ scrollWin }) {
   let parent
   
   useEffect(() => {
-    if (scrollWin) {
-      parent = ReactDOM.findDOMNode(scrollWin)
-      parent.addEventListener("scroll", 
-        e => handleScroll(e.target.scrollTop))
+    let isUnmount = false
+    if (scrollWin && scrollWin.current) {
+      parent = scrollWin.current
+      parent.addEventListener("scroll", e => {
+        if (!isUnmount) handleScroll(e.target.scrollTop, e.target.clientHeight)
+      })
     } else {
       parent = window
-      parent.addEventListener("scroll",
-        () => handleScroll(window.scrollY))
+      parent.addEventListener("scroll", () => {
+        if (!isUnmount) handleScroll(window.scrollY, window.innerHeight)
+      })
     }
 
-    return () => parent.removeEventListener("scroll", handleScroll)
+    return () => {
+      parent.removeEventListener("scroll", handleScroll)
+      isUnmount = true
+    }
   })
 
-  const handleScroll = scrollOffset => {
-    if (scrollOffset > 250) {
+  const handleScroll = (scrollOffset, viewHeight) => {
+    if (scrollOffset > (viewHeight / 2)) {
       if (!show) setShow(true)
     } else {
       if (show) setShow(false)
@@ -32,19 +37,14 @@ export default function ScrollTopButton({ scrollWin }) {
   const handleClick = () => {
     parent["scrollTo"]({ top: 0, behavior: "smooth" })
   }
-
+  
   return (
-    <>
-      {
-        show &&
-        <IconButton
-          aria-label = "scroll to top"
-          className  = "scroll-btn"
-          onClick    = { () => handleClick() }
-        >
-          <ExpandLessIcon />
-        </IconButton>
-      }
-    </>
+    <IconButton
+      aria-label = "scroll to top"
+      className  = { `scroll-btn${ show ? " show": "" }` }
+      onClick    = { () => handleClick() }
+    >
+      <ExpandLessIcon />
+    </IconButton>
   )
 }

@@ -17,7 +17,7 @@ $time-text-shadow: #fff 0 2px,
   #fff -1.4px 1.4px;
 
 @mixin timing-shadow($color) {
-  box-shadow: $color 2px 2px 1px;
+  box-shadow: $color 2px 2px 5px;
 }
 
 .big-btn {
@@ -80,7 +80,7 @@ $time-text-shadow: #fff 0 2px,
 
   &.timer {
     .avatar {
-      border: 3px solid $timer-color;
+      border: 3px outset $timer-color;
       background-color: $timer-bg-color;
       opacity: 1;
       @include timing-shadow($timer-color);
@@ -100,7 +100,7 @@ $time-text-shadow: #fff 0 2px,
   }
 
   &.alert .avatar {
-    border: 3px solid $alert-color;
+    border-color: $alert-color;
     background-color: $alert-bg-color;
     @include timing-shadow($alert-color);
 
@@ -117,7 +117,7 @@ $time-text-shadow: #fff 0 2px,
   }
   
   &.appeared .avatar {
-    border: 3px solid $appeared-color;
+    border-color: $appeared-color;
     background-color: $appeared-bg-color;
     @include timing-shadow($appeared-color);
   
@@ -422,7 +422,7 @@ $time-text-shadow: #fff 0 2px,
         width: 50%;
       }
 
-      &.discrete-slider > *:first-child {
+      &.discrete-slider > *:last-child {
         display: none;
       }
     }
