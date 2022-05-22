@@ -6,7 +6,7 @@ const en_US = {
   },
   timer: {
     title: "MVP Timer",
-    search: "Monster name or monster ID",
+    search: "Enter monster name, ID or location to search",
     checkTimer: "Click to select timers",
     respawn: "Respawn Time",
     checked: "{0} / {1} Selected",

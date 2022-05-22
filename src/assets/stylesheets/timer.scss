@@ -128,142 +128,146 @@ $time-text-shadow: #fff 0 2px,
 }
 
 .check-card {
-  display: flex;
-  align-items: center;
+  width: 300px;
   border: 1px solid $note-color;
   border-radius: 5px;
   box-shadow: $card-shadow;
-  padding: 5px;
-  width: 300px;
   cursor: pointer;
 
-  &.timer {
-    background-color: $disable-color;
-    cursor: initial;
-    pointer-events: none;
-  }
-
-  & > .avatar {
-    min-width: 100px;
+  .check-area {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    padding: 5px;
 
-    & > * {
-      &:first-child {
-        display: flex;
-        justify-content: center;
-        width: $avatar-size;
-        height: $avatar-size;
-        padding: 5px;
-        margin: 5px 0;
+    &.timer {
+      background-color: $disable-color;
+      cursor: initial;
+      pointer-events: none;
+    }
+
+    & > .avatar {
+      min-width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & > * {
+        &:first-child {
+          display: flex;
+          justify-content: center;
+          width: $avatar-size;
+          height: $avatar-size;
+          padding: 5px;
+          margin: 5px 0;
+        }
+
+        &:last-child {
+          padding: 0;
+
+          & > * {
+            padding: 0 0 5px 5px;
+          }
+        }
+      }
+      
+      img {
+        width: auto;
+        font-size: $small-size;
+        color: $note-color;
+        text-align: center;
+        align-self: center;
       }
 
-      &:last-child {
-        padding: 0;
+      .desc, .note {
+        display: flex;
+        align-items: center;
+        font-size: $small-size;
+        justify-content: center;
 
         & > * {
-          padding: 0 0 5px 5px;
+          padding-right: 5px;
+        }
+      }
+    }
+
+    & > .info {
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      padding-right: 5px;
+
+      & > * {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        padding: 0 5px 5px 0;
+        
+        & > *:not(button) {
+          padding: 0 5px;
+
+          &:first-child {
+            padding-left: 0;
+          }
+
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+
+      .name {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: $bold-weight;
+        height: $avatar-size;
+        padding-top: 5px;
+        margin: 5px 0;
+
+        .check {
+          color: $main-color;
+        }
+      }
+
+      .time {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px dotted $font-color;
+        -webkit-border-radius: 5px 20px;
+        border-radius: 5px 20px;
+        margin: 5px;
+          
+        .alert {
+          color: $alert-color;
+        }
+
+        .appeared {
+          color: $appeared-color;
+        }
+
+        .play button {
+          @include icon-button();
+          margin: 0 10px;
         }
       }
     }
     
-    img {
-      width: auto;
+    .timer {
+      color: $timer-color;
+      font-weight: $bold-weight;
+    }
+
+    .desc {
+      font-size: $small-size;
+    }
+    
+    .note, .location {
       font-size: $small-size;
       color: $note-color;
-      text-align: center;
-      align-self: center;
     }
-
-    .desc, .note {
-      display: flex;
-      align-items: center;
-      font-size: $small-size;
-      justify-content: center;
-
-      & > * {
-        padding-right: 5px;
-      }
-    }
-  }
-
-  & > .info {
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
-
-    & > * {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-align: left;
-      padding: 0 5px 5px 0;
-      
-      & > *:not(button) {
-        padding: 0 5px;
-
-        &:first-child {
-          padding-left: 0;
-        }
-
-        &:last-child {
-          padding-right: 0;
-        }
-      }
-    }
-
-    .name {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-weight: $bold-weight;
-      height: $avatar-size;
-      padding-top: 5px;
-      margin: 5px 0;
-
-      .check {
-        color: $main-color;
-      }
-    }
-
-    .time {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: 1px dotted $font-color;
-      -webkit-border-radius: 5px 20px;
-      border-radius: 5px 20px;
-      margin: 5px;
-        
-      .alert {
-        color: $alert-color;
-      }
-
-      .appeared {
-        color: $appeared-color;
-      }
-
-      .play button {
-        @include icon-button();
-        margin: 0 10px;
-      }
-    }
-  }
-  
-  .timer {
-    color: $timer-color;
-    font-weight: $bold-weight;
-  }
-
-  .desc {
-    font-size: $small-size;
-  }
-  
-  .note, .location {
-    font-size: $small-size;
-    color: $note-color;
   }
 }
 

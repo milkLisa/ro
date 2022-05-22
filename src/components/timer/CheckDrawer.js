@@ -20,10 +20,16 @@ export default function CheckDrawer({
     const word = trimStr(keywords)
     const newList = monsters.filter(mon => 
       mon.roId.toString().match(new RegExp(word, "i")) || 
-      mon.name.match(new RegExp(word, "i"))
+      mon.name.match(new RegExp(word, "i")) ||
+      (mon.location && mon.location.match(new RegExp(word, "i")))
     )
     
     setLeftList(word.length > 0 ? newList : monsters)
+  }
+
+  const handleChange = value => {
+    setSearchText(value)
+    search(value)
   }
 
   const changeList = (monster, isAdd) => {
@@ -59,10 +65,7 @@ export default function CheckDrawer({
             placeholder     = { intl.timer.search }
             value           = { searchText }
             className       = "search-field"
-            onChange        = { e => setSearchText(e.target.value) }
-            onKeyDown       = { e => {
-              if (e.key.match(new RegExp("enter", "i"))) search(e.target.value)
-            }}
+            onChange        = { e => handleChange(e.target.value) }
           />
         </div>
       }
