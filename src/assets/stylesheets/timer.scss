@@ -393,21 +393,29 @@ $time-text-shadow: #fff 0 2px,
         padding-left: 0;
         padding-right: 10px;
       }
+    }
 
-      &.discrete-slider {
-        width: 70%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        flex: 1;
+    .discrete-slider {
+      width: 70%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex: 1;
 
-        & > * {
-          margin: 0 10px;
-        }
+      & > * {
+        margin: 0 10px;
+      }
 
-        input {
-          width: 42px;
-        }
+      input {
+        width: 42px;
+      }
+    }
+
+    .native-select {
+      width: 100%;
+
+      & > * {
+        width: 100%;
       }
     }
   }

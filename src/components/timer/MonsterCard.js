@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import TextField from '@mui/material/TextField'
 import Dialog from '@mui/material/Dialog'
 import DialogTitle from '@mui/material/DialogTitle'
@@ -12,7 +12,7 @@ import {
 import { isValid } from '../../utils/parser'
 
 export default function MonsterCard({ 
-  intl, monster, settings, onStart, onStop 
+  intl, settings, monster, onStart, onStop, onTime 
 }) {
   const [isEdit, setIsEdit]     = useState(false)
   const [editText, setEditText] = useState("")
@@ -20,7 +20,13 @@ export default function MonsterCard({
   const isStart = isValid(monster.utcMSEC)
   const leftTime = monster.leftTime || defaultTime
   const img = "/static/images/" + (monster.image ? monster.image : "egg.png")
+  const before = parseToMSEC(settings.remindBefore) || MINUTE
   
+  useEffect(() => {
+    if (isStart && getFormatedTime(leftTime) === getFormatedTime(before)) 
+      onTime(monster.id)
+  })
+
   const getClass = (stable, isStart, time) => {
     let classArr = [stable]
 
@@ -29,7 +35,7 @@ export default function MonsterCard({
 
       if(time < 0)
         classArr.push("appeared")
-      else if (time < (parseToMSEC(settings.remindBefore) || MINUTE))
+      else if (time < before)
         classArr.push("alert")
     }
 

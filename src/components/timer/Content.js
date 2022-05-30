@@ -14,7 +14,7 @@ const combinedTimer = (ts, ms) => {
   let arr = []
   ts.forEach(obj => {
     let mons = ms.find(m => m.id == obj.id)
-    if (mons) arr.push(Object.assign(obj, mons))
+    if (mons) arr.push(Object.assign({}, obj, mons))
   })
   return arr
 }
@@ -25,15 +25,10 @@ export default function Content({ intl, settings }) {
   const [ isCheckOpen, setIsCheckOpen ] = useState(false)
 
   useEffect(() => {
-    query("/api/monsters")
-      .then(mons => {
-        if (mons && mons.length) {
-          query("/api/timers")
-            .then(data => {
-              setTimers(data)
-              setMonsters(mons)
-            })
-        }
+    query(["/api/monsters", "/api/timers"])
+      .then(data => {
+        setTimers(data.timers)
+        setMonsters(data.monsters)
       })
   }, [])
 
@@ -60,8 +55,9 @@ export default function Content({ intl, settings }) {
   }
 
   const updateTimers = list => {
-    setTimers(list)
-    renew("/api/timers", list)
+    let objs = list.map(t => TimerObj(t))
+    setTimers(objs)
+    renew("/api/timers", objs)
   }
 
   if (!settings || !monsters || !timers)
@@ -85,10 +81,10 @@ export default function Content({ intl, settings }) {
         </Button>
         
         <TimerList 
-          intl    = { intl }
-          timers  = { combinedTimer(timers, monsters) }
-          settings= { settings }
-          onChange= { updateTimers }
+          intl      = { intl }
+          monTimers = { combinedTimer(timers, monsters) }
+          settings  = { settings }
+          onChange  = { updateTimers }
         />
       </main>
       

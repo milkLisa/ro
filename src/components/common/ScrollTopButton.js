@@ -7,32 +7,30 @@ export default function ScrollTopButton({ scrollWin }) {
   let parent
   
   useEffect(() => {
-    let isUnmount = false
+    function handleScroll(scrollOffset, viewHeight) {
+      if (scrollOffset > (viewHeight / 2)) {
+        if (!show) setShow(true)
+      } else {
+        if (show) setShow(false)
+      }
+    }
+
     if (scrollWin && scrollWin.current) {
       parent = scrollWin.current
-      parent.addEventListener("scroll", e => {
-        if (!isUnmount) handleScroll(e.target.scrollTop, e.target.clientHeight)
-      })
+      parent.addEventListener("scroll", e => 
+        handleScroll(e.target.scrollTop, e.target.clientHeight)
+      )
     } else {
       parent = window
-      parent.addEventListener("scroll", () => {
-        if (!isUnmount) handleScroll(window.scrollY, window.innerHeight)
-      })
+      parent.addEventListener("scroll", () => 
+        handleScroll(window.scrollY, window.innerHeight)
+      )
     }
 
     return () => {
       parent.removeEventListener("scroll", handleScroll)
-      isUnmount = true
     }
   })
-
-  const handleScroll = (scrollOffset, viewHeight) => {
-    if (scrollOffset > (viewHeight / 2)) {
-      if (!show) setShow(true)
-    } else {
-      if (show) setShow(false)
-    }
-  }
 
   const handleClick = () => {
     parent["scrollTo"]({ top: 0, behavior: "smooth" })

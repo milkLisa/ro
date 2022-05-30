@@ -20,6 +20,9 @@ const zh_TW = {
     showDateTime: "顯示時間日期",
     remindBefore: "現身前幾分鐘開始提醒",
     continueAfter: "現身後持續計時幾分鐘",
+    remindAudio: "提醒音樂",
+    playSeconds: "音樂播放秒數",
+    noneAudio: "無",
     settingTitle: "設定"
   },
   monsters: {

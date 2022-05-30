@@ -14,7 +14,7 @@ export default function CheckDrawer({
   const [ checkedList, setCheckedList ] = useState(timers)
   const [ searchText, setSearchText]    = useState("")
 
-  useEffect(() => setCheckedList(timers) , [timers])
+  useEffect(() => setCheckedList(timers), [timers])
 
   const search = keywords => {
     const word = trimStr(keywords)

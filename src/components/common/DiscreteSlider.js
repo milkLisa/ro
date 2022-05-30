@@ -3,9 +3,9 @@ import Slider from '@mui/material/Slider'
 import Input from '@mui/material/Input'
 import { toNumber } from '../../utils/parser'
 
-const marks = max => {
-  return Array(max).fill(0).reduce((pre, curr, index) => {
-    pre.push({ value: index + 1 })
+const marks = (step, max) => {
+  return Array(max / step).fill(0).reduce((pre, curr, index) => {
+    pre.push({ value: (index + 1) * step })
     return pre
   }, [])
 }
@@ -32,7 +32,7 @@ export default function DiscreteSlider({
         value       = { toNumber(value, min) }
         defaultValue= { value }
         step        = { step }
-        marks       = { marks(max) }
+        marks       = { marks(step, max) }
         min         = { min }
         max         = { max }
         onChange    = { handleChange }

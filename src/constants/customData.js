@@ -5,7 +5,8 @@ export function TimerObj(monster, options) {
 
 export function SettingsObj(settings, options) {
   const objKeys = ["id", "showName", "showLocation", 
-  "showDateTime", "remindBefore", "continueAfter"]
+  "showDateTime", "remindBefore", "continueAfter", 
+  "remindAudio", "playSeconds", "audios"]
   return BuildObj(settings, options, objKeys)
 }
 

@@ -20,6 +20,9 @@ const en_US = {
     showDateTime: "Display appear date and time",
     remindBefore: "Remind minutes before appear",
     continueAfter: "Keep timing minutes after appeared",
+    remindAudio: "Remind audio",
+    playSeconds: "Audio playing seconds",
+    noneAudio: "None",
     settingTitle: "Settings"
   },
   monsters: {

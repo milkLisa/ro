@@ -1,19 +1,20 @@
 import { Component } from 'react'
-import { TimerObj } from '../../constants/customData'
 import { MINUTE, SECOND, parseToMSEC } from '../../constants/dateTime'
 import { isValid, isChanged } from '../../utils/parser'
+import AudioPlayer from '../common/AudioPlayer'
 import MonsterCard from './MonsterCard'
 import SortedDrawer from './SortedDrawer'
 
 const sortByAppearTime = list => {
-  let newList = list.filter(m => !!m.utcMSEC)
+  let newList = list.filter(m => isValid(m.utcMSEC))
   newList.sort((a, b) => a.utcMSEC - b.utcMSEC)
   return newList
 }
 
 export default class TimerList extends Component {
-  state = { isSortOpen: false, allTimer: this.props.timers }
+  state = { isSortOpen: false, allTimer: this.props.monTimers }
   intervalId = null
+  remindId = null
   
   componentDidMount() {
     const hasTiming = this.state.allTimer.some(mon => isValid(mon.utcMSEC))
@@ -21,18 +22,20 @@ export default class TimerList extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { timers } = this.props
+    const { monTimers, settings } = this.props
     let { allTimer } = this.state
 
-    if (isChanged(timers, prevProps.timers)) {
+    if (isChanged(monTimers.map(t => t.id), allTimer.map(t => t.id))) {
       let timerMap = allTimer.reduce((previous, current) => {
         previous[current.id] = current
         return previous
       }, {})
 
-      allTimer = timers.map(mon => Object.assign(mon, timerMap[mon.id]))
+      allTimer = monTimers.map(mon => Object.assign(mon, timerMap[mon.id]))
       this.setState({ allTimer })
     }
+
+    if (isChanged(settings, prevProps.settings)) this.remindId = null
   }
 
   componentWillUnmount() {
@@ -62,13 +65,14 @@ export default class TimerList extends Component {
 
     if (!keepTiming) this.clearTimer()
 
-    if (hasStop) this.props.onChange(allTimer.map(m => TimerObj(m)))
+    if (hasStop) this.props.onChange(allTimer)
     else this.setState({ allTimer })
   }
 
   clearTimer() {
     clearInterval(this.intervalId)
     this.intervalId = null
+    this.remindId = null
   }
 
   start(timer) {
@@ -83,7 +87,8 @@ export default class TimerList extends Component {
         return mon
       })
 
-      this.props.onChange(allTimer.map(m => TimerObj(m)))
+      this.setState({ allTimer })
+      this.props.onChange(allTimer)
     }
 
     if (!this.intervalId)
@@ -92,20 +97,21 @@ export default class TimerList extends Component {
 
   stop(timer) {
     let { allTimer } = this.state
-    let keepTiming = false
+    
+    if (this.remindId == timer.id) this.remindId = null
 
     allTimer = allTimer.map(mon => {
-      if (mon.id == timer.id) {
+      if (mon.id == timer.id) 
         mon = Object.assign(mon, { ...timer, leftTime: null })
-      }
-
-      if (isValid(mon.utcMSEC)) keepTiming = true
       return mon
     })
 
-    this.props.onChange(allTimer.map(m => TimerObj(m)))
+    this.setState({ allTimer })
+    this.props.onChange(allTimer)
+  }
 
-    if (!keepTiming) this.clearTimer()
+  handlePlayerFinish(id) {
+    if (this.remindId == id) this.remindId = null
   }
 
   MonsterList(prefix, list) {
@@ -115,21 +121,29 @@ export default class TimerList extends Component {
       <MonsterCard 
         intl     = { intl }
         settings = { settings }
-        key      = { `${prefix}${ mon.id }${ mon.roId }` }
+        key      = { `${ prefix }${ mon.id }${ mon.roId }` }
         monster  = { mon }
         onStart  = { timer => this.start(timer) }
         onStop   = { timer => this.stop(timer) }
+        onTime   = { id => this.remindId = id }
       />
     ))
   }
 
   render() {
-    const { intl } = this.props
+    const { intl, settings } = this.props
     const { isSortOpen, allTimer } = this.state
     const sorted = sortByAppearTime(allTimer)
 
     return (
       <>
+        <AudioPlayer 
+          id      = { this.remindId }
+          src     = { settings.remindAudio }
+          seconds = { settings.playSeconds * SECOND }
+          onFinish= { id => this.handlePlayerFinish(id) }
+        />
+
         <div className="list">
           { allTimer.length > 0 && this.MonsterList("t", allTimer) }
         </div>

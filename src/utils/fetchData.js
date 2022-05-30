@@ -11,11 +11,28 @@ const REQ_OPTIONS = {
   referrer    : "no-referrer", // *client, no-referrer
 }
 
-export async function query(url) {
-  return fetchApi(url, {
-    method: "GET",
-    ...REQ_OPTIONS
-  })
+export async function query(urls) {
+  if (typeof urls === "string") {
+    return fetchApi(urls, {
+      method: "GET",
+      ...REQ_OPTIONS
+    })
+  } else {
+    return new Promise(async (resolve, reject) => {
+      let data = {}
+      
+      for (let i = 0; i < urls.length; i++) {
+        const url = urls[i]
+        const apiName = url.substring(url.lastIndexOf("/") + 1)
+        await fetchApi(url, {
+          method: "GET",
+          ...REQ_OPTIONS
+        }).then(result => data[apiName] = result)
+
+        if (i == urls.length - 1) resolve(data)
+      }
+    })
+  }
 }
 
 export async function add(url, data) {
