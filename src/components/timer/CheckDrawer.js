@@ -15,11 +15,11 @@ import CheckCard from './CheckCard'
 export default function CheckDrawer({ 
   intl, isOpen, monsters, timers, onClose 
 }) {
-  const [ leftList, setLeftList ]           = useState(monsters)
-  const [ checkedTimers, setCheckedTimers ] = useState(timers)
-  const [ searchText, setSearchText]        = useState("")
-  const [ showMessage, setShowMessage]      = useState(false)
-  const [ selectedTab, setSelectedTab]      = useState("mvp")
+  const [leftList, setLeftList]           = useState(monsters)
+  const [checkedTimers, setCheckedTimers] = useState(timers)
+  const [searchText, setSearchText]       = useState("")
+  const [showMessage, setShowMessage]     = useState(false)
+  const [selectedTab, setSelectedTab]     = useState("mvp")
 
   useEffect(() => {
     if (isChanged(timers, checkedTimers)) setCheckedTimers(timers)

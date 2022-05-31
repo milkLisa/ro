@@ -288,29 +288,6 @@ $time-text-shadow: #fff 0 2px,
   }
 }
 
-.timer-container header {
-  & > *:not(.title) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 0;
-    margin-right: 5px;
-    
-    & > *:not(a) {
-      width: 36px;
-      height: 36px;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-      
-    & > a {
-      display: flex;
-      align-items: center;
-    }
-  }
-}
-
 .timer-container footer {
   min-height: 100px;
   padding-bottom: 40px;
@@ -390,9 +367,10 @@ $time-text-shadow: #fff 0 2px,
 .settings-table {
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
+  padding: 0 20px 48px 20px;
   
   & > * {
+    @include bottom-divider();
     width: 100%;
     min-height: 64px;
     display: flex;
@@ -403,7 +381,7 @@ $time-text-shadow: #fff 0 2px,
       padding: 0 0 0 10px;
       
       &:first-child {
-        width: 30%;
+        width: 50%;
         min-width: 100px;
         display: block;
         text-align: left;
@@ -413,7 +391,7 @@ $time-text-shadow: #fff 0 2px,
     }
 
     .discrete-slider {
-      width: 70%;
+      width: 50%;
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -429,7 +407,7 @@ $time-text-shadow: #fff 0 2px,
     }
 
     .native-select {
-      width: 100%;
+      width: 50%;
 
       & > * {
         width: 100%;

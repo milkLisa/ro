@@ -11,7 +11,7 @@ import {
 import BossIcon from './BossIcon'
 
 export default function MonsterCard({ 
-  intl, settings, monster, onStart, onStop, onTime 
+  intl, settings, monster, onSwitch, onTime 
 }) {
   const [isEdit, setIsEdit]     = useState(false)
   const [editText, setEditText] = useState("")
@@ -45,11 +45,10 @@ export default function MonsterCard({
   }
 
   const handleSwitch = turnOn => {
-    if (turnOn) {
-      onStart({ ...monster, utcMSEC: defaultTime + Date.now() })
-    } else {
-      onStop({ ...monster, utcMSEC: null })
-    }
+    onSwitch(turnOn, turnOn 
+      ? { ...monster, utcMSEC: defaultTime + Date.now() }
+      : { ...monster, utcMSEC: null, leftTime: null }
+    )
   }
 
   const openEditBox = e => {
@@ -69,9 +68,7 @@ export default function MonsterCard({
   const handleEditOk = () => {
     let msec = parseToMSEC(editText)
     msec = msec < SECOND ? defaultTime : msec
-
-    onStart({ ...monster, utcMSEC: msec + Date.now(), editMSEC: msec })
-
+    onSwitch(true, { ...monster, utcMSEC: msec + Date.now(), editMSEC: msec })
     handleEditClose()
   }
 

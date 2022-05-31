@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from 'react'
+import { useState, useEffect, useReducer } from 'react'
 import NativeSelect from '@mui/material/NativeSelect'
 import { isValid } from '../../utils/parser'
 import DrawerContainer from '../common/DrawerContainer'
@@ -8,13 +8,18 @@ import ToggleSwitch from '../common/ToggleSwitch'
 export default function SettingsDrawer({ 
   intl, isOpen, savedSettings, onClose 
 }) {
+  const [isChange, setIsChange] = useState(false)
   const [settings, setSettings] = useReducer(
     (prevState, newState) => ({ ...prevState, ...newState })
     , savedSettings)
   
-  useEffect(() => setSettings(savedSettings), [savedSettings])
+  useEffect(() => {
+    setIsChange(false)
+    setSettings(savedSettings)
+  }, [savedSettings])
 
   const handleChange = (key, value) => {
+    if (key == "remindAudio" && !isChange) setIsChange(true)
     setSettings({ [key]: value })
   }
 
@@ -94,25 +99,25 @@ export default function SettingsDrawer({
               </NativeSelect>
               
               {
-                isValid(remindAudio) &&
+                isValid(remindAudio) && isChange &&
                 <audio autoPlay src={ remindAudio } />
               }
             </div>
           </div>
 
-            {
-              isValid(remindAudio) &&
-              <div>
-                <span>{ intl.timer.playSeconds }</span>
-                <DiscreteSlider 
-                  step    = { 5 }
-                  min     = { 5 }
-                  max     = { 60 } 
-                  value   = { playSeconds } 
-                  onChange= { value => handleChange("playSeconds", value) }
-                />
-              </div>
-            }
+          {
+            isValid(remindAudio) &&
+            <div>
+              <span>{ intl.timer.playSeconds }</span>
+              <DiscreteSlider
+                step    = { 5 }
+                min     = { 5 }
+                max     = { 60 } 
+                value   = { playSeconds } 
+                onChange= { value => handleChange("playSeconds", value) }
+              />
+            </div>
+          }
         </div>
         :
         <span>{ intl.timer.emptyError }</span>

@@ -1,7 +1,7 @@
 header {
+  @include bottom-divider();
   width: 100%;
   min-height: $anchor-height;
-  border-bottom: 1px solid #eaeaea;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,5 +9,27 @@ header {
 
   .title {
     font-size: $large-size;
+    max-width: 70%;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+
+    & > *:not(a) {
+      width: 36px;
+      height: 36px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    & > a {
+      display: flex;
+      align-items: center;
+    }
   }
 }

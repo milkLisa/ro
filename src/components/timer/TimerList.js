@@ -17,8 +17,7 @@ export default class TimerList extends Component {
   remindId = null
   
   componentDidMount() {
-    const hasTiming = this.state.allTimer.some(mon => !!mon.utcMSEC)
-    if (hasTiming) this.start()
+    this.intervalId = setInterval(() => this.timing(), SECOND)
   }
 
   componentDidUpdate(prevProps) {
@@ -45,7 +44,7 @@ export default class TimerList extends Component {
   timing() {
     const { settings } = this.props
     let { allTimer } = this.state
-    let keepTiming = false, hasStop = false
+    let hasTiming = false, hasStop = false
 
     allTimer = allTimer.map(mon => {
       if (!!mon.utcMSEC) {
@@ -56,50 +55,22 @@ export default class TimerList extends Component {
           hasStop = true
         } else {
           mon.leftTime = msec
-          keepTiming = true
+          hasTiming = true
         }
       }
 
       return mon
     })
 
-    if (!keepTiming) this.clearTimer()
-
     if (hasStop) this.props.onChange(allTimer)
-    else this.setState({ allTimer })
+    else if (hasTiming) this.setState({ allTimer })
   }
 
-  clearTimer() {
-    clearInterval(this.intervalId)
-    this.intervalId = null
-    this.remindId = null
-  }
+  handleSwitch(turnOn, timer) {
+    if (!turnOn && this.remindId == timer.id) this.remindId = null
 
-  start(timer) {
     let { allTimer } = this.state
-    
-    if (!timer) {
-      // No assign timer means initial
-      this.clearTimer()
-    } else {
-      allTimer = allTimer.map(mon => mon.id == timer.id ? timer : mon)
-      this.setState({ allTimer })
-      this.props.onChange(allTimer)
-    }
-
-    if (!this.intervalId)
-      this.intervalId = setInterval(() => this.timing(), SECOND)
-  }
-
-  stop(timer) {
-    let { allTimer } = this.state
-    
-    if (this.remindId == timer.id) this.remindId = null
-
-    allTimer = allTimer.map(
-      mon => mon.id == timer.id ? { ...timer, leftTime: null } : mon
-    )
-
+    allTimer = allTimer.map(mon => mon.id == timer.id ? timer : mon)
     this.setState({ allTimer })
     this.props.onChange(allTimer)
   }
@@ -117,8 +88,7 @@ export default class TimerList extends Component {
         settings = { settings }
         key      = { `${ prefix }${ mon.id }${ mon.roId }` }
         monster  = { mon }
-        onStart  = { timer => this.start(timer) }
-        onStop   = { timer => this.stop(timer) }
+        onSwitch = { (turnOn, timer) => this.handleSwitch(turnOn, timer) }
         onTime   = { id => this.remindId = id }
       />
     ))

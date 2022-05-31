@@ -20,10 +20,10 @@ const combinedTimer = (ts, ms) => {
 }
 
 export default function Content({ intl, settings }) {
-  const [ monsters, setMonsters ]       = useState([])
-  const [ timers, setTimers ]           = useState([])
-  const [ savedTimers, setSavedTimers ] = useState([])
-  const [ isCheckOpen, setIsCheckOpen ] = useState(false)
+  const [monsters, setMonsters]       = useState([])
+  const [timers, setTimers]           = useState([])
+  const [savedTimers, setSavedTimers] = useState([])
+  const [isCheckOpen, setIsCheckOpen] = useState(false)
 
   useEffect(() => {
     query(["/api/monsters", "/api/timers"])

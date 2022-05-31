@@ -32,6 +32,7 @@ $bg-color: #ddd;
 $border-color: #bbb;
 $mask-color: rgba(255, 255, 255, 0.65);
 $card-shadow: 2px 2px 1px $note-color;
+$divider-color: #eaeaea;
 
 @mixin light-style() {
   color: $dark-color;
@@ -86,6 +87,10 @@ $card-shadow: 2px 2px 1px $note-color;
   svg {
     font-size: $big-size;
   }
+}
+
+@mixin bottom-divider() {
+  border-bottom: 1px solid $divider-color;
 }
 
 html {

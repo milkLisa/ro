@@ -8,7 +8,6 @@ import { SettingsObj } from '../../constants/customData'
 import HtmlHead from '../../components/common/HtmlHead'
 import Header from '../../components/common/Header'
 import Footer from '../../components/common/Footer'
-import GitHubLink from '../../components/common/GitHubLink'
 import ScrollTopButton from '../../components/common/ScrollTopButton'
 import Content from '../../components/timer/Content'
 import SettingsDrawer from '../../components/timer/SettingsDrawer'
@@ -59,11 +58,7 @@ export default function Home({ intl }) {
 
         <Container className="timer-container">
           <Header title={ intl.timer.title }>
-            <div>
-              <SettingsIcon onClick={ () => setIsOpen(true) }/>
-
-              <GitHubLink />
-            </div>
+            <SettingsIcon onClick={ () => setIsOpen(true) }/>
           </Header>
           
           <Content intl={ intl } settings={ settings } />

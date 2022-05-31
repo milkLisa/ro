@@ -13,7 +13,7 @@ const zh_TW = {
     selected: "已選取",
     editTitle: "自訂時間",
     editDesc: "請輸入剩餘分鐘數, 或以符號分隔的時分秒數, 如[時.分.秒]、[時 分 秒]",
-    editSubmit: "確定",
+    editSubmit: "開始計時",
     emptyError: "無資料，請確認網路連線是否正常。",
     appearSort: "現身排序",
     showName: "顯示名稱",

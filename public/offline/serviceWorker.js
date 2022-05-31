@@ -77,7 +77,10 @@ const networkFirstStrategy = async (request) => {
 const fetchRequestAndCache = async (request) => {
   const networkResponse = await fetch(request)
   const clonedResponse = networkResponse.clone()
-  const cache = await caches.open(cacheName)
-  cache.put(request, networkResponse)
+
+  if (request.method !== "HEAD") {
+    const cache = await caches.open(cacheName)
+    cache.put(request, networkResponse)
+  }
   return clonedResponse
 }

@@ -13,7 +13,7 @@ const en_US = {
     selected: "Selected",
     editTitle: "Custom Time",
     editDesc: "Please enter remaining minutes, or time in [H.m.s] / [H m s] format",
-    editSubmit: "OK",
+    editSubmit: "Timer Start",
     emptyError: "Fetch data failed. Please check your network connection.",
     appearSort: "Appear Sort",
     showName: "Display Monster Name",
