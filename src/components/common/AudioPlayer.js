@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { isValid } from "../../utils/parser"
 
 export default function AudioPlayer({ id, src, seconds = null, onFinish }) {
@@ -11,7 +11,7 @@ export default function AudioPlayer({ id, src, seconds = null, onFinish }) {
       playId = null
     }
 
-    if (seconds) {
+    if (isValid(src) && isValid(id) && seconds) {
       clearInterval(playId)
       playId = setInterval(() => reset(), seconds)
     }
