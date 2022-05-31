@@ -1,12 +1,12 @@
 import { Component } from 'react'
 import { MINUTE, SECOND, parseToMSEC } from '../../constants/dateTime'
-import { isValid, isChanged } from '../../utils/parser'
+import { isChanged } from '../../utils/parser'
 import AudioPlayer from '../common/AudioPlayer'
 import MonsterCard from './MonsterCard'
 import SortedDrawer from './SortedDrawer'
 
 const sortByAppearTime = list => {
-  let newList = list.filter(m => isValid(m.utcMSEC))
+  let newList = list.filter(m => !!m.utcMSEC)
   newList.sort((a, b) => a.utcMSEC - b.utcMSEC)
   return newList
 }
@@ -17,7 +17,7 @@ export default class TimerList extends Component {
   remindId = null
   
   componentDidMount() {
-    const hasTiming = this.state.allTimer.some(mon => isValid(mon.utcMSEC))
+    const hasTiming = this.state.allTimer.some(mon => !!mon.utcMSEC)
     if (hasTiming) this.start()
   }
 
@@ -48,7 +48,7 @@ export default class TimerList extends Component {
     let keepTiming = false, hasStop = false
 
     allTimer = allTimer.map(mon => {
-      if (isValid(mon.utcMSEC)) {
+      if (!!mon.utcMSEC) {
         const msec = mon.utcMSEC - Date.now()
         if (msec <= (-parseToMSEC(settings.continueAfter) || -MINUTE)) {
           mon.utcMSEC = null
@@ -82,11 +82,7 @@ export default class TimerList extends Component {
       // No assign timer means initial
       this.clearTimer()
     } else {
-      allTimer = allTimer.map(mon => {
-        if (mon.id == timer.id) mon = Object.assign(mon, timer)
-        return mon
-      })
-
+      allTimer = allTimer.map(mon => mon.id == timer.id ? timer : mon)
       this.setState({ allTimer })
       this.props.onChange(allTimer)
     }
@@ -100,11 +96,9 @@ export default class TimerList extends Component {
     
     if (this.remindId == timer.id) this.remindId = null
 
-    allTimer = allTimer.map(mon => {
-      if (mon.id == timer.id) 
-        mon = Object.assign(mon, { ...timer, leftTime: null })
-      return mon
-    })
+    allTimer = allTimer.map(
+      mon => mon.id == timer.id ? { ...timer, leftTime: null } : mon
+    )
 
     this.setState({ allTimer })
     this.props.onChange(allTimer)

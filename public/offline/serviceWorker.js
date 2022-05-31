@@ -1,11 +1,22 @@
+importScripts("/offline/monstersPreload.js")
+
 const cacheName = "timer-cache-v1"
 const CacheNames = [cacheName]
 
-const appShellFiles=[
-  "/manifest.json"
+let appShellFiles = [
+  "/manifest.json",
+  "/static/icons/mvp.png",
+  "/static/icons/mini.png"
 ]
 
-const freshFileNames = []
+monsters.forEach(mon => {
+  appShellFiles.push(`/static/images/${mon.image}`)
+})
+
+const freshFileNames = [
+  "default1.mp3",
+  "default2.mp3"
+]
 
 self.addEventListener("install", event => {
   console.log("[Service Worker] Install")

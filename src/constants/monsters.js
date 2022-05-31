@@ -1,1280 +1,6 @@
 export const monsters = [
   {
     "id":0,
-    "roId":1089,
-    "isMVP":false,
-    "name":"蛙王",
-    "level":27,
-    "race":"魚貝",
-    "element":"水1",
-    "size":"中",
-    "image":"1089.png",
-    "location":"克魔島基乃依沼澤地 (cmd_fild03)",
-    "msec":3600000
-  },
-  {
-    "id":1,
-    "roId":1089,
-    "isMVP":false,
-    "name":"蛙王",
-    "level":27,
-    "race":"魚貝",
-    "element":"水1",
-    "size":"中",
-    "image":"1089.png",
-    "location":"吉芬原野 (gef_fild01)",
-    "msec":3600000
-  },
-  {
-    "id":2,
-    "roId":1090,
-    "isMVP":false,
-    "name":"波利之王",
-    "level":42,
-    "race":"植物",
-    "element":"水1",
-    "size":"中",
-    "image":"1090.png",
-    "location":"普隆德拉迷宮森林3樓 (prt_maze03)",
-    "msec":1800000
-  },
-  {
-    "id":3,
-    "roId":1090,
-    "isMVP":false,
-    "name":"波利之王",
-    "level":42,
-    "race":"植物",
-    "element":"水1",
-    "size":"中",
-    "image":"1090.png",
-    "location":"薑餅城玩具工廠倉庫 (xmas_dun01)",
-    "msec":1800000
-  },
-  {
-    "id":4,
-    "roId":1090,
-    "isMVP":false,
-    "name":"波利之王",
-    "level":42,
-    "race":"植物",
-    "element":"水1",
-    "size":"中",
-    "image":"1090.png",
-    "location":"蘇克拉特沙漠 (pay_fild04)",
-    "msec":3600000
-  },
-  {
-    "id":5,
-    "roId":1090,
-    "isMVP":false,
-    "name":"波利之王",
-    "level":42,
-    "race":"植物",
-    "element":"水1",
-    "size":"中",
-    "image":"1090.png",
-    "location":"爾邁斯瀑雷德 (yuno_fild04)",
-    "msec":5400000
-  },
-  {
-    "id":6,
-    "roId":1091,
-    "isMVP":false,
-    "name":"龍蠅",
-    "level":47,
-    "race":"昆蟲",
-    "element":"風1",
-    "size":"小",
-    "image":"1091.png",
-    "location":"蘇克拉特沙漠 (moc_fild18)",
-    "msec":3600000
-  },
-  {
-    "id":7,
-    "roId":1092,
-    "isMVP":false,
-    "name":"流浪之狼",
-    "level":93,
-    "race":"動物",
-    "element":"地1",
-    "size":"中",
-    "image":"1092.png",
-    "location":"普隆德拉迷宮森林3樓 (prt_maze03)",
-    "msec":1800000
-  },
-  {
-    "id":8,
-    "roId":1092,
-    "isMVP":false,
-    "name":"流浪之狼",
-    "level":93,
-    "race":"動物",
-    "element":"地1",
-    "size":"中",
-    "image":"1092.png",
-    "location":"普隆德拉迷宮森林1樓 (prt_maze01)",
-    "msec":3600000
-  },
-  {
-    "id":9,
-    "roId":1092,
-    "isMVP":false,
-    "name":"流浪之狼",
-    "level":93,
-    "race":"動物",
-    "element":"地1",
-    "size":"中",
-    "image":"1092.png",
-    "location":"公會地下密穴 (gld_dun01)",
-    "msec":14400000
-  },
-  {
-    "id":10,
-    "roId":1093,
-    "isMVP":false,
-    "name":"藍瘋兔",
-    "level":31,
-    "race":"動物",
-    "element":"無3",
-    "size":"中",
-    "image":"1093.png",
-    "location":"普隆德拉原野 (prt_fild02)",
-    "msec":1800000
-  },
-  {
-    "id":11,
-    "roId":1093,
-    "isMVP":false,
-    "name":"藍瘋兔",
-    "level":31,
-    "race":"動物",
-    "element":"無3",
-    "size":"中",
-    "image":"1093.png",
-    "location":"普隆德拉迷宮森林3樓 (prt_maze03)",
-    "msec":1800000
-  },
-  {
-    "id":12,
-    "roId":1096,
-    "isMVP":false,
-    "name":"天使波利",
-    "level":77,
-    "race":"天使",
-    "element":"聖4",
-    "size":"中",
-    "image":"1096.png",
-    "location":"爾邁斯瀑雷德 (yuno_fild03)",
-    "msec":3600000
-  },
-  {
-    "id":13,
-    "roId":1096,
-    "isMVP":false,
-    "name":"天使波利",
-    "level":77,
-    "race":"天使",
-    "element":"聖4",
-    "size":"中",
-    "image":"1096.png",
-    "location":"薑餅城玩具工廠倉庫 (xmas_dun01)",
-    "msec":3600000
-  },
-  {
-    "id":14,
-    "roId":1096,
-    "isMVP":false,
-    "name":"天使波利",
-    "level":77,
-    "race":"天使",
-    "element":"聖4",
-    "size":"中",
-    "image":"1096.png",
-    "location":"蘇克拉特沙漠 (pay_fild04)",
-    "msec":3600000
-  },
-  {
-    "id":15,
-    "roId":1120,
-    "isMVP":false,
-    "name":"幽靈波利",
-    "level":90,
-    "race":"惡魔",
-    "element":"念4",
-    "size":"中",
-    "image":"1120.png",
-    "location":"艾爾貝塔沈船2樓 (treasure02)",
-    "msec":3600000
-  },
-  {
-    "id":16,
-    "roId":1120,
-    "isMVP":false,
-    "name":"幽靈波利",
-    "level":90,
-    "race":"惡魔",
-    "element":"念4",
-    "size":"中",
-    "image":"1120.png",
-    "location":"蘇克拉特沙漠 (pay_fild04)",
-    "msec":3600000
-  },
-  {
-    "id":17,
-    "roId":1120,
-    "isMVP":false,
-    "name":"幽靈波利",
-    "level":90,
-    "race":"惡魔",
-    "element":"念4",
-    "size":"中",
-    "image":"1120.png",
-    "location":"普隆德拉迷宮森林3樓 (prt_maze03)",
-    "msec":7200000
-  },
-  {
-    "id":18,
-    "roId":1120,
-    "isMVP":false,
-    "name":"幽靈波利",
-    "level":90,
-    "race":"惡魔",
-    "element":"念4",
-    "size":"中",
-    "image":"1120.png",
-    "location":"公會地下密穴 (gld_dun04)",
-    "msec":14400000
-  },
-  {
-    "id":19,
-    "roId":1200,
-    "isMVP":false,
-    "name":"艾斯恩魔女",
-    "level":105,
-    "race":"人形",
-    "element":"無3",
-    "size":"中",
-    "image":"1200.png",
-    "location":"克雷斯特漢姆古城地下監獄2樓 (gl_prison1)",
-    "msec":3600000
-  },
-  {
-    "id":20,
-    "roId":1203,
-    "isMVP":false,
-    "name":"弒神者",
-    "level":130,
-    "race":"無形",
-    "element":"暗4",
-    "size":"大",
-    "image":"1203.png",
-    "location":"克雷斯特漢姆古城騎士團2樓 (gl_knt02)",
-    "msec":3600000
-  },
-  {
-    "id":21,
-    "roId":1203,
-    "isMVP":false,
-    "name":"弒神者",
-    "level":130,
-    "race":"無形",
-    "element":"暗4",
-    "size":"大",
-    "image":"1203.png",
-    "location":"克雷斯特漢姆古城2樓 (gl_cas02)",
-    "msec":7200000
-  },
-  {
-    "id":22,
-    "roId":1203,
-    "isMVP":false,
-    "name":"弒神者",
-    "level":130,
-    "race":"無形",
-    "element":"暗4",
-    "size":"大",
-    "image":"1203.png",
-    "location":"葛帔尼亞 (gefenia01)",
-    "msec":10800000
-  },
-  {
-    "id":23,
-    "roId":1203,
-    "isMVP":false,
-    "name":"弒神者",
-    "level":130,
-    "race":"無形",
-    "element":"暗4",
-    "size":"大",
-    "image":"1203.png",
-    "location":"葛帔尼亞 (gefenia02)",
-    "msec":18000000
-  },
-  {
-    "id":24,
-    "roId":1203,
-    "isMVP":false,
-    "name":"弒神者",
-    "level":130,
-    "race":"無形",
-    "element":"暗4",
-    "size":"大",
-    "image":"1203.png",
-    "location":"葛帔尼亞 (gefenia03)",
-    "msec":18000000
-  },
-  {
-    "id":25,
-    "roId":1203,
-    "isMVP":false,
-    "name":"弒神者",
-    "level":130,
-    "race":"無形",
-    "element":"暗4",
-    "size":"大",
-    "image":"1203.png",
-    "location":"葛帔尼亞 (gefenia04)",
-    "msec":18000000
-  },
-  {
-    "id":26,
-    "roId":1204,
-    "isMVP":false,
-    "name":"獸牙怪",
-    "level":114,
-    "race":"無形",
-    "element":"暗3",
-    "size":"中",
-    "image":"1204.png",
-    "location":"克雷斯特漢姆古城2樓 (gl_cas02)",
-    "msec":7200000
-  },
-  {
-    "id":27,
-    "roId":1204,
-    "isMVP":false,
-    "name":"獸牙怪",
-    "level":114,
-    "race":"無形",
-    "element":"暗3",
-    "size":"中",
-    "image":"1204.png",
-    "location":"葛帔尼亞 (gefenia02)",
-    "msec":10800000
-  },
-  {
-    "id":28,
-    "roId":1204,
-    "isMVP":false,
-    "name":"獸牙怪",
-    "level":114,
-    "race":"無形",
-    "element":"暗3",
-    "size":"中",
-    "image":"1204.png",
-    "location":"葛帔尼亞 (gefenia01)",
-    "msec":18000000
-  },
-  {
-    "id":29,
-    "roId":1204,
-    "isMVP":false,
-    "name":"獸牙怪",
-    "level":114,
-    "race":"無形",
-    "element":"暗3",
-    "size":"中",
-    "image":"1204.png",
-    "location":"葛帔尼亞 (gefenia03)",
-    "msec":18000000
-  },
-  {
-    "id":30,
-    "roId":1204,
-    "isMVP":false,
-    "name":"獸牙怪",
-    "level":114,
-    "race":"無形",
-    "element":"暗3",
-    "size":"中",
-    "image":"1204.png",
-    "location":"葛帔尼亞 (gefenia04)",
-    "msec":18000000
-  },
-  {
-    "id":31,
-    "roId":1205,
-    "isMVP":false,
-    "name":"行刑者",
-    "level":101,
-    "race":"無形",
-    "element":"暗2",
-    "size":"大",
-    "image":"1205.png",
-    "location":"葛帔尼亞 (gefenia03)",
-    "msec":10800000
-  },
-  {
-    "id":32,
-    "roId":1205,
-    "isMVP":false,
-    "name":"行刑者",
-    "level":101,
-    "race":"無形",
-    "element":"暗2",
-    "size":"大",
-    "image":"1205.png",
-    "location":"葛帔尼亞 (gefenia01)",
-    "msec":18000000
-  },
-  {
-    "id":33,
-    "roId":1205,
-    "isMVP":false,
-    "name":"行刑者",
-    "level":101,
-    "race":"無形",
-    "element":"暗2",
-    "size":"大",
-    "image":"1205.png",
-    "location":"葛帔尼亞 (gefenia02)",
-    "msec":18000000
-  },
-  {
-    "id":34,
-    "roId":1205,
-    "isMVP":false,
-    "name":"行刑者",
-    "level":101,
-    "race":"無形",
-    "element":"暗2",
-    "size":"大",
-    "image":"1205.png",
-    "location":"葛帔尼亞 (gefenia04)",
-    "msec":18000000
-  },
-  {
-    "id":35,
-    "roId":1259,
-    "isMVP":false,
-    "name":"獅鷲獸",
-    "level":105,
-    "race":"動物",
-    "element":"風4",
-    "size":"大",
-    "image":"1259.png",
-    "location":"毀葛原野 (hu_fild02)",
-    "msec":3600000
-  },
-  {
-    "id":36,
-    "roId":1268,
-    "isMVP":false,
-    "name":"血腥騎士",
-    "level":116,
-    "race":"無形",
-    "element":"暗4",
-    "size":"大",
-    "image":"1268.png",
-    "location":"克雷斯特漢姆古城騎士團2樓 (gl_knt02)",
-    "msec":3600000
-  },
-  {
-    "id":37,
-    "roId":1268,
-    "isMVP":false,
-    "name":"血腥騎士",
-    "level":116,
-    "race":"無形",
-    "element":"暗4",
-    "size":"大",
-    "image":"1268.png",
-    "location":"葛帔尼亞 (gefenia01)",
-    "msec":3600000
-  },
-  {
-    "id":38,
-    "roId":1268,
-    "isMVP":false,
-    "name":"血腥騎士",
-    "level":116,
-    "race":"無形",
-    "element":"暗4",
-    "size":"大",
-    "image":"1268.png",
-    "location":"葛帔尼亞 (gefenia02)",
-    "msec":3600000
-  },
-  {
-    "id":39,
-    "roId":1268,
-    "isMVP":false,
-    "name":"血腥騎士",
-    "level":116,
-    "race":"無形",
-    "element":"暗4",
-    "size":"大",
-    "image":"1268.png",
-    "location":"葛帔尼亞 (gefenia03)",
-    "msec":3600000
-  },
-  {
-    "id":40,
-    "roId":1268,
-    "isMVP":false,
-    "name":"血腥騎士",
-    "level":116,
-    "race":"無形",
-    "element":"暗4",
-    "size":"大",
-    "image":"1268.png",
-    "location":"葛帔尼亞 (gefenia04)",
-    "msec":3600000
-  },
-  {
-    "id":41,
-    "roId":1289,
-    "isMVP":false,
-    "name":"狂暴蟻后",
-    "level":81,
-    "race":"昆蟲",
-    "element":"地4",
-    "size":"大",
-    "image":"1289.png",
-    "location":"公會地下密穴 (gld_dun03)",
-    "msec":1200000
-  },
-  {
-    "id":42,
-    "roId":1289,
-    "isMVP":false,
-    "name":"狂暴蟻后",
-    "level":81,
-    "race":"昆蟲",
-    "element":"地4",
-    "size":"大",
-    "image":"1289.png",
-    "location":"公會地下密穴2樓 (gld_dun02_2)",
-    "msec":1200000
-  },
-  {
-    "id":43,
-    "roId":1289,
-    "isMVP":false,
-    "name":"狂暴蟻后",
-    "level":81,
-    "race":"昆蟲",
-    "element":"地4",
-    "size":"大",
-    "image":"1289.png",
-    "location":"深淵迴廊:英雄之淚 (gld2_ald)",
-    "msec":1200000
-  },
-  {
-    "id":44,
-    "roId":1296,
-    "isMVP":false,
-    "name":"犬妖首領",
-    "level":112,
-    "race":"人形",
-    "element":"風2",
-    "size":"中",
-    "image":"1296.png",
-    "location":"浦勒吐盧納(ra_fild06)",
-    "msec":1800000
-  },
-  {
-    "id":45,
-    "roId":1296,
-    "isMVP":false,
-    "name":"犬妖首領",
-    "level":112,
-    "race":"人形",
-    "element":"風2",
-    "size":"中",
-    "image":"1296.png",
-    "location":"公會地下密穴2樓 (gld_dun03_2)",
-    "msec":14400000
-  },
-  {
-    "id":46,
-    "roId":1299,
-    "isMVP":false,
-    "name":"哥布靈首領",
-    "level":55,
-    "race":"人形",
-    "element":"風1",
-    "size":"中",
-    "image":"1299.png",
-    "location":"吉芬原野 (gef_fild11)",
-    "msec":1800000
-  },
-  {
-    "id":47,
-    "roId":1302,
-    "isMVP":false,
-    "name":"迷幻之王",
-    "level":96,
-    "race":"惡魔",
-    "element":"不死4",
-    "size":"大",
-    "image":"1302.png",
-    "location":"公會地下密穴 (gld_dun04)",
-    "msec":1200000
-  },
-  {
-    "id":48,
-    "roId":1302,
-    "isMVP":false,
-    "name":"迷幻之王",
-    "level":96,
-    "race":"惡魔",
-    "element":"不死4",
-    "size":"大",
-    "image":"1302.png",
-    "location":"公會地下密穴2樓 (gld_dun04_2)",
-    "msec":1200000
-  },
-  {
-    "id":49,
-    "roId":1302,
-    "isMVP":false,
-    "name":"迷幻之王",
-    "level":96,
-    "race":"惡魔",
-    "element":"不死4",
-    "size":"大",
-    "image":"1302.png",
-    "location":"深淵迴廊:亡者之丘 (gld2_gef)",
-    "msec":1200000
-  },
-  {
-    "id":50,
-    "roId":1302,
-    "isMVP":false,
-    "name":"迷幻之王",
-    "level":96,
-    "race":"惡魔",
-    "element":"不死4",
-    "size":"大",
-    "image":"1302.png",
-    "location":"克雷斯特漢姆古城地下公墓 (gl_chy_a)",
-    "msec":3600000
-  },
-  {
-    "id":51,
-    "roId":1302,
-    "isMVP":false,
-    "name":"迷幻之王",
-    "level":96,
-    "race":"惡魔",
-    "element":"不死4",
-    "size":"大",
-    "image":"1302.png",
-    "location":"克雷斯特漢姆古城地下公墓 (gl_chyard)",
-    "msec":3600000
-  },
-  {
-    "id":52,
-    "roId":1302,
-    "isMVP":false,
-    "name":"迷幻之王",
-    "level":96,
-    "race":"惡魔",
-    "element":"不死4",
-    "size":"大",
-    "image":"1302.png",
-    "location":"古城地下公墓(夢魘) (gl_chyard_)",
-    "msec":3600000
-  },
-  {
-    "id":53,
-    "roId":1307,
-    "isMVP":false,
-    "name":"狂暴月夜貓",
-    "level":79,
-    "race":"惡魔",
-    "element":"火3",
-    "size":"中",
-    "image":"1307.png",
-    "location":"公會地下密穴 (gld_dun01)",
-    "msec":1200000
-  },
-  {
-    "id":54,
-    "roId":1307,
-    "isMVP":false,
-    "name":"狂暴月夜貓",
-    "level":79,
-    "race":"惡魔",
-    "element":"火3",
-    "size":"中",
-    "image":"1307.png",
-    "location":"斐揚洞穴5樓(廢村) (pay_dun04)",
-    "msec":3600000
-  },
-  {
-    "id":55,
-    "roId":1388,
-    "isMVP":false,
-    "name":"聖天使波利",
-    "level":84,
-    "race":"天使",
-    "element":"聖3",
-    "size":"中",
-    "image":"1388.png",
-    "location":"爾邁斯瀑雷德 (yuno_fild04)",
-    "msec":3600000
-  },
-  {
-    "id":56,
-    "roId":1582,
-    "isMVP":false,
-    "name":"惡魔波利",
-    "level":66,
-    "race":"惡魔",
-    "element":"暗4",
-    "size":"中",
-    "image":"1582.png",
-    "location":"爾邁斯瀑雷德 (yuno_fild03)",
-    "msec":6000000
-  },
-  {
-    "id":57,
-    "roId":1582,
-    "isMVP":false,
-    "name":"惡魔波利",
-    "level":66,
-    "race":"惡魔",
-    "element":"暗4",
-    "size":"中",
-    "image":"1582.png",
-    "location":"蘇克拉特沙漠 (pay_fild04)",
-    "msec":7200000
-  },
-  {
-    "id":58,
-    "roId":1674,
-    "isMVP":false,
-    "name":"莫內",
-    "level":88,
-    "race":"無形",
-    "element":"火3",
-    "size":"大",
-    "image":"1674.png",
-    "location":null,
-    "msec":3600000
-  },
-  {
-    "id":59,
-    "roId":1681,
-    "isMVP":false,
-    "name":"雙子星-S58",
-    "level":135,
-    "race":"無形",
-    "element":"水3",
-    "size":"中",
-    "image":"1681.png",
-    "location":"活體實驗研究所地下1樓 (lhz_dun01)",
-    "msec":1800000
-  },
-  {
-    "id":60,
-    "roId":1681,
-    "isMVP":false,
-    "name":"雙子星-S58",
-    "level":135,
-    "race":"無形",
-    "element":"水3",
-    "size":"中",
-    "image":"1681.png",
-    "location":"活體實驗研究所地下2樓 (lhz_dun02)",
-    "msec":1800000
-  },
-  {
-    "id":61,
-    "roId":1733,
-    "isMVP":false,
-    "name":"齊爾",
-    "level":90,
-    "race":"無形",
-    "element":"暗2",
-    "size":"中",
-    "image":"1733.png",
-    "location":null,
-    "msec":3600000
-  },
-  {
-    "id":62,
-    "roId":1765,
-    "isMVP":false,
-    "name":"巴基力 蘭特克力斯",
-    "level":141,
-    "race":"天使",
-    "element":"聖2",
-    "size":"大",
-    "image":"1765.png",
-    "location":"奧丁神殿3F（分流A） (odin_t03a)",
-    "msec":5400000
-  },
-  {
-    "id":63,
-    "roId":1765,
-    "isMVP":false,
-    "name":"巴基力 蘭特克力斯",
-    "level":141,
-    "race":"天使",
-    "element":"聖2",
-    "size":"大",
-    "image":"1765.png",
-    "location":"毀葛奧丁神殿北區 (odin_tem03)",
-    "msec":5400000
-  },
-  {
-    "id":64,
-    "roId":1829,
-    "isMVP":false,
-    "name":"劍士監護人魔物",
-    "level":133,
-    "race":"人形",
-    "element":"無4",
-    "size":"大",
-    "image":null,
-    "location":"菲音斯托爾火山洞穴2樓 (thor_v02)",
-    "msec":7200000
-  },
-  {
-    "id":65,
-    "roId":1830,
-    "isMVP":false,
-    "name":"弓箭手監護人魔物",
-    "level":132,
-    "race":"人形",
-    "element":"無4",
-    "size":"大",
-    "image":null,
-    "location":"菲音斯托爾火山洞穴2樓 (thor_v02)",
-    "msec":7200000
-  },
-  {
-    "id":66,
-    "roId":1872,
-    "isMVP":false,
-    "name":"魔鬼蒼蠅",
-    "level":127,
-    "race":"天使",
-    "element":"無4",
-    "size":"中",
-    "image":"1872.png",
-    "location":null,
-    "msec":3600000
-  },
-  {
-    "id":67,
-    "roId":1875,
-    "isMVP":false,
-    "name":"王的屍體",
-    "level":80,
-    "race":"不死",
-    "element":"不死4",
-    "size":"中",
-    "image":"1875.png",
-    "location":null,
-    "msec":3600000
-  },
-  {
-    "id":68,
-    "roId":1916,
-    "isMVP":false,
-    "name":"魔王夢羅克",
-    "level":151,
-    "race":"惡魔",
-    "element":"暗4",
-    "size":"大",
-    "image":"1916.png",
-    "location":"蘇克拉特沙漠次元裂縫 (moc_fild21)",
-    "msec":21600000
-  },
-  {
-    "id":69,
-    "roId":1918,
-    "isMVP":false,
-    "name":"夢羅克門徒之邪靈",
-    "level":132,
-    "race":"天使",
-    "element":"暗1",
-    "size":"大",
-    "image":"1918.png",
-    "location":"火焰盆地 (moro_vol)",
-    "msec":3600000
-  },
-  {
-    "id":70,
-    "roId":1919,
-    "isMVP":false,
-    "name":"夢羅克門徒之泥怪",
-    "level":132,
-    "race":"惡魔",
-    "element":"暗3",
-    "size":"中",
-    "image":"1919.png",
-    "location":"火焰盆地 (moro_vol)",
-    "msec":3600000
-  },
-  {
-    "id":71,
-    "roId":1920,
-    "isMVP":false,
-    "name":"夢羅克門徒之活屍",
-    "level":133,
-    "race":"惡魔",
-    "element":"不死3",
-    "size":"中",
-    "image":"1920.png",
-    "location":"火焰盆地 (moro_vol)",
-    "msec":3600000
-  },
-  {
-    "id":72,
-    "roId":1921,
-    "isMVP":false,
-    "name":"夢羅克門徒之喜樂",
-    "level":134,
-    "race":"惡魔",
-    "element":"念3",
-    "size":"中",
-    "image":"1921.png",
-    "location":"火焰盆地 (moro_vol)",
-    "msec":3600000
-  },
-  {
-    "id":73,
-    "roId":1960,
-    "isMVP":false,
-    "name":"魔力之荊棘",
-    "level":89,
-    "race":"惡魔",
-    "element":"暗4",
-    "size":"小",
-    "image":"1960.png",
-    "location":"克雷斯特漢姆的沒落 (1@gl_prq)",
-    "msec":86400000
-  },
-  {
-    "id":74,
-    "roId":1990,
-    "isMVP":false,
-    "name":"硬石猛瑪",
-    "level":137,
-    "race":"動物",
-    "element":"地3",
-    "size":"大",
-    "image":"1990.png",
-    "location":"魔怒克原野 (man_fild03)",
-    "msec":14400000
-  },
-  {
-    "id":75,
-    "roId":2188,
-    "isMVP":false,
-    "name":"怪異腔棘魚",
-    "level":100,
-    "race":"魚貝",
-    "element":"水2",
-    "size":"大",
-    "image":"2188.png",
-    "location":null,
-    "msec":3600000
-  },
-  {
-    "id":76,
-    "roId":2475,
-    "isMVP":false,
-    "name":"墮落根莖",
-    "level":150,
-    "race":"惡魔",
-    "element":"地3",
-    "size":"大",
-    "image":"2475.png",
-    "location":"舊的古城騎士團副本1F (1@gl_k)",
-    "msec":3600000
-  },
-  {
-    "id":77,
-    "roId":2476,
-    "isMVP":false,
-    "name":"闇答萊屍",
-    "level":150,
-    "race":"不死",
-    "element":"不死4",
-    "size":"大",
-    "image":"2476.png",
-    "location":"舊的古城騎士團副本2F (2@gl_k)",
-    "msec":3600000
-  },
-  {
-    "id":78,
-    "roId":2562,
-    "isMVP":false,
-    "name":"狄瓦伊",
-    "level":160,
-    "race":"人形",
-    "element":"念2",
-    "size":"中",
-    "image":"2562.png",
-    "location":"吉芬魔法大賽 (1@ge_st)",
-    "msec":3600000
-  },
-  {
-    "id":79,
-    "roId":2564,
-    "isMVP":false,
-    "name":"潘利爾",
-    "level":160,
-    "race":"人形",
-    "element":"念2",
-    "size":"中",
-    "image":"2564.png",
-    "location":"吉芬魔法大賽 (1@ge_st)",
-    "msec":3600000
-  },
-  {
-    "id":80,
-    "roId":2921,
-    "isMVP":false,
-    "name":"鴞裊子爵",
-    "level":168,
-    "race":"惡魔",
-    "element":"無3",
-    "size":"大",
-    "image":"2921.png",
-    "location":"夢魘密穴鐘塔2樓 (c_tower2_)",
-    "msec":60000
-  },
-  {
-    "id":81,
-    "roId":2923,
-    "isMVP":false,
-    "name":"鴞裊侯爵",
-    "level":170,
-    "race":"惡魔",
-    "element":"無3",
-    "size":"大",
-    "image":"2923.png",
-    "location":"夢魘密穴鐘塔3樓 (c_tower3_)",
-    "msec":60000
-  },
-  {
-    "id":82,
-    "roId":2973,
-    "isMVP":false,
-    "name":"噩夢大公",
-    "level":190,
-    "race":"無形",
-    "element":"無1",
-    "size":"小",
-    "image":"2973.png",
-    "location":null,
-    "msec":3600000
-  },
-  {
-    "id":83,
-    "roId":3039,
-    "isMVP":false,
-    "name":"烈火夢羅克門徒",
-    "level":149,
-    "race":"惡魔",
-    "element":"暗1",
-    "size":"大",
-    "image":"3039.png",
-    "location":"火焰盆地 (moro_vol)",
-    "msec":3600000
-  },
-  {
-    "id":84,
-    "roId":3040,
-    "isMVP":false,
-    "name":"猖狂夢羅克門徒",
-    "level":149,
-    "race":"惡魔",
-    "element":"暗3",
-    "size":"中",
-    "image":"3040.png",
-    "location":"火焰盆地 (moro_vol)",
-    "msec":3600000
-  },
-  {
-    "id":85,
-    "roId":3041,
-    "isMVP":false,
-    "name":"冰凍夢羅克門徒",
-    "level":149,
-    "race":"惡魔",
-    "element":"水3",
-    "size":"中",
-    "image":"3041.png",
-    "location":"火焰盆地 (moro_vol)",
-    "msec":3600000
-  },
-  {
-    "id":86,
-    "roId":3073,
-    "isMVP":false,
-    "name":"覺醒的貝爾",
-    "level":140,
-    "race":"惡魔",
-    "element":"不死3",
-    "size":"中",
-    "image":"3073.png",
-    "location":"噩夢吉特巴 (1@jtb)最終房",
-    "msec":3600000
-  },
-  {
-    "id":87,
-    "roId":3181,
-    "isMVP":false,
-    "name":"暴走的船長裴陸",
-    "level":130,
-    "race":"龍族",
-    "element":"暗2",
-    "size":"大",
-    "image":"3181.png",
-    "location":null,
-    "msec":3600000
-  },
-  {
-    "id":88,
-    "roId":3426,
-    "isMVP":false,
-    "name":"虎王",
-    "level":101,
-    "race":"動物",
-    "element":"火1",
-    "size":"大",
-    "image":"3426.png",
-    "location":null,
-    "msec":3600000
-  },
-  {
-    "id":89,
-    "roId":3427,
-    "isMVP":false,
-    "name":"俄塞里斯",
-    "level":103,
-    "race":"不死",
-    "element":"不死3",
-    "size":"中",
-    "image":"3427.png",
-    "location":null,
-    "msec":3600000
-  },
-  {
-    "id":90,
-    "roId":3428,
-    "isMVP":false,
-    "name":"皮里恩",
-    "level":105,
-    "race":"動物",
-    "element":"無1",
-    "size":"大",
-    "image":"3428.png",
-    "location":null,
-    "msec":3600000
-  },
-  {
-    "id":91,
-    "roId":3429,
-    "isMVP":false,
-    "name":"獸人英雄",
-    "level":107,
-    "race":"人形",
-    "element":"地2",
-    "size":"大",
-    "image":"3429.png",
-    "location":null,
-    "msec":3600000
-  },
-  {
-    "id":92,
-    "roId":3430,
-    "isMVP":false,
-    "name":"塔奧群卡",
-    "level":109,
-    "race":"惡魔",
-    "element":"無1",
-    "size":"大",
-    "image":"3430.png",
-    "location":null,
-    "msec":3600000
-  },
-  {
-    "id":93,
-    "roId":20521,
-    "isMVP":false,
-    "name":"혼돈의 안드레마",
-    "level":177,
-    "race":"人形",
-    "element":"無4",
-    "size":"中",
-    "image":"20521.png",
-    "location":"扭曲的迷宮森林 (prt_mz03_i)",
-    "msec":3600000
-  },
-  {
-    "id":94,
-    "roId":20575,
-    "isMVP":false,
-    "name":"無限墮落根莖",
-    "level":190,
-    "race":"惡魔",
-    "element":"地3",
-    "size":"大",
-    "image":"20575.png",
-    "location":"污染的次元 (1@gl_he)中央走道",
-    "msec":3600000
-  },
-  {
-    "id":95,
-    "roId":20785,
-    "isMVP":false,
-    "name":"MD_BROKEN_THANATOS",
-    "level":999,
-    "race":"無形",
-    "element":"無1",
-    "size":"小",
-    "image":"20785.png",
-    "location":null,
-    "msec":3600000
-  },
-  {
-    "id":96,
-    "roId":20928,
-    "isMVP":false,
-    "name":"CHIMERA_THEONE",
-    "level":999,
-    "race":"無形",
-    "element":"無1",
-    "size":"小",
-    "image":"20928.png",
-    "location":"廢棄研究所艾米基提亞二樓:集中培養室 (amicitia2)",
-    "msec":3600000
-  },
-  {
-    "id":97,
-    "roId":21395,
-    "isMVP":false,
-    "name":"ILL_MAYA",
-    "level":999,
-    "race":null,
-    "element":"無1",
-    "size":null,
-    "image":"21395.png",
-    "location":"認知的庭園(幻影) (ant_d02_i)",
-    "msec":3600000
-  },
-  {
-    "id":98,
     "roId":1038,
     "isMVP":true,
     "name":"俄塞里斯",
@@ -1287,7 +13,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":99,
+    "id":1,
     "roId":1039,
     "isMVP":true,
     "name":"巴風特",
@@ -1300,7 +26,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":100,
+    "id":2,
     "roId":1039,
     "isMVP":true,
     "name":"巴風特",
@@ -1313,7 +39,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":101,
+    "id":3,
     "roId":1046,
     "isMVP":true,
     "name":"死靈",
@@ -1326,7 +52,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":102,
+    "id":4,
     "roId":1046,
     "isMVP":true,
     "name":"死靈",
@@ -1339,7 +65,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":103,
+    "id":5,
     "roId":1046,
     "isMVP":true,
     "name":"死靈",
@@ -1352,7 +78,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":104,
+    "id":6,
     "roId":1059,
     "isMVP":true,
     "name":"蜂后",
@@ -1365,7 +91,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":105,
+    "id":7,
     "roId":1059,
     "isMVP":true,
     "name":"蜂后",
@@ -1378,7 +104,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":106,
+    "id":8,
     "roId":1086,
     "isMVP":true,
     "name":"黃金蟲",
@@ -1391,7 +117,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":107,
+    "id":9,
     "roId":1087,
     "isMVP":true,
     "name":"獸人英雄",
@@ -1404,7 +130,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":108,
+    "id":10,
     "roId":1112,
     "isMVP":true,
     "name":"海盜之王",
@@ -1417,7 +143,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":109,
+    "id":11,
     "roId":1115,
     "isMVP":true,
     "name":"虎王",
@@ -1430,7 +156,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":110,
+    "id":12,
     "roId":1115,
     "isMVP":true,
     "name":"虎王",
@@ -1443,7 +169,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":111,
+    "id":13,
     "roId":1115,
     "isMVP":true,
     "name":"虎王",
@@ -1456,7 +182,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":112,
+    "id":14,
     "roId":1147,
     "isMVP":true,
     "name":"蟻后",
@@ -1469,7 +195,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":113,
+    "id":15,
     "roId":1147,
     "isMVP":true,
     "name":"蟻后",
@@ -1482,7 +208,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":114,
+    "id":16,
     "roId":1147,
     "isMVP":true,
     "name":"蟻后",
@@ -1495,7 +221,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":115,
+    "id":17,
     "roId":1150,
     "isMVP":true,
     "name":"月夜貓",
@@ -1508,7 +234,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":116,
+    "id":18,
     "roId":1150,
     "isMVP":true,
     "name":"月夜貓",
@@ -1521,7 +247,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":117,
+    "id":19,
     "roId":1157,
     "isMVP":true,
     "name":"法老王",
@@ -1534,7 +260,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":118,
+    "id":20,
     "roId":1159,
     "isMVP":true,
     "name":"皮里恩",
@@ -1547,7 +273,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":119,
+    "id":21,
     "roId":1190,
     "isMVP":true,
     "name":"獸人酋長",
@@ -1560,7 +286,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":120,
+    "id":22,
     "roId":1251,
     "isMVP":true,
     "name":"冰暴騎士",
@@ -1573,7 +299,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":121,
+    "id":23,
     "roId":1252,
     "isMVP":true,
     "name":"卡崙",
@@ -1586,7 +312,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":122,
+    "id":24,
     "roId":1272,
     "isMVP":true,
     "name":"黑暗之王",
@@ -1599,7 +325,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":123,
+    "id":25,
     "roId":1272,
     "isMVP":true,
     "name":"黑暗之王",
@@ -1612,7 +338,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":124,
+    "id":26,
     "roId":1272,
     "isMVP":true,
     "name":"黑暗之王",
@@ -1625,7 +351,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":125,
+    "id":27,
     "roId":1272,
     "isMVP":true,
     "name":"黑暗之王",
@@ -1638,7 +364,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":126,
+    "id":28,
     "roId":1312,
     "isMVP":true,
     "name":"烏龜將軍",
@@ -1651,7 +377,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":127,
+    "id":29,
     "roId":1373,
     "isMVP":true,
     "name":"死靈騎士",
@@ -1664,7 +390,7 @@ export const monsters = [
     "msec":7980000
   },
   {
-    "id":128,
+    "id":30,
     "roId":1389,
     "isMVP":true,
     "name":"德古拉男爵",
@@ -1677,7 +403,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":129,
+    "id":31,
     "roId":1418,
     "isMVP":true,
     "name":"墨蛇君",
@@ -1690,7 +416,7 @@ export const monsters = [
     "msec":5400000
   },
   {
-    "id":130,
+    "id":32,
     "roId":1492,
     "isMVP":true,
     "name":"元靈武士",
@@ -1703,7 +429,7 @@ export const monsters = [
     "msec":5400000
   },
   {
-    "id":131,
+    "id":33,
     "roId":1511,
     "isMVP":true,
     "name":"古埃及王",
@@ -1716,7 +442,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":132,
+    "id":34,
     "roId":1518,
     "isMVP":true,
     "name":"白素貞",
@@ -1729,7 +455,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":133,
+    "id":35,
     "roId":1583,
     "isMVP":true,
     "name":"塔奧群卡",
@@ -1742,7 +468,7 @@ export const monsters = [
     "msec":18000000
   },
   {
-    "id":134,
+    "id":36,
     "roId":1623,
     "isMVP":true,
     "name":"RSX-0806",
@@ -1755,7 +481,7 @@ export const monsters = [
     "msec":7500000
   },
   {
-    "id":135,
+    "id":37,
     "roId":1630,
     "isMVP":true,
     "name":"白素貞",
@@ -1768,7 +494,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":136,
+    "id":38,
     "roId":1630,
     "isMVP":true,
     "name":"白素貞",
@@ -1781,7 +507,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":137,
+    "id":39,
     "roId":1646,
     "isMVP":true,
     "name":"闇●騎士領主 賽依連",
@@ -1794,7 +520,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":138,
+    "id":40,
     "roId":1647,
     "isMVP":true,
     "name":"闇●十字刺客 艾勒梅斯",
@@ -1807,7 +533,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":139,
+    "id":41,
     "roId":1648,
     "isMVP":true,
     "name":"闇●神工匠 哈沃德",
@@ -1820,7 +546,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":140,
+    "id":42,
     "roId":1649,
     "isMVP":true,
     "name":"闇●神官 瑪嘉雷特",
@@ -1833,7 +559,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":141,
+    "id":43,
     "roId":1650,
     "isMVP":true,
     "name":"闇●神射手 迪文",
@@ -1846,7 +572,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":142,
+    "id":44,
     "roId":1651,
     "isMVP":true,
     "name":"闇●超魔導師 凱特莉娜",
@@ -1859,7 +585,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":143,
+    "id":45,
     "roId":1658,
     "isMVP":true,
     "name":"闇●劍士 賽尼亞",
@@ -1872,7 +598,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":144,
+    "id":46,
     "roId":1685,
     "isMVP":true,
     "name":"貝思波",
@@ -1885,7 +611,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":145,
+    "id":47,
     "roId":1688,
     "isMVP":true,
     "name":"嗒妮小姐",
@@ -1898,7 +624,7 @@ export const monsters = [
     "msec":25800000
   },
   {
-    "id":146,
+    "id":48,
     "roId":1708,
     "isMVP":true,
     "name":"魔劍士 達納托斯的記憶",
@@ -1911,7 +637,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":147,
+    "id":49,
     "roId":1719,
     "isMVP":true,
     "name":"迪塔勒泰晤勒斯",
@@ -1924,7 +650,7 @@ export const monsters = [
     "msec":10800000
   },
   {
-    "id":148,
+    "id":50,
     "roId":1734,
     "isMVP":true,
     "name":"齊爾-D-01",
@@ -1937,7 +663,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":149,
+    "id":51,
     "roId":1751,
     "isMVP":true,
     "name":"蘭特克力斯",
@@ -1950,7 +676,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":150,
+    "id":52,
     "roId":1768,
     "isMVP":true,
     "name":"幽暗夢魘",
@@ -1963,7 +689,7 @@ export const monsters = [
     "msec":18000000
   },
   {
-    "id":151,
+    "id":53,
     "roId":1779,
     "isMVP":true,
     "name":"水晶龍",
@@ -1976,7 +702,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":152,
+    "id":54,
     "roId":1785,
     "isMVP":true,
     "name":"阿特羅斯",
@@ -1989,7 +715,7 @@ export const monsters = [
     "msec":10800000
   },
   {
-    "id":153,
+    "id":55,
     "roId":1785,
     "isMVP":true,
     "name":"阿特羅斯",
@@ -2002,7 +728,7 @@ export const monsters = [
     "msec":10800000
   },
   {
-    "id":154,
+    "id":56,
     "roId":1785,
     "isMVP":true,
     "name":"阿特羅斯",
@@ -2015,7 +741,7 @@ export const monsters = [
     "msec":18000000
   },
   {
-    "id":155,
+    "id":57,
     "roId":1785,
     "isMVP":true,
     "name":"阿特羅斯",
@@ -2028,7 +754,7 @@ export const monsters = [
     "msec":21600000
   },
   {
-    "id":156,
+    "id":58,
     "roId":1785,
     "isMVP":true,
     "name":"阿特羅斯",
@@ -2041,7 +767,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":157,
+    "id":59,
     "roId":1832,
     "isMVP":true,
     "name":"伊夫利特",
@@ -2054,7 +780,7 @@ export const monsters = [
     "msec":39600000
   },
   {
-    "id":158,
+    "id":60,
     "roId":1871,
     "isMVP":true,
     "name":"墮落大神官 悉潘",
@@ -2067,7 +793,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":159,
+    "id":61,
     "roId":1885,
     "isMVP":true,
     "name":"青冠龍",
@@ -2080,7 +806,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":160,
+    "id":62,
     "roId":1917,
     "isMVP":true,
     "name":"負傷夢羅克",
@@ -2093,7 +819,7 @@ export const monsters = [
     "msec":43200000
   },
   {
-    "id":161,
+    "id":63,
     "roId":1980,
     "isMVP":true,
     "name":"榔鎚酷布靈",
@@ -2106,7 +832,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":162,
+    "id":64,
     "roId":1980,
     "isMVP":true,
     "name":"榔鎚酷布靈",
@@ -2119,7 +845,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":163,
+    "id":65,
     "roId":2022,
     "isMVP":true,
     "name":"尼德霍格的影子",
@@ -2132,7 +858,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":164,
+    "id":66,
     "roId":2068,
     "isMVP":true,
     "name":"波伊塔塔",
@@ -2145,7 +871,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":165,
+    "id":67,
     "roId":2087,
     "isMVP":true,
     "name":"女王甲蟲",
@@ -2158,7 +884,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":166,
+    "id":68,
     "roId":2131,
     "isMVP":true,
     "name":"殭屍龍",
@@ -2171,7 +897,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":167,
+    "id":69,
     "roId":2156,
     "isMVP":true,
     "name":"讓特",
@@ -2184,7 +910,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":168,
+    "id":70,
     "roId":2165,
     "isMVP":true,
     "name":"女王甲蟲",
@@ -2197,7 +923,7 @@ export const monsters = [
     "msec":7800000
   },
   {
-    "id":169,
+    "id":71,
     "roId":2202,
     "isMVP":true,
     "name":"魔鬼大烏賊",
@@ -2210,7 +936,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":170,
+    "id":72,
     "roId":2202,
     "isMVP":true,
     "name":"魔鬼大烏賊",
@@ -2223,7 +949,7 @@ export const monsters = [
     "msec":8400000
   },
   {
-    "id":171,
+    "id":73,
     "roId":2235,
     "isMVP":true,
     "name":"闇●聖殿十字軍 蘭達羅倫斯",
@@ -2236,7 +962,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":172,
+    "id":74,
     "roId":2236,
     "isMVP":true,
     "name":"闇●創造者 普拉梅姆",
@@ -2249,7 +975,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":173,
+    "id":75,
     "roId":2237,
     "isMVP":true,
     "name":"闇●智者 西里亞阿迪",
@@ -2262,7 +988,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":174,
+    "id":76,
     "roId":2238,
     "isMVP":true,
     "name":"闇●武術宗師 陳理歐",
@@ -2275,7 +1001,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":175,
+    "id":77,
     "roId":2239,
     "isMVP":true,
     "name":"闇●神行太保 科迪",
@@ -2288,7 +1014,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":176,
+    "id":78,
     "roId":2240,
     "isMVP":true,
     "name":"闇●搞笑藝人 雅歐帕奇爾",
@@ -2301,7 +1027,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":177,
+    "id":79,
     "roId":2241,
     "isMVP":true,
     "name":"闇●冷豔舞姬 特蘭提尼",
@@ -2314,7 +1040,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":178,
+    "id":80,
     "roId":2244,
     "isMVP":true,
     "name":"闇●武術宗師",
@@ -2327,7 +1053,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":179,
+    "id":81,
     "roId":2249,
     "isMVP":true,
     "name":"淘汰者傅立葉",
@@ -2340,7 +1066,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":180,
+    "id":82,
     "roId":2251,
     "isMVP":true,
     "name":"喬伊亞",
@@ -2353,7 +1079,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":181,
+    "id":83,
     "roId":2253,
     "isMVP":true,
     "name":"將軍大賢",
@@ -2366,7 +1092,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":182,
+    "id":84,
     "roId":2255,
     "isMVP":true,
     "name":"亡靈的守護者卡德斯",
@@ -2379,7 +1105,7 @@ export const monsters = [
     "msec":28800000
   },
   {
-    "id":183,
+    "id":85,
     "roId":2321,
     "isMVP":true,
     "name":"bakonawa",
@@ -2392,7 +1118,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":184,
+    "id":86,
     "roId":2362,
     "isMVP":true,
     "name":"古埃及王-夢魘",
@@ -2405,7 +1131,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":185,
+    "id":87,
     "roId":2441,
     "isMVP":true,
     "name":"魔鬼孩子王",
@@ -2418,7 +1144,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":186,
+    "id":88,
     "roId":2442,
     "isMVP":true,
     "name":"魔鬼孩子王",
@@ -2431,7 +1157,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":187,
+    "id":89,
     "roId":2483,
     "isMVP":true,
     "name":"惡夢之巴風特",
@@ -2444,7 +1170,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":188,
+    "id":90,
     "roId":2996,
     "isMVP":true,
     "name":"席琳基米",
@@ -2457,7 +1183,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":189,
+    "id":91,
     "roId":3029,
     "isMVP":true,
     "name":"死神 安庫",
@@ -2470,7 +1196,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":190,
+    "id":92,
     "roId":3074,
     "isMVP":true,
     "name":"時間支配者",
@@ -2483,7 +1209,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":191,
+    "id":93,
     "roId":3220,
     "isMVP":true,
     "name":"闇●十字斬首者 艾勒梅斯",
@@ -2496,7 +1222,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":192,
+    "id":94,
     "roId":3221,
     "isMVP":true,
     "name":"闇●大主教 瑪嘉雷特",
@@ -2509,7 +1235,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":193,
+    "id":95,
     "roId":3222,
     "isMVP":true,
     "name":"闇●遊俠 迪文",
@@ -2522,7 +1248,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":194,
+    "id":96,
     "roId":3223,
     "isMVP":true,
     "name":"闇●機械工匠 哈沃德",
@@ -2535,7 +1261,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":195,
+    "id":97,
     "roId":3224,
     "isMVP":true,
     "name":"闇●咒術士 凱特莉娜",
@@ -2548,7 +1274,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":196,
+    "id":98,
     "roId":3225,
     "isMVP":true,
     "name":"闇●盧恩騎士 賽依連",
@@ -2561,7 +1287,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":197,
+    "id":99,
     "roId":3240,
     "isMVP":true,
     "name":"闇●皇家禁衛隊 蘭達",
@@ -2574,7 +1300,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":198,
+    "id":100,
     "roId":3241,
     "isMVP":true,
     "name":"闇●基因學者 普拉梅姆",
@@ -2587,7 +1313,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":199,
+    "id":101,
     "roId":3242,
     "isMVP":true,
     "name":"闇●妖術師 西里亞",
@@ -2600,7 +1326,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":200,
+    "id":102,
     "roId":3243,
     "isMVP":true,
     "name":"闇●修羅 陳理歐",
@@ -2613,7 +1339,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":201,
+    "id":103,
     "roId":3244,
     "isMVP":true,
     "name":"闇●魅影追蹤者 科迪",
@@ -2626,7 +1352,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":202,
+    "id":104,
     "roId":3245,
     "isMVP":true,
     "name":"闇●宮廷樂師 雅歐帕奇爾",
@@ -2639,7 +1365,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":203,
+    "id":105,
     "roId":3246,
     "isMVP":true,
     "name":"闇●浪姬舞者 特蘭提尼",
@@ -2652,7 +1378,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":204,
+    "id":106,
     "roId":3505,
     "isMVP":true,
     "name":"巨大蛋黃波利",
@@ -2665,7 +1391,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":205,
+    "id":107,
     "roId":3741,
     "isMVP":true,
     "name":"蜘蛛戰車",
@@ -2678,7 +1404,7 @@ export const monsters = [
     "msec":7200000
   },
   {
-    "id":206,
+    "id":108,
     "roId":3796,
     "isMVP":true,
     "name":"甦醒水晶龍",
@@ -2691,7 +1417,7 @@ export const monsters = [
     "msec":72000000
   },
   {
-    "id":207,
+    "id":109,
     "roId":20260,
     "isMVP":true,
     "name":"光芒泰迪熊",
@@ -2704,7 +1430,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":208,
+    "id":110,
     "roId":20273,
     "isMVP":true,
     "name":"古代塔奧群卡",
@@ -2717,7 +1443,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":209,
+    "id":111,
     "roId":20277,
     "isMVP":true,
     "name":"古代伍坦防禦者",
@@ -2730,7 +1456,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":210,
+    "id":112,
     "roId":20386,
     "isMVP":true,
     "name":"詛咒施密特國王",
@@ -2743,7 +1469,7 @@ export const monsters = [
     "msec":86400000
   },
   {
-    "id":211,
+    "id":113,
     "roId":20387,
     "isMVP":true,
     "name":"詛咒施密特國王",
@@ -2756,7 +1482,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":212,
+    "id":114,
     "roId":20419,
     "isMVP":true,
     "name":"堅硬穆希貝斯寇",
@@ -2769,7 +1495,7 @@ export const monsters = [
     "msec":259200000
   },
   {
-    "id":213,
+    "id":115,
     "roId":20421,
     "isMVP":true,
     "name":"汙染蜘蛛女王",
@@ -2782,7 +1508,7 @@ export const monsters = [
     "msec":7620000
   },
   {
-    "id":214,
+    "id":116,
     "roId":20422,
     "isMVP":true,
     "name":"汙染黑暗之王",
@@ -2795,7 +1521,7 @@ export const monsters = [
     "msec":7800000
   },
   {
-    "id":215,
+    "id":117,
     "roId":20520,
     "isMVP":true,
     "name":"混沌巴風特",
@@ -2808,7 +1534,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":216,
+    "id":118,
     "roId":20536,
     "isMVP":true,
     "name":"無名劍士",
@@ -2821,7 +1547,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":217,
+    "id":119,
     "roId":20572,
     "isMVP":true,
     "name":"希梅爾茲幻影",
@@ -2834,7 +1560,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":218,
+    "id":120,
     "roId":20573,
     "isMVP":true,
     "name":"闇答萊屍幻影",
@@ -2847,7 +1573,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":219,
+    "id":121,
     "roId":20601,
     "isMVP":true,
     "name":"珠寶溫古力安特",
@@ -2860,7 +1586,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":220,
+    "id":122,
     "roId":20610,
     "isMVP":true,
     "name":"巴基力雷吉麗芙",
@@ -2873,7 +1599,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":221,
+    "id":123,
     "roId":20611,
     "isMVP":true,
     "name":"巴基力英格麗",
@@ -2886,7 +1612,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":222,
+    "id":124,
     "roId":20618,
     "isMVP":true,
     "name":"骷髏迪塔勒泰晤勒斯",
@@ -2899,7 +1625,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":223,
+    "id":125,
     "roId":20648,
     "isMVP":true,
     "name":"大王喵喵",
@@ -2912,7 +1638,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":224,
+    "id":126,
     "roId":20811,
     "isMVP":true,
     "name":"深海魔鬼大烏賊",
@@ -2925,7 +1651,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":225,
+    "id":127,
     "roId":20843,
     "isMVP":true,
     "name":"深海魔女",
@@ -2938,7 +1664,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":226,
+    "id":128,
     "roId":20919,
     "isMVP":true,
     "name":"噩夢小丑皇",
@@ -2951,7 +1677,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":227,
+    "id":129,
     "roId":20934,
     "isMVP":true,
     "name":"R001-貝斯蒂亞",
@@ -2964,7 +1690,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":228,
+    "id":130,
     "roId":20943,
     "isMVP":true,
     "name":"DEATH_WITCH",
@@ -2977,7 +1703,7 @@ export const monsters = [
     "msec":3600000
   },
   {
-    "id":229,
+    "id":131,
     "roId":21301,
     "isMVP":true,
     "name":"불태우는 송곳니",
@@ -2987,6 +1713,1280 @@ export const monsters = [
     "size":null,
     "image":"21301.png",
     "location":"奧茲迷宮2F (oz_dun02)",
+    "msec":3600000
+  },
+  {
+    "id":132,
+    "roId":1089,
+    "isMVP":false,
+    "name":"蛙王",
+    "level":27,
+    "race":"魚貝",
+    "element":"水1",
+    "size":"中",
+    "image":"1089.png",
+    "location":"克魔島基乃依沼澤地 (cmd_fild03)",
+    "msec":3600000
+  },
+  {
+    "id":133,
+    "roId":1089,
+    "isMVP":false,
+    "name":"蛙王",
+    "level":27,
+    "race":"魚貝",
+    "element":"水1",
+    "size":"中",
+    "image":"1089.png",
+    "location":"吉芬原野 (gef_fild01)",
+    "msec":3600000
+  },
+  {
+    "id":134,
+    "roId":1090,
+    "isMVP":false,
+    "name":"波利之王",
+    "level":42,
+    "race":"植物",
+    "element":"水1",
+    "size":"中",
+    "image":"1090.png",
+    "location":"普隆德拉迷宮森林3樓 (prt_maze03)",
+    "msec":1800000
+  },
+  {
+    "id":135,
+    "roId":1090,
+    "isMVP":false,
+    "name":"波利之王",
+    "level":42,
+    "race":"植物",
+    "element":"水1",
+    "size":"中",
+    "image":"1090.png",
+    "location":"薑餅城玩具工廠倉庫 (xmas_dun01)",
+    "msec":1800000
+  },
+  {
+    "id":136,
+    "roId":1090,
+    "isMVP":false,
+    "name":"波利之王",
+    "level":42,
+    "race":"植物",
+    "element":"水1",
+    "size":"中",
+    "image":"1090.png",
+    "location":"蘇克拉特沙漠 (pay_fild04)",
+    "msec":3600000
+  },
+  {
+    "id":137,
+    "roId":1090,
+    "isMVP":false,
+    "name":"波利之王",
+    "level":42,
+    "race":"植物",
+    "element":"水1",
+    "size":"中",
+    "image":"1090.png",
+    "location":"爾邁斯瀑雷德 (yuno_fild04)",
+    "msec":5400000
+  },
+  {
+    "id":138,
+    "roId":1091,
+    "isMVP":false,
+    "name":"龍蠅",
+    "level":47,
+    "race":"昆蟲",
+    "element":"風1",
+    "size":"小",
+    "image":"1091.png",
+    "location":"蘇克拉特沙漠 (moc_fild18)",
+    "msec":3600000
+  },
+  {
+    "id":139,
+    "roId":1092,
+    "isMVP":false,
+    "name":"流浪之狼",
+    "level":93,
+    "race":"動物",
+    "element":"地1",
+    "size":"中",
+    "image":"1092.png",
+    "location":"普隆德拉迷宮森林3樓 (prt_maze03)",
+    "msec":1800000
+  },
+  {
+    "id":140,
+    "roId":1092,
+    "isMVP":false,
+    "name":"流浪之狼",
+    "level":93,
+    "race":"動物",
+    "element":"地1",
+    "size":"中",
+    "image":"1092.png",
+    "location":"普隆德拉迷宮森林1樓 (prt_maze01)",
+    "msec":3600000
+  },
+  {
+    "id":141,
+    "roId":1092,
+    "isMVP":false,
+    "name":"流浪之狼",
+    "level":93,
+    "race":"動物",
+    "element":"地1",
+    "size":"中",
+    "image":"1092.png",
+    "location":"公會地下密穴 (gld_dun01)",
+    "msec":14400000
+  },
+  {
+    "id":142,
+    "roId":1093,
+    "isMVP":false,
+    "name":"藍瘋兔",
+    "level":31,
+    "race":"動物",
+    "element":"無3",
+    "size":"中",
+    "image":"1093.png",
+    "location":"普隆德拉原野 (prt_fild02)",
+    "msec":1800000
+  },
+  {
+    "id":143,
+    "roId":1093,
+    "isMVP":false,
+    "name":"藍瘋兔",
+    "level":31,
+    "race":"動物",
+    "element":"無3",
+    "size":"中",
+    "image":"1093.png",
+    "location":"普隆德拉迷宮森林3樓 (prt_maze03)",
+    "msec":1800000
+  },
+  {
+    "id":144,
+    "roId":1096,
+    "isMVP":false,
+    "name":"天使波利",
+    "level":77,
+    "race":"天使",
+    "element":"聖4",
+    "size":"中",
+    "image":"1096.png",
+    "location":"爾邁斯瀑雷德 (yuno_fild03)",
+    "msec":3600000
+  },
+  {
+    "id":145,
+    "roId":1096,
+    "isMVP":false,
+    "name":"天使波利",
+    "level":77,
+    "race":"天使",
+    "element":"聖4",
+    "size":"中",
+    "image":"1096.png",
+    "location":"薑餅城玩具工廠倉庫 (xmas_dun01)",
+    "msec":3600000
+  },
+  {
+    "id":146,
+    "roId":1096,
+    "isMVP":false,
+    "name":"天使波利",
+    "level":77,
+    "race":"天使",
+    "element":"聖4",
+    "size":"中",
+    "image":"1096.png",
+    "location":"蘇克拉特沙漠 (pay_fild04)",
+    "msec":3600000
+  },
+  {
+    "id":147,
+    "roId":1120,
+    "isMVP":false,
+    "name":"幽靈波利",
+    "level":90,
+    "race":"惡魔",
+    "element":"念4",
+    "size":"中",
+    "image":"1120.png",
+    "location":"艾爾貝塔沈船2樓 (treasure02)",
+    "msec":3600000
+  },
+  {
+    "id":148,
+    "roId":1120,
+    "isMVP":false,
+    "name":"幽靈波利",
+    "level":90,
+    "race":"惡魔",
+    "element":"念4",
+    "size":"中",
+    "image":"1120.png",
+    "location":"蘇克拉特沙漠 (pay_fild04)",
+    "msec":3600000
+  },
+  {
+    "id":149,
+    "roId":1120,
+    "isMVP":false,
+    "name":"幽靈波利",
+    "level":90,
+    "race":"惡魔",
+    "element":"念4",
+    "size":"中",
+    "image":"1120.png",
+    "location":"普隆德拉迷宮森林3樓 (prt_maze03)",
+    "msec":7200000
+  },
+  {
+    "id":150,
+    "roId":1120,
+    "isMVP":false,
+    "name":"幽靈波利",
+    "level":90,
+    "race":"惡魔",
+    "element":"念4",
+    "size":"中",
+    "image":"1120.png",
+    "location":"公會地下密穴 (gld_dun04)",
+    "msec":14400000
+  },
+  {
+    "id":151,
+    "roId":1200,
+    "isMVP":false,
+    "name":"艾斯恩魔女",
+    "level":105,
+    "race":"人形",
+    "element":"無3",
+    "size":"中",
+    "image":"1200.png",
+    "location":"克雷斯特漢姆古城地下監獄2樓 (gl_prison1)",
+    "msec":3600000
+  },
+  {
+    "id":152,
+    "roId":1203,
+    "isMVP":false,
+    "name":"弒神者",
+    "level":130,
+    "race":"無形",
+    "element":"暗4",
+    "size":"大",
+    "image":"1203.png",
+    "location":"克雷斯特漢姆古城騎士團2樓 (gl_knt02)",
+    "msec":3600000
+  },
+  {
+    "id":153,
+    "roId":1203,
+    "isMVP":false,
+    "name":"弒神者",
+    "level":130,
+    "race":"無形",
+    "element":"暗4",
+    "size":"大",
+    "image":"1203.png",
+    "location":"克雷斯特漢姆古城2樓 (gl_cas02)",
+    "msec":7200000
+  },
+  {
+    "id":154,
+    "roId":1203,
+    "isMVP":false,
+    "name":"弒神者",
+    "level":130,
+    "race":"無形",
+    "element":"暗4",
+    "size":"大",
+    "image":"1203.png",
+    "location":"葛帔尼亞 (gefenia01)",
+    "msec":10800000
+  },
+  {
+    "id":155,
+    "roId":1203,
+    "isMVP":false,
+    "name":"弒神者",
+    "level":130,
+    "race":"無形",
+    "element":"暗4",
+    "size":"大",
+    "image":"1203.png",
+    "location":"葛帔尼亞 (gefenia02)",
+    "msec":18000000
+  },
+  {
+    "id":156,
+    "roId":1203,
+    "isMVP":false,
+    "name":"弒神者",
+    "level":130,
+    "race":"無形",
+    "element":"暗4",
+    "size":"大",
+    "image":"1203.png",
+    "location":"葛帔尼亞 (gefenia03)",
+    "msec":18000000
+  },
+  {
+    "id":157,
+    "roId":1203,
+    "isMVP":false,
+    "name":"弒神者",
+    "level":130,
+    "race":"無形",
+    "element":"暗4",
+    "size":"大",
+    "image":"1203.png",
+    "location":"葛帔尼亞 (gefenia04)",
+    "msec":18000000
+  },
+  {
+    "id":158,
+    "roId":1204,
+    "isMVP":false,
+    "name":"獸牙怪",
+    "level":114,
+    "race":"無形",
+    "element":"暗3",
+    "size":"中",
+    "image":"1204.png",
+    "location":"克雷斯特漢姆古城2樓 (gl_cas02)",
+    "msec":7200000
+  },
+  {
+    "id":159,
+    "roId":1204,
+    "isMVP":false,
+    "name":"獸牙怪",
+    "level":114,
+    "race":"無形",
+    "element":"暗3",
+    "size":"中",
+    "image":"1204.png",
+    "location":"葛帔尼亞 (gefenia02)",
+    "msec":10800000
+  },
+  {
+    "id":160,
+    "roId":1204,
+    "isMVP":false,
+    "name":"獸牙怪",
+    "level":114,
+    "race":"無形",
+    "element":"暗3",
+    "size":"中",
+    "image":"1204.png",
+    "location":"葛帔尼亞 (gefenia01)",
+    "msec":18000000
+  },
+  {
+    "id":161,
+    "roId":1204,
+    "isMVP":false,
+    "name":"獸牙怪",
+    "level":114,
+    "race":"無形",
+    "element":"暗3",
+    "size":"中",
+    "image":"1204.png",
+    "location":"葛帔尼亞 (gefenia03)",
+    "msec":18000000
+  },
+  {
+    "id":162,
+    "roId":1204,
+    "isMVP":false,
+    "name":"獸牙怪",
+    "level":114,
+    "race":"無形",
+    "element":"暗3",
+    "size":"中",
+    "image":"1204.png",
+    "location":"葛帔尼亞 (gefenia04)",
+    "msec":18000000
+  },
+  {
+    "id":163,
+    "roId":1205,
+    "isMVP":false,
+    "name":"行刑者",
+    "level":101,
+    "race":"無形",
+    "element":"暗2",
+    "size":"大",
+    "image":"1205.png",
+    "location":"葛帔尼亞 (gefenia03)",
+    "msec":10800000
+  },
+  {
+    "id":164,
+    "roId":1205,
+    "isMVP":false,
+    "name":"行刑者",
+    "level":101,
+    "race":"無形",
+    "element":"暗2",
+    "size":"大",
+    "image":"1205.png",
+    "location":"葛帔尼亞 (gefenia01)",
+    "msec":18000000
+  },
+  {
+    "id":165,
+    "roId":1205,
+    "isMVP":false,
+    "name":"行刑者",
+    "level":101,
+    "race":"無形",
+    "element":"暗2",
+    "size":"大",
+    "image":"1205.png",
+    "location":"葛帔尼亞 (gefenia02)",
+    "msec":18000000
+  },
+  {
+    "id":166,
+    "roId":1205,
+    "isMVP":false,
+    "name":"行刑者",
+    "level":101,
+    "race":"無形",
+    "element":"暗2",
+    "size":"大",
+    "image":"1205.png",
+    "location":"葛帔尼亞 (gefenia04)",
+    "msec":18000000
+  },
+  {
+    "id":167,
+    "roId":1259,
+    "isMVP":false,
+    "name":"獅鷲獸",
+    "level":105,
+    "race":"動物",
+    "element":"風4",
+    "size":"大",
+    "image":"1259.png",
+    "location":"毀葛原野 (hu_fild02)",
+    "msec":3600000
+  },
+  {
+    "id":168,
+    "roId":1268,
+    "isMVP":false,
+    "name":"血腥騎士",
+    "level":116,
+    "race":"無形",
+    "element":"暗4",
+    "size":"大",
+    "image":"1268.png",
+    "location":"克雷斯特漢姆古城騎士團2樓 (gl_knt02)",
+    "msec":3600000
+  },
+  {
+    "id":169,
+    "roId":1268,
+    "isMVP":false,
+    "name":"血腥騎士",
+    "level":116,
+    "race":"無形",
+    "element":"暗4",
+    "size":"大",
+    "image":"1268.png",
+    "location":"葛帔尼亞 (gefenia01)",
+    "msec":3600000
+  },
+  {
+    "id":170,
+    "roId":1268,
+    "isMVP":false,
+    "name":"血腥騎士",
+    "level":116,
+    "race":"無形",
+    "element":"暗4",
+    "size":"大",
+    "image":"1268.png",
+    "location":"葛帔尼亞 (gefenia02)",
+    "msec":3600000
+  },
+  {
+    "id":171,
+    "roId":1268,
+    "isMVP":false,
+    "name":"血腥騎士",
+    "level":116,
+    "race":"無形",
+    "element":"暗4",
+    "size":"大",
+    "image":"1268.png",
+    "location":"葛帔尼亞 (gefenia03)",
+    "msec":3600000
+  },
+  {
+    "id":172,
+    "roId":1268,
+    "isMVP":false,
+    "name":"血腥騎士",
+    "level":116,
+    "race":"無形",
+    "element":"暗4",
+    "size":"大",
+    "image":"1268.png",
+    "location":"葛帔尼亞 (gefenia04)",
+    "msec":3600000
+  },
+  {
+    "id":173,
+    "roId":1289,
+    "isMVP":false,
+    "name":"狂暴蟻后",
+    "level":81,
+    "race":"昆蟲",
+    "element":"地4",
+    "size":"大",
+    "image":"1289.png",
+    "location":"公會地下密穴 (gld_dun03)",
+    "msec":1200000
+  },
+  {
+    "id":174,
+    "roId":1289,
+    "isMVP":false,
+    "name":"狂暴蟻后",
+    "level":81,
+    "race":"昆蟲",
+    "element":"地4",
+    "size":"大",
+    "image":"1289.png",
+    "location":"公會地下密穴2樓 (gld_dun02_2)",
+    "msec":1200000
+  },
+  {
+    "id":175,
+    "roId":1289,
+    "isMVP":false,
+    "name":"狂暴蟻后",
+    "level":81,
+    "race":"昆蟲",
+    "element":"地4",
+    "size":"大",
+    "image":"1289.png",
+    "location":"深淵迴廊:英雄之淚 (gld2_ald)",
+    "msec":1200000
+  },
+  {
+    "id":176,
+    "roId":1296,
+    "isMVP":false,
+    "name":"犬妖首領",
+    "level":112,
+    "race":"人形",
+    "element":"風2",
+    "size":"中",
+    "image":"1296.png",
+    "location":"浦勒吐盧納(ra_fild06)",
+    "msec":1800000
+  },
+  {
+    "id":177,
+    "roId":1296,
+    "isMVP":false,
+    "name":"犬妖首領",
+    "level":112,
+    "race":"人形",
+    "element":"風2",
+    "size":"中",
+    "image":"1296.png",
+    "location":"公會地下密穴2樓 (gld_dun03_2)",
+    "msec":14400000
+  },
+  {
+    "id":178,
+    "roId":1299,
+    "isMVP":false,
+    "name":"哥布靈首領",
+    "level":55,
+    "race":"人形",
+    "element":"風1",
+    "size":"中",
+    "image":"1299.png",
+    "location":"吉芬原野 (gef_fild11)",
+    "msec":1800000
+  },
+  {
+    "id":179,
+    "roId":1302,
+    "isMVP":false,
+    "name":"迷幻之王",
+    "level":96,
+    "race":"惡魔",
+    "element":"不死4",
+    "size":"大",
+    "image":"1302.png",
+    "location":"公會地下密穴 (gld_dun04)",
+    "msec":1200000
+  },
+  {
+    "id":180,
+    "roId":1302,
+    "isMVP":false,
+    "name":"迷幻之王",
+    "level":96,
+    "race":"惡魔",
+    "element":"不死4",
+    "size":"大",
+    "image":"1302.png",
+    "location":"公會地下密穴2樓 (gld_dun04_2)",
+    "msec":1200000
+  },
+  {
+    "id":181,
+    "roId":1302,
+    "isMVP":false,
+    "name":"迷幻之王",
+    "level":96,
+    "race":"惡魔",
+    "element":"不死4",
+    "size":"大",
+    "image":"1302.png",
+    "location":"深淵迴廊:亡者之丘 (gld2_gef)",
+    "msec":1200000
+  },
+  {
+    "id":182,
+    "roId":1302,
+    "isMVP":false,
+    "name":"迷幻之王",
+    "level":96,
+    "race":"惡魔",
+    "element":"不死4",
+    "size":"大",
+    "image":"1302.png",
+    "location":"克雷斯特漢姆古城地下公墓 (gl_chy_a)",
+    "msec":3600000
+  },
+  {
+    "id":183,
+    "roId":1302,
+    "isMVP":false,
+    "name":"迷幻之王",
+    "level":96,
+    "race":"惡魔",
+    "element":"不死4",
+    "size":"大",
+    "image":"1302.png",
+    "location":"克雷斯特漢姆古城地下公墓 (gl_chyard)",
+    "msec":3600000
+  },
+  {
+    "id":184,
+    "roId":1302,
+    "isMVP":false,
+    "name":"迷幻之王",
+    "level":96,
+    "race":"惡魔",
+    "element":"不死4",
+    "size":"大",
+    "image":"1302.png",
+    "location":"古城地下公墓(夢魘) (gl_chyard_)",
+    "msec":3600000
+  },
+  {
+    "id":185,
+    "roId":1307,
+    "isMVP":false,
+    "name":"狂暴月夜貓",
+    "level":79,
+    "race":"惡魔",
+    "element":"火3",
+    "size":"中",
+    "image":"1307.png",
+    "location":"公會地下密穴 (gld_dun01)",
+    "msec":1200000
+  },
+  {
+    "id":186,
+    "roId":1307,
+    "isMVP":false,
+    "name":"狂暴月夜貓",
+    "level":79,
+    "race":"惡魔",
+    "element":"火3",
+    "size":"中",
+    "image":"1307.png",
+    "location":"斐揚洞穴5樓(廢村) (pay_dun04)",
+    "msec":3600000
+  },
+  {
+    "id":187,
+    "roId":1388,
+    "isMVP":false,
+    "name":"聖天使波利",
+    "level":84,
+    "race":"天使",
+    "element":"聖3",
+    "size":"中",
+    "image":"1388.png",
+    "location":"爾邁斯瀑雷德 (yuno_fild04)",
+    "msec":3600000
+  },
+  {
+    "id":188,
+    "roId":1582,
+    "isMVP":false,
+    "name":"惡魔波利",
+    "level":66,
+    "race":"惡魔",
+    "element":"暗4",
+    "size":"中",
+    "image":"1582.png",
+    "location":"爾邁斯瀑雷德 (yuno_fild03)",
+    "msec":6000000
+  },
+  {
+    "id":189,
+    "roId":1582,
+    "isMVP":false,
+    "name":"惡魔波利",
+    "level":66,
+    "race":"惡魔",
+    "element":"暗4",
+    "size":"中",
+    "image":"1582.png",
+    "location":"蘇克拉特沙漠 (pay_fild04)",
+    "msec":7200000
+  },
+  {
+    "id":190,
+    "roId":1674,
+    "isMVP":false,
+    "name":"莫內",
+    "level":88,
+    "race":"無形",
+    "element":"火3",
+    "size":"大",
+    "image":"1674.png",
+    "location":null,
+    "msec":3600000
+  },
+  {
+    "id":191,
+    "roId":1681,
+    "isMVP":false,
+    "name":"雙子星-S58",
+    "level":135,
+    "race":"無形",
+    "element":"水3",
+    "size":"中",
+    "image":"1681.png",
+    "location":"活體實驗研究所地下1樓 (lhz_dun01)",
+    "msec":1800000
+  },
+  {
+    "id":192,
+    "roId":1681,
+    "isMVP":false,
+    "name":"雙子星-S58",
+    "level":135,
+    "race":"無形",
+    "element":"水3",
+    "size":"中",
+    "image":"1681.png",
+    "location":"活體實驗研究所地下2樓 (lhz_dun02)",
+    "msec":1800000
+  },
+  {
+    "id":193,
+    "roId":1733,
+    "isMVP":false,
+    "name":"齊爾",
+    "level":90,
+    "race":"無形",
+    "element":"暗2",
+    "size":"中",
+    "image":"1733.png",
+    "location":null,
+    "msec":3600000
+  },
+  {
+    "id":194,
+    "roId":1765,
+    "isMVP":false,
+    "name":"巴基力 蘭特克力斯",
+    "level":141,
+    "race":"天使",
+    "element":"聖2",
+    "size":"大",
+    "image":"1765.png",
+    "location":"奧丁神殿3F（分流A） (odin_t03a)",
+    "msec":5400000
+  },
+  {
+    "id":195,
+    "roId":1765,
+    "isMVP":false,
+    "name":"巴基力 蘭特克力斯",
+    "level":141,
+    "race":"天使",
+    "element":"聖2",
+    "size":"大",
+    "image":"1765.png",
+    "location":"毀葛奧丁神殿北區 (odin_tem03)",
+    "msec":5400000
+  },
+  {
+    "id":196,
+    "roId":1829,
+    "isMVP":false,
+    "name":"劍士監護人魔物",
+    "level":133,
+    "race":"人形",
+    "element":"無4",
+    "size":"大",
+    "image":null,
+    "location":"菲音斯托爾火山洞穴2樓 (thor_v02)",
+    "msec":7200000
+  },
+  {
+    "id":197,
+    "roId":1830,
+    "isMVP":false,
+    "name":"弓箭手監護人魔物",
+    "level":132,
+    "race":"人形",
+    "element":"無4",
+    "size":"大",
+    "image":null,
+    "location":"菲音斯托爾火山洞穴2樓 (thor_v02)",
+    "msec":7200000
+  },
+  {
+    "id":198,
+    "roId":1872,
+    "isMVP":false,
+    "name":"魔鬼蒼蠅",
+    "level":127,
+    "race":"天使",
+    "element":"無4",
+    "size":"中",
+    "image":"1872.png",
+    "location":null,
+    "msec":3600000
+  },
+  {
+    "id":199,
+    "roId":1875,
+    "isMVP":false,
+    "name":"王的屍體",
+    "level":80,
+    "race":"不死",
+    "element":"不死4",
+    "size":"中",
+    "image":"1875.png",
+    "location":null,
+    "msec":3600000
+  },
+  {
+    "id":200,
+    "roId":1916,
+    "isMVP":false,
+    "name":"魔王夢羅克",
+    "level":151,
+    "race":"惡魔",
+    "element":"暗4",
+    "size":"大",
+    "image":"1916.png",
+    "location":"蘇克拉特沙漠次元裂縫 (moc_fild21)",
+    "msec":21600000
+  },
+  {
+    "id":201,
+    "roId":1918,
+    "isMVP":false,
+    "name":"夢羅克門徒之邪靈",
+    "level":132,
+    "race":"天使",
+    "element":"暗1",
+    "size":"大",
+    "image":"1918.png",
+    "location":"火焰盆地 (moro_vol)",
+    "msec":3600000
+  },
+  {
+    "id":202,
+    "roId":1919,
+    "isMVP":false,
+    "name":"夢羅克門徒之泥怪",
+    "level":132,
+    "race":"惡魔",
+    "element":"暗3",
+    "size":"中",
+    "image":"1919.png",
+    "location":"火焰盆地 (moro_vol)",
+    "msec":3600000
+  },
+  {
+    "id":203,
+    "roId":1920,
+    "isMVP":false,
+    "name":"夢羅克門徒之活屍",
+    "level":133,
+    "race":"惡魔",
+    "element":"不死3",
+    "size":"中",
+    "image":"1920.png",
+    "location":"火焰盆地 (moro_vol)",
+    "msec":3600000
+  },
+  {
+    "id":204,
+    "roId":1921,
+    "isMVP":false,
+    "name":"夢羅克門徒之喜樂",
+    "level":134,
+    "race":"惡魔",
+    "element":"念3",
+    "size":"中",
+    "image":"1921.png",
+    "location":"火焰盆地 (moro_vol)",
+    "msec":3600000
+  },
+  {
+    "id":205,
+    "roId":1960,
+    "isMVP":false,
+    "name":"魔力之荊棘",
+    "level":89,
+    "race":"惡魔",
+    "element":"暗4",
+    "size":"小",
+    "image":"1960.png",
+    "location":"克雷斯特漢姆的沒落 (1@gl_prq)",
+    "msec":86400000
+  },
+  {
+    "id":206,
+    "roId":1990,
+    "isMVP":false,
+    "name":"硬石猛瑪",
+    "level":137,
+    "race":"動物",
+    "element":"地3",
+    "size":"大",
+    "image":"1990.png",
+    "location":"魔怒克原野 (man_fild03)",
+    "msec":14400000
+  },
+  {
+    "id":207,
+    "roId":2188,
+    "isMVP":false,
+    "name":"怪異腔棘魚",
+    "level":100,
+    "race":"魚貝",
+    "element":"水2",
+    "size":"大",
+    "image":"2188.png",
+    "location":null,
+    "msec":3600000
+  },
+  {
+    "id":208,
+    "roId":2475,
+    "isMVP":false,
+    "name":"墮落根莖",
+    "level":150,
+    "race":"惡魔",
+    "element":"地3",
+    "size":"大",
+    "image":"2475.png",
+    "location":"舊的古城騎士團副本1F (1@gl_k)",
+    "msec":3600000
+  },
+  {
+    "id":209,
+    "roId":2476,
+    "isMVP":false,
+    "name":"闇答萊屍",
+    "level":150,
+    "race":"不死",
+    "element":"不死4",
+    "size":"大",
+    "image":"2476.png",
+    "location":"舊的古城騎士團副本2F (2@gl_k)",
+    "msec":3600000
+  },
+  {
+    "id":210,
+    "roId":2562,
+    "isMVP":false,
+    "name":"狄瓦伊",
+    "level":160,
+    "race":"人形",
+    "element":"念2",
+    "size":"中",
+    "image":"2562.png",
+    "location":"吉芬魔法大賽 (1@ge_st)",
+    "msec":3600000
+  },
+  {
+    "id":211,
+    "roId":2564,
+    "isMVP":false,
+    "name":"潘利爾",
+    "level":160,
+    "race":"人形",
+    "element":"念2",
+    "size":"中",
+    "image":"2564.png",
+    "location":"吉芬魔法大賽 (1@ge_st)",
+    "msec":3600000
+  },
+  {
+    "id":212,
+    "roId":2921,
+    "isMVP":false,
+    "name":"鴞裊子爵",
+    "level":168,
+    "race":"惡魔",
+    "element":"無3",
+    "size":"大",
+    "image":"2921.png",
+    "location":"夢魘密穴鐘塔2樓 (c_tower2_)",
+    "msec":60000
+  },
+  {
+    "id":213,
+    "roId":2923,
+    "isMVP":false,
+    "name":"鴞裊侯爵",
+    "level":170,
+    "race":"惡魔",
+    "element":"無3",
+    "size":"大",
+    "image":"2923.png",
+    "location":"夢魘密穴鐘塔3樓 (c_tower3_)",
+    "msec":60000
+  },
+  {
+    "id":214,
+    "roId":2973,
+    "isMVP":false,
+    "name":"噩夢大公",
+    "level":190,
+    "race":"無形",
+    "element":"無1",
+    "size":"小",
+    "image":"2973.png",
+    "location":null,
+    "msec":3600000
+  },
+  {
+    "id":215,
+    "roId":3039,
+    "isMVP":false,
+    "name":"烈火夢羅克門徒",
+    "level":149,
+    "race":"惡魔",
+    "element":"暗1",
+    "size":"大",
+    "image":"3039.png",
+    "location":"火焰盆地 (moro_vol)",
+    "msec":3600000
+  },
+  {
+    "id":216,
+    "roId":3040,
+    "isMVP":false,
+    "name":"猖狂夢羅克門徒",
+    "level":149,
+    "race":"惡魔",
+    "element":"暗3",
+    "size":"中",
+    "image":"3040.png",
+    "location":"火焰盆地 (moro_vol)",
+    "msec":3600000
+  },
+  {
+    "id":217,
+    "roId":3041,
+    "isMVP":false,
+    "name":"冰凍夢羅克門徒",
+    "level":149,
+    "race":"惡魔",
+    "element":"水3",
+    "size":"中",
+    "image":"3041.png",
+    "location":"火焰盆地 (moro_vol)",
+    "msec":3600000
+  },
+  {
+    "id":218,
+    "roId":3073,
+    "isMVP":false,
+    "name":"覺醒的貝爾",
+    "level":140,
+    "race":"惡魔",
+    "element":"不死3",
+    "size":"中",
+    "image":"3073.png",
+    "location":"噩夢吉特巴 (1@jtb)最終房",
+    "msec":3600000
+  },
+  {
+    "id":219,
+    "roId":3181,
+    "isMVP":false,
+    "name":"暴走的船長裴陸",
+    "level":130,
+    "race":"龍族",
+    "element":"暗2",
+    "size":"大",
+    "image":"3181.png",
+    "location":null,
+    "msec":3600000
+  },
+  {
+    "id":220,
+    "roId":3426,
+    "isMVP":false,
+    "name":"虎王",
+    "level":101,
+    "race":"動物",
+    "element":"火1",
+    "size":"大",
+    "image":"3426.png",
+    "location":null,
+    "msec":3600000
+  },
+  {
+    "id":221,
+    "roId":3427,
+    "isMVP":false,
+    "name":"俄塞里斯",
+    "level":103,
+    "race":"不死",
+    "element":"不死3",
+    "size":"中",
+    "image":"3427.png",
+    "location":null,
+    "msec":3600000
+  },
+  {
+    "id":222,
+    "roId":3428,
+    "isMVP":false,
+    "name":"皮里恩",
+    "level":105,
+    "race":"動物",
+    "element":"無1",
+    "size":"大",
+    "image":"3428.png",
+    "location":null,
+    "msec":3600000
+  },
+  {
+    "id":223,
+    "roId":3429,
+    "isMVP":false,
+    "name":"獸人英雄",
+    "level":107,
+    "race":"人形",
+    "element":"地2",
+    "size":"大",
+    "image":"3429.png",
+    "location":null,
+    "msec":3600000
+  },
+  {
+    "id":224,
+    "roId":3430,
+    "isMVP":false,
+    "name":"塔奧群卡",
+    "level":109,
+    "race":"惡魔",
+    "element":"無1",
+    "size":"大",
+    "image":"3430.png",
+    "location":null,
+    "msec":3600000
+  },
+  {
+    "id":225,
+    "roId":20521,
+    "isMVP":false,
+    "name":"혼돈의 안드레마",
+    "level":177,
+    "race":"人形",
+    "element":"無4",
+    "size":"中",
+    "image":"20521.png",
+    "location":"扭曲的迷宮森林 (prt_mz03_i)",
+    "msec":3600000
+  },
+  {
+    "id":226,
+    "roId":20575,
+    "isMVP":false,
+    "name":"無限墮落根莖",
+    "level":190,
+    "race":"惡魔",
+    "element":"地3",
+    "size":"大",
+    "image":"20575.png",
+    "location":"污染的次元 (1@gl_he)中央走道",
+    "msec":3600000
+  },
+  {
+    "id":227,
+    "roId":20785,
+    "isMVP":false,
+    "name":"MD_BROKEN_THANATOS",
+    "level":999,
+    "race":"無形",
+    "element":"無1",
+    "size":"小",
+    "image":"20785.png",
+    "location":null,
+    "msec":3600000
+  },
+  {
+    "id":228,
+    "roId":20928,
+    "isMVP":false,
+    "name":"CHIMERA_THEONE",
+    "level":999,
+    "race":"無形",
+    "element":"無1",
+    "size":"小",
+    "image":"20928.png",
+    "location":"廢棄研究所艾米基提亞二樓:集中培養室 (amicitia2)",
+    "msec":3600000
+  },
+  {
+    "id":229,
+    "roId":21395,
+    "isMVP":false,
+    "name":"ILL_MAYA",
+    "level":999,
+    "race":null,
+    "element":"無1",
+    "size":null,
+    "image":"21395.png",
+    "location":"認知的庭園(幻影) (ant_d02_i)",
     "msec":3600000
   }
 ]

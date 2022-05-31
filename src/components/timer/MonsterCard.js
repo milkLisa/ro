@@ -5,26 +5,28 @@ import DialogTitle from '@mui/material/DialogTitle'
 import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button'
-import { TimerObj } from '../../constants/customData'
 import { 
   MINUTE, SECOND, getFormatedTime, getDateTime, parseToMSEC
 } from '../../constants/dateTime'
-import { isValid } from '../../utils/parser'
+import BossIcon from './BossIcon'
 
 export default function MonsterCard({ 
   intl, settings, monster, onStart, onStop, onTime 
 }) {
   const [isEdit, setIsEdit]     = useState(false)
   const [editText, setEditText] = useState("")
-  const defaultTime = monster.editMSEC || monster.msec
-  const isStart = isValid(monster.utcMSEC)
+
+  const { showName, showLocation, showDateTime, remindBefore } = settings
+  const { id, isMVP, name, location, msec, utcMSEC, editMSEC, image } = monster
+  const defaultTime = editMSEC || msec
   const leftTime = monster.leftTime || defaultTime
-  const img = "/static/images/" + (monster.image ? monster.image : "egg.png")
-  const before = parseToMSEC(settings.remindBefore) || MINUTE
+  const isStart = !!utcMSEC
+  const img = "/static/images/" + (image ? image : "egg.png")
+  const before = parseToMSEC(remindBefore) || MINUTE
   
   useEffect(() => {
     if (isStart && getFormatedTime(leftTime) === getFormatedTime(before)) 
-      onTime(monster.id)
+      onTime(id)
   })
 
   const getClass = (stable, isStart, time) => {
@@ -44,9 +46,9 @@ export default function MonsterCard({
 
   const handleSwitch = turnOn => {
     if (turnOn) {
-      onStart(TimerObj(monster, { utcMSEC: defaultTime + Date.now() }))
+      onStart({ ...monster, utcMSEC: defaultTime + Date.now() })
     } else {
-      onStop(TimerObj(monster, { utcMSEC: null }))
+      onStop({ ...monster, utcMSEC: null })
     }
   }
 
@@ -68,15 +70,9 @@ export default function MonsterCard({
     let msec = parseToMSEC(editText)
     msec = msec < SECOND ? defaultTime : msec
 
-    onStart(TimerObj(monster, 
-      { utcMSEC: msec + Date.now(), editMSEC: msec }
-    ))
+    onStart({ ...monster, utcMSEC: msec + Date.now(), editMSEC: msec })
 
     handleEditClose()
-  }
-
-  const showField = (setting, value) => {
-    return setting ? value : ""
   }
 
   return (
@@ -87,6 +83,8 @@ export default function MonsterCard({
         onDoubleClick = { e => openEditBox(e) }
         onContextMenu = { e => openEditBox(e) }
       >
+        <BossIcon isMVP={ isMVP } />
+
         <div className="time">
           { getFormatedTime(leftTime) }
         </div>
@@ -99,15 +97,9 @@ export default function MonsterCard({
       </div>
 
       <div className="info">
-        <div>{ showField(settings.showName, monster.name) }</div>
-        
-        
-        { showField(settings.showLocation, 
-          <div className="location">{ monster.location }</div>) }
-        
-        <div>
-          { showField(settings.showDateTime, getDateTime(monster.utcMSEC)) }
-        </div>
+        { showName && <div>{ name }</div> }
+        { showLocation && <div className="location">{ location }</div> }
+        { showDateTime && utcMSEC && <div>{ getDateTime(utcMSEC) }</div> }
       </div>
 
       <Dialog 

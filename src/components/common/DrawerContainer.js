@@ -8,7 +8,7 @@ import LoadingModal from './LoadingModal'
 import Loading from './Loading'
 
 export default function DrawerContainer({ 
-  intl, anchor, isOpen, header, onClose, children,
+  intl, className, keep, anchor, isOpen, header, onClose, children,
   closeIcon = <CloseIcon />, closeLabel = "ESC"
 }) {
   const [loading, setLoading] = useState(false)
@@ -30,10 +30,11 @@ export default function DrawerContainer({
       }
 
       <Drawer
+        className = { className }
         anchor    = { anchor }
         open      = { isOpen }
         PaperProps= { { ref: container } }
-        ModalProps= { { keepMounted: true } }
+        ModalProps= { { keepMounted: !!keep } }
         onClose   = { () => handleClose() }
       >
         <Container className="drawer-container" >

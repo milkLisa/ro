@@ -22,12 +22,14 @@ const combinedTimer = (ts, ms) => {
 export default function Content({ intl, settings }) {
   const [ monsters, setMonsters ]       = useState([])
   const [ timers, setTimers ]           = useState([])
+  const [ savedTimers, setSavedTimers ] = useState([])
   const [ isCheckOpen, setIsCheckOpen ] = useState(false)
 
   useEffect(() => {
     query(["/api/monsters", "/api/timers"])
       .then(data => {
         setTimers(data.timers)
+        setSavedTimers(combinedTimer(data.timers, data.monsters))
         setMonsters(data.monsters)
       })
   }, [])
@@ -50,6 +52,7 @@ export default function Content({ intl, settings }) {
 
     if (isChanged(ids, newIds)) {
       setTimers(newTimers)
+      setSavedTimers(combinedTimer(newTimers, monsters))
       renew("/api/timers", newTimers)
     }
   }
@@ -82,7 +85,7 @@ export default function Content({ intl, settings }) {
         
         <TimerList 
           intl      = { intl }
-          monTimers = { combinedTimer(timers, monsters) }
+          monTimers = { savedTimers }
           settings  = { settings }
           onChange  = { updateTimers }
         />
@@ -91,7 +94,7 @@ export default function Content({ intl, settings }) {
       <CheckDrawer
         intl        = { intl }
         isOpen      = { isCheckOpen }
-        timers      = { timers }
+        timers      = { isCheckOpen ? timers : [] }
         monsters    = { monsters }
         onClose     = { saveTimers }
       />

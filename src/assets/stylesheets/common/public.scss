@@ -15,7 +15,7 @@ $large-size: 2rem;
 $big-size: 3rem;
 
 $anchor-height: 64px;
-$avatar-size: 48px;
+$avatar-size: 60px;
 
 $thin-weight: 400;
 $normal-weight: 500;
@@ -51,6 +51,11 @@ $card-shadow: 2px 2px 1px $note-color;
 
 @mixin default-font() {
   font-size: $normal-size;
+}
+
+@mixin small-icon() {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 @mixin icon-button() {

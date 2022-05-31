@@ -4,6 +4,7 @@ import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import AlarmOnIcon from '@mui/icons-material/AlarmOn'
 import { getFormatedTime } from '../../constants/dateTime'
+import BossIcon from './BossIcon'
 
 export default function CheckCard({ 
   intl, monster, isChecked, isStarting, onCheck 
@@ -30,7 +31,7 @@ export default function CheckCard({
             </div>
 
             <div className="desc">
-              <span>{ monster.isMVP ? "MVP" : "Boss" }</span>
+              <BossIcon isMVP={ monster.isMVP } />
               <span>{ `Lv.${ monster.level }` }</span>
             </div>
 

@@ -1,5 +1,5 @@
 import moment from 'moment-timezone'
-import { isValid, trimStr } from '../utils/parser'
+import { trimStr } from '../utils/parser'
 
 export const SECOND = 1000   // 1 second = 1000 milliseconds
 export const MINUTE = SECOND * 60
@@ -20,7 +20,7 @@ export function getFormatedTime(ms) {
 }
 
 export function getDateTime(ms) {
-  if (isValid(ms)) return moment(ms).format("YYYY-MM-DD HH:mm:ss")
+  if (ms) return moment(ms).format("YYYY-MM-DD HH:mm:ss")
   else return ""
 }
 

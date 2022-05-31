@@ -62,12 +62,21 @@ result = result.filter(items=["ID", "isMVP","名稱","Lv↑","種族","屬性","
 result.columns = ["roId", "isMVP", "name", "level", "race", "element", "size", "image", "location", "msec"]
 
 #result.to_json("monsters.json", orient="index", force_ascii=False, indent=2)
-result = result.sort_values(by=["isMVP", "roId", "level", "msec", "location"])
+result = result.sort_values(by=["isMVP", "roId", "level", "msec", "location"], ascending=[False, True, True, True, True])
 
 #重設index
 result = result.reset_index(drop=True)
 result.insert(0, "id", result.index.tolist())
 
+#建立魔物資料
 jsonData = result.to_json(orient="records", force_ascii=False, indent=2)
 with open("../src/constants/monsters.js", "w+", encoding="utf-8") as file:
   file.write(f"export const monsters = {jsonData}")
+
+#建立魔物預載列表
+result = result.filter(items=["image"], axis=1)
+result = result.drop_duplicates(subset="image")
+result = result[result["image"].notna()]
+jsonData = result.to_json(orient="records", force_ascii=False, indent=2)
+with open("../public/offline/monstersPreload.js", "w+", encoding="utf-8") as file:
+  file.write(f"const monsters = {jsonData}")

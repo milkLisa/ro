@@ -24,6 +24,7 @@ export default function SettingsDrawer({
   return (
     <DrawerContainer
       intl    = { intl }
+      keep    = { true }
       anchor  = "right"
       isOpen  = { isOpen }
       header  = { <span>{ intl.timer.settingTitle }</span> }
