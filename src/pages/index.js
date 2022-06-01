@@ -2,8 +2,6 @@ import Link from '@mui/material/Link'
 import NavigateNextIcon from '@mui/icons-material/NavigateNext'
 import HtmlHead from '../components/common/HtmlHead'
 import Header from '../components/common/Header'
-import Footer from '../components/common/Footer'
-import GitHubLink from '../components/common/GitHubLink'
 
 export default function Home({ locale, intl }) {
   return (
@@ -11,9 +9,7 @@ export default function Home({ locale, intl }) {
       <HtmlHead title={ intl.home.title } />
 
       <div className="container">
-        <Header title={ intl.home.welcome }>
-          <GitHubLink />
-        </Header>
+        <Header title={ intl.home.welcome } />
 
         <main>
           <div className="list">
@@ -24,8 +20,6 @@ export default function Home({ locale, intl }) {
             </Link>
           </div>
         </main>
-
-        <Footer copyright={ intl.copyright } />
       </div>
     </>
   )
