@@ -1,7 +1,7 @@
 const zh_TW = {
   home: {
-    title: "Ragnarok工具庫",
-    welcome: "歡迎來到Ragnarok工具庫",
+    title: "Ragnarok Online工具庫",
+    welcome: "歡迎來到Ragnarok Online工具庫",
     loading: "請稍候..."
   },
   timer: {

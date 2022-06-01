@@ -1,12 +1,14 @@
 {
-  "private": true,
+  "name": "ro",
+  "version": "1.0.0",
+  "description": "Ragnarok Online Tools",
   "scripts": {
     "clean": "rimraf .next public\\sw.* public\\workbox-* public\\fallback-*",
+    "local:dev": "npm-run-all clean dev",
+    "local:start": "set NODE_ENV=production && npm-run-all clean build start",
     "build": "next build",
-    "next:dev": "next dev",
-    "next:prod": "next start",
-    "dev": "npm-run-all clean next:dev",
-    "start": "set NODE_ENV=production && npm-run-all clean build next:prod"
+    "dev": "next dev",
+    "start": "next start -p $PORT"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
