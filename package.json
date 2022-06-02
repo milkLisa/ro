@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf .next public\\sw.* public\\workbox-* public\\fallback-*",
     "local:dev": "npm-run-all clean dev",
-    "local:start": "set NODE_ENV=production && npm-run-all clean build start",
+    "local:start": "npm-run-all clean build start",
     "build": "next build",
     "dev": "next dev",
     "start": "next start -p $PORT"

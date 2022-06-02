@@ -2,10 +2,7 @@ export default function SortedDrawer({
   intl, isOpen, number, onOpen, children 
 }) {
   return (
-    <div
-      className = { `swipeable-drawer${ isOpen ? " show" : "" }` }
-      onClick   = { () => onOpen(!isOpen) }
-    >
+    <div className={ `swipeable-drawer${ isOpen ? " show" : "" }` }>
       <div 
         className = "puller" 
         onClick   = { () => onOpen(!isOpen) }

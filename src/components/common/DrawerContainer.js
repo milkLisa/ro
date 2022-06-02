@@ -15,12 +15,14 @@ export default function DrawerContainer({
   const container = useRef(null)
 
   useEffect(() => {
-    if (loading) setLoading(!loading)
+    if (loading) setLoading(false)
   }, [isOpen])
 
   const handleClose = () => {
-    setLoading(true)
-    onClose()
+    if (isOpen) {
+      setLoading(true)
+      onClose()
+    }
   }
 
   return (
