@@ -44,14 +44,16 @@ self.addEventListener("activate", event => {
 })
 
 self.addEventListener("fetch", event => {
-  const requestUrl = new URL(event.request.url)
+  const url = event.request.url
+  const requestUrl = new URL(url)
   const requestPath = requestUrl.pathname
   const fileName = requestPath.substring(requestPath.lastIndexOf("/") + 1)
-  if (freshFileNames.indexOf(fileName) > -1 ||
-      requestPath.indexOf("/api/") > -1) {
+  if (url.indexOf("analytics") > -1 ||
+      requestPath.indexOf("/api/") > -1 ||
+      freshFileNames.indexOf(fileName) > -1) {
     return event.respondWith(networkFetch(event.request))
   } else {
-    console.log("[Service Worker] Fetch url: ", event.request.url)
+    console.log("[Service Worker] Fetch url: ", url)
     return event.respondWith(networkFirstStrategy(event.request))
   }
 })

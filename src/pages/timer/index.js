@@ -11,6 +11,7 @@ import Footer from '../../components/common/Footer'
 import ScrollTopButton from '../../components/common/ScrollTopButton'
 import Content from '../../components/timer/Content'
 import SettingsDrawer from '../../components/timer/SettingsDrawer'
+import * as gtag from '../../lib/gtag'
 import { query, update } from '../../utils/fetchData'
 import { isChanged } from '../../utils/parser'
 
@@ -46,6 +47,8 @@ export default function Home({ intl }) {
     if (isChanged(settings, newSettings)) {
       setSettings(newSettings)
       update("/api/settings", newSettings)
+
+      gtag.event("Change Settings", "Settings", JSON.stringify(newSettings))
     }
   }
 

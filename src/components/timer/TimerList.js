@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { MINUTE, SECOND, parseToMSEC } from '../../constants/dateTime'
+import * as gtag from '../../lib/gtag'
 import { isChanged } from '../../utils/parser'
 import AudioPlayer from '../common/AudioPlayer'
 import MonsterCard from './MonsterCard'
@@ -79,6 +80,12 @@ export default class TimerList extends Component {
     if (this.remindId == id) this.remindId = null
   }
 
+  handleSortOpen(isSortOpen) {
+    this.setState({ isSortOpen })
+
+    gtag.event("Check Sorted List", "Sorted Drawer", isSortOpen ? "Open" : "Close")
+  }
+
   MonsterList(prefix, list) {
     const { intl, settings } = this.props
 
@@ -116,7 +123,7 @@ export default class TimerList extends Component {
           intl   = { intl }
           isOpen = { isSortOpen }
           number = { sorted.length }
-          onOpen = { () => this.setState({ isSortOpen: !isSortOpen }) }
+          onOpen = { () => this.handleSortOpen(!isSortOpen) }
         >
           { sorted.length > 0 && this.MonsterList("s", sorted) }
         </SortedDrawer>

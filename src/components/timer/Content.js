@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Button from '@mui/material/Button'
 import TableViewIcon from '@mui/icons-material/TableView'
 import { TimerObj } from '../../constants/customData'
+import * as gtag from '../../lib/gtag'
 import { query, renew } from '../../utils/fetchData'
 import { isChanged } from '../../utils/parser'
 import Loading from '../common/Loading'
@@ -54,6 +55,8 @@ export default function Content({ intl, settings }) {
       setTimers(newTimers)
       setSavedTimers(combinedTimer(newTimers, monsters))
       renew("/api/timers", newTimers)
+
+      gtag.event("Add/Delete Timers", "Check Timers", JSON.stringify(newTimers))
     }
   }
 
