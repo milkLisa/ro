@@ -369,7 +369,7 @@ $time-text-shadow: #fff 0 2px,
   flex-direction: column;
   padding: 0 20px 48px 20px;
   
-  & > * {
+  & > *:not(.upload-manager) {
     @include bottom-divider();
     width: 100%;
     min-height: 64px;
@@ -413,6 +413,10 @@ $time-text-shadow: #fff 0 2px,
         width: 100%;
       }
     }
+  }
+  
+  .action-area .delete-btn {
+    background-color: $secondary-color;
   }
 }
 

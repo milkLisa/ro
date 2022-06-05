@@ -1,7 +1,7 @@
 import { openDB } from 'idb'
 
 const DB_NAME = "ro"
-const STORE_NAMES = ["monsters", "timers", "settings"]
+const STORE_NAMES = ["monsters", "timers", "settings", "audios"]
 
 const REQ_OPTIONS = {
   cache       : "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -18,19 +18,22 @@ export async function query(urls) {
       ...REQ_OPTIONS
     })
   } else {
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve) => {
       let data = {}
       
-      for (let i = 0; i < urls.length; i++) {
-        const url = urls[i]
+      urls.forEach(async url => {
         const apiName = url.substring(url.lastIndexOf("/") + 1)
         await fetchApi(url, {
           method: "GET",
           ...REQ_OPTIONS
-        }).then(result => data[apiName] = result)
+        }).then(result => {
+          data[apiName] = result
 
-        if (i == urls.length - 1) resolve(data)
-      }
+          if (Object.keys(data).length === urls.length) {
+            resolve(data)
+          }
+        })
+      })
     })
   }
 }
@@ -75,7 +78,11 @@ const fetchApi = async (url, options) => {
   const db = await openDB(DB_NAME, 1, {
     upgrade(db) {
       STORE_NAMES.forEach(name => {
-        db.createObjectStore(name, { keyPath: "id" })
+        if (name === "audios") {
+          db.createObjectStore(name, { keyPath: "name" })
+        } else {
+          db.createObjectStore(name, { keyPath: "id" })
+        }
       })
     }
   }).catch(err => {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Button from '@mui/material/Button'
 import TableViewIcon from '@mui/icons-material/TableView'
-import { TimerObj } from '../../constants/customData'
+import { TimerObj } from '../../constants/dataFormat'
 import * as gtag from '../../lib/gtag'
 import { query, renew } from '../../utils/fetchData'
 import { isChanged } from '../../utils/parser'
@@ -20,7 +20,7 @@ const combinedTimer = (ts, ms) => {
   return arr
 }
 
-export default function Content({ intl, settings }) {
+export default function Content({ intl, settings, audios }) {
   const [monsters, setMonsters]       = useState([])
   const [timers, setTimers]           = useState([])
   const [savedTimers, setSavedTimers] = useState([])
@@ -66,7 +66,7 @@ export default function Content({ intl, settings }) {
     renew("/api/timers", objs)
   }
 
-  if (!settings || !monsters || !timers)
+  if (!settings || !audios ||!monsters || !timers)
     return <main>{ intl.timer.emptyError }</main>
 
   if (!monsters.length)
@@ -90,6 +90,7 @@ export default function Content({ intl, settings }) {
           intl      = { intl }
           monTimers = { savedTimers }
           settings  = { settings }
+          audios    = { audios }
           onChange  = { updateTimers }
         />
       </main>

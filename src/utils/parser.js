@@ -1,3 +1,7 @@
+export function toMB(bytes) {
+  return `${Number.parseFloat(bytes / 1024 / 1024).toFixed(2)}MB`
+}
+
 export function toNumber(x, initail = 0) {
   return new RegExp(/^\d+$/).test(x) ? Number(x) : Number(initail)
 }

@@ -1,49 +1,143 @@
-import { useState, useEffect, useReducer } from 'react'
+import { Component } from 'react'
 import NativeSelect from '@mui/material/NativeSelect'
-import { isValid } from '../../utils/parser'
+import AudioUploader from '../common/AudioUploader'
 import DrawerContainer from '../common/DrawerContainer'
 import DiscreteSlider from '../common/DiscreteSlider'
 import ToggleSwitch from '../common/ToggleSwitch'
+import { toMB, isValid, isChanged, template } from '../../utils/parser'
+import { 
+  MAX_AUDIO_FILES, MAX_AUDIO_SIZE, AUDIO_TYPES 
+} from '../../constants/limit'
 
-export default function SettingsDrawer({ 
-  intl, isOpen, savedSettings, onClose 
-}) {
-  const [isChange, setIsChange] = useState(false)
-  const [settings, setSettings] = useReducer(
-    (prevState, newState) => ({ ...prevState, ...newState })
-    , savedSettings)
+export default class SettingsDrawer extends Component {
+  state = {
+    settings: this.props.savedSettings,
+    audios: this.props.savedAudios,
+    players: this.buildPlayers([], this.props.savedAudios),
+    message: null
+  }
   
-  useEffect(() => {
-    setIsChange(false)
-    setSettings(savedSettings)
-  }, [savedSettings])
+  componentDidUpdate(prevProps) {
+    const { savedSettings, savedAudios } = this.props
+    let { settings, audios, players } = this.state
 
-  const handleChange = (key, value) => {
-    if (key == "remindAudio" && !isChange) setIsChange(true)
-    setSettings({ [key]: value })
+    if (isChanged(prevProps.savedSettings, savedSettings) ||
+      isChanged(prevProps.savedAudios, savedAudios)) {
+      settings = savedSettings
+      audios = savedAudios
+      players = this.buildPlayers(players, savedAudios)
+      this.setState({ settings, audios, players, message: null })
+    }
   }
 
-  const { showName, showLocation, showDateTime, remindBefore, 
-    continueAfter, remindAudio, playSeconds, audios } = settings
-  
-  return (
-    <DrawerContainer
-      intl    = { intl }
-      keep    = { true }
-      anchor  = "right"
-      isOpen  = { isOpen }
-      header  = { <span>{ intl.timer.settingTitle }</span> }
-      onClose ={ () => onClose(settings) }
-    >
-      {
-        savedSettings
-        ? 
+  buildPlayers(players, audios) {
+    const playerObjs = players.reduce((obj, player) => {
+      if (isValid(player.paused) && !player.paused) player.pause()
+      obj[player.name] = player
+      return obj
+    }, {})
+
+    let newPlayers = []
+    if (audios) {
+      newPlayers = audios.map(audio => {
+        const name = audio.name
+        if (name in playerObjs) {
+          return playerObjs[name]
+        } else {
+          let player = new Audio(audio.src)
+          player.addEventListener("pause", () => player.currentTime = 0)
+          player.name = name
+          return player
+        }
+      })
+    }
+
+    return newPlayers
+  }
+
+  playAudio(players, name) {
+    return players.map(player => {
+      if (player.name == name) {
+        player.play()
+      } else if (isValid(player.paused) && !player.paused) {
+        player.pause()
+      }
+      return player
+    })
+  }
+
+  handleChange(key, value) {
+    let { settings, players } = this.state
+    if (key === "remindAudio") this.playAudio(players, value)
+    Object.assign(settings, { [key]: value } )
+    this.setState({ settings })
+  }
+
+  handleClose() {
+    const { settings, audios, players } = this.state
+    this.playAudio(players, "")
+    this.props.onClose(settings, audios)
+  }
+
+  handleAudioUpload(audio) {
+    let { settings, audios, players } = this.state
+    Object.assign(settings, { remindAudio: audio.name })
+    audios.push(audio)
+    players = this.buildPlayers(players, audios)
+    this.playAudio(players, audio.name)
+    this.setState({ settings, audios, players, message: null })
+  }
+
+  handleAudioDelete(name) {
+    let { settings, audios, players } = this.state
+    Object.assign(settings, { remindAudio: audios[0].name })
+    audios = audios.filter(audio => audio.name !== name)
+    players = this.buildPlayers(players, audios)
+    this.setState({ settings, audios, players, message: null })
+  }
+
+  handleUploadError(error) {
+    const { intl } = this.props
+    const { type, name, size } = error
+    this.playAudio(this.state.players, "")
+
+    let message = ""
+    switch (type) {
+      case "type":
+        message = template(intl.timer.typeError, name, AUDIO_TYPES.join(","))
+        break
+      case "size":
+        message = template(intl.timer.sizeError, name, toMB(size))
+        break
+      default:
+        message = template(`intl.timer.${type}Error`, name)
+    }
+
+    this.setState({ message })
+  }
+
+  render() {
+    const { intl, isOpen } = this.props
+    const { settings, audios, message } = this.state
+    const { showName, showLocation, showDateTime, remindBefore, 
+      continueAfter, remindAudio, playSeconds } = settings
+    const uploadList = audios.filter(a => !a.isDefault)
+    
+    return (
+      <DrawerContainer
+        intl    = { intl }
+        keep    = { true }
+        anchor  = "right"
+        isOpen  = { isOpen }
+        header  = { <span>{ intl.timer.settingTitle }</span> }
+        onClose = { () => this.handleClose() }
+      >
         <div className="settings-table">
           <div>
             <span>{ intl.timer.showName }</span>
             <ToggleSwitch 
               status  = { showName }
-              onSwitch= { status => handleChange("showName", status) }
+              onSwitch= { status => this.handleChange("showName", status) }
             />
           </div>
 
@@ -51,7 +145,7 @@ export default function SettingsDrawer({
             <span>{ intl.timer.showLocation }</span>
             <ToggleSwitch 
               status  = { showLocation }
-              onSwitch= { status => handleChange("showLocation", status) }
+              onSwitch= { status => this.handleChange("showLocation", status) }
             />
           </div>
 
@@ -59,7 +153,7 @@ export default function SettingsDrawer({
             <span>{ intl.timer.showDateTime }</span>
             <ToggleSwitch 
               status  = { showDateTime }
-              onSwitch= { status => handleChange("showDateTime", status) }
+              onSwitch= { status => this.handleChange("showDateTime", status) }
             />
           </div>
 
@@ -68,7 +162,7 @@ export default function SettingsDrawer({
             <DiscreteSlider 
               max     = { 10 } 
               value   = { remindBefore } 
-              onChange= { value => handleChange("remindBefore", value) }
+              onChange= { value => this.handleChange("remindBefore", value) }
             />
           </div>
 
@@ -77,7 +171,7 @@ export default function SettingsDrawer({
             <DiscreteSlider 
               max     = { 5 } 
               value   = { continueAfter } 
-              onChange= { value => handleChange("continueAfter", value) }
+              onChange= { value => this.handleChange("continueAfter", value) }
             />
           </div>
 
@@ -86,22 +180,17 @@ export default function SettingsDrawer({
             <div className="native-select">
               <NativeSelect 
                 value    = { remindAudio || "nan" }
-                onChange = { e => handleChange("remindAudio", e.target.value) }
+                onChange = { e => this.handleChange("remindAudio", e.target.value) }
               >
                 <option key="-1" value="nan">{ intl.timer.noneAudio }</option>
                 {
-                  audios && audios.map((src, index) => 
-                    <option key={ index } value={ src }>
-                      { src.slice(src.lastIndexOf("/") + 1) }
+                  audios.map((audio, index) => 
+                    <option key={ index } value={ audio.name }>
+                      { audio.name }
                     </option>
                   )
                 }
               </NativeSelect>
-              
-              {
-                isValid(remindAudio) && isChange &&
-                <audio autoPlay src={ remindAudio } />
-              }
             </div>
           </div>
 
@@ -114,14 +203,27 @@ export default function SettingsDrawer({
                 min     = { 5 }
                 max     = { 60 } 
                 value   = { playSeconds } 
-                onChange= { value => handleChange("playSeconds", value) }
+                onChange= { value => this.handleChange("playSeconds", value) }
               />
             </div>
           }
+          
+          <AudioUploader
+            name        = "remind_audio"
+            uploadList  = { uploadList }
+            maxLimit    = { MAX_AUDIO_FILES }
+            maxMsg      = { intl.timer.uploadMax }
+            sizeLimit   = { MAX_AUDIO_SIZE }
+            errorMsg    = { message }
+            fileTypes   = { AUDIO_TYPES }
+            placeholder = { intl.timer.uploadAudio }
+            onUpload    = { obj => this.handleAudioUpload(obj) }
+            onDelete    = { name => this.handleAudioDelete(name) }
+            onError     = { error => this.handleUploadError(error) }
+          />
         </div>
-        :
-        <span>{ intl.timer.emptyError }</span>
-      }
-    </DrawerContainer>
-  )
+          
+      </DrawerContainer>
+    )
+  }
 }

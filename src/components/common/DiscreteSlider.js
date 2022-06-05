@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Slider from '@mui/material/Slider'
 import Input from '@mui/material/Input'
 import { toNumber } from '../../utils/parser'

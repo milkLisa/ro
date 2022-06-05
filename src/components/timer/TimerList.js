@@ -102,17 +102,19 @@ export default class TimerList extends Component {
   }
 
   render() {
-    const { intl, settings } = this.props
+    const { intl, settings, audios } = this.props
+    const { remindAudio, playSeconds } = settings
     const { isSortOpen, allTimer } = this.state
     const sorted = sortByAppearTime(allTimer)
 
     return (
       <>
         <AudioPlayer 
-          id      = { this.remindId }
-          src     = { settings.remindAudio }
-          seconds = { settings.playSeconds * SECOND }
-          onFinish= { id => this.handlePlayerFinish(id) }
+          remindId  = { this.remindId }
+          audioName = { remindAudio }
+          source    = { audios }
+          seconds   = { playSeconds * SECOND }
+          onFinish  = { id => this.handlePlayerFinish(id) }
         />
 
         <div className="list">

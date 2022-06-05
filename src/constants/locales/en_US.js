@@ -24,7 +24,13 @@ const en_US = {
     remindAudio: "Remind audio",
     playSeconds: "Audio playing seconds",
     noneAudio: "None",
-    settingTitle: "Settings"
+    settingTitle: "Settings",
+    uploadAudio: "Upload Custom Audio",
+    uploadMax: "Maximum of uploads reached",
+    typeError: "【{0}】File type error, only accept {1} extensions",
+    formatError: "【{0}】Format error, please check audio format matches the extension",
+    existError: "【{0}】exists",
+    sizeError: "【{0}】File size {1} exceeds 5MB limit"
   },
   monsters: {
     race: {

@@ -3,19 +3,19 @@ importScripts("/offline/monstersPreload.js")
 const cacheName = "timer-cache-v1"
 const CacheNames = [cacheName]
 
-let appShellFiles = [
+let cacheFiles = [
   "/manifest.json",
   "/static/icons/mvp.png",
   "/static/icons/mini.png"
 ]
 
-monsters.forEach(mon => {
-  appShellFiles.push(`/static/images/${mon.image}`)
-})
+monsters.forEach(mon => 
+  cacheFiles.push(`/static/images/${mon.image}`)
+)
 
-const freshFileNames = [
-  "default1.mp3",
-  "default2.mp3"
+const noCacheFiles = [
+  "/static/audio/default1.mp3",
+  "/static/audio/default2.mp3"
 ]
 
 self.addEventListener("install", event => {
@@ -23,7 +23,7 @@ self.addEventListener("install", event => {
   self.skipWaiting()
   const preCache = async () => {
     const cache = await caches.open(cacheName)
-    return cache.addAll(appShellFiles)
+    return cache.addAll(cacheFiles)
   }
   event.waitUntil(preCache())
 })
@@ -47,10 +47,9 @@ self.addEventListener("fetch", event => {
   const url = event.request.url
   const requestUrl = new URL(url)
   const requestPath = requestUrl.pathname
-  const fileName = requestPath.substring(requestPath.lastIndexOf("/") + 1)
   if (url.indexOf("analytics") > -1 ||
       requestPath.indexOf("/api/") > -1 ||
-      freshFileNames.indexOf(fileName) > -1) {
+      noCacheFiles.indexOf(requestPath) > -1) {
     return event.respondWith(networkFetch(event.request))
   } else {
     console.log("[Service Worker] Fetch url: ", url)
@@ -62,8 +61,8 @@ const networkFetch = async (request) => {
   try {
     return await fetch(request)
   } catch (ex) {
-    return new Response(new Blob([]), {
-      "status": 417, "statusText": ex.message
+    return new Response(undefined, {
+      "status": 304, "statusText": ex.message
     })
   }
 }

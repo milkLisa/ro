@@ -242,3 +242,64 @@ a {
     display: flex;
   }
 }
+
+.upload-manager {
+  display: flex;
+  flex-direction: column;
+
+  .action-area {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .delete-btn {
+      @include default-font();
+      border: 1px solid $divider-color;
+      border-radius: 10px;
+      background-color: $divider-color;
+      margin: 5px;
+      padding: 8px;
+    }
+  }
+
+  .upload-area {
+    padding: 1rem;
+    
+    .upload-input {
+      display: none;
+    }
+
+    .upload-btn {
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+
+      &:hover * {
+        color: $main-color;
+      }
+
+      .upload-label {
+        @include icon-button();
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > * {
+          padding-right: 5px;
+        }
+
+        & > *:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  .upload-max {
+    font-style: italic;
+    color: $note-color;
+  }
+}
