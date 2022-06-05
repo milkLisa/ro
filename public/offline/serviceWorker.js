@@ -3,15 +3,11 @@ importScripts("/offline/monstersPreload.js")
 const cacheName = "timer-cache-v1"
 const CacheNames = [cacheName]
 
-let cacheFiles = [
+let cacheFiles = new Set([
   "/manifest.json",
   "/static/icons/mvp.png",
   "/static/icons/mini.png"
-]
-
-monsters.forEach(mon => 
-  cacheFiles.push(`/static/images/${mon.image}`)
-)
+])
 
 const noCacheFiles = [
   "/static/audio/default1.mp3",
@@ -22,8 +18,9 @@ self.addEventListener("install", event => {
   console.log("[Service Worker] Install")
   self.skipWaiting()
   const preCache = async () => {
+    monsters.forEach(mon => cacheFiles.add(`/static/images/${mon.image}`))
     const cache = await caches.open(cacheName)
-    return cache.addAll(cacheFiles)
+    return cache.addAll(Array.from(cacheFiles))
   }
   event.waitUntil(preCache())
 })
