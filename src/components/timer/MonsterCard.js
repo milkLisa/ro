@@ -13,8 +13,9 @@ import BossIcon from './BossIcon'
 export default function MonsterCard({ 
   intl, settings, monster, onSwitch, onTime 
 }) {
-  const [isEdit, setIsEdit]     = useState(false)
-  const [editText, setEditText] = useState("")
+  const [isEdit, setIsEdit]       = useState(false)
+  const [editText, setEditText]   = useState("")
+  const [isReminded, setIsReminded]= useState(false)
 
   const { showName, showLocation, showDateTime, remindBefore } = settings
   const { id, isMVP, name, location, msec, utcMSEC, editMSEC, image } = monster
@@ -25,8 +26,10 @@ export default function MonsterCard({
   const before = parseToMSEC(remindBefore) || MINUTE
   
   useEffect(() => {
-    if (isStart && getFormatedTime(leftTime) === getFormatedTime(before)) 
+    if (!isReminded && isStart && (leftTime <= before)) {
       onTime(id)
+      setIsReminded(true)
+    }
   })
 
   const getClass = (stable, isStart, time) => {
