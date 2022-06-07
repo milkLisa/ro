@@ -16,6 +16,7 @@ export default class SettingsDrawer extends Component {
     players: this.buildPlayers([], this.props.savedAudios),
     message: null
   }
+  isUpload = false
   
   componentDidUpdate(prevProps) {
     const { savedSettings, savedAudios } = this.props
@@ -67,10 +68,12 @@ export default class SettingsDrawer extends Component {
   }
 
   handleChange(key, value) {
-    let { settings, players } = this.state
-    if (key === "remindAudio") this.playAudio(players, value)
-    Object.assign(settings, { [key]: value } )
-    this.setState({ settings })
+    if (!this.isUpload) {
+      let { settings, players } = this.state
+      this.playAudio(players, key === "remindAudio" ? value : "")
+      Object.assign(settings, { [key]: value } )
+      this.setState({ settings })
+    }
   }
 
   handleClose() {
@@ -80,12 +83,14 @@ export default class SettingsDrawer extends Component {
   }
 
   handleAudioUpload(audio) {
+    this.isUpload = true
     let { settings, audios, players } = this.state
     Object.assign(settings, { remindAudio: audio.name })
     audios.push(audio)
     players = this.buildPlayers(players, audios)
     this.playAudio(players, audio.name)
     this.setState({ settings, audios, players, message: null })
+    this.isUpload = false
   }
 
   handleAudioDelete(name) {
@@ -98,7 +103,7 @@ export default class SettingsDrawer extends Component {
 
   handleUploadError(error) {
     const { intl } = this.props
-    const { type, name, size } = error
+    const { type, name, size, err } = error
     this.playAudio(this.state.players, "")
 
     let message = ""
@@ -108,6 +113,9 @@ export default class SettingsDrawer extends Component {
         break
       case "size":
         message = template(intl.timer.sizeError, name, toMB(size))
+        break
+      case "format":
+        message = template(intl.timer.formatError, name, err)
         break
       default:
         message = template(`intl.timer.${type}Error`, name)
@@ -207,20 +215,23 @@ export default class SettingsDrawer extends Component {
               />
             </div>
           }
-          
-          <AudioUploader
-            name        = "remind_audio"
-            uploadList  = { uploadList }
-            maxLimit    = { MAX_AUDIO_FILES }
-            maxMsg      = { intl.timer.uploadMax }
-            sizeLimit   = { MAX_AUDIO_SIZE }
-            errorMsg    = { message }
-            fileTypes   = { AUDIO_TYPES }
-            placeholder = { intl.timer.uploadAudio }
-            onUpload    = { obj => this.handleAudioUpload(obj) }
-            onDelete    = { name => this.handleAudioDelete(name) }
-            onError     = { error => this.handleUploadError(error) }
-          />
+
+          {
+            isValid(remindAudio) &&
+            <AudioUploader
+              name        = "remind_audio"
+              uploadList  = { uploadList }
+              maxLimit    = { MAX_AUDIO_FILES }
+              maxMsg      = { intl.timer.uploadMax }
+              sizeLimit   = { MAX_AUDIO_SIZE }
+              errorMsg    = { message }
+              fileTypes   = { AUDIO_TYPES }
+              placeholder = { intl.timer.uploadAudio }
+              onUpload    = { obj => this.handleAudioUpload(obj) }
+              onDelete    = { name => this.handleAudioDelete(name) }
+              onError     = { error => this.handleUploadError(error) }
+            />
+          }
         </div>
           
       </DrawerContainer>

@@ -25,12 +25,12 @@ const zh_TW = {
     playSeconds: "音樂播放秒數",
     noneAudio: "無",
     settingTitle: "設定",
-    uploadAudio: "上傳自訂音樂",
+    uploadAudio: "上傳自訂音樂 (上限5MB)",
     uploadMax: "已達自訂上限",
     typeError: "【{0}】檔案類型錯誤, 僅接受{1}副檔名",
-    formatError: "【{0}】格式錯誤, 請確認檔案格式與副檔名相符",
+    formatError: "【{0}】格式錯誤, 請確認檔案格式與副檔名相符。{1}",
     existError: "【{0}】已存在",
-    sizeError: "【{0}】檔案大小 {1} 超過 5MB 上限"
+    sizeError: "【{0}】檔案大小 {1} 超過限制"
   },
   monsters: {
     race: {

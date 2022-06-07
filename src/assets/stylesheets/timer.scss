@@ -436,14 +436,8 @@ $time-text-shadow: #fff 0 2px,
   .settings-table {
     max-width: $mini-mobile;
   
-    & > * > * {
-      &:first-child {
-        width: 50%;
-      }
-
-      &.discrete-slider > *:last-child {
+    .discrete-slider > *:last-child {
         display: none;
-      }
     }
   }
 }

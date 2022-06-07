@@ -11,9 +11,7 @@ export default function AudioUploader({
   const handleAudioChange = e => {
     e.preventDefault()
 
-    let reader = new FileReader()
     const file = e.target.files[0]
-
     if (!file) return
 
     const fileName = file.name
@@ -28,7 +26,8 @@ export default function AudioUploader({
 
     // fileTypes為空(未指定)，則接受所有格式
     const isAccept = fileTypes.length === 0 || fileTypes.indexOf(extension) > -1
-    
+
+    let reader = new FileReader()
     reader.onloadend = async () => {
       if (file.size > sizeLimit) {
         onError({ type: "size", name: fileName, size: file.size })
@@ -38,11 +37,11 @@ export default function AudioUploader({
           player.addEventListener("canplay", () => {
             player.pause()
             player = null
+            onUpload({ name: fileName, src: reader.result })
           })
           await player.play()
-          onUpload({ name: fileName, src: reader.result })
         } catch (err) {
-          onError({ type: "format", name: fileName })
+          onError({ type: "format", name: fileName, err })
         }
       }
 

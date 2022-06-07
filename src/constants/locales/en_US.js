@@ -25,12 +25,12 @@ const en_US = {
     playSeconds: "Audio playing seconds",
     noneAudio: "None",
     settingTitle: "Settings",
-    uploadAudio: "Upload Custom Audio",
+    uploadAudio: "Upload Custom Audio (Limit 5MB)",
     uploadMax: "Maximum of uploads reached",
     typeError: "【{0}】File type error, only accept {1} extensions",
-    formatError: "【{0}】Format error, please check audio format matches the extension",
+    formatError: "【{0}】Format error, please check audio format matches the extension. {1}",
     existError: "【{0}】exists",
-    sizeError: "【{0}】File size {1} exceeds 5MB limit"
+    sizeError: "【{0}】File size {1} exceeds the limit"
   },
   monsters: {
     race: {
