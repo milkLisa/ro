@@ -2,14 +2,14 @@ import { useState, useEffect, useRef } from 'react'
 import Container from '@mui/material/Container'
 import Drawer from '@mui/material/Drawer'
 import IconButton from '@mui/material/IconButton'
-import CloseIcon from '@mui/icons-material/Close'
+import CloseIcon from '@mui/icons-material/ExitToApp'
 import ScrollTopButton from './ScrollTopButton'
 import LoadingModal from './LoadingModal'
 import Loading from './Loading'
 
 export default function DrawerContainer({ 
   intl, className, keep, anchor, isOpen, header, onClose, children,
-  closeIcon = <CloseIcon />, closeLabel = "ESC"
+  closeIcon = <CloseIcon />
 }) {
   const [loading, setLoading] = useState(false)
   const container = useRef(null)
@@ -52,8 +52,6 @@ export default function DrawerContainer({
                 onClick    = { () => handleClose() }
               >
                 { closeIcon }
-                
-                <span>{ closeLabel }</span>
               </IconButton>
             </div>
           </header>

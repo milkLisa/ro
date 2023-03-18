@@ -8,7 +8,7 @@
     "local:start": "npm-run-all clean build start",
     "build": "next build",
     "dev": "next dev",
-    "start": "next start -p $PORT"
+    "start": "next start"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -17,7 +17,7 @@
     "@mui/material": "^5.6.1",
     "idb": "^7.0.1",
     "moment-timezone": "^0.5.34",
-    "next": "latest",
+    "next": "^12.1.6",
     "next-pwa": "^5.5.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
