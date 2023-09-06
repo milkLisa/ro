@@ -330,13 +330,25 @@ const monsters = [
     "image":"20919.png"
   },
   {
+    "image":"20928.png"
+  },
+  {
     "image":"20934.png"
   },
   {
     "image":"20943.png"
   },
   {
+    "image":"20994.png"
+  },
+  {
+    "image":"20996.png"
+  },
+  {
     "image":"21301.png"
+  },
+  {
+    "image":"21395.png"
   },
   {
     "image":"1089.png"
@@ -358,9 +370,6 @@ const monsters = [
   },
   {
     "image":"1120.png"
-  },
-  {
-    "image":"1200.png"
   },
   {
     "image":"1203.png"
@@ -409,6 +418,12 @@ const monsters = [
   },
   {
     "image":"1765.png"
+  },
+  {
+    "image":"1829.png"
+  },
+  {
+    "image":"1830.png"
   },
   {
     "image":"1872.png"
@@ -499,11 +514,5 @@ const monsters = [
   },
   {
     "image":"20785.png"
-  },
-  {
-    "image":"20928.png"
-  },
-  {
-    "image":"21395.png"
   }
 ]

@@ -1,6 +1,7 @@
 # dependencies
 /node_modules
 package-lock.json
+yarn.lock
 /.vscode/
 
 # next.js
@@ -19,6 +20,9 @@ yarn-error.log*
 .env*.local
 
 # python script
+/py_scripts/*venv
+/py_scripts/*.js
+/py_scripts/*.csv
 test.py
 
 # PWA files

@@ -1,5 +1,6 @@
 """
 從RO幻想廳讀取Boss和MVP資料存到monsters.csv
+Updated: 2023/09/05
 """
 from time import sleep
 from bs4 import BeautifulSoup
@@ -19,7 +20,7 @@ def decodeEmail(e):
 """
 ================= load monster list ==================
 """
-url_attr = {"boss": {"v": 2, "pages": 6}, "mvp": {"v": 3, "pages": 5}}
+url_attr = {"boss": {"v": 2, "pages": 14}, "mvp": {"v": 3, "pages": 13}}
 url_template = "https://rd.fharr.com/moblist?v={}&g=1&page={}"
 
 #load monster list
@@ -38,6 +39,7 @@ for tp in url_attr :
     #刪除無傷害數值的魔物
     ##data = data[data["ATK(max)"]>0]
     #刪除測試用魔物和蛋!
+    data = data.rename(columns=lambda x: x.replace("↑",""))
     data = data[data["名稱"].str.contains(r"測試|Lv")==False]
 
     monsters = pd.concat([monsters, data], ignore_index=True)
@@ -69,7 +71,7 @@ for row in monsters.itertuples(index=False) :
     imgData = pd.concat([imgData, tmpData], ignore_index=True)
 
   #get respawn data
-  location = soup.find(text="重生時間")
+  location = soup.find(string=lambda text: text=="重生時間")
   if location :
     for parent in location.parents :
       if parent.name == "table" :
@@ -83,8 +85,12 @@ for row in monsters.itertuples(index=False) :
 
         #remove tfoot
         data = data[data["重生時間"].str.contains(r"重生時間")==False]
-        data = data.filter(items=["地圖", "階層", "重生時間"], axis=1)
-        data.columns = ["location", "floor", "time"]
+
+        #analyze location
+        map = data["地圖"].str.extract(r"(?P<location>.*)\((?P<mapCode>.*)\)")
+        data = pd.concat([map, data], axis=1)
+        data = data.filter(items=["location", "mapCode", "階層", "重生時間"], axis=1)
+        data.columns = ["location", "mapCode", "floor", "time"]
         
         #add id column
         data = data.assign(id=row.ID)

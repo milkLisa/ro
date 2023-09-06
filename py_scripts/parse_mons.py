@@ -1,5 +1,6 @@
 """
 解析monsters.csv製作monsters.js
+Updated: 2023/09/05
 """
 import re
 import pandas as pd
@@ -25,12 +26,12 @@ def transToMSEC(x):
 ===================================
 """
 result = pd.read_csv("monsters.csv", encoding="utf-8")
-print("1. result length {}".format(len(result)))
+print("1. Number of source results: {}".format(len(result)))
 
 #刪除即時和秒數重生的資料
 #result = result[result["time"].notna() & result["time"].str.contains(r"^\d+.?[天|時|分]")]
-result = result[result["time"].isna() | (result["time"].str.contains(r"^(即時|\d+秒)")==False)]
-print("2. result length {}".format(len(result)))
+result = result[result["time"].isna() | (result["time"].str.match("(即時|\d+秒)")==False)]
+print("2. Number of results after filtering: {}".format(len(result)))
 
 #空白、未知或條件式的重生時間都預設1小時
 result["time"] = result["time"].fillna("1小時")
@@ -51,32 +52,35 @@ result = result.replace({"floor": r"隨機"}, {"floor": pd.NA}, regex=True)
 result["img"] = result.apply(lambda x: str(x["ID"]) + ".png" if pd.notna(x["img"]) else pd.NA, axis=1)
 
 #結合地圖與樓層資訊
-result["location"] = result["location"] + result["floor"].apply(lambda x: " " + x if pd.notna(x) else "")
-result["location"] = result["location"].replace(r"( |\[網站備註\])", "", regex=True)
-result["location"] = result["location"].replace(r" ", " ", regex=True)
+#result["location"] = result["location"] + result["floor"].apply(lambda x: " " + x if pd.notna(x) else "")
+result["location"] = result["location"].replace(u"(\s|\[網站備註\])", "", regex=True)
+result["location"] = result["location"].replace(r"～", "~", regex=True)
 
 #只取需要的欄位
-result = result.filter(items=["ID", "isMVP","名稱","Lv↑","種族","屬性","體型", "img", "location", "msec"], axis=1)
+result = result.filter(items=["ID", "isMVP","名稱","Lv","種族","屬性","體型", "img", "location", "mapCode", "floor", "msec"], axis=1)
 
 #自訂欄位名稱
-result.columns = ["roId", "isMVP", "name", "level", "race", "element", "size", "image", "location", "msec"]
+result.columns = ["roId", "isMVP", "name", "level", "race", "element", "size", "image", "location", "mapCode", "floor", "msec"]
 
 #result.to_json("monsters.json", orient="index", force_ascii=False, indent=2)
-result = result.sort_values(by=["isMVP", "roId", "level", "msec", "location"], ascending=[False, True, True, True, True])
+result = result.sort_values(by=["isMVP", "roId", "level", "msec", "mapCode"], ascending=[False, True, True, True, True])
 
-#重設index
-result = result.reset_index(drop=True)
-result.insert(0, "id", result.index.tolist())
+#新增id為[roId_mapCode]
+result.insert(0, "id", result.apply(lambda x: str(x["roId"]) + "_" + (str(x["mapCode"]) if pd.notna(x["mapCode"]) else "na"), axis=1))
 
 #建立魔物資料
+filename = "../src/constants/monsters.js"
 jsonData = result.to_json(orient="records", force_ascii=False, indent=2)
-with open("../src/constants/monsters.js", "w+", encoding="utf-8") as file:
+with open(filename, "w+", encoding="utf-8") as file:
   file.write(f"export const monsters = {jsonData}")
+print(f"Overwrite {filename}")
 
 #建立魔物預載列表
+filename = "../public/offline/monstersPreload.js"
 result = result.filter(items=["image"], axis=1)
 result = result.drop_duplicates(subset="image")
 result = result[result["image"].notna()]
 jsonData = result.to_json(orient="records", force_ascii=False, indent=2)
-with open("../public/offline/monstersPreload.js", "w+", encoding="utf-8") as file:
+with open(filename, "w+", encoding="utf-8") as file:
   file.write(f"const monsters = {jsonData}")
+print(f"Overwrite {filename}")
