@@ -1,6 +1,11 @@
 {
-  "short_name": "RO MVP Timer",
   "name": "Ragnarok Online MVP Timer",
+  "short_name": "RO MVP Timer",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
   "description": "List most of all mvp timer, for player easy to timering the respawn time",
   "icons": [
     {
@@ -28,12 +33,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "start_url": "/",
-  "orientation": "portrait",
-  "purpose": "maskable",
-  "background_color": "#FFFFFF",
-  "display": "standalone",
-  "scope": "/",
-  "theme_color": "#000000"
+  ]
 }

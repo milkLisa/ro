@@ -63,7 +63,7 @@ const en_US = {
       large: "Large"
     }
   },
-  copyright: "All ragnarok-related graphics and materials are copyright © 2002-2022 Gravity Co., Ltd.Logo Gravity Co., Ltd.X.D.Global Ltd. & Lee Myoungjin."
+  copyright: "All ragnarok-related graphics and materials are copyright © 2002-2023 Gravity Co., Ltd. & X.D.Global Ltd. & LeeMyoungJin(studio DTDS)."
 }
 
 export default en_US

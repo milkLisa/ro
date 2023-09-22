@@ -63,7 +63,7 @@ const zh_TW = {
       large: "大"
     }
   },
-  copyright: "所有Ragnarok相關圖片和資源版權歸屬於 © 2002-2022 Gravity Co., Ltd.Logo Gravity Co., Ltd.X.D.Global Ltd. & Lee Myoungjin."
+  copyright: "所有Ragnarok相關圖片和資源版權歸屬於 © 2002-2023 Gravity Co., Ltd. & X.D.Global Ltd. & LeeMyoungJin(studio DTDS)."
 }
 
 export default zh_TW
