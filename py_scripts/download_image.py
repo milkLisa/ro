@@ -2,24 +2,29 @@
 從monsters.csv的img url下載圖檔,
 並縮小成max 64*64 pixel,
 再轉存png格式至public/static/images資料夾
+Updated: 2023/09/24
 """
 from time import sleep
 from PIL import Image
 import pandas as pd
-import os
 import requests
+import datetime
+import os
 import io
 
 monsters = pd.read_csv("monsters.csv", encoding="utf-8")
 monsters = monsters.filter(items=["ID", "img"], axis=1)
 monsters = monsters.drop_duplicates()
-monsters = monsters.dropna()
-monsters = monsters[monsters["img"].str.contains(r"null.gif")==False]
-print("Ready to download {} monsters image.....".format(len(monsters)))
 
-for row in monsters.itertuples(index=False) :
-  filename = "{}.png".format(row.ID)
-  outpath = os.path.join("../public/static/images/", filename)
+images = pd.read_csv("images.csv", encoding="utf-8")
+images.columns = ["ID", "image"]
+images = images.join(monsters.set_index("ID"), on="ID")
+
+start_time = datetime.datetime.now()
+print("Ready to download {} monsters image...{}".format(len(images), start_time))
+
+for row in images.itertuples(index=False) :
+  outpath = os.path.join("../public/static/images/", row.image)
 
   if os.path.isfile(outpath) :
     print("{}'s image exist".format(row.ID))
@@ -62,5 +67,8 @@ for row in monsters.itertuples(index=False) :
 
     #image.show()
     image.save(outpath, "png")
-
+    
     sleep(1)
+
+end_time = datetime.datetime.now()
+print("Download finished at {}, it takes {} seconds".format(end_time, (end_time - start_time).total_seconds()))

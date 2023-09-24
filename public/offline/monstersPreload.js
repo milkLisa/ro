@@ -144,13 +144,94 @@ const monsters = [
     "image":"2022.png"
   },
   {
+    "image":"20260.png"
+  },
+  {
+    "image":"20273.png"
+  },
+  {
+    "image":"20277.png"
+  },
+  {
+    "image":"20386.png"
+  },
+  {
+    "image":"20387.png"
+  },
+  {
+    "image":"20419.png"
+  },
+  {
+    "image":"20421.png"
+  },
+  {
+    "image":"20422.png"
+  },
+  {
+    "image":"20520.png"
+  },
+  {
+    "image":"20536.png"
+  },
+  {
+    "image":"20572.png"
+  },
+  {
+    "image":"20573.png"
+  },
+  {
+    "image":"20601.png"
+  },
+  {
+    "image":"20610.png"
+  },
+  {
+    "image":"20611.png"
+  },
+  {
+    "image":"20618.png"
+  },
+  {
+    "image":"20648.png"
+  },
+  {
     "image":"2068.png"
+  },
+  {
+    "image":"20811.png"
+  },
+  {
+    "image":"20843.png"
   },
   {
     "image":"2087.png"
   },
   {
+    "image":"20919.png"
+  },
+  {
+    "image":"20928.png"
+  },
+  {
+    "image":"20934.png"
+  },
+  {
+    "image":"20943.png"
+  },
+  {
+    "image":"20994.png"
+  },
+  {
+    "image":"20996.png"
+  },
+  {
+    "image":"21301.png"
+  },
+  {
     "image":"2131.png"
+  },
+  {
+    "image":"21395.png"
   },
   {
     "image":"2156.png"
@@ -270,87 +351,6 @@ const monsters = [
     "image":"3796.png"
   },
   {
-    "image":"20260.png"
-  },
-  {
-    "image":"20273.png"
-  },
-  {
-    "image":"20277.png"
-  },
-  {
-    "image":"20386.png"
-  },
-  {
-    "image":"20387.png"
-  },
-  {
-    "image":"20419.png"
-  },
-  {
-    "image":"20421.png"
-  },
-  {
-    "image":"20422.png"
-  },
-  {
-    "image":"20520.png"
-  },
-  {
-    "image":"20536.png"
-  },
-  {
-    "image":"20572.png"
-  },
-  {
-    "image":"20573.png"
-  },
-  {
-    "image":"20601.png"
-  },
-  {
-    "image":"20610.png"
-  },
-  {
-    "image":"20611.png"
-  },
-  {
-    "image":"20618.png"
-  },
-  {
-    "image":"20648.png"
-  },
-  {
-    "image":"20811.png"
-  },
-  {
-    "image":"20843.png"
-  },
-  {
-    "image":"20919.png"
-  },
-  {
-    "image":"20928.png"
-  },
-  {
-    "image":"20934.png"
-  },
-  {
-    "image":"20943.png"
-  },
-  {
-    "image":"20994.png"
-  },
-  {
-    "image":"20996.png"
-  },
-  {
-    "image":"21301.png"
-  },
-  {
-    "image":"21395.png"
-  },
-  {
     "image":"1089.png"
   },
   {
@@ -453,6 +453,15 @@ const monsters = [
     "image":"1990.png"
   },
   {
+    "image":"20521.png"
+  },
+  {
+    "image":"20575.png"
+  },
+  {
+    "image":"20785.png"
+  },
+  {
     "image":"2188.png"
   },
   {
@@ -505,14 +514,5 @@ const monsters = [
   },
   {
     "image":"3430.png"
-  },
-  {
-    "image":"20521.png"
-  },
-  {
-    "image":"20575.png"
-  },
-  {
-    "image":"20785.png"
   }
 ]

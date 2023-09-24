@@ -1,11 +1,11 @@
 """
-解析monsters.csv製作monsters.js
-Updated: 2023/09/05
+解析monsters.csv製作monsters.js, monstersPreload.js, images.csv
+Updated: 2023/09/24
 """
 import re
 import pandas as pd
 
-def getMSEC(str):
+def getMSEC(str) :
   SENCOND = 1000
   MINUTE = SENCOND * 60
   HOUR = MINUTE * 60
@@ -18,7 +18,7 @@ def getMSEC(str):
     "分鐘": MINUTE
   }.get(time[2], SENCOND) * int(time[1])
 
-def transToMSEC(x):
+def transToMSEC(x) :
   tmp = re.search(r'(\d+(天|小時|分鐘))(\d+(天|小時|分鐘))?', str(x))
   msec = getMSEC(tmp[1]) + (getMSEC(tmp[3]) if pd.notna(tmp[3]) else 0)
   return msec
@@ -62,11 +62,15 @@ result = result.filter(items=["ID", "isMVP","名稱","Lv","種族","屬性","體
 #自訂欄位名稱
 result.columns = ["roId", "isMVP", "name", "level", "race", "element", "size", "image", "location", "mapCode", "floor", "msec"]
 
-#result.to_json("monsters.json", orient="index", force_ascii=False, indent=2)
-result = result.sort_values(by=["isMVP", "roId", "level", "msec", "mapCode"], ascending=[False, True, True, True, True])
-
 #新增id為[roId_mapCode]
 result.insert(0, "id", result.apply(lambda x: str(x["roId"]) + "_" + (str(x["mapCode"]) if pd.notna(x["mapCode"]) else "na"), axis=1))
+
+#result.to_json("monsters.json", orient="index", force_ascii=False, indent=2)
+result = result.sort_values(by=["isMVP", "id", "level", "msec", "mapCode"], ascending=[False, True, True, True, True])
+
+#刪除重複id
+result = result.drop_duplicates(subset="id")
+print("3. Number of results after drop duplicate id: {}".format(len(result)))
 
 #建立魔物資料
 filename = "../src/constants/monsters.js"
@@ -77,9 +81,14 @@ print(f"Overwrite {filename}")
 
 #建立魔物預載列表
 filename = "../public/offline/monstersPreload.js"
-result = result.filter(items=["image"], axis=1)
+
+result = result.filter(items=["roId", "image"], axis=1)
 result = result.drop_duplicates(subset="image")
 result = result[result["image"].notna()]
+result.to_csv("images.csv", index=False)
+print("4. Number of preload images: {}, save to images.csv".format(len(result)))
+
+result = result.filter(items=["image"], axis=1)
 jsonData = result.to_json(orient="records", force_ascii=False, indent=2)
 with open(filename, "w+", encoding="utf-8") as file:
   file.write(f"const monsters = {jsonData}")
