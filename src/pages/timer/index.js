@@ -7,6 +7,7 @@ import timerTheme from '../../assets/themes/timerTheme'
 import { SettingsObj } from '../../constants/dataFormat'
 import HtmlHead from '../../components/common/HtmlHead'
 import Header from '../../components/common/Header'
+import Footer from '../../components/common/Footer'
 import LoadingModal from '../../components/common/LoadingModal'
 import ScrollTopButton from '../../components/common/ScrollTopButton'
 import Content from '../../components/timer/Content'
@@ -68,6 +69,8 @@ export default function Home({ intl }) {
               
               <Content intl={ intl } settings={ settings } audios={ audios } />
               
+              <Footer copyright={ intl.copyright } />
+
               <SettingsDrawer
                 intl          = { intl }
                 isOpen        = { isOpen }
