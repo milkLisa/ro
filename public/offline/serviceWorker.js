@@ -6,7 +6,8 @@ const CacheNames = [cacheName]
 let cacheFiles = new Set([
   "/manifest.json",
   "/static/icons/mvp.png",
-  "/static/icons/mini.png"
+  "/static/icons/mini.png",
+  "/static/icons/loading.png"
 ])
 
 const noCacheFiles = [
@@ -18,7 +19,7 @@ self.addEventListener("install", event => {
   console.log("[Service Worker] Install")
   self.skipWaiting()
   const preCache = async () => {
-    monsters.forEach(mon => cacheFiles.add(`/static/images/${mon.image}`))
+    monsters.forEach(monster => cacheFiles.add(`/static/images/${monster.image}`))
     const cache = await caches.open(cacheName)
     return cache.addAll(Array.from(cacheFiles))
   }

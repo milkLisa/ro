@@ -100,16 +100,15 @@ $time-text-shadow: #fff 0 2px,
   }
 
   &.alert .avatar {
-    border-color: $alert-color;
     background-color: $alert-bg-color;
     @include timing-shadow($alert-color);
 
-    animation: blink 1s infinite reverse;
     @keyframes blink {
-      0% {
-        border-color: $alert-bg-color;
-      }
+      from {border-color: $alert-color;}
+      to {border-color: $alert-bg-color;}
     }
+
+    animation: blink 1s infinite;
 
     .time {
       color: $alert-color;

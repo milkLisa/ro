@@ -44,3 +44,7 @@ export function parseToMSEC(str) {
 
   return hours + minutes + seconds
 }
+
+export function isLessOrEqual(x, y) {
+  return parseInt(x / SECOND) <= parseInt(y / SECOND)
+}

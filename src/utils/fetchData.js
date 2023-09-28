@@ -72,7 +72,6 @@ export async function del(url, data) {
 
 const fetchApi = async (url, options) => {
   const apiName = url.substring(url.lastIndexOf("/") + 1)
-  console.log("Fetch API: ", apiName)
 
   let isDBSupport = true
   const db = await openDB(DB_NAME, 1, {
@@ -90,17 +89,20 @@ const fetchApi = async (url, options) => {
     console.log("IndexedDB Error: ", err.message)
   })
 
-  // Firefox private browsing is not support IndexedDB
+  // Private browsing might not support IndexedDB
   if (!isDBSupport) {
+    console.log("Fetch API From Network: ", apiName)
     return await fetchFromNetwork(url, options)
-  } 
+  } else {
+    console.log("Fetch API with Idb: ", apiName)
+  }
 
   try {
     return (options.method == "GET")
       ? (await fetchFromIdb(db, apiName))
       : (await updateToIdb(db, apiName, options))
   } catch (ex) {
-    console.log("Fetch API from network failed: ", url, ex)
+    console.log("Fetch API from Idb failed: ", url, ex)
     return await fetchApiAndStore(db, apiName, url, options)
   }
 }

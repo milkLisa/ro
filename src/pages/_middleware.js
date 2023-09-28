@@ -13,6 +13,4 @@ export function middleware(request) {
     url.pathname = `/zh-TW${request.nextUrl.pathname}`
     return NextResponse.redirect(url)
   }
-
-  return undefined
 }

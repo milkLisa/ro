@@ -5,7 +5,6 @@ import { TimerObj } from '../../constants/dataFormat'
 import * as gtag from '../../lib/gtag'
 import { query, renew } from '../../utils/fetchData'
 import { isChanged } from '../../utils/parser'
-import Loading from '../common/Loading'
 import CheckDrawer from './CheckDrawer'
 import TimerList from './TimerList'
 
@@ -70,7 +69,7 @@ export default function Content({ intl, settings, audios }) {
     return <main>{ intl.timer.emptyError }</main>
 
   if (!monsters.length)
-    return <main><Loading /></main>
+    return <></>
 
   return (
     <>

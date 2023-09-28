@@ -6,7 +6,7 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button'
 import { 
-  MINUTE, SECOND, getFormatedTime, getDateTime, parseToMSEC
+  MINUTE, SECOND, getFormatedTime, getDateTime, parseToMSEC, isLessOrEqual
 } from '../../constants/dateTime'
 import BossIcon from './BossIcon'
 
@@ -26,7 +26,7 @@ export default function MonsterCard({
   const before = parseToMSEC(remindBefore) || MINUTE
   
   useEffect(() => {
-    if (!isReminded && isStart && (leftTime <= before)) {
+    if (!isReminded && isStart && isLessOrEqual(leftTime, before)) {
       onTime(id)
       setIsReminded(true)
     }

@@ -2,25 +2,24 @@ import { useState, useEffect, useRef } from 'react'
 import Container from '@mui/material/Container'
 import Drawer from '@mui/material/Drawer'
 import IconButton from '@mui/material/IconButton'
-import CloseIcon from '@mui/icons-material/ExitToApp'
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 import ScrollTopButton from './ScrollTopButton'
 import LoadingModal from './LoadingModal'
-import Loading from './Loading'
 
 export default function DrawerContainer({ 
   intl, className, keep, anchor, isOpen, header, onClose, children,
-  closeIcon = <CloseIcon />
+  closeIcon = <ArrowBackIosNewIcon />
 }) {
-  const [loading, setLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const container = useRef(null)
 
   useEffect(() => {
-    if (loading) setLoading(false)
+    if (isLoading) setIsLoading(false)
   }, [isOpen])
 
   const handleClose = () => {
     if (isOpen) {
-      setLoading(true)
+      setIsLoading(true)
       onClose()
     }
   }
@@ -28,7 +27,7 @@ export default function DrawerContainer({
   return (
     <>
       {
-        loading && <LoadingModal intl={ intl } open={ loading } />
+        isLoading && <LoadingModal message={ intl.home.loading } />
       }
 
       <Drawer
@@ -41,11 +40,7 @@ export default function DrawerContainer({
       >
         <Container className="drawer-container" >
           <header>
-            { header }
-
-            <div className="buton-box">
-              { loading && <Loading size="50px" /> }
-
+            <div className="button-box">
               <IconButton
                 aria-label = "close"
                 className  = "close-btn"
@@ -54,6 +49,8 @@ export default function DrawerContainer({
                 { closeIcon }
               </IconButton>
             </div>
+
+            { header }
           </header>
 
           { children }

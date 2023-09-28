@@ -1,17 +1,16 @@
 import Modal from '@mui/material/Modal'
-import Loading from './Loading'
 
-export default function LoadingModal({ intl, open }) {
+export default function LoadingModal({ message }) {
   return (
     <Modal
-      open      = { open }
+      open      = { true }
       className = "loading-modal"
       disableAutoFocus
     >
       <div className="content">
-        <Loading />
+        <div className="progress"/>
         
-        <span>{ intl.home.loading }</span>
+        <span>{ message }</span>
       </div>
     </Modal>
   )
