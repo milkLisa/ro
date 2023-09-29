@@ -4,32 +4,20 @@ import AudioUploader from '../common/AudioUploader'
 import DrawerContainer from '../common/DrawerContainer'
 import DiscreteSlider from '../common/DiscreteSlider'
 import ToggleSwitch from '../common/ToggleSwitch'
-import { toMB, isValid, isChanged, template } from '../../utils/parser'
+import { toMB, isValid, template } from '../../utils/parser'
 import { 
   MAX_AUDIO_FILES, MAX_AUDIO_SIZE, AUDIO_TYPES 
 } from '../../constants/limit'
 
 export default class SettingsDrawer extends Component {
   state = {
-    settings: this.props.savedSettings,
-    audios: this.props.savedAudios,
+    settings: { ...this.props.savedSettings },
+    audios: [...this.props.savedAudios],
     players: this.buildPlayers([], this.props.savedAudios),
     message: null
   }
   isUpload = false
-  
-  componentDidUpdate(prevProps) {
-    const { savedSettings, savedAudios } = this.props
-    let { settings, audios, players } = this.state
-
-    if (isChanged(prevProps.savedSettings, savedSettings) ||
-      isChanged(prevProps.savedAudios, savedAudios)) {
-      settings = savedSettings
-      audios = savedAudios
-      players = this.buildPlayers(players, savedAudios)
-      this.setState({ settings, audios, players, message: null })
-    }
-  }
+  actionChange = this.handleChange.bind(this)
 
   buildPlayers(players, audios) {
     const playerObjs = players.reduce((obj, player) => {
@@ -46,8 +34,8 @@ export default class SettingsDrawer extends Component {
           return playerObjs[name]
         } else {
           let player = new Audio(audio.src)
-          player.addEventListener("pause", () => player.currentTime = 0)
           player.name = name
+          player.addEventListener("pause", () => player.currentTime = 0)
           return player
         }
       })
@@ -57,48 +45,57 @@ export default class SettingsDrawer extends Component {
   }
 
   playAudio(players, name) {
-    return players.map(player => {
+    players.forEach(player => {
       if (player.name == name) {
         player.play()
       } else if (isValid(player.paused) && !player.paused) {
         player.pause()
       }
-      return player
     })
   }
 
   handleChange(key, value) {
     if (!this.isUpload) {
-      let { settings, players } = this.state
+      const { settings, players } = this.state
       this.playAudio(players, key === "remindAudio" ? value : "")
-      Object.assign(settings, { [key]: value } )
-      this.setState({ settings })
+      this.setState({ settings: { ...settings, [key]: value } })
     }
   }
 
   handleClose() {
     const { settings, audios, players } = this.state
     this.playAudio(players, "")
-    this.props.onClose(settings, audios)
+    this.props.onClose({ ...settings }, [...audios])
   }
 
   handleAudioUpload(audio) {
     this.isUpload = true
-    let { settings, audios, players } = this.state
-    Object.assign(settings, { remindAudio: audio.name })
-    audios.push(audio)
-    players = this.buildPlayers(players, audios)
-    this.playAudio(players, audio.name)
-    this.setState({ settings, audios, players, message: null })
+    const { settings, audios, players } = this.state
+    let newAudios = [...audios, audio]
+    let newPlayers = this.buildPlayers(players, newAudios)
+    this.playAudio(newPlayers, audio.name)
+    this.setState({ 
+      settings: { ...settings, remindAudio: audio.name },
+      audios: newAudios, 
+      players: newPlayers,
+      message: null
+    })
     this.isUpload = false
   }
 
   handleAudioDelete(name) {
-    let { settings, audios, players } = this.state
-    Object.assign(settings, { remindAudio: audios[0].name })
-    audios = audios.filter(audio => audio.name !== name)
-    players = this.buildPlayers(players, audios)
-    this.setState({ settings, audios, players, message: null })
+    const { settings, audios, players } = this.state
+    let newAudios = audios.filter(audio => audio.name !== name)
+    let newPlayers = this.buildPlayers(players, newAudios)
+    this.setState({
+      settings: {
+        ...settings,
+        remindAudio: newAudios.map(audio => audio.isDefault && audio.name)[0]
+      },
+      audios: newAudios,
+      players: newPlayers,
+      message: null
+    })
   }
 
   handleUploadError(error) {
@@ -144,42 +141,47 @@ export default class SettingsDrawer extends Component {
           <div>
             <span>{ intl.timer.showName }</span>
             <ToggleSwitch 
+              name    = "showName"
               status  = { showName }
-              onSwitch= { status => this.handleChange("showName", status) }
+              onSwitch= { this.actionChange }
             />
           </div>
 
           <div>
             <span>{ intl.timer.showLocation }</span>
-            <ToggleSwitch 
+            <ToggleSwitch
+              name    = "showLocation"
               status  = { showLocation }
-              onSwitch= { status => this.handleChange("showLocation", status) }
+              onSwitch= { this.actionChange }
             />
           </div>
 
           <div>
             <span>{ intl.timer.showDateTime }</span>
             <ToggleSwitch 
+              name    = "showDateTime"
               status  = { showDateTime }
-              onSwitch= { status => this.handleChange("showDateTime", status) }
+              onSwitch= { this.actionChange }
             />
           </div>
 
           <div>
             <span>{ intl.timer.remindBefore }</span>
             <DiscreteSlider 
+              name    = "remindBefore"
               max     = { 10 } 
               value   = { remindBefore } 
-              onChange= { value => this.handleChange("remindBefore", value) }
+              onChange= { this.actionChange }
             />
           </div>
 
           <div>
             <span>{ intl.timer.continueAfter }</span>
             <DiscreteSlider 
+              name    = "continueAfter"
               max     = { 5 } 
               value   = { continueAfter } 
-              onChange= { value => this.handleChange("continueAfter", value) }
+              onChange= { this.actionChange }
             />
           </div>
 
@@ -207,11 +209,12 @@ export default class SettingsDrawer extends Component {
             <div>
               <span>{ intl.timer.playSeconds }</span>
               <DiscreteSlider
+                name    = "playSeconds"
                 step    = { 5 }
                 min     = { 5 }
                 max     = { 60 } 
                 value   = { playSeconds } 
-                onChange= { value => this.handleChange("playSeconds", value) }
+                onChange= { this.actionChange }
               />
             </div>
           }
@@ -233,7 +236,6 @@ export default class SettingsDrawer extends Component {
             />
           }
         </div>
-          
       </DrawerContainer>
     )
   }

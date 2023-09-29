@@ -1,38 +1,28 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Button from '@mui/material/Button'
 import TableViewIcon from '@mui/icons-material/TableView'
-import { TimerObj } from '../../constants/dataFormat'
 import * as gtag from '../../lib/gtag'
-import { query, renew } from '../../utils/fetchData'
-import { isChanged } from '../../utils/parser'
 import CheckDrawer from './CheckDrawer'
 import TimerList from './TimerList'
+import { TimerObj } from '../../constants/dataFormat'
+import * as fetchData from '../../utils/fetchData'
+import { isChanged } from '../../utils/parser'
 
-const combinedTimer = (ts, ms) => {
-  if (!ts || !ms) return ts
+const combine = (timers, monsters) => {
+  if (!timers || !monsters) return timers
 
   let arr = []
-  ts.forEach(obj => {
-    let mons = ms.find(m => m.id == obj.id)
-    if (mons) arr.push(Object.assign({}, obj, mons))
+  timers.forEach(obj => {
+    let monster = monsters.find(m => m.id == obj.id)
+    if (monster) arr.push(Object.assign({}, obj, monster))
   })
   return arr
 }
 
-export default function Content({ intl, settings, audios }) {
-  const [monsters, setMonsters]       = useState([])
-  const [timers, setTimers]           = useState([])
-  const [savedTimers, setSavedTimers] = useState([])
+export default function Content({ intl, monsters, defaultTimers, settings, audios }) {
+  const [timers, setTimers] = useState(defaultTimers)
+  const [selectedTimers, setSelectedTimers] = useState(combine(defaultTimers, monsters))
   const [isCheckOpen, setIsCheckOpen] = useState(false)
-
-  useEffect(() => {
-    query(["/api/monsters", "/api/timers"])
-      .then(data => {
-        setTimers(data.timers)
-        setSavedTimers(combinedTimer(data.timers, data.monsters))
-        setMonsters(data.monsters)
-      })
-  }, [])
 
   const saveTimers = newTimers => {
     const ids = timers.map(t => t.id)
@@ -52,8 +42,8 @@ export default function Content({ intl, settings, audios }) {
 
     if (isChanged(ids, newIds)) {
       setTimers(newTimers)
-      setSavedTimers(combinedTimer(newTimers, monsters))
-      renew("/api/timers", newTimers)
+      setSelectedTimers(combine(newTimers, monsters))
+      fetchData.renew("/api/timers", newTimers)
 
       gtag.event("Add/Delete Timers", "Check Timers", JSON.stringify(newTimers))
     }
@@ -62,15 +52,9 @@ export default function Content({ intl, settings, audios }) {
   const updateTimers = list => {
     let objs = list.map(t => TimerObj(t))
     setTimers(objs)
-    renew("/api/timers", objs)
+    fetchData.renew("/api/timers", objs)
   }
-
-  if (!settings || !audios ||!monsters || !timers)
-    return <main>{ intl.timer.emptyError }</main>
-
-  if (!monsters.length)
-    return <></>
-
+  
   return (
     <>
       <main>
@@ -86,18 +70,18 @@ export default function Content({ intl, settings, audios }) {
         </Button>
         
         <TimerList 
-          intl      = { intl }
-          monTimers = { savedTimers }
-          settings  = { settings }
-          audios    = { audios }
-          onChange  = { updateTimers }
+          intl            = { intl }
+          selectedTimers  = { selectedTimers }
+          settings        = { settings }
+          audios          = { audios }
+          onChange        = { updateTimers }
         />
       </main>
       
       <CheckDrawer
         intl        = { intl }
         isOpen      = { isCheckOpen }
-        timers      = { isCheckOpen ? timers : [] }
+        timers      = { isCheckOpen ? [...timers] : [] }
         monsters    = { monsters }
         onClose     = { saveTimers }
       />

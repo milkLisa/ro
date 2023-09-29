@@ -86,7 +86,7 @@ const fetchApi = async (url, options) => {
     }
   }).catch(err => {
     isDBSupport = false
-    console.log("IndexedDB Error: ", err.message)
+    console.log("Open Idb Error: ", err.message)
   })
 
   // Private browsing might not support IndexedDB
@@ -122,7 +122,7 @@ const fetchApiAndStore = async (db, apiName, url, options) => {
     const tx = db.transaction(apiName, "readwrite")
     const store = tx.objectStore(apiName)
 
-    // Api CRUD都回覆完整陣列, 所以直接清空store重建資料
+    // API CRUD都回覆完整陣列, 所以直接清空store重建資料
     store.clear()
     resJson.forEach(obj => store.put(obj))
     tx.done

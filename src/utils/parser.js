@@ -1,3 +1,11 @@
+export function toClassStr(...args) {
+  let classes = []
+  args.forEach(name => {
+    if (typeof name === "string") return classes.push(name.trim())
+  }, [])
+  return classes.join(" ")
+}
+
 export function toMB(bytes) {
   return `${Number.parseFloat(bytes / 1024 / 1024).toFixed(2)}MB`
 }
@@ -34,4 +42,22 @@ export function template(fmt, ...args) {
       return args[index]
     }
   })
+}
+
+export function objReducer(prev, next) {
+  return (next && typeof next === "object") ? { ...prev, ...next } : next
+}
+
+export function skipEvents(prevProps, nextProps) {
+  const prev = Object.keys(prevProps).reduce((p, c) => {
+    if (typeof prevProps[c] !== "function") p[c] = prevProps[c]
+    return p
+  }, {})
+
+  const next = Object.keys(nextProps).reduce((p, c) => {
+    if (typeof nextProps[c] !== "function") p[c] = nextProps[c]
+    return p
+  }, {})
+
+  return JSON.stringify(prev) == JSON.stringify(next)
 }

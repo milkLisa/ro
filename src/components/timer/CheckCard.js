@@ -1,20 +1,19 @@
+import { memo } from 'react'
 import Card from '@mui/material/Card'
 import CardActionArea from '@mui/material/CardActionArea'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import AlarmOnIcon from '@mui/icons-material/AlarmOn'
-import { getFormatedTime } from '../../constants/dateTime'
 import BossIcon from './BossIcon'
+import { getFormatedTime } from '../../constants/dateTime'
+import { toClassStr } from '../../utils/parser'
 
-export default function CheckCard({ 
-  intl, monster, isChecked, isStarting, onCheck 
-}) {
+function CheckCard({ intl, monster, isChecked, onCheck }) {
   const img = monster.image ? monster.image : "egg.png"
-
   return (
     <Card className="check-card">
       <CardActionArea
-        className = { `check-area${ isStarting ?" timer" : "" }` }
+        className = { toClassStr("check-area", monster.isStarting && "timer") }
         onClick   = { () => onCheck(monster, !isChecked) }
       >
         <div className="avatar">
@@ -49,7 +48,7 @@ export default function CheckCard({
 
             <div>
               { 
-                isStarting
+                monster.isStarting
                 ? <AlarmOnIcon />
                 : isChecked
                   ? <CheckBoxIcon className="check" /> 
@@ -71,3 +70,5 @@ export default function CheckCard({
     </Card>
   )
 }
+
+export default memo(CheckCard)

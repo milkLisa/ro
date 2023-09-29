@@ -13,7 +13,7 @@ const sortByAppearTime = list => {
 }
 
 export default class TimerList extends Component {
-  state = { isSortOpen: false, allTimer: this.props.monTimers }
+  state = { isSortOpen: false, allTimer: this.props.selectedTimers }
   intervalId = null
   remindId = null
   
@@ -22,17 +22,18 @@ export default class TimerList extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { monTimers, settings } = this.props
-    let { allTimer } = this.state
+    const { selectedTimers, settings } = this.props
+    const { allTimer } = this.state
 
-    if (isChanged(monTimers.map(t => t.id), allTimer.map(t => t.id))) {
+    if (isChanged(selectedTimers.map(t => t.id), allTimer.map(t => t.id))) {
       let timerMap = allTimer.reduce((previous, current) => {
         previous[current.id] = current
         return previous
       }, {})
 
-      allTimer = monTimers.map(mon => Object.assign(mon, timerMap[mon.id]))
-      this.setState({ allTimer })
+      this.setState({ 
+        allTimer: selectedTimers.map(monster => Object.assign(monster, timerMap[monster.id]))
+      })
     }
 
     if (isChanged(settings, prevProps.settings)) this.remindId = null
@@ -44,36 +45,36 @@ export default class TimerList extends Component {
 
   timing() {
     const { settings } = this.props
-    let { allTimer } = this.state
+    const { allTimer } = this.state
     let hasTiming = false, hasStop = false
 
-    allTimer = allTimer.map(mon => {
-      if (!!mon.utcMSEC) {
-        const msec = mon.utcMSEC - Date.now()
+    let newAllTimer = allTimer.map(monster => {
+      if (!!monster.utcMSEC) {
+        const msec = monster.utcMSEC - Date.now()
         if (msec <= (-parseToMSEC(settings.continueAfter) || -MINUTE)) {
-          mon.utcMSEC = null
-          mon.leftTime = null
+          monster.utcMSEC = null
+          monster.leftTime = null
           hasStop = true
         } else {
-          mon.leftTime = msec
+          monster.leftTime = msec
           hasTiming = true
         }
       }
 
-      return mon
+      return monster
     })
 
-    if (hasStop) this.props.onChange(allTimer)
-    else if (hasTiming) this.setState({ allTimer })
+    if (hasStop) this.props.onChange(newAllTimer)
+    else if (hasTiming) this.setState({ allTimer: newAllTimer })
   }
 
   handleSwitch(turnOn, timer) {
     if (!turnOn && this.remindId == timer.id) this.remindId = null
 
-    let { allTimer } = this.state
-    allTimer = allTimer.map(mon => mon.id == timer.id ? timer : mon)
-    this.setState({ allTimer })
-    this.props.onChange(allTimer)
+    const { allTimer } = this.state
+    let newAllTimer = allTimer.map(monster => monster.id == timer.id ? timer : monster)
+    this.setState({ allTimer: newAllTimer })
+    this.props.onChange(newAllTimer)
   }
 
   handlePlayerFinish(id) {
@@ -89,12 +90,12 @@ export default class TimerList extends Component {
   MonsterList(prefix, list) {
     const { intl, settings } = this.props
 
-    return list.map(mon => (
+    return list.map(monster => (
       <MonsterCard 
         intl     = { intl }
         settings = { settings }
-        key      = { `${ prefix }${ mon.id }${ mon.roId }` }
-        monster  = { mon }
+        key      = { `${ prefix }${ monster.id }` }
+        monster  = { monster }
         onSwitch = { (turnOn, timer) => this.handleSwitch(turnOn, timer) }
         onTime   = { id => this.remindId = id }
       />

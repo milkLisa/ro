@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, memo } from 'react'
 import IconButton from '@mui/material/IconButton'
 import ExpandLessIcon from '@mui/icons-material/ExpandLess'
+import { toClassStr } from '../../utils/parser'
 
-export default function ScrollTopButton({ scrollWin }) {
+function ScrollTopButton({ scrollWin }) {
   const [show, setShow] = useState(false)
   let parent
   
@@ -39,10 +40,12 @@ export default function ScrollTopButton({ scrollWin }) {
   return (
     <IconButton
       aria-label = "scroll to top"
-      className  = { `scroll-btn${ show ? " show": "" }` }
+      className  = { toClassStr("scroll-btn", show && "show") }
       onClick    = { () => handleClick() }
     >
       <ExpandLessIcon />
     </IconButton>
   )
 }
+
+export default memo(ScrollTopButton)

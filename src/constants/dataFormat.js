@@ -5,13 +5,6 @@ export function TimerObj(monster, options) {
   return BuildObj(monster, options, objKeys)
 }
 
-export function SettingsObj(settings, options) {
-  const objKeys = ["id", "showName", "showLocation", 
-  "showDateTime", "remindBefore", "continueAfter", 
-  "remindAudio", "playSeconds"]
-  return BuildObj(settings, options, objKeys)
-}
-
 export function BuildObj(source = {}, options = {}, objKeys = []) {
   let newObj = {}
   objKeys.forEach(key => newObj[key] = assignValue(key, source, options))

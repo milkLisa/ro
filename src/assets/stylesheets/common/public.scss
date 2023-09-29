@@ -163,16 +163,10 @@ a {
   color: $light-color;
 
   .progress {
-    @keyframes loading {
-      from {top: 5px;}
-      to {top: -5px;}
-    }
-    
-    background: url("/static/icons/loading.png") no-repeat;
+    background: url("/static/icons/loading.gif") no-repeat;
+    background-size: 72px;
     width: 72px;
     height: 72px;
-    position: relative;
-    animation: loading 1s ease 0s infinite;
   }
 
   & > *:last-child {

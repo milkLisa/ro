@@ -1,158 +1,116 @@
-import { useState, useEffect } from 'react'
-import TextField from '@mui/material/TextField'
-import IconButton from '@mui/material/IconButton'
+import { useEffect, useReducer, useRef, memo } from 'react'
 import Snackbar from '@mui/material/Snackbar'
-import Tab from '@mui/material/Tab'
-import Tabs from '@mui/material/Tabs'
-import SearchIcon from '@mui/icons-material/Search'
-import { TimerObj } from '../../constants/dataFormat'
-import { SECOND } from '../../constants/dateTime'
-import { trimStr, template, isChanged } from '../../utils/parser'
 import DrawerContainer from '../common/DrawerContainer'
-import CheckCard from './CheckCard'
+import SearchPanel from '../common/SearchPanel'
+import CheckTabs from './CheckTabs'
+import { TimerObj, assignValue } from '../../constants/dataFormat'
+import { SECOND } from '../../constants/dateTime'
+import { template, isChanged, skipEvents } from '../../utils/parser'
 
-export default function CheckDrawer({ 
-  intl, isOpen, monsters, timers, onClose 
-}) {
-  const [leftList, setLeftList]           = useState(monsters)
-  const [checkedTimers, setCheckedTimers] = useState(timers)
-  const [searchText, setSearchText]       = useState("")
-  const [showMessage, setShowMessage]     = useState(false)
-  const [selectedTab, setSelectedTab]     = useState("mvp")
+const searchFields = ["roId", "name", "location"]
 
-  useEffect(() => {
-    if (isChanged(timers, checkedTimers)) setCheckedTimers(timers)
-  }, [timers])
-
-  const search = keywords => {
-    const word = trimStr(keywords)
-    const newList = monsters.filter(mon => 
-      mon.roId.toString().match(new RegExp(word, "i")) || 
-      mon.name.match(new RegExp(word, "i")) ||
-      (mon.location && mon.location.match(new RegExp(word, "i")))
-    )
-    
-    setLeftList(word.length > 0 ? newList : monsters)
-  }
-
-  const changeList = (monster, isAdd) => {
-    let newList = Array.from(checkedTimers)
-    if (isAdd)
-      newList.push(TimerObj(monster))
-    else
-      newList = newList.filter(mon => mon.id != monster.id)
-
-    setCheckedTimers(newList)
-    setShowMessage(true)
-  }
-
-  const handleChange = value => {
-    setSearchText(value)
-    search(value)
-  }
-
-  const handleClose = () => {
-    onClose(checkedTimers.sort((a, b) => a.id - b.id))
-    setShowMessage(false)
-  }
-
-  const message = template(intl.timer.checkMsg, checkedTimers.length, monsters.length)
-  
-  const checkedMap = checkedTimers.reduce((previous, current) => {
+const buildItems = currentState => {
+  const { timers, leftList } = currentState
+  const checkedMap = timers.reduce((previous, current) => {
     previous[current.id] = !!current.utcMSEC
     return previous
   }, {})
 
-  const listMap = leftList.reduce((previous, current) => {
-    if (current.isMVP) previous.mvp.push(current)
-    else previous.mini.push(current)
+  let mvp = [], mini = [], checked = []
+  leftList.forEach(monster => {
+    if (monster.id in checkedMap) {
+      monster.isChecked = true
+      monster.isStarting = checkedMap[monster.id]
+      checked.push(monster)
+    } else {
+      monster.isChecked = false
+      monster.isStarting = false
+    }
 
-    if (current.id in checkedMap) previous.checked.push(current)
-    return previous
-  }, { mvp: [], mini: [], checked: [] })
+    if (monster.isMVP) mvp.push(monster)
+    else mini.push(monster)
+  })
+  
+  return { timers, leftList, tabItems: { mvp, mini, checked } }
+}
 
+const reducer = (prevState, nextState) => {
+  const message = assignValue("message", prevState, nextState, null)
+
+  if ("timers" in nextState || "leftList" in nextState) {
+    const timers = assignValue("timers", prevState, nextState, [])
+    const leftList = assignValue("leftList", prevState, nextState, [])
+    return { ...buildItems({ timers, leftList }), message }
+  } else {
+    return { ...prevState, message }
+  }
+}
+
+function CheckDrawer({ intl, isOpen, monsters, timers, onClose }) {
+  const [state, setState] = useReducer(reducer
+    , { timers, leftList: monsters }, buildItems)
+  const tempTimers = useRef(timers)
+
+  const changeList = useRef((monster, isAdd) => {
+    let newList = tempTimers.current
+    if (isAdd)
+      newList.push(TimerObj(monster))
+    else
+      newList = newList.filter(item => item.id != monster.id)
+
+    tempTimers.current = newList
+    setState({ 
+      timers: newList,
+      message: template(intl.timer.checkMsg, newList.length, monsters.length)
+    })
+  })
+
+  const searchPanel = useRef(<SearchPanel
+    source     = { monsters }
+    fields     = { searchFields }
+    placeholder= { intl.timer.search }
+    onSearch   = { resultList => setState({ leftList: resultList }) }
+  />)
+
+  useEffect(() => {
+    if (isChanged(timers, state.timers)) {
+      tempTimers.current = timers
+      setState({ timers })
+    }
+  }, [timers])
+
+  const handleClose = () => {
+    onClose(state.timers.sort((a, b) => a.id - b.id))
+    setState({ timers: [], message: null })
+  }
+  
   return (
     <DrawerContainer
       className = "check-drawer"
       intl      = { intl }
+      keep      = { true }
       anchor    = "bottom"
       isOpen    = { isOpen }
       onClose   = { () => handleClose() }
-      header    = {
-        <div className="search-panel">
-          <IconButton
-            aria-label= "search"
-            className = "search-btn"
-            onClick   = { () => search(searchText)  }
-          >
-            <SearchIcon />
-          </IconButton>
-
-          <TextField
-            autoComplete    = "off"
-            fullWidth       = { true }
-            margin          = "none"
-            variant         = "outlined"
-            placeholder     = { intl.timer.search }
-            value           = { searchText }
-            className       = "search-field"
-            onChange        = { e => handleChange(e.target.value) }
-          />
-        </div>
-      }
+      header    = { searchPanel.current }
     >
-      <div>
-        <Tabs
-          centered
-          className = "check-tabs"
-          aria-label= "mvp, mini, selected tabs"
-          value     = { selectedTab }
-          onChange  = { (event, value) => setSelectedTab(value) } 
-        >
-          <Tab 
-            label = { `MVP (${ listMap.mvp.length })` } 
-            value = "mvp"
-          />
-
-          <Tab 
-            label = { `MINI (${ listMap.mini.length })` } 
-            value = "mini"
-          />
-
-          <Tab 
-            label = { `${ intl.timer.selected } (${ listMap.checked.length })` } 
-            value = "checked"
-          />
-        </Tabs>
-        
-        <div 
-          role      = "tabpanel"
-          className = "list"
-        >
-          { 
-            listMap[selectedTab].map(mon => 
-              <CheckCard 
-                intl      = { intl }
-                key       = { `${ selectedTab }-${ mon.id }-${ mon.roId }` } 
-                monster   = { mon }
-                isChecked = { mon.id in checkedMap }
-                isStarting= { checkedMap[mon.id] }
-                onCheck   = { changeList }
-              />
-            )
-          }
-        </div>
-      </div>
+      <CheckTabs
+        intl     = { intl }
+        items    = { state.tabItems }
+        onCheck  = { changeList.current } 
+      />
 
       <Snackbar
         className       = "check-message"
         anchorOrigin    = { { vertical: "bottom", horizontal: "center" } }
-        open            = { showMessage }
-        key             = { message }
-        message         = { message }
+        open            = { !!state.message }
+        key             = { state.message }
+        message         = { state.message }
         autoHideDuration= { 3 * SECOND }
-        onClose         = { () => setShowMessage(false) }
+        onClose         = { () => setState({ message: null }) }
       />
     </DrawerContainer>
   )
 }
+
+export default memo(CheckDrawer, skipEvents)

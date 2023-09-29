@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import Slider from '@mui/material/Slider'
 import Input from '@mui/material/Input'
 import { toNumber } from '../../utils/parser'
@@ -9,8 +10,8 @@ const marks = (step, max) => {
   }, [])
 }
 
-export default function DiscreteSlider({ 
-  step = 1, min = 1, max = 10, value = 1, onChange
+function DiscreteSlider({ 
+  name, step = 1, min = 1, max = 10, value = 1, onChange
 }) {
   const handleChange = e => {
     let x = toNumber(e.target.value, min) 
@@ -21,7 +22,7 @@ export default function DiscreteSlider({
       x = max
     }
 
-    onChange(x)
+    onChange(name, x)
   }
 
   return (
@@ -52,3 +53,5 @@ export default function DiscreteSlider({
     </div>
   )
 }
+
+export default memo(DiscreteSlider)

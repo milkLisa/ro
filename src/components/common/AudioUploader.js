@@ -2,10 +2,11 @@ import Alert from '@mui/material/Alert'
 import IconButton from '@mui/material/IconButton'
 import CloudUploadIcon from '@mui/icons-material/CloudUpload'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
+import { toClassStr } from '../../utils/parser'
 
 export default function AudioUploader({
   name = "audio", className, uploadList = [], maxLimit = 5, maxMsg = "Max 5", 
-  sizeLimit, fileTypes = ["mp3"], placeholder, errorMsg, 
+  sizeLimit, fileTypes = [], placeholder, errorMsg, 
   onUpload, onDelete, onError
 }) {
   const handleAudioChange = e => {
@@ -24,7 +25,7 @@ export default function AudioUploader({
 
     const extension = fileName.split(".").pop().toLowerCase()
 
-    // fileTypes為空(未指定)，則接受所有格式
+    // Accept all format while fileTypes is empty
     const isAccept = fileTypes.length === 0 || fileTypes.indexOf(extension) > -1
 
     let reader = new FileReader()
@@ -60,9 +61,9 @@ export default function AudioUploader({
     result.push(`.${ next }`)
     return result
   }, [])
-
+  
   return (
-    <div className={ `upload-manager ${ className ? className : "" }` }>
+    <div className={ toClassStr("upload-manager", className) }>
       {
         uploadList.length > 0 &&
         <div className="action-area">
