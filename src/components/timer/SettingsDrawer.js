@@ -124,7 +124,7 @@ export default class SettingsDrawer extends Component {
   render() {
     const { intl, isOpen } = this.props
     const { settings, audios, message } = this.state
-    const { showName, showLocation, showDateTime, remindBefore, 
+    const { showName, showLocation, showMapCode, showDateTime, remindBefore, 
       continueAfter, remindAudio, playSeconds } = settings
     const uploadList = audios.filter(a => !a.isDefault)
     
@@ -152,6 +152,15 @@ export default class SettingsDrawer extends Component {
             <ToggleSwitch
               name    = "showLocation"
               status  = { showLocation }
+              onSwitch= { this.actionChange }
+            />
+          </div>
+
+          <div>
+            <span>{ intl.timer.showMapCode }</span>
+            <ToggleSwitch
+              name    = "showMapCode"
+              status  = { showMapCode }
               onSwitch= { this.actionChange }
             />
           </div>

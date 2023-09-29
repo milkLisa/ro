@@ -64,6 +64,7 @@ function CheckCard({ intl, monster, isChecked, onCheck }) {
           
           <div className="desc">
             <span>{ monster.location }</span>
+            <span>{ monster.mapCode }</span>
           </div>
         </div>
       </CardActionArea>

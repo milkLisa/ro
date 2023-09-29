@@ -20,6 +20,7 @@ const zh_TW = {
     appearSort: "現身排序",
     showName: "顯示名稱",
     showLocation: "顯示地點",
+    showMapCode: "顯示地圖編號",
     showDateTime: "顯示時間日期",
     remindBefore: "現身前幾分鐘開始提醒",
     continueAfter: "現身後持續計時幾分鐘",

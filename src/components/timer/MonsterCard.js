@@ -17,8 +17,8 @@ export default function MonsterCard({
   const [editText, setEditText]   = useState("")
   const [isReminded, setIsReminded]= useState(false)
 
-  const { showName, showLocation, showDateTime, remindBefore } = settings
-  const { id, isMVP, name, location, msec, utcMSEC, editMSEC, image } = monster
+  const { showName, showLocation, showMapCode, showDateTime, remindBefore } = settings
+  const { id, isMVP, name, location, mapCode, msec, utcMSEC, editMSEC, image } = monster
   const defaultTime = editMSEC || msec
   const leftTime = monster.leftTime || defaultTime
   const isStart = !!utcMSEC
@@ -99,6 +99,7 @@ export default function MonsterCard({
       <div className="info">
         { showName && <div>{ name }</div> }
         { showLocation && <div className="location">{ location }</div> }
+        { showMapCode && <div className="map-code">{ mapCode }</div> }
         { showDateTime && utcMSEC && <div>{ getDateTime(utcMSEC) }</div> }
       </div>
 

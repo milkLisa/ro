@@ -2,6 +2,7 @@ var settings = [{
   id: 0,  //For idb store
   showName: true, 
   showLocation: true, 
+  showMapCode: true, 
   showDateTime: true,
   remindBefore: 5,  //Minutes
   continueAfter: 1,  //Minutes
