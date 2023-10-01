@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import Button from '@mui/material/Button'
+import Tooltip from '@mui/material/Tooltip'
+import IconButton from '@mui/material/IconButton'
 import TableViewIcon from '@mui/icons-material/TableView'
+import HelpIcon from '@mui/icons-material/Help'
 import * as gtag from '../../lib/gtag'
 import CheckDrawer from './CheckDrawer'
 import TimerList from './TimerList'
@@ -58,17 +61,33 @@ export default function Content({ intl, monsters, defaultTimers, settings, audio
   return (
     <>
       <main>
-        <Button 
-          className = "add-btn"
-          aria-label= "add timers"
-          variant   = "contained"
-          disableFocusRipple
-          endIcon   = { <TableViewIcon /> }
-          onClick   = { () => setIsCheckOpen(true) } 
-        >
-          { intl.timer.checkTimer }
-        </Button>
-        
+        <div>
+          <Button 
+            className = "add-btn"
+            aria-label= "add timers"
+            variant   = "contained"
+            disableFocusRipple
+            endIcon   = { <TableViewIcon /> }
+            onClick   = { () => setIsCheckOpen(true) } 
+          >
+            { intl.timer.checkTimer }
+          </Button>
+
+          <Tooltip
+            title     = { intl.timer.actionHelper }
+            placement = "right"
+            arrow
+          >
+            <IconButton
+              className = "helper-btn"
+              aria-label= "action helper"
+              disableRipple
+            >
+              <HelpIcon />
+            </IconButton>
+          </Tooltip>
+        </div>
+
         <TimerList 
           intl            = { intl }
           selectedTimers  = { selectedTimers }

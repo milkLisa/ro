@@ -24,6 +24,13 @@ const theme = createTheme({
           padding: "10px"
         }
       }
+    },
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          whiteSpace: "pre-line"
+        }
+      }
     }
   },
   palette: {

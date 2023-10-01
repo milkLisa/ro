@@ -40,7 +40,8 @@ function SearchPanel({
         placeholder     = { placeholder }
         value           = { searchText }
         className       = "search-field"
-        onChange        = { e => handleChange(e.target.value) }
+        onChange        = { e => setSearchText(e.target.value) }
+        onKeyUp         = { e => handleChange(e.target.value) }
       />
     </div>
   )

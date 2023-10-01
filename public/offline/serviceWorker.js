@@ -66,16 +66,19 @@ const networkFetch = async (request) => {
 }
 
 const cacheFirstStrategy = async (request) => {
-  return await caches.match(request)
-    .then(res => res ? res : fetchRequestAndCache(request))
-    .catch(ex => fetchRequestAndCache(request))
+  try {
+    const res = await caches.match(request)
+    if (res) return res
+  } catch (ex) {}
+
+  return fetchRequestAndCache(request)
 }
 
 const fetchRequestAndCache = async (request) => {
-  const networkResponse = await fetch(request)
+  const networkResponse = await networkFetch(request)
   const clonedResponse = networkResponse.clone()
 
-  if (request.method == "GET") {
+  if (networkResponse.ok && !networkResponse.redirected && request.method == "GET") {
     const cache = await caches.open(cacheName)
     cache.put(request, networkResponse)
   }
