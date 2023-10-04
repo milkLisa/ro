@@ -75,6 +75,8 @@ print("{} Catch {} monsters".format(datetime.datetime.now(), len(monsters)))
 """
 imgData = pd.DataFrame()
 respawnData = pd.DataFrame()
+divineData = pd.DataFrame()
+moonData = pd.DataFrame()
 for row in monsters.itertuples(index=False) :
   print("Fatch {}'s image and respawn data".format(row.ID))
   url = "https://rd.fharr.com/db/monster/{}".format(row.ID)
@@ -125,6 +127,27 @@ for row in monsters.itertuples(index=False) :
     data = data.assign(id=row.ID)
     respawnData = pd.concat([respawnData, data], ignore_index=True)
 
+  #====== load monster source name from divine-pride ======
+  url = "https://www.divine-pride.net/database/monster/{}".format(row.ID)
+  data = requests.get(url).text
+  soup = BeautifulSoup(data, "html.parser")
+  title = soup.select_one("legend.entry-title")
+  if title :
+    en = re.sub(r"(^\s+)|(\s+$)", "", title.contents[0])
+    source = re.sub(r"(^\s+)|(\s+$)", "", title.contents[len(title.contents)-1])
+    tmpData = pd.DataFrame({"id": [row.ID], "s_name": [source], "en_bak_name": [en]})
+    divineData = pd.concat([divineData, tmpData], ignore_index=True)
+  
+  #====== load monster english name from shining-moon ======
+  url = "https://www.shining-moon.com/?module=monster&action=view&id={}".format(row.ID)
+  data = requests.get(url).text
+  soup = BeautifulSoup(data, "html.parser")
+  iro = soup.find("th", string=lambda text: text=="iRO Name")
+  if iro :
+    en = iro.parent.select_one("td").text
+    tmpData = pd.DataFrame({"id": [row.ID], "en_name": [en]})
+    moonData = pd.concat([moonData, tmpData], ignore_index=True)
+  
   sleep(1)
 
 print("Catch {} image url".format(len(imgData)))
@@ -138,10 +161,14 @@ print("Catch {} respawn data".format(len(respawnData)))
 monsters = monsters.set_index("ID")
 imgData = imgData.set_index("id")
 respawnData = respawnData.set_index("id")
+divineData = divineData.set_index("id")
+moonData = moonData.set_index("id")
 
 #combine to monsters
 monsters = monsters.join(imgData)
 monsters = monsters.join(respawnData)
+monsters = monsters.join(divineData)
+monsters = monsters.join(moonData)
 
 print("Total {} lines, write to file monsters.csv".format(len(monsters)))
 monsters.to_csv("monsters.csv", index_label="ID")

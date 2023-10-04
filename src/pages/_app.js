@@ -9,7 +9,8 @@ import '../assets/stylesheets/index.scss'
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter()
   const { locale } = router
-  const intl = locale === "en-US" ? enContent : zhContent
+  let intl = locale === "en-US" ? enContent : zhContent
+  intl.isEnglish = locale === "en-US"
 
   useEffect(() => {
     const handleRouteChange = url => gtag.pageview(url)

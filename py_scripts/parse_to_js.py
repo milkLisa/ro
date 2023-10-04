@@ -56,11 +56,15 @@ result["img"] = result.apply(lambda x: str(x["ID"]) + ".png" if pd.notna(x["img"
 result["location"] = result["location"].replace(u"(\s|\[網站備註\])", "", regex=True)
 result["location"] = result["location"].replace(r"～", "~", regex=True)
 
+#English name填空: shining-moon(en_name) > divine-pride(en_bak_name) > RO官方名(s_name)
+result["en_name"] = result["en_name"].fillna(result["en_bak_name"])
+result["en_name"] = result["en_name"].fillna(result["s_name"])
+
 #只取需要的欄位
-result = result.filter(items=["ID", "isMVP","名稱","Lv","種族","屬性","體型", "img", "location", "mapCode", "floor", "msec"], axis=1)
+result = result.filter(items=["ID", "isMVP","名稱","en_name","Lv","種族","屬性","體型", "img", "location", "mapCode", "floor", "msec"], axis=1)
 
 #自訂欄位名稱
-result.columns = ["roId", "isMVP", "name", "level", "race", "element", "size", "image", "location", "mapCode", "floor", "msec"]
+result.columns = ["roId", "isMVP", "name","en_name", "level", "race", "element", "size", "image", "location", "mapCode", "floor", "msec"]
 
 #新增id為[roId_mapCode]
 result.insert(0, "id", result.apply(lambda x: str(x["roId"]) + "_" + (str(x["mapCode"]) if pd.notna(x["mapCode"]) else "na"), axis=1))

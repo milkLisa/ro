@@ -5,7 +5,7 @@ const en_US = {
     loading: "Just a moment..."
   },
   timer: {
-    title: "MVP Timer",
+    title: "RO MVP Timer",
     search: "Enter monster name, ID or location to search",
     checkTimer: "Click to select timers",
     actionHelper: "1.Select timers\n2.Single click to start/stop timer\n3.Double click to customize time for timer",

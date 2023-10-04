@@ -20,7 +20,7 @@ function CheckCard({ intl, monster, isChecked, onCheck }) {
           <div>
             <img
               src = { `/static/images/${ img }` }
-              alt = { monster.name }
+              alt = { intl.isEnglish ? monster.en_name : monster.name }
             />
           </div>
           
@@ -44,7 +44,7 @@ function CheckCard({ intl, monster, isChecked, onCheck }) {
         
         <div className="info">
           <div className="name">
-            <span>{ monster.name }</span>
+            <span>{ intl.isEnglish ? monster.en_name : monster.name }</span>
 
             <div>
               { 

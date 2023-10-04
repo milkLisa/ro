@@ -5,7 +5,7 @@ const zh_TW = {
     loading: "請稍候..."
   },
   timer: {
-    title: "MVP計時器",
+    title: "RO MVP計時器",
     search: "輸入魔物名稱、ID或重生地點搜尋",
     checkTimer: "選取計時器",
     actionHelper: "1.選取計時器\n2.單擊：啟動/停止計時器\n3.雙擊：自訂計時器時間",
