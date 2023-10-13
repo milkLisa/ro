@@ -37,15 +37,7 @@ const theme = createTheme({
     primary: {
       main: "#8192c8",
       contrastText: "#fff"
-    },
-    secondary: {
-      main: "#feecc5",
-      contrastText: "#fff"
-    },
-    error: {
-      main: "#bf565b",
-      contrastText: "#fff"
-    },
+    }
   }
 })
 

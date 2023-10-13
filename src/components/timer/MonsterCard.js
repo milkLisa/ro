@@ -6,7 +6,7 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button'
 import { 
-  MINUTE, SECOND, getFormatedTime, getDateTime, parseToMSEC, isLessOrEqual
+  MINUTE, SECOND, HALF_SECOND, getFormatedTime, getDateTime, parseToMSEC, isLessOrEqual
 } from '../../constants/dateTime'
 import BossIcon from './BossIcon'
 
@@ -16,6 +16,7 @@ export default function MonsterCard({
   const [isEdit, setIsEdit]       = useState(false)
   const [editText, setEditText]   = useState("")
   const [isReminded, setIsReminded]= useState(false)
+  const [touchTime, setTouchTime]= useState(0)
 
   const { showName, showLocation, showMapCode, showDateTime, remindBefore } = settings
   const { id, isMVP, name, en_name, location, mapCode, msec, utcMSEC, editMSEC, image } = monster
@@ -75,12 +76,23 @@ export default function MonsterCard({
     handleEditClose()
   }
 
+  const touchCheck = (e) => {
+    e.preventDefault()
+    const time = Date.now() - touchTime
+    if (time < HALF_SECOND) {
+      handleSwitch(!isStart)
+    } else {
+      openEditBox(e)
+    }
+  }
+
   return (
     <div className={ getClass("monster-card", isStart, leftTime) }>
       <div 
         className     = "avatar"
+        onTouchStart  = { () => setTouchTime(Date.now()) }
+        onTouchEnd    = { e => touchCheck(e) }
         onClick       = { () => handleSwitch(!isStart) }
-        onDoubleClick = { e => openEditBox(e) }
         onContextMenu = { e => openEditBox(e) }
       >
         <BossIcon isMVP={ isMVP } />
@@ -130,6 +142,10 @@ export default function MonsterCard({
         </DialogContent>
 
         <DialogActions>
+          <Button onClick={ () => handleEditClose() }>
+            { intl.timer.editCancel }
+          </Button>
+          
           <Button onClick={ () => handleEditOk() }>
             { intl.timer.editSubmit }
           </Button>

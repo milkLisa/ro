@@ -154,6 +154,9 @@ a {
   }
 }
 
+.MuiTooltip-popper[data-popper-placement*="bottom"] .MuiTooltip-tooltip {
+  margin-top: 0;
+}
 
 .loading-modal .content {
   display: flex;

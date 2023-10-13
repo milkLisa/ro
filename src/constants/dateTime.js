@@ -1,10 +1,11 @@
 import moment from 'moment-timezone'
 import { trimStr } from '../utils/parser'
 
-export const SECOND = 1000   // 1 second = 1000 milliseconds
-export const MINUTE = SECOND * 60
-export const HOUR   = MINUTE * 60
-export const DAY    = HOUR * 24
+export const SECOND     = 1000   // 1 second = 1000 milliseconds
+export const HALF_SECOND= SECOND/2
+export const MINUTE     = SECOND * 60
+export const HOUR       = MINUTE * 60
+export const DAY        = HOUR * 24
 
 export function padZero(len, x) {
   x = x.toString().replace("-", "")

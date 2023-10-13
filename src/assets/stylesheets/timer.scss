@@ -30,7 +30,7 @@ $time-text-shadow: #fff 0 2px,
   }
 }
 
-.helper-btn {
+.tooltip-btn {
   position: absolute;
 }
 
@@ -40,6 +40,12 @@ $time-text-shadow: #fff 0 2px,
   flex-direction: column;
   align-items: center;
   padding: 10px;
+  
+  //Disable iOS long press menu and effect
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 
   .avatar {
     width: 80px;
