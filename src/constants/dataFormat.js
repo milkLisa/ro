@@ -16,3 +16,7 @@ export function assignValue(key, source = {}, options = {}, initail = null) {
   if (!isValid(value)) value = initail
   return value
 }
+
+export function SearchFields(isEnglish) {
+  return ["roId", isEnglish ? "en_name" : "name", "location", "mapCode"]
+}

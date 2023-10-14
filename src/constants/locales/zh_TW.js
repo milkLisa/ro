@@ -6,7 +6,7 @@ const zh_TW = {
   },
   timer: {
     title: "RO MVP計時器",
-    search: "輸入魔物名稱、ID或重生地點搜尋",
+    search: "輸入名稱、ID、地點或地圖編號搜尋",
     checkTimer: "選取計時器",
     actionHelper: "1.選取計時器\n2.單擊：啟動/停止計時器\n3.右鍵/長按半秒：自訂計時器時間",
     respawn: "重生時間",

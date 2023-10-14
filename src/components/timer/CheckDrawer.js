@@ -3,11 +3,9 @@ import Snackbar from '@mui/material/Snackbar'
 import DrawerContainer from '../common/DrawerContainer'
 import SearchPanel from '../common/SearchPanel'
 import CheckTabs from './CheckTabs'
-import { TimerObj, assignValue } from '../../constants/dataFormat'
+import { TimerObj, assignValue, SearchFields } from '../../constants/dataFormat'
 import { SECOND } from '../../constants/dateTime'
 import { template, isChanged, skipEvents } from '../../utils/parser'
-
-const searchFields = ["roId", "name", "location"]
 
 const buildItems = currentState => {
   const { timers, leftList } = currentState
@@ -36,13 +34,14 @@ const buildItems = currentState => {
 
 const reducer = (prevState, nextState) => {
   const message = assignValue("message", prevState, nextState, null)
+  const isFilter = assignValue("isFilter", prevState, nextState, false)
 
   if ("timers" in nextState || "leftList" in nextState) {
     const timers = assignValue("timers", prevState, nextState, [])
     const leftList = assignValue("leftList", prevState, nextState, [])
-    return { ...buildItems({ timers, leftList }), message }
+    return { ...buildItems({ timers, leftList }), message, isFilter }
   } else {
-    return { ...prevState, message }
+    return { ...prevState, message, isFilter }
   }
 }
 
@@ -67,9 +66,9 @@ function CheckDrawer({ intl, isOpen, monsters, timers, onClose }) {
 
   const searchPanel = useRef(<SearchPanel
     source     = { monsters }
-    fields     = { searchFields }
+    fields     = { SearchFields(intl.isEnglish) }
     placeholder= { intl.timer.search }
-    onSearch   = { resultList => setState({ leftList: resultList }) }
+    onSearch   = { (resultList, isFilter) => setState({ leftList: resultList, isFilter }) }
   />)
 
   useEffect(() => {
@@ -95,9 +94,10 @@ function CheckDrawer({ intl, isOpen, monsters, timers, onClose }) {
       header    = { searchPanel.current }
     >
       <CheckTabs
-        intl     = { intl }
-        items    = { state.tabItems }
-        onCheck  = { changeList.current } 
+        intl      = { intl }
+        items     = { state.tabItems }
+        showFilter= { state.isFilter }
+        onCheck   = { changeList.current }
       />
 
       <Snackbar

@@ -200,13 +200,29 @@ a {
   margin: 10px 10px 10px 56px;
   width: 100%;
 
-  .search-field input {
-    margin-left: 32px;
+  .search-field {
+    label:not(.Mui-focused, .MuiFormLabel-filled) {
+      left: 28px;
+      top: -5px;
+      color: $note-color;
+      width: calc(100% - 82px);
+      text-align: left;
+    }
+    
+    input {
+      margin-left: 32px;
+      margin-right: 32px;
+    }
   }
 
   .search-btn {
     @include icon-button();
     margin-right: -42px;
+  }
+
+  .clear-btn {
+    @include icon-button();
+    margin-left: -42px;
   }
 }
 

@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
+import FilterListIcon from '@mui/icons-material/FilterList'
 import CheckCard from '../timer/CheckCard'
 import { toClassStr } from '../../utils/parser'
 
-export default function CheckTabs({ intl, className, items = {}, onCheck }) {
+export default function CheckTabs({
+  intl, className, items = {}, showFilter, onCheck
+}) {
   const keys = Object.keys(items)
   const [selectedTab, setSelectedTab] = useState(keys[0])
   
@@ -24,6 +27,7 @@ export default function CheckTabs({ intl, className, items = {}, onCheck }) {
               <Tab
                 key   = { key }
                 value = { key }
+                icon  = { showFilter ? <FilterListIcon /> : null }
                 label = { `${ tabName } (${ items[key].length })` }
               />
             )

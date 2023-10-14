@@ -141,6 +141,16 @@ $time-text-shadow: #fff 0 2px,
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .MuiTab-labelIcon {
+      display: flex;
+      flex-direction: row-reverse;
+      min-height: 48px;
+
+      svg {
+        @include default-font();
+      }
+    }
   }
 
   .check-card {

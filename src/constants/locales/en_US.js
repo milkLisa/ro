@@ -6,7 +6,7 @@ const en_US = {
   },
   timer: {
     title: "RO MVP Timer",
-    search: "Enter monster name, ID or location to search",
+    search: "Enter name, ID, location or mapCode to search",
     checkTimer: "Click to select timers",
     actionHelper: "1.Select timers\n2.Single click to start/stop timer\n3.Right click or long press half-second to customize time for timer",
     respawn: "Respawn Time",
