@@ -6,17 +6,20 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button'
 import { 
-  MINUTE, SECOND, HALF_SECOND, getFormatedTime, getDateTime, parseToMSEC, isLessOrEqual
+  MINUTE, SECOND, HALF_SECOND, TIME_FORMAT,
+  getFormatedTime, getDateTime, parseToMSEC, isLessOrEqual
 } from '../../constants/dateTime'
+import { trimStr } from '../../utils/parser'
 import BossIcon from './BossIcon'
 
 export default function MonsterCard({ 
   intl, settings, monster, onSwitch, onTime 
 }) {
-  const [isEdit, setIsEdit]       = useState(false)
-  const [editText, setEditText]   = useState("")
+  const [isEdit, setIsEdit]        = useState(false)
+  const [isError, setIsError]      = useState(false)
+  const [editText, setEditText]    = useState("")
   const [isReminded, setIsReminded]= useState(false)
-  const [touchTime, setTouchTime]= useState(0)
+  const [touchTime, setTouchTime]  = useState(0)
 
   const { showName, showLocation, showMapCode, showDateTime, remindBefore } = settings
   const { id, isMVP, name, en_name, location, mapCode, msec, utcMSEC, editMSEC, image } = monster
@@ -61,12 +64,16 @@ export default function MonsterCard({
   }
 
   const handleEditChange = e => {
-    setEditText(e.target.value)
+    const text = trimStr(e.target.value)
+    const isMatch = text.length > 0 ? text.match(TIME_FORMAT) : true
+    setIsError(!isMatch)
+    setEditText(text)
   }
 
   const handleEditClose = () => {
-    setIsEdit(false)
     setEditText("")
+    setIsError(false)
+    setIsEdit(false)
   }
 
   const handleEditOk = () => {
@@ -131,12 +138,15 @@ export default function MonsterCard({
             focused
             autoFocus
             fullWidth
+            error     = { isError }
+            label     = { isError ? intl.timer.editError : "" }
             margin    = "none"
             type      = "tel"
+            inputProps= {{ style: { textAlign: "right" } }}
             value     = { editText }
             onChange  = { e => handleEditChange(e) }
             onKeyDown = { e => {
-              if (e.key.match(new RegExp("enter", "i"))) handleEditOk()
+              if (!isError && e.key.match(new RegExp("enter", "i"))) handleEditOk()
             }}
           />
         </DialogContent>
@@ -146,7 +156,10 @@ export default function MonsterCard({
             { intl.timer.editCancel }
           </Button>
           
-          <Button onClick={ () => handleEditOk() }>
+          <Button
+            onClick = { () => handleEditOk() }
+            disabled= { isError }
+          >
             { intl.timer.editSubmit }
           </Button>
         </DialogActions>

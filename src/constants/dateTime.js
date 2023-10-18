@@ -6,6 +6,7 @@ export const HALF_SECOND= SECOND/2
 export const MINUTE     = SECOND * 60
 export const HOUR       = MINUTE * 60
 export const DAY        = HOUR * 24
+export const TIME_FORMAT= /^(\d{1,2}\D)?(\d{1,2}\D)?(\d{1,2})$/
 
 export function padZero(len, x) {
   x = x.toString().replace("-", "")

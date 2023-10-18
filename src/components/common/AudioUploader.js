@@ -35,9 +35,9 @@ export default function AudioUploader({
       } else {
         try {
           let player = new Audio(reader.result)
+          player.muted = true
           player.addEventListener("canplay", () => {
             player.pause()
-            player = null
             onUpload({ name: fileName, src: reader.result })
           })
           await player.play()
