@@ -93,6 +93,19 @@ $divider-color: #eaeaea;
   border-bottom: 1px solid $divider-color;
 }
 
+@mixin default-dialog() {
+  white-space: pre-line;
+
+  .desc {
+    padding: 0 24px;
+  }
+
+  .MuiDialogActions-root.center {
+    padding-top: 16px;
+    justify-content: center;
+  }
+}
+
 html {
   @include default-font-family();
   font-size: 16px;

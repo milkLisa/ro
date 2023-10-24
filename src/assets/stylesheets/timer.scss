@@ -24,11 +24,16 @@ $time-text-shadow: #fff 0 2px,
   @include large-button();
 }
 
-.edit-dialog {
-  .desc {
-    padding: 0 24px;
-    white-space: pre-line;
+.alert-dialog {
+  @include default-dialog();
+
+  .MuiTypography-root, .desc {
+    color: $alert-color;
   }
+}
+
+.edit-dialog {
+  @include default-dialog();
 }
 
 .tooltip-btn {

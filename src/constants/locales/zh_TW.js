@@ -36,7 +36,10 @@ const zh_TW = {
     typeError: "【{0}】檔案類型錯誤, 僅接受{1}副檔名",
     formatError: "【{0}】格式錯誤, 請確認檔案格式與副檔名相符。{1}",
     existError: "【{0}】已存在",
-    sizeError: "【{0}】檔案大小 {1} 超過限制"
+    sizeError: "【{0}】檔案大小 {1} 超過限制",
+    playAlertTitle: "播放錯誤",
+    allow: "允許",
+    playError: "非互動的自動播放被禁止，請變更瀏覽器設定，或點擊允許按鈕播放"
   },
   monsters: {
     race: {

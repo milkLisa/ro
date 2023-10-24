@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { MINUTE, SECOND, parseToMSEC } from '../../constants/dateTime'
 import * as gtag from '../../lib/gtag'
 import { isChanged } from '../../utils/parser'
-import AudioPlayer from '../common/AudioPlayer'
+import AudioPlayer from './AudioPlayer'
 import MonsterCard from './MonsterCard'
 import SortedDrawer from './SortedDrawer'
 
@@ -21,8 +21,8 @@ export default class TimerList extends Component {
     this.intervalId = setInterval(() => this.timing(), SECOND)
   }
 
-  componentDidUpdate(prevProps) {
-    const { selectedTimers, settings } = this.props
+  componentDidUpdate() {
+    const { selectedTimers } = this.props
     const { allTimer } = this.state
 
     if (isChanged(selectedTimers.map(t => t.id), allTimer.map(t => t.id))) {
@@ -35,8 +35,6 @@ export default class TimerList extends Component {
         allTimer: selectedTimers.map(monster => Object.assign(monster, timerMap[monster.id]))
       })
     }
-
-    if (isChanged(settings, prevProps.settings)) this.remindId = null
   }
 
   componentWillUnmount() {
@@ -107,15 +105,17 @@ export default class TimerList extends Component {
     const { remindAudio, playSeconds } = settings
     const { isSortOpen, allTimer } = this.state
     const sorted = sortByAppearTime(allTimer)
+    const file = audios && audios.find(a => a.name === remindAudio)
+    const src = file ? file.src : null
 
     return (
       <>
         <AudioPlayer 
-          remindId  = { this.remindId }
-          audioName = { remindAudio }
-          source    = { audios }
-          seconds   = { playSeconds * SECOND }
-          onFinish  = { id => this.handlePlayerFinish(id) }
+          intl     = { intl }
+          remindId = { this.remindId }
+          src      = { src }
+          delay    = { playSeconds * SECOND }
+          onFinish = { id => this.handlePlayerFinish(id) }
         />
 
         <div className="list">

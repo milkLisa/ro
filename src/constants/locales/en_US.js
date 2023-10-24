@@ -36,7 +36,10 @@ const en_US = {
     typeError: "【{0}】File type error, only accept {1} extensions",
     formatError: "【{0}】Format error, please check audio format matches the extension. {1}",
     existError: "【{0}】exists",
-    sizeError: "【{0}】File size {1} exceeds the limit"
+    sizeError: "【{0}】File size {1} exceeds the limit",
+    playAlertTitle: "Play Audio Error",
+    allow: "Allow",
+    playError: "The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.\nPlease click the Allow button to obtain permission."
   },
   monsters: {
     race: {
