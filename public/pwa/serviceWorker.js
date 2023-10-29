@@ -1,4 +1,4 @@
-importScripts("/offline/monstersPreload.js")
+importScripts("/pwa/monstersPreload.js")
 
 const cacheName = "timer-cache-v1"
 const CacheNames = [cacheName]
@@ -8,7 +8,9 @@ let cacheFiles = new Set([
   "/static/icons/mvp.png",
   "/static/icons/mini.png",
   "/static/icons/loading.gif",
-  "/static/images/egg.png"
+  "/static/images/egg.png",
+  "/static/screenshots/list.png",
+  "/static/screenshots/timer.png"
 ])
 
 const noCacheFiles = [
@@ -29,7 +31,6 @@ self.addEventListener("install", event => {
 
 self.addEventListener("activate", event => {
   console.log("[Service Worker] Activate Event")
-  self.clients.claim()
   const clearCache = async () => {
     const keys = await caches.keys()
     keys.forEach(async (k) => {
@@ -38,7 +39,7 @@ self.addEventListener("activate", event => {
       }
     })
   }
-  event.waitUntil(clearCache())
+  event.waitUntil(self.clients.claim().then(() => clearCache()))
 })
 
 self.addEventListener("fetch", event => {
@@ -60,7 +61,8 @@ const networkFetch = async (request) => {
     return await fetch(request)
   } catch (ex) {
     return new Response(undefined, {
-      "status": 304, "statusText": ex.message
+      status: 304,
+      statusText: ex.message
     })
   }
 }
@@ -77,10 +79,11 @@ const cacheFirstStrategy = async (request) => {
 const fetchRequestAndCache = async (request) => {
   const networkResponse = await networkFetch(request)
   const clonedResponse = networkResponse.clone()
-
+  
   if (networkResponse.ok && !networkResponse.redirected && request.method == "GET") {
     const cache = await caches.open(cacheName)
     cache.put(request, networkResponse)
   }
+  
   return clonedResponse
 }

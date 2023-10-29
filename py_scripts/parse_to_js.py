@@ -84,7 +84,7 @@ with open(filename, "w+", encoding="utf-8") as file:
 print(f"Overwrite {filename}")
 
 #建立魔物預載列表
-filename = "../public/offline/monstersPreload.js"
+filename = "../src/pwa/monstersPreload.js"
 
 result = result.filter(items=["roId", "image"], axis=1)
 result = result.drop_duplicates(subset="image")

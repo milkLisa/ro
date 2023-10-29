@@ -7,7 +7,7 @@ module.exports = withPWA({
         source: "/",
         destination: "/timer",
         permanent: true,
-      },
+      }
     ]
   },
   compress: true,
@@ -15,10 +15,10 @@ module.exports = withPWA({
   i18n: {
     locales: ["default", "zh-TW", "en-US"],
     defaultLocale: "default",
-    localeDetection: false,
+    localeDetection: false
   },
   pwa: {
     dest: "public",
-    importScripts: ["offline/serviceWorker.js"]
+    importScripts: ["/pwa/serviceWorker.js"]
   }
 })

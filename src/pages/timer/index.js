@@ -19,7 +19,9 @@ export default function Timer({ intl }) {
     fetchData.query(["/api/settings", "/api/audios", "/api/monsters", "/api/timers"])
       .then(result => {
         result.settings = result.settings && result.settings[0]
-        if (result && Object.keys(result).every(key => !!result[key])) {
+        if (!result.timers) result.timers = []
+
+        if (Object.keys(result).every(key => !!result[key])) {
           setData({ ...result })
         } else {
           setData({ isError: true })

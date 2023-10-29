@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Ragnarok Online Tools",
   "scripts": {
+    "next:build": "next build",
+    "next:dev": "next dev",
+    "next:start": "next start",
     "clean": "rimraf .next public\\sw.* public\\workbox-* public\\fallback-*",
-    "local:dev": "npm-run-all clean dev",
-    "local:start": "npm-run-all clean build start",
-    "build": "next build",
-    "dev": "next dev",
-    "start": "next start"
+    "dev": "npm-run-all clean next:dev",
+    "start": "npm-run-all clean next:build next:start"
   },
   "dependencies": {
     "@emotion/react": "11.9.0",
